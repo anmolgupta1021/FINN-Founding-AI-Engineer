@@ -38,7 +38,11 @@ def test_brief_default_24h_frozen_clock():
     cards_by_id = {x["id"]: x for x in body["deep_extracted_cards"]}
 
     laurus = cards_by_id["nse:LAURUSLABS:106834235"]
+    assert len(laurus["network_hooks"]) == 1
+    assert laurus["network_hooks"][0]["name"] == "Meghna Reddy"
     assert "both worked at Cohance Lifesciences Limited (tenure not stated in filing)" in laurus["network_hooks"][0]["path"]
+    assert all(h["name"] != "Mahesh Reddy" for h in laurus["network_hooks"])
+    assert all(h["name"] != "Madhavan Iyengar" for h in laurus["network_hooks"])
 
     bajfin_ciso = cards_by_id["nse:BAJFINANCE:106822209"]
     assert all("knows the company" in h["path"] for h in bajfin_ciso["network_hooks"])
@@ -166,3 +170,62 @@ def test_brief_window_scrubber_monotonicity():
     assert material_counts[0] < material_counts[-1]
     assert routine_counts[0] < routine_counts[-1]
     assert total_counts[0] < total_counts[-1]
+
+
+import pytest
+from datetime import date
+from finn.network.matcher import _days_since, _recency_phrase
+
+
+@pytest.mark.parametrize(
+    ("days", "expected_phrase"),
+    [
+        (0, "spoke 0d ago"),
+        (5, "spoke 5d ago"),
+        (13, "spoke 13d ago"),
+        (14, "spoke 2 wks ago"),
+        (21, "spoke 3 wks ago"),
+        (22, "spoke 3 wks ago"),
+        (35, "spoke 5 wks ago"),
+        (40, "spoke 5 wks ago"),
+        (42, "spoke 6 wks ago"),
+        (49, "spoke 7 wks ago"),
+        (51, "spoke 7 wks ago"),
+        (53, "spoke 7 wks ago"),
+        (59, "spoke 8 wks ago"),
+        (60, "spoke 2 mos ago"),
+        (90, "spoke 3 mos ago"),
+        (118, "spoke 3 mos ago"),
+        (526, "spoke 17 mos ago"),
+        (656, "spoke 21 mos ago"),
+    ],
+)
+def test_recency_phrase_parametrized(days: int, expected_phrase: str):
+    """Assert exact emitted phrases for boundary days."""
+    assert _recency_phrase(days) == expected_phrase
+
+
+@pytest.mark.parametrize(
+    ("contact_dt", "anchor_dt", "expected_days", "expected_phrase"),
+    [
+        # Frozen demo clock anchor: 2026-11-06
+        ("2026-09-14", date(2026, 11, 6), 53, "spoke 7 wks ago"),   # Siddharth Kulkarni
+        ("2026-09-16", date(2026, 11, 6), 51, "spoke 7 wks ago"),   # Mahesh Reddy
+        ("2025-01-19", date(2026, 11, 6), 656, "spoke 21 mos ago"), # Rajeshwari Deshmukh (seed)
+        ("2026-08-22", date(2026, 11, 6), 76, "spoke 2 mos ago"),   # Meghna Reddy
+        ("2026-10-12", date(2026, 11, 6), 25, "spoke 3 wks ago"),   # Nikhil Sharma
+        ("2026-10-15", date(2026, 11, 6), 22, "spoke 3 wks ago"),   # Kunal Parekh
+        ("2026-07-11", date(2026, 11, 6), 118, "spoke 3 mos ago"),  # Vikram Kulkarni
+        # Prior announcement date anchor: 2026-10-26 (explains why earlier turn saw 6 wks / 5 wks)
+        ("2026-09-14", date(2026, 10, 26), 42, "spoke 6 wks ago"),  # Siddharth Kulkarni under Oct 26
+        ("2026-09-16", date(2026, 10, 26), 40, "spoke 5 wks ago"),  # Mahesh Reddy under Oct 26
+    ],
+)
+def test_contact_recency_fixed_anchor_parametrized(
+    contact_dt: str, anchor_dt: date, expected_days: int, expected_phrase: str
+):
+    """Assert exact mathematical days and recency phrases under fixed reference dates."""
+    days = _days_since(contact_dt, anchor_dt)
+    assert days == expected_days
+    assert _recency_phrase(days) == expected_phrase
+

@@ -330,6 +330,14 @@ def match_contacts_for_announcement(
             }
         )
 
+    # If filing contains appointee bio overlaps (e.g. Cohance on Laurus, Cummins on KPIT, ICICI on HDFC),
+    # drop generic "knows the company" matches that have no overlap with the new appointee.
+    appointee_overlaps = [
+        x for x in scored if x["link_type"] in ("verified_tenure_overlap", "same_org_tenure_not_in_filing")
+    ]
+    if appointee_overlaps:
+        scored = appointee_overlaps
+
     scored.sort(key=lambda x: (-x["score"], x["days_since_contact"]))
     top = scored[:3]
     if top and not any(x["degree"] == 2 for x in top):

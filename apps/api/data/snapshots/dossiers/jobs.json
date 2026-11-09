@@ -254,5 +254,37 @@
     "started_at": "2026-11-09T12:11:22.076115+00:00",
     "finished_at": "2026-11-09T12:11:22.077572+00:00",
     "error": null
+  },
+  "job_dixon_2cafd5c3": {
+    "job_id": "job_dixon_2cafd5c3",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-09T16:47:39.162176+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-09T16:47:39.162820+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-09T16:47:39.163070+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-09T16:47:39.163288+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-09T16:47:39.162176+00:00",
+    "finished_at": "2026-11-09T16:47:39.163493+00:00",
+    "error": null
   }
 }

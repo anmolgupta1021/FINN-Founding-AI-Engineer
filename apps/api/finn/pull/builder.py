@@ -27,6 +27,11 @@ from typing import Any
 from finn.constants import LENDER_SYMBOLS
 from finn.llm.router import LLMRouter
 from finn.network.matcher import match_contacts_for_dossier
+from finn.pull.prompts import (
+    build_concall_guidance_prompt,
+    build_reasoning_prompt,
+    compute_guidance_verdict_in_code,
+)
 from finn.pull.verifier import NOT_FOUND_IN_FILINGS, verify_citation
 from finn.store import get_portfolio
 
@@ -239,48 +244,26 @@ def build_company_dossier(
     if progress_cb:
         progress_cb(f"Extracting Promised-vs-Delivered concall guidance for {sym}", 72)
 
-    # --- CALL 2: Bulk LLM (`gemini-3.5-flash-lite`) — Extract Concall Guidance & Promised-vs-Delivered ---
+    # --- CALL 2: Bulk LLM (`gemini-3.5-flash-lite`) — Extract Forward Guidance ONLY ---
     concall_raw: dict[str, Any] = {}
     if concall_docs:
-        q_table_json = json.dumps(trajectory.get("quarterly_recent", []), ensure_ascii=False)
-        cc_prompt = (
-            f"You are analyzing the last {len(concall_docs)} earnings call transcripts of {comp_meta.get('name')} ({sym}).\n"
-            "STRICT RULES:\n"
-            "1. Use ONLY the concall transcript page blocks and quarterly financial table below. No outside knowledge.\n"
-            "2. Every `verbatim_quote` MUST be copied word-for-word (40 to 220 characters) from the cited `doc_id` and `page`.\n"
-            "3. Extract 4 to 5 rows for the `promised_vs_delivered` table:\n"
-            "   - Row 1 MUST come from the LATEST concall (`IS_LATEST_CALL: True`). Because subsequent quarterly results have not been filed yet, set `verdict` to `\"Untestable (Latest Call)\"` and `delivered_summary` to `\"Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.\"`\n"
-            "   - Rows 2 to 5 MUST come from EARLIER concalls (`IS_LATEST_CALL: False`) where management gave specific quantitative or timeline guidance (e.g. revenue growth, margins, capex commissioning, new customer ramp, or NII/NIM/credit cost/deposit growth for lenders), and compare against what was subsequently delivered in later concalls or the quarterly actuals table.\n"
-            "   - Valid `verdict` values for earlier calls: `\"Delivered\"`, `\"Partially delivered\"`, `\"Goalposts moved\"`, `\"Missed\"`, or `\"Not found in filings\"`.\n\n"
-            "Return ONLY valid JSON matching this schema:\n"
-            "{\n"
-            '  "promised_vs_delivered": [\n'
-            "    {\n"
-            '      "period_called": "e.g. Q2 FY27 Concall (Latest) or Q3 FY26 Concall",\n'
-            '      "is_latest_call": true,\n'
-            '      "topic": "e.g. FY27 Revenue / Margin / Capex / NIM Guidance",\n'
-            '      "promised_guidance": "Specific commitment stated on the call",\n'
-            '      "promised_doc_id": "EXACT_DOC_ID",\n'
-            '      "promised_page": 5,\n'
-            '      "promised_quote": "exact verbatim substring from that concall page",\n'
-            '      "delivered_summary": "Actual delivered outcome from subsequent concall or quarterly table",\n'
-            '      "delivered_doc_id": "EXACT_DOC_ID_OR_EMPTY_FOR_LATEST",\n'
-            '      "delivered_page": 3,\n'
-            '      "delivered_quote": "exact verbatim substring from subsequent concall page (or empty if latest call)",\n'
-            '      "verdict": "Untestable (Latest Call) | Delivered | Partially delivered | Goalposts moved | Missed"\n'
-            "    }\n"
-            "  ]\n"
-            "}\n\n"
-            f"SCREENER QUARTERLY ACTUALS (₹ Cr):\n{q_table_json}\n\n"
-            f"CONCALL TRANSCRIPT EXCERPTS:\n{_format_concalls_for_prompt(docs_by_id)}"
+        cc_prompt = build_concall_guidance_prompt(
+            company_name=comp_meta.get("name", sym),
+            symbol=sym,
+            is_lender=is_lender,
+            concall_blocks=_format_concalls_for_prompt(docs_by_id),
         )
         try:
             res_cc = router.generate(
                 task=f"pull_extract_concalls_{sym.lower()}",
                 tier="bulk",
                 source_kind="concall_transcript_pdf",
-                prompt_version="pull_cc_v1",
-                system="Return strictly valid JSON. Every promised_quote and delivered_quote must be an exact substring of the cited page.",
+                prompt_version="pull_cc_v2",
+                system=(
+                    "Return strictly valid JSON matching schema. Extract forward-looking guidance ONLY "
+                    "{metric, target_low, target_high, period, quote, speaker, page, doc_id, is_latest_call}. "
+                    "Do NOT extract delivered summaries or verdicts."
+                ),
                 contents=cc_prompt,
             )
             if res_cc.get("text"):
@@ -329,12 +312,16 @@ def build_company_dossier(
 
     verified_pvd: list[dict[str, Any]] = []
     latest_cc_doc = next((d for d in concall_docs if d.get("is_latest_call")), None)
-    for row in concall_raw.get("promised_vs_delivered") or []:
+    raw_claims = concall_raw.get("guidance_claims") or concall_raw.get("promised_vs_delivered") or []
+    for row in raw_claims:
+        doc_id = row.get("doc_id") or row.get("promised_doc_id")
+        page = row.get("page") or row.get("promised_page")
+        quote = row.get("quote") or row.get("promised_quote")
         p_cit = verify_citation(
             {
-                "doc_id": row.get("promised_doc_id"),
-                "page": row.get("promised_page"),
-                "verbatim_quote": row.get("promised_quote"),
+                "doc_id": doc_id,
+                "page": page,
+                "verbatim_quote": quote,
             },
             docs_by_id,
         )
@@ -342,50 +329,31 @@ def build_company_dossier(
             continue
         p_doc = docs_by_id.get(p_cit["doc_id"], {})
         is_latest = bool(p_doc.get("is_latest_call") or row.get("is_latest_call"))
-
-        if is_latest:
-            verified_pvd.append(
-                {
-                    "period_called": p_doc.get("label") or row.get("period_called") or "Latest Concall",
-                    "is_latest_call": True,
-                    "promised_vs_delivered_testable": False,
-                    "topic": row.get("topic") or "Forward Guidance",
-                    "promised_guidance": row.get("promised_guidance") or p_cit["verbatim_quote"],
-                    "promised_citation": p_cit,
-                    "delivered_summary": (
-                        "Latest call — forward guidance only; untestable for promised-vs-delivered "
-                        "until subsequent quarter results are filed."
-                    ),
-                    "delivered_citation": None,
-                    "verdict": "Untestable (Latest Call)",
-                }
-            )
-        else:
-            d_cit = verify_citation(
-                {
-                    "doc_id": row.get("delivered_doc_id"),
-                    "page": row.get("delivered_page"),
-                    "verbatim_quote": row.get("delivered_quote"),
-                },
-                docs_by_id,
-            )
-            verdict = str(row.get("verdict") or "Delivered")
-            if verdict not in ("Delivered", "Partially delivered", "Goalposts moved", "Missed", NOT_FOUND_IN_FILINGS):
-                verdict = "Delivered"
-            verified_pvd.append(
-                {
-                    "period_called": p_doc.get("label") or row.get("period_called") or "Prior Concall",
-                    "is_latest_call": False,
-                    "promised_vs_delivered_testable": True,
-                    "topic": row.get("topic") or "Execution Check",
-                    "promised_guidance": row.get("promised_guidance") or p_cit["verbatim_quote"],
-                    "promised_citation": p_cit,
-                    "delivered_summary": row.get("delivered_summary")
-                    or (d_cit["verbatim_quote"] if d_cit.get("verified") else NOT_FOUND_IN_FILINGS),
-                    "delivered_citation": d_cit if d_cit.get("verified") else None,
-                    "verdict": verdict if (d_cit.get("verified") or row.get("delivered_summary")) else NOT_FOUND_IN_FILINGS,
-                }
-            )
+        claim_dict = {
+            "metric": row.get("metric") or row.get("topic") or "Operational Guidance",
+            "target_low": row.get("target_low"),
+            "target_high": row.get("target_high"),
+            "period": row.get("period") or p_doc.get("label"),
+            "is_latest_call": is_latest,
+        }
+        # Compute outcome and verdict deterministically in Python code from structured results
+        code_verdict = compute_guidance_verdict_in_code(claim_dict, trajectory, is_lender=is_lender)
+        verified_pvd.append(
+            {
+                "claim_id": len(verified_pvd) + 1,
+                "period_called": p_doc.get("label") or row.get("period") or ("Latest Concall" if is_latest else "Prior Concall"),
+                "is_latest_call": is_latest,
+                "promised_vs_delivered_testable": code_verdict["testable"],
+                "topic": row.get("metric") or row.get("topic") or "Forward Guidance",
+                "speaker": row.get("speaker") or "Management",
+                "promised_guidance": row.get("quote") or p_cit["verbatim_quote"],
+                "promised_citation": p_cit,
+                "delivered_summary": code_verdict["delivered_summary"],
+                "delivered_citation": None,
+                "verdict": code_verdict["verdict"],
+                "one_line_explanation": None,
+            }
+        )
 
     # Ensure the latest concall row is always present at index 0 and marked untestable
     if latest_cc_doc and not any(r.get("is_latest_call") for r in verified_pvd):
@@ -522,43 +490,46 @@ def build_company_dossier(
     # --- CALL 3: Strong LLM (`gemini-3.6-flash`, `thinking_budget=1024`) — Numbers-vs-Narrative & Bull/Bear ---
     reasoning_raw: dict[str, Any] = {}
     if cit_by_idx:
-        r_prompt = (
-            f"You are a senior buy-side equity analyst writing the Numbers-vs-Narrative check and Bull/Bear debate for {comp_meta.get('name')} ({sym}).\n"
-            "STRICT NON-NEGOTIABLE RULES:\n"
-            "1. Use ONLY the 5-Year/Quarterly Financial Trajectory and the Verified Primary Filing Citations (`citation_id` 1..N) below.\n"
-            "2. Every item in `numbers_vs_narrative`, `bull_case`, and `bear_case` MUST reference a valid `citation_id` (integer) from `VERIFIED_CITATIONS`.\n"
-            f"3. {'SECTOR RULE (LENDER): This company is a Bank/NBFC lender. NEVER use or compute EBITDA (state \"EBITDA not meaningful for lenders\"). Analyze NII/Revenue, Financing Profit (PPOP), Financing Margin, PBT, PAT, ROE, and Gross/Net NPA.' if is_lender else 'SECTOR RULE (NON-LENDER): Compare management narrative against 5-year Revenue/PAT CAGR, derived Operating EBITDA margin trajectory, and cumulative 5-year CFO/PAT cash conversion.'}\n"
-            "4. Include 2 `unanswered_diligence_questions` where the primary filings do not disclose a key breakdown (explicitly include the phrase `\"not found in filings\"`).\n\n"
-            "Return ONLY valid JSON matching this schema:\n"
-            "{\n"
-            '  "executive_summary": "2-sentence synthesis of trajectory vs management execution",\n'
-            '  "numbers_vs_narrative": [\n'
-            '    {"check_title": "e.g. Cash Conversion (CFO/PAT) vs Growth Narrative", "numbers_observed": "Specific 5Y or quarterly numbers from trajectory", "narrative_claimed": "What management emphasized in filings", "verdict": "Aligned | Divergence | Watch closely", "citation_id": 1}\n'
-            "  ],\n"
-            '  "bull_case": [\n'
-            '    {"title": "Short headline", "thesis": "1-2 sentence primary-source argument with numbers", "citation_id": 1}\n'
-            "  ],\n"
-            '  "bear_case": [\n'
-            '    {"title": "Short headline", "thesis": "1-2 sentence risk/headwind grounded in filing disclosures or numbers-vs-narrative gap", "citation_id": 2}\n'
-            "  ],\n"
-            '  "unanswered_diligence_questions": [\n'
-            '    {"topic": "Specific undisclosed metric/cohort", "status": "not found in filings", "question_for_management_or_network": "Specific question to test"}\n'
-            "  ]\n"
-            "}\n\n"
-            f"FINANCIAL TRAJECTORY (5Y ANNUAL + RECENT QUARTERS):\n{json.dumps(trajectory, ensure_ascii=False)}\n\n"
-            f"VERIFIED_CITATIONS:\n{json.dumps(pool_for_prompt, ensure_ascii=False)}"
+        claims_table_for_prompt = [
+            {
+                "claim_id": r.get("claim_id", idx + 1),
+                "period": r.get("period_called"),
+                "topic": r.get("topic"),
+                "speaker": r.get("speaker"),
+                "quote": r.get("promised_guidance"),
+                "delivered_actual": r.get("delivered_summary"),
+                "computed_verdict": r.get("verdict"),
+            }
+            for idx, r in enumerate(verified_pvd)
+        ]
+        r_prompt = build_reasoning_prompt(
+            company_name=comp_meta.get("name", sym),
+            symbol=sym,
+            is_lender=is_lender,
+            trajectory_json=json.dumps(trajectory, ensure_ascii=False),
+            claims_table_json=json.dumps(claims_table_for_prompt, ensure_ascii=False),
+            verified_citations_json=json.dumps(pool_for_prompt, ensure_ascii=False),
         )
         try:
             res_strong = router.generate(
                 task=f"pull_reasoning_{sym.lower()}",
                 tier="strong",
                 source_kind="primary_filings_verified_citations",
-                prompt_version="pull_reasoning_v1",
-                system="Return strictly valid JSON. Every citation_id must reference an existing integer ID from VERIFIED_CITATIONS.",
+                prompt_version="pull_reasoning_v2",
+                system=(
+                    "Return strictly valid JSON matching schema. For guidance_explanations, write ONLY a 1-line "
+                    "explanation for each claim_id citing filed numbers. Every citation_id must reference an integer from VERIFIED_CITATIONS."
+                ),
                 contents=r_prompt,
             )
             if res_strong.get("text"):
                 reasoning_raw = _clean_json_text(res_strong["text"])
+                for exp in reasoning_raw.get("guidance_explanations") or []:
+                    cid = exp.get("claim_id")
+                    line = exp.get("one_line_explanation")
+                    for pvd_row in verified_pvd:
+                        if pvd_row.get("claim_id") == cid and line:
+                            pvd_row["one_line_explanation"] = line
         except Exception:  # noqa: BLE001
             reasoning_raw = {}
 
