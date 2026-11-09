@@ -94,6 +94,30 @@ def _build_bridge_lookup(
     return best_bridge
 
 
+def _extract_filing_tenure_for_org(verbatim_bio: str, org_name: str) -> tuple[int, int] | None:
+    """Return `(start_year, end_year)` ONLY if the same sentence/clause in the filing text explicitly
+    states a year range for `org_name` (e.g., 'Cummins Group in India from March 2004 through October 2017').
+    Never infer or assume tenure dates that are not printed in the filing for that organization.
+    """
+    org_l = org_name.lower()
+    if org_l not in verbatim_bio:
+        return None
+    for sentence in re.split(r"[.;\n]", verbatim_bio):
+        pos = sentence.find(org_l)
+        if pos < 0:
+            continue
+        clause = sentence[max(0, pos - 20) : pos + len(org_l) + 90]
+        m = re.search(
+            r"\b(19\d{2}|20\d{2})\b\s*(?:to|through|till|[-–—])\s*(?:[a-z]+\s+)?\b(19\d{2}|20\d{2})\b",
+            clause,
+            re.IGNORECASE,
+        )
+        if m:
+            y1, y2 = int(m.group(1)), int(m.group(2))
+            return (min(y1, y2), max(y1, y2))
+    return None
+
+
 def match_contacts_for_announcement(
     item: dict[str, Any],
     contacts: list[dict[str, Any]],
@@ -102,7 +126,16 @@ def match_contacts_for_announcement(
     contact_links: list[dict[str, Any]] | None = None,
     ref_date: date | None = None,
 ) -> list[dict[str, Any]]:
-    """Return top deterministic 1st-degree and 2nd-degree 'Who to call' matches for a corporate announcement."""
+    """Return top deterministic 'Who to call' matches for a corporate announcement.
+    Enforces the Network Honesty Rule:
+    - Overlap claims with real people in filings may ONLY use tenure dates stated in the filing.
+    - If the filing names a prior employer without tenure dates (e.g., HDFC/Srivatsan at ICICI Bank,
+      Laurus/Jha at Cohance Lifesciences), label as 'both worked at X (tenure not stated in filing)'.
+    - If the match is only at the filing company itself (e.g., Bajaj CISO, Dixon/Vachani), label as
+      'knows the company'.
+    - A '2nd-degree' path on a real person's filing is only emitted when the 2nd-degree contact has a
+      filing-stated tenure overlap with the target (e.g., KPIT/Talaulicar at Cummins 2004–2017).
+    """
     anchor = ref_date or date(2026, 11, 6)
     sym = (item.get("symbol") or "").upper()
     det = item.get("details") or {}
@@ -146,47 +179,76 @@ def match_contacts_for_announcement(
         recency_str = _recency_phrase(days)
         strength = int(ct.get("strength", 3))
         bridge_pair = bridge_map.get(ct["id"])
-        degree = 2 if (strength <= 2 and bridge_pair is not None) else 1
+
+        filing_tenure: tuple[int, int] | None = None
+        has_verified_tenure_overlap = False
+        if bio_overlaps:
+            af0 = bio_overlaps[0]
+            filing_tenure = _extract_filing_tenure_for_org(verbatim_bio, af0["org"])
+            if filing_tenure is not None:
+                c_start = int(af0.get("start") or 0)
+                c_end = int(af0.get("end") or 9999)
+                if max(c_start, filing_tenure[0]) <= min(c_end, filing_tenure[1]):
+                    has_verified_tenure_overlap = True
+
+        # 2nd-degree on a filing is ONLY valid if the 2nd-degree contact has a verified filing-stated link to the target
+        if strength <= 2:
+            if has_verified_tenure_overlap and bridge_pair is not None:
+                degree = 2
+            else:
+                continue
+        else:
+            degree = 1
 
         score = strength * 10 + (12 if degree == 2 else 0)
         reasons: list[str] = []
         overlap_org = None
         overlap_tenure = None
+        link_type = "peer_ecosystem"
 
         if bio_overlaps:
             score += 48
             af0 = bio_overlaps[0]
             overlap_org = af0["org"]
             overlap_tenure = f"{af0.get('start', '?')}–{af0.get('end', 'present')}"
-            reasons.append(
-                f"Filing PDF verbatim bio cites '{overlap_org}', where {ct['name']} served as {af0.get('role')} ({overlap_tenure})."
-            )
-        if direct_affs:
+            if has_verified_tenure_overlap and filing_tenure is not None:
+                link_type = "verified_tenure_overlap"
+                reasons.append(
+                    f"Filing PDF verbatim bio states tenure at {overlap_org} ({filing_tenure[0]}–{filing_tenure[1]}), "
+                    f"overlapping {ct['name']} ({af0.get('role')}, {overlap_tenure})."
+                )
+            else:
+                link_type = "same_org_tenure_not_in_filing"
+                reasons.append(
+                    f"both worked at {overlap_org} (tenure not stated in filing) — "
+                    f"{ct['name']} served as {af0.get('role')} ({overlap_tenure})."
+                )
+        elif direct_affs:
             score += 32
             af_d = direct_affs[0]
-            if not overlap_org:
-                overlap_org = af_d["org"]
-                overlap_tenure = f"{af_d.get('start', '?')}–{af_d.get('end', 'present')}"
+            overlap_org = af_d["org"]
+            overlap_tenure = f"{af_d.get('start', '?')}–{af_d.get('end', 'present')}"
+            link_type = "knows_company"
             reasons.append(
-                f"Ex-{af_d['org']}: {af_d.get('role')} ({af_d.get('start', '?')}–{af_d.get('end', 'present')})."
+                f"knows the company ({af_d['org']}): {ct['name']} served as {af_d.get('role')} ({overlap_tenure})."
             )
-        if peer_affs:
+        elif peer_affs:
             score += 15
             af_p, rel_desc = peer_affs[0]
-            if not overlap_org:
-                overlap_org = af_p["org"]
-                overlap_tenure = f"{af_p.get('start', '?')}–{af_p.get('end', 'present')}"
+            overlap_org = af_p["org"]
+            overlap_tenure = f"{af_p.get('start', '?')}–{af_p.get('end', 'present')}"
+            link_type = "peer_ecosystem"
             reasons.append(
-                f"Ecosystem peer ({af_p['org']} · {rel_desc}): {af_p.get('role')} ({af_p.get('start', '?')}–{af_p.get('end', 'present')})."
+                f"Ecosystem peer ({af_p['org']} · {rel_desc}): {af_p.get('role')} ({overlap_tenure})."
             )
 
-        if degree == 2 and bridge_pair is not None:
+        if degree == 2 and bridge_pair is not None and filing_tenure is not None:
             bridge_ct, edge = bridge_pair
             b_days = _days_since(bridge_ct.get("last_contacted"), anchor)
             b_recency = _recency_phrase(b_days)
             path_str = (
                 f"You → {bridge_ct['name']} (strength {bridge_ct['strength']}/5 · {b_recency}) "
-                f"→ {ct['name']} (2nd-degree · {overlap_org}, {overlap_tenure})"
+                f"→ {ct['name']} (2nd-degree · overlapped at {overlap_org}, filing states {filing_tenure[0]}–{filing_tenure[1]})"
             )
             reasons.append(
                 f"Warm 2nd-degree intro via {bridge_ct['name']} ({edge.get('kind', 'ex_colleague')} at {edge.get('overlap_org')}, {edge.get('overlap_years')})."
@@ -198,23 +260,41 @@ def match_contacts_for_announcement(
             )
         else:
             first_name = ct["name"].split()[0]
-            if item.get("category") == "management_change" and bio_overlaps:
+            if link_type == "verified_tenure_overlap" and filing_tenure is not None:
                 path_str = (
                     f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
-                    f"→ overlapped at {overlap_org} ({overlap_tenure})"
+                    f"→ overlapped at {overlap_org} (filing states {filing_tenure[0]}–{filing_tenure[1]})"
                 )
                 opener = (
-                    f"Hi {first_name} — saw {sym}'s exchange filing today. The brief profile mentions "
-                    f"{overlap_org} during your tenure ({overlap_tenure}). Would love 10 mins for your read on background & execution style."
+                    f"Hi {first_name} — saw {sym}'s exchange filing today. The brief profile states "
+                    f"{overlap_org} ({filing_tenure[0]}–{filing_tenure[1]}), overlapping your tenure ({overlap_tenure}). Would love 10 mins for your read."
+                )
+            elif link_type == "same_org_tenure_not_in_filing":
+                path_str = (
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"→ both worked at {overlap_org} (tenure not stated in filing)"
+                )
+                opener = (
+                    f"Hi {first_name} — saw {sym}'s exchange filing today; the brief profile notes prior work at "
+                    f"{overlap_org} (tenure not stated in filing). Given your time there ({overlap_tenure}), do you happen to know them or the team?"
+                )
+            elif link_type == "knows_company":
+                path_str = (
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"→ knows the company ({overlap_org})"
+                )
+                opener = (
+                    f"Hi {first_name} — {sym} just filed '{item.get('summary_1l', item.get('subject', ''))[:70]}'. "
+                    f"Since you know the company from your time at {overlap_org} ({overlap_tenure}), would love a quick sanity check."
                 )
             else:
                 path_str = (
                     f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
-                    f"→ {overlap_org} ({overlap_tenure})"
+                    f"→ ecosystem peer ({overlap_org})"
                 )
                 opener = (
                     f"Hi {first_name} — {sym} just filed '{item.get('summary_1l', item.get('subject', ''))[:70]}'. "
-                    f"Given your time at {overlap_org}, would love a quick sanity check this week."
+                    f"Given your perspective from {overlap_org}, would love a quick sanity check this week."
                 )
 
         reasons.append(
@@ -231,6 +311,7 @@ def match_contacts_for_announcement(
                 "city": ct.get("city"),
                 "strength": strength,
                 "degree": degree,
+                "link_type": link_type,
                 "last_contacted": ct.get("last_contacted"),
                 "recency": recency_str,
                 "days_since_contact": days,
@@ -482,6 +563,209 @@ def query_network(
         "inferred_label": INFERRED_SYNTHETIC_LABEL,
         "privacy_guarantee": "100% deterministic local graph traversal — zero private network data ever sent to an LLM",
         "results": results[:12],
+    }
+
+
+def match_contacts_for_dossier(
+    data_dir: Path,
+    symbol: str,
+    *,
+    ref_date: date | None = None,
+) -> dict[str, Any]:
+    """Weave Network contacts directly into a Pull company dossier (`[S5]`).
+
+    Groups contacts into 3 primary-diligence buckets:
+    - `ex_company`: Ex-employees / former executives at the target company (`knows the company`).
+    - `competitors`: Contacts from direct competitors (`company_links` with `kind == 'competitor'`).
+    - `suppliers_customers`: Value-chain contacts (suppliers, customers, channel / ecosystem peers).
+    """
+    anchor = ref_date or date(2026, 11, 6)
+    sym = (symbol or "").upper()
+    pf = get_portfolio(data_dir)
+    contacts = get_contacts(data_dir).get("contacts", [])
+    company_links = get_company_links(data_dir)
+    contact_links = get_contact_links(data_dir)
+
+    company_by_sym: dict[str, dict[str, Any]] = {}
+    for c in pf.get("companies", []) + pf.get("research", []):
+        company_by_sym[c["symbol"].upper()] = c
+    comp_info = company_by_sym.get(sym, {"symbol": sym, "name": sym, "sector": "Listed Equity"})
+    comp_name = comp_info.get("name", sym)
+    sector_tokens = [
+        t.lower()
+        for t in re.split(r"[\s/&,-]+", comp_info.get("sector", ""))
+        if len(t) >= 3 and t.lower() not in _STOP_WORDS
+    ]
+
+    competitor_syms: dict[str, str] = {}
+    value_chain_syms: dict[str, str] = {}
+    for lk in company_links:
+        src = (lk.get("src") or "").upper()
+        dst = (lk.get("dst") or "").upper()
+        kind = (lk.get("kind") or "peer").lower()
+        note = lk.get("note") or kind
+        peer = dst if src == sym else (src if dst == sym else "")
+        if not peer:
+            continue
+        if "compet" in kind or "peer" in kind:
+            competitor_syms[peer] = f"{kind} ({note})"
+        else:
+            value_chain_syms[peer] = f"{kind} ({note})"
+
+    contacts_by_id = {c["id"]: c for c in contacts}
+    bridge_map = _build_bridge_lookup(contacts_by_id, contact_links)
+
+    ex_company: list[dict[str, Any]] = []
+    competitors: list[dict[str, Any]] = []
+    suppliers_customers: list[dict[str, Any]] = []
+
+    def _build_entry(
+        contact: dict[str, Any],
+        bucket: str,
+        af: dict[str, Any],
+        rel_label: str,
+        diligence_q: str,
+        *,
+        strength_val: int,
+        recency_val: str,
+        degree_val: int,
+        bridge_val: tuple[dict[str, Any], dict[str, Any]] | None,
+    ) -> dict[str, Any]:
+        tenure = f"{af.get('start', '?')}–{af.get('end', 'present')}"
+        org = af.get("org") or sym
+        first_name = contact["name"].split()[0]
+        if degree_val == 2 and bridge_val is not None:
+            b_ct, _edge = bridge_val
+            b_days = _days_since(b_ct.get("last_contacted"), anchor)
+            path_str = (
+                f"You → {b_ct['name']} (strength {b_ct['strength']}/5 · {_recency_phrase(b_days)}) "
+                f"→ {contact['name']} (2nd-degree · knows {org}, {tenure})"
+            )
+        else:
+            path_str = f"You → {contact['name']} (strength {strength_val}/5 · {recency_val}) → knows the company ({org}, {tenure})"
+        return {
+            "contact_id": contact["id"],
+            "name": contact["name"],
+            "headline": contact["headline"],
+            "city": contact.get("city"),
+            "strength": strength_val,
+            "degree": degree_val,
+            "recency": recency_val,
+            "bucket": bucket,
+            "org": org,
+            "role": af.get("role"),
+            "tenure": tenure,
+            "relation_label": rel_label,
+            "path": path_str,
+            "expertise_tags": contact.get("expertise_tags", [])[:4],
+            "diligence_prompt": diligence_q,
+            "draft_opener": (
+                f"Hi {first_name} — running a primary-source deep dive on {comp_name} ({sym}) from their latest "
+                f"Annual Report and concalls. Given your experience at {org} ({tenure}), {diligence_q}"
+            ),
+            "inferred_label": INFERRED_SYNTHETIC_LABEL,
+        }
+
+    for ct in contacts:
+        affs = ct.get("affiliations") or []
+        strength = int(ct.get("strength", 3))
+        days = _days_since(ct.get("last_contacted"), anchor)
+        recency_str = _recency_phrase(days)
+        bridge_pair = bridge_map.get(ct["id"])
+        degree = 2 if (strength <= 2 and bridge_pair is not None) else 1
+
+        matched_direct = False
+        for af in affs:
+            af_sym = (af.get("symbol") or "").upper()
+            org = af.get("org") or ""
+            if af_sym == sym or (len(comp_name) >= 5 and comp_name.split()[0].lower() in org.lower()):
+                ex_company.append(
+                    _build_entry(
+                        ct,
+                        "ex_company",
+                        af,
+                        f"knows the company ({org})",
+                        f"how realistic is management's execution timeline on new capacity and margin guidance at {comp_name}?",
+                        strength_val=strength,
+                        recency_val=recency_str,
+                        degree_val=degree,
+                        bridge_val=bridge_pair,
+                    )
+                )
+                matched_direct = True
+                break
+        if matched_direct:
+            continue
+
+        matched_comp = False
+        for af in affs:
+            af_sym = (af.get("symbol") or "").upper()
+            if af_sym in competitor_syms:
+                competitors.append(
+                    _build_entry(
+                        ct,
+                        "competitors",
+                        af,
+                        f"competitor benchmark ({af.get('org')} · {competitor_syms[af_sym]})",
+                        f"how does {comp_name}'s pricing discipline and customer wallet share compare against {af.get('org')} on the ground?",
+                        strength_val=strength,
+                        recency_val=recency_str,
+                        degree_val=degree,
+                        bridge_val=bridge_pair,
+                    )
+                )
+                matched_comp = True
+                break
+        if matched_comp:
+            continue
+
+        for af in affs:
+            af_sym = (af.get("symbol") or "").upper()
+            if af_sym in value_chain_syms:
+                suppliers_customers.append(
+                    _build_entry(
+                        ct,
+                        "suppliers_customers",
+                        af,
+                        f"value chain ({af.get('org')} · {value_chain_syms[af_sym]})",
+                        f"what are you seeing on channel inventory, working-capital terms, and order visibility with {comp_name}?",
+                        strength_val=strength,
+                        recency_val=recency_str,
+                        degree_val=degree,
+                        bridge_val=bridge_pair,
+                    )
+                )
+                break
+        else:
+            tags_lower = " ".join(str(t).lower() for t in ct.get("expertise_tags", []))
+            if sector_tokens and any(tok in tags_lower for tok in sector_tokens) and affs:
+                suppliers_customers.append(
+                    _build_entry(
+                        ct,
+                        "suppliers_customers",
+                        affs[0],
+                        f"sector specialist ({affs[0].get('org')})",
+                        f"how do you view sector-wide demand and regulatory tailwinds for {comp_name} ({sym}) over the next 4 quarters?",
+                        strength_val=strength,
+                        recency_val=recency_str,
+                        degree_val=degree,
+                        bridge_val=bridge_pair,
+                    )
+                )
+
+    ex_company.sort(key=lambda x: (-x["strength"], x["degree"]))
+    competitors.sort(key=lambda x: (-x["strength"], x["degree"]))
+    suppliers_customers.sort(key=lambda x: (-x["strength"], x["degree"]))
+
+    return {
+        "symbol": sym,
+        "company_name": comp_name,
+        "inferred_label": INFERRED_SYNTHETIC_LABEL,
+        "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+        "ex_company": ex_company[:3],
+        "competitors": competitors[:3],
+        "suppliers_customers": suppliers_customers[:3],
+        "total_matched": len(ex_company[:3]) + len(competitors[:3]) + len(suppliers_customers[:3]),
     }
 
 

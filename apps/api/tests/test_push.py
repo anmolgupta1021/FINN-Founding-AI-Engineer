@@ -16,7 +16,7 @@ def test_brief_default_24h_frozen_clock():
     assert len(body["ranked_material"]) >= 2
     assert body["routine_summary"]["count"] >= 1
 
-    # Verify HDFCBANK management_change PDF extraction + inferred synthetic network hook
+    # Verify HDFCBANK management_change PDF extraction + Network Honesty Rule
     hdfc_mgmt = [
         x
         for x in body["ranked_material"]
@@ -26,18 +26,33 @@ def test_brief_default_24h_frozen_clock():
     item = hdfc_mgmt[0]
     assert "ICICI" in item["details"]["brief_profile_verbatim"]
     assert item["details"]["cited_page"] == 3
-    assert len(item["network_hooks"]) >= 2
+    assert len(item["network_hooks"]) >= 1
     top_hook = item["network_hooks"][0]
     assert top_hook["name"] == "Nandini Subramanian"
-    assert "ICICI Bank Limited" in top_hook["path"]
+    assert "both worked at ICICI Bank Limited (tenure not stated in filing)" in top_hook["path"]
     assert top_hook["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+    # No 2nd-degree claim when filing does not state appointee's prior-employer tenure dates
+    assert [h for h in item["network_hooks"] if h.get("degree") == 2] == []
 
-    # Also verify 2nd-degree warm intro path on HDFCBANK filing
-    deg2 = [h for h in item["network_hooks"] if h.get("degree") == 2]
-    assert len(deg2) >= 1
-    assert "Nandini Subramanian" in deg2[0]["path"]
-    assert "Arvind Raghavan" in deg2[0]["path"]
-    assert deg2[0]["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+    # Check Laurus/Jha, Bajaj CISO, Dixon/Vachani, and KPIT/Talaulicar in deep_extracted_cards
+    cards_by_id = {x["id"]: x for x in body["deep_extracted_cards"]}
+
+    laurus = cards_by_id["nse:LAURUSLABS:106834235"]
+    assert "both worked at Cohance Lifesciences Limited (tenure not stated in filing)" in laurus["network_hooks"][0]["path"]
+
+    bajfin_ciso = cards_by_id["nse:BAJFINANCE:106822209"]
+    assert all("knows the company" in h["path"] for h in bajfin_ciso["network_hooks"])
+
+    dixon_vachani = cards_by_id["nse:DIXON:106800816"]
+    assert all("knows the company" in h["path"] for h in dixon_vachani["network_hooks"])
+
+    kpit_talaulicar = cards_by_id["nse:KPITTECH:106831889"]
+    assert "overlapped at Cummins Group in India (filing states 2004–2017)" in kpit_talaulicar["network_hooks"][0]["path"]
+    kpit_deg2 = [h for h in kpit_talaulicar["network_hooks"] if h.get("degree") == 2]
+    assert len(kpit_deg2) == 1
+    assert "Siddharth Kulkarni" in kpit_deg2[0]["path"]
+    assert "Rajeshwari Deshmukh" in kpit_deg2[0]["path"]
+    assert "filing states 2004–2017" in kpit_deg2[0]["path"]
 
 
 def test_brief_triggered_alerts_and_threshold_tuning():

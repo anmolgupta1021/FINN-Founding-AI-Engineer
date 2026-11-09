@@ -73,6 +73,9 @@ class LLMRouter:
         self.ledger = LLMLedger(data_dir / "snapshots" / "llm_ledger.jsonl")
         self._transport = transport
 
+    def has_live_key(self) -> bool:
+        return bool(os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or self._transport is not None)
+
     def model_for(self, tier: ModelTier) -> tuple[str, int]:
         cfg = resolve_configured_models(self.data_dir)
         if tier == "bulk":

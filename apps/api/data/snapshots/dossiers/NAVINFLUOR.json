@@ -1,0 +1,799 @@
+{
+  "symbol": "NAVINFLUOR",
+  "company_name": "Navin Fluorine International",
+  "sector": "Specialty chemicals",
+  "bucket": "watchlist",
+  "is_lender": false,
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-09T10:53:00.020697+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/NAVINFLUOR/consolidated/",
+  "business_model_1l": "Navin Fluorine International (Specialty chemicals) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (428 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "NAVINFLUOR_AR_LATEST",
+      "label": "NAVINFLUOR Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe8394d4-503f-4418-b9d1-3691ee92e2f7.pdf",
+      "size_kb": 19437.7,
+      "page_count": 356,
+      "non_empty_pages": 356,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+      "label": "NAVINFLUOR Concall Nov 2026 Transcript",
+      "date_label": "Nov 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+      "size_kb": 3713.3,
+      "page_count": 17,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 17,
+        "total_chars": 44596,
+        "speaker_turn_count": 93,
+        "distinct_speaker_count": 16,
+        "sample_speakers": [
+          "Sub.",
+          "Encl.",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Vishad Mafatlal",
+          "Nitin Kulkarni",
+          "Anish Ganatra",
+          "Sanjesh Jain"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 27,
+        "header_cue_hits": 7,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
+      "label": "NAVINFLUOR Concall Aug 2026 Transcript",
+      "date_label": "Aug 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
+      "size_kb": 3583.2,
+      "page_count": 17,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 17,
+        "total_chars": 49082,
+        "speaker_turn_count": 90,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "Sub.",
+          "Encl.",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Pooja Swami",
+          "Vishad Mafatlal",
+          "Nitin Kulkarni",
+          "Anish Ganatra"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 31,
+        "header_cue_hits": 8,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "NAVINFLUOR_CONCALL_3_MAY_2026",
+      "label": "NAVINFLUOR Concall May 2026 Transcript",
+      "date_label": "May 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1440596d-ed29-441c-b785-0c8dbf3b5dbd.pdf",
+      "size_kb": 1320.8,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 51273,
+        "speaker_turn_count": 109,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "Sub.",
+          "Encl.",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Pooja Swami",
+          "Vishad Mafatlal",
+          "Nitin Kulkarni",
+          "Anish Ganatra"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 37,
+        "header_cue_hits": 5,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "NAVINFLUOR_CONCALL_4_FEB_2026",
+      "label": "NAVINFLUOR Concall Feb 2026 Transcript",
+      "date_label": "Feb 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=45e3cf37-1db9-4a21-944f-cf829ff37c84.pdf",
+      "size_kb": 1482.3,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 48349,
+        "speaker_turn_count": 123,
+        "distinct_speaker_count": 19,
+        "sample_speakers": [
+          "Sub.",
+          "Encl.",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Pooja Swami",
+          "Vishad Mafatlal",
+          "Nitin Kulkarni",
+          "Anish Ganatra"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 30,
+        "header_cue_hits": 5,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "NAVINFLUOR",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 22.9,
+      "pat_cagr_pct": 26.1,
+      "cumulative_5y_cfo_cr": 2226.0,
+      "cumulative_5y_pat_cr": 1861.0,
+      "cumulative_5y_cfo_to_pat_pct": 119.6
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 1453.0,
+        "ebitda_derived_cr": 356.0,
+        "ebitda_margin_derived_pct": 24.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 344.0,
+        "pat_cr": 263.0,
+        "cfo_cr": 75.0,
+        "cfo_to_pat_pct": 28.5,
+        "roce_pct": 19.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 2077.0,
+        "ebitda_derived_cr": 550.0,
+        "ebitda_margin_derived_pct": 26.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 496.0,
+        "pat_cr": 375.0,
+        "cfo_cr": -64.0,
+        "cfo_to_pat_pct": -17.1,
+        "roce_pct": 20.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 2065.0,
+        "ebitda_derived_cr": 399.0,
+        "ebitda_margin_derived_pct": 19.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 336.0,
+        "pat_cr": 270.0,
+        "cfo_cr": 750.0,
+        "cfo_to_pat_pct": 277.8,
+        "roce_pct": 11.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 2349.0,
+        "ebitda_derived_cr": 534.0,
+        "ebitda_margin_derived_pct": 23.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 380.0,
+        "pat_cr": 289.0,
+        "cfo_cr": 571.0,
+        "cfo_to_pat_pct": 197.6,
+        "roce_pct": 11.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 3314.0,
+        "ebitda_derived_cr": 1082.0,
+        "ebitda_margin_derived_pct": 33.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 873.0,
+        "pat_cr": 664.0,
+        "cfo_cr": 894.0,
+        "cfo_to_pat_pct": 134.6,
+        "roce_pct": 21.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 725.0,
+        "ebitda_derived_cr": 207.0,
+        "ebitda_margin_derived_pct": 29.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 155.0,
+        "pat_cr": 117.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 758.0,
+        "ebitda_derived_cr": 246.0,
+        "ebitda_margin_derived_pct": 32.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 198.0,
+        "pat_cr": 148.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 892.0,
+        "ebitda_derived_cr": 308.0,
+        "ebitda_margin_derived_pct": 34.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 238.0,
+        "pat_cr": 185.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 938.0,
+        "ebitda_derived_cr": 321.0,
+        "ebitda_margin_derived_pct": 34.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 282.0,
+        "pat_cr": 213.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 1045.0,
+        "ebitda_derived_cr": 357.0,
+        "ebitda_margin_derived_pct": 34.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 318.0,
+        "pat_cr": 243.0
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_cr": 1191.0,
+        "ebitda_derived_cr": 407.0,
+        "ebitda_margin_derived_pct": 34.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 352.0,
+        "pat_cr": 269.0
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "NAVINFLUOR Concall Nov 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "NAVINFLUOR Concall Aug 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
+        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "NAVINFLUOR Concall May 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "For the full year FY26, net operating revenues grew to INR3,314 crores, reflecting a growth of 41%, supported by broad-based momentum across specialty chemicals, CDMO and HPP.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_3_MAY_2026",
+        "doc_label": "NAVINFLUOR Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1440596d-ed29-441c-b785-0c8dbf3b5dbd.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "For the full year FY26, net operating revenues grew to INR3,314 crores, reflecting a growth of 41%, supported by broad-based momentum across specialty chemicals, CDMO and HPP.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
+        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "NAVINFLUOR Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Operating PBT increased to INR243 crores versus INR98 crores in Q3 FY25 and INR179 crores in Q2 FY26, marking a growth of 149% year-on-year and 36% sequential growth.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_4_FEB_2026",
+        "doc_label": "NAVINFLUOR Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=45e3cf37-1db9-4a21-944f-cf829ff37c84.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "Operating PBT increased to INR243 crores versus INR98 crores in Q3 FY25 and INR179 crores in Q2 FY26, marking a growth of 149% year-on-year and 36% sequential growth.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_3_MAY_2026",
+        "doc_label": "NAVINFLUOR Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1440596d-ed29-441c-b785-0c8dbf3b5dbd.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Quarter 4 FY26 revenue grew 20% year-on-year at INR393 crores, driven by improved realization and volume growth.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
+      "numbers_observed": "5Y Revenue CAGR 22.9%, PAT CAGR 26.1%; latest annual Revenue ₹3314.0 Cr, PAT ₹664.0 Cr.",
+      "narrative_claimed": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
+      "numbers_observed": "5Y Cumulative CFO ₹2226.0 Cr vs Cumulative PAT ₹1861.0 Cr (CFO/PAT = 119.6%).",
+      "narrative_claimed": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
+        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
+      "numbers_observed": "Latest annual Derived EBITDA ₹1082.0 Cr (Margin 33.0%, derived) · ROCE 21.0%.",
+      "narrative_claimed": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (NAVINFLUOR Concall Nov 2026 Transcript)",
+      "thesis": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (NAVINFLUOR Concall Aug 2026 Transcript)",
+      "thesis": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
+        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (NAVINFLUOR Concall Nov 2026 Transcript)",
+      "thesis": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
+        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (NAVINFLUOR Annual Report 2026 (Annual Report))",
+      "thesis": "Cash Credit and Working Capital Loans (i) The Cash credit, Working capital loans, Buyers credit and Packing credit in Foreign currency carry interest rate of 4.09% - 7.40% (Previous year: 5.80% - 9.60%).",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_AR_LATEST",
+        "doc_label": "NAVINFLUOR Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe8394d4-503f-4418-b9d1-3691ee92e2f7.pdf",
+        "page": 319,
+        "cited_page": 319,
+        "verbatim_quote": "Cash Credit and Working Capital Loans (i) The Cash credit, Working capital loans, Buyers credit and Packing credit in Foreign currency carry interest rate of 4.09% - 7.40% (Previous year: 5.80% - 9.60%).",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (NAVINFLUOR Annual Report 2026 (Annual Report))",
+      "thesis": "Further, global headline inflation is expected to rise from 4.1% in 2025 to 4.4% in 2026 and then moderate to 3.7% in 2027.",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_AR_LATEST",
+        "doc_label": "NAVINFLUOR Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe8394d4-503f-4418-b9d1-3691ee92e2f7.pdf",
+        "page": 104,
+        "cited_page": 104,
+        "verbatim_quote": "Further, global headline inflation is expected to rise from 4.1% in 2025 to 4.4% in 2026 and then moderate to 3.7% in 2027.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (NAVINFLUOR Concall Feb 2026 Transcript)",
+      "thesis": "As of December 31, FY25, our net debt-to-equity ratio stood at 0.03x and net working capital was below 80 days of sales.",
+      "citation": {
+        "verified": true,
+        "doc_id": "NAVINFLUOR_CONCALL_4_FEB_2026",
+        "doc_label": "NAVINFLUOR Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=45e3cf37-1db9-4a21-944f-cf829ff37c84.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "As of December 31, FY25, our net debt-to-equity ratio stood at 0.03x and net working capital was below 80 days of sales.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "NAVINFLUOR",
+    "company_name": "Navin Fluorine International",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:prashant_deshpande",
+        "name": "Prashant Deshpande",
+        "headline": "Head of HFO & Fluoropolymers Engineering · Ex-Navin Fluorine",
+        "city": "Surat",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 7 wks ago",
+        "bucket": "ex_company",
+        "org": "Navin Fluorine International",
+        "role": "GM — Projects & Process Engineering (Dahej)",
+        "tenure": "2018–2025",
+        "relation_label": "knows the company (Navin Fluorine International)",
+        "path": "You → Prashant Deshpande (strength 5/5 · spoke 7 wks ago) → knows the company (Navin Fluorine International, 2018–2025)",
+        "expertise_tags": [
+          "HFO-1234yf",
+          "Honeywell contract",
+          "CDMO cGMP",
+          "Dahej fluorination"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "draft_opener": "Hi Prashant — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Navin Fluorine International (2018–2025), how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:arjun_mehta",
+        "name": "Arjun Mehta",
+        "headline": "Head of Operations, Specialty Intermediates · Ex-Aarti Industries & Navin Fluorine",
+        "city": "Mumbai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 14 mos ago",
+        "bucket": "ex_company",
+        "org": "Navin Fluorine International",
+        "role": "Process Lead, Dewas",
+        "tenure": "2013–2017",
+        "relation_label": "knows the company (Navin Fluorine International)",
+        "path": "You → Arjun Mehta (strength 4/5 · spoke 14 mos ago) → knows the company (Navin Fluorine International, 2013–2017)",
+        "expertise_tags": [
+          "specialty chemicals",
+          "fluorination",
+          "China+1 agrochem",
+          "capex execution"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "draft_opener": "Hi Arjun — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Navin Fluorine International (2013–2017), how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:hemant_shah",
+        "name": "Hemant Shah",
+        "headline": "CFO — Specialty Chemicals Peer · Ex-Navin Fluorine & Deepak Nitrite",
+        "city": "Vadodara",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 4 mos ago",
+        "bucket": "ex_company",
+        "org": "Navin Fluorine International",
+        "role": "VP — Finance & Commercial",
+        "tenure": "2016–2023",
+        "relation_label": "knows the company (Navin Fluorine International)",
+        "path": "You → Hemant Shah (strength 4/5 · spoke 4 mos ago) → knows the company (Navin Fluorine International, 2016–2023)",
+        "expertise_tags": [
+          "capex ROCE",
+          "working capital cycle",
+          "CDMO contracts",
+          "chemical cycle"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "draft_opener": "Hi Hemant — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Navin Fluorine International (2016–2023), how realistic is management's execution timeline on new capacity and margin guidance at Navin Fluorine International?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [
+      {
+        "contact_id": "contact:shweta_bansal",
+        "name": "Shweta Bansal",
+        "headline": "Head of Agrochem CSM Commercialization · Ex-PI Industries & SRF",
+        "city": "Udaipur",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 4 mos ago",
+        "bucket": "competitors",
+        "org": "PI Industries",
+        "role": "AVP — CSM Business Development & Program Mgmt",
+        "tenure": "2018–2024",
+        "relation_label": "competitor benchmark (PI Industries · competitor (Fluorochemical CDMO/CSM peer serving global agro & pharma))",
+        "path": "You → Shweta Bansal (strength 4/5 · spoke 4 mos ago) → knows the company (PI Industries, 2018–2024)",
+        "expertise_tags": [
+          "CSM agrochemicals",
+          "pyroxasulfone",
+          "pharma CDMO transition",
+          "Jambusar"
+        ],
+        "diligence_prompt": "how does Navin Fluorine International's pricing discipline and customer wallet share compare against PI Industries on the ground?",
+        "draft_opener": "Hi Shweta — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at PI Industries (2018–2024), how does Navin Fluorine International's pricing discipline and customer wallet share compare against PI Industries on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:alok_nanda",
+        "name": "Alok Nanda",
+        "headline": "VP Nitric Acid & Downstream Chlorination · Ex-Aarti Industries",
+        "city": "Vapi",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 17 mos ago",
+        "bucket": "competitors",
+        "org": "Aarti Industries",
+        "role": "GM — Process Safety & Operations",
+        "tenure": "2015–2023",
+        "relation_label": "competitor benchmark (Aarti Industries · competitor (Specialty fluorination overlap))",
+        "path": "You → Alok Nanda (strength 3/5 · spoke 17 mos ago) → knows the company (Aarti Industries, 2015–2023)",
+        "expertise_tags": [
+          "chlorotoluene",
+          "MMA",
+          "long-term supply contracts",
+          "agro intermediates"
+        ],
+        "diligence_prompt": "how does Navin Fluorine International's pricing discipline and customer wallet share compare against Aarti Industries on the ground?",
+        "draft_opener": "Hi Alok — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Aarti Industries (2015–2023), how does Navin Fluorine International's pricing discipline and customer wallet share compare against Aarti Industries on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:suresh_babu",
+        "name": "Suresh Babu",
+        "headline": "GM EHS & Process Scale-Up · Ex-PI Industries (Panoli)",
+        "city": "Bharuch",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 16 mos ago",
+        "bucket": "competitors",
+        "org": "PI Industries",
+        "role": "DGM — Technical Services & Scale-Up",
+        "tenure": "2015–2023",
+        "relation_label": "competitor benchmark (PI Industries · competitor (Fluorochemical CDMO/CSM peer serving global agro & pharma))",
+        "path": "You → Suresh Babu (strength 3/5 · spoke 16 mos ago) → knows the company (PI Industries, 2015–2023)",
+        "expertise_tags": [
+          "Panoli plant",
+          "diazotization",
+          "flow chemistry",
+          "Japanese CSM audits"
+        ],
+        "diligence_prompt": "how does Navin Fluorine International's pricing discipline and customer wallet share compare against PI Industries on the ground?",
+        "draft_opener": "Hi Suresh — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at PI Industries (2015–2023), how does Navin Fluorine International's pricing discipline and customer wallet share compare against PI Industries on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:priti_desai",
+        "name": "Priti Desai",
+        "headline": "VP Waterproofing & Project Sales · Ex-Pidilite & Asian Paints",
+        "city": "Ahmedabad",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Pidilite Industries",
+        "role": "Zonal Head — Construction Chemicals",
+        "tenure": "2018–2025",
+        "relation_label": "sector specialist (Pidilite Industries)",
+        "path": "You → Priti Desai (strength 4/5 · spoke 2 mos ago) → knows the company (Pidilite Industries, 2018–2025)",
+        "expertise_tags": [
+          "real estate project sales",
+          "Nina Percept",
+          "construction chemicals",
+          "tile adhesives"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Navin Fluorine International (NAVINFLUOR) over the next 4 quarters?",
+        "draft_opener": "Hi Priti — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Pidilite Industries (2018–2025), how do you view sector-wide demand and regulatory tailwinds for Navin Fluorine International (NAVINFLUOR) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:anirudh_bhatia",
+        "name": "Anirudh Bhatia",
+        "headline": "SVP Specialty Generics & US Commercial · Ex-Sun Pharma",
+        "city": "Mumbai",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 19 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Sun Pharmaceutical Industries",
+        "role": "VP — Specialty Commercial Strategy",
+        "tenure": "2016–2023",
+        "relation_label": "sector specialist (Sun Pharmaceutical Industries)",
+        "path": "You → Anirudh Bhatia (strength 3/5 · spoke 19 mos ago) → knows the company (Sun Pharmaceutical Industries, 2016–2023)",
+        "expertise_tags": [
+          "specialty pharma",
+          "Ilumya/Winlevi",
+          "USFDA",
+          "domestic chronic therapies"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Navin Fluorine International (NAVINFLUOR) over the next 4 quarters?",
+        "draft_opener": "Hi Anirudh — running a primary-source deep dive on Navin Fluorine International (NAVINFLUOR) from their latest Annual Report and concalls. Given your experience at Sun Pharmaceutical Industries (2016–2023), how do you view sector-wide demand and regulatory tailwinds for Navin Fluorine International (NAVINFLUOR) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 8
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 17,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

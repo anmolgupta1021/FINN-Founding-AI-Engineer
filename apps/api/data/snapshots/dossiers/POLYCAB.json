@@ -1,0 +1,677 @@
+{
+  "symbol": "POLYCAB",
+  "company_name": "Polycab India",
+  "sector": "Cables & wires",
+  "bucket": "holding",
+  "is_lender": false,
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-09T10:53:02.462498+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/POLYCAB/consolidated/",
+  "business_model_1l": "Polycab India (Cables & wires) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (605 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "POLYCAB_AR_LATEST",
+      "label": "POLYCAB Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ff6bcced-1327-449f-8a82-6fd651a0124f.pdf",
+      "size_kb": 20389.7,
+      "page_count": 527,
+      "non_empty_pages": 527,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+      "label": "POLYCAB Concall Oct 2026 Transcript",
+      "date_label": "Oct 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+      "size_kb": 493.1,
+      "page_count": 20,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 20,
+        "total_chars": 54220,
+        "speaker_turn_count": 97,
+        "distinct_speaker_count": 18,
+        "sample_speakers": [
+          "Corporate Office",
+          "Web",
+          "Membership No.",
+          "Address",
+          "MANAGEMENT",
+          "Moderator",
+          "Niyant Maru",
+          "Nikhil Jaisinghani"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 30,
+        "header_cue_hits": 9,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "POLYCAB_CONCALL_2_JUL_2026",
+      "label": "POLYCAB Concall Jul 2026 Transcript",
+      "date_label": "Jul 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+      "size_kb": 463.7,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 54465,
+        "speaker_turn_count": 82,
+        "distinct_speaker_count": 18,
+        "sample_speakers": [
+          "Corporate Office",
+          "Web",
+          "Membership No.",
+          "Address",
+          "MANAGEMENT",
+          "Moderator",
+          "Niyant Maru",
+          "Shashank Yagnick"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 30,
+        "header_cue_hits": 7,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "POLYCAB_CONCALL_3_MAY_2026",
+      "label": "POLYCAB Concall May 2026 Transcript",
+      "date_label": "May 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+      "size_kb": 499.7,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 53799,
+        "speaker_turn_count": 86,
+        "distinct_speaker_count": 16,
+        "sample_speakers": [
+          "Corporate Office",
+          "Web",
+          "Membership No.",
+          "Address",
+          "MANAGEMENT",
+          "Moderator",
+          "Niyant Maru",
+          "Our priorities remain very clear"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 19,
+        "header_cue_hits": 8,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "POLYCAB_CONCALL_4_JAN_2026",
+      "label": "POLYCAB Concall Jan 2026 Transcript",
+      "date_label": "Jan 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c54bf2c3-22fa-45e1-bf1a-2194e7b46183.pdf",
+      "size_kb": 501.6,
+      "page_count": 20,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 20,
+        "total_chars": 52560,
+        "speaker_turn_count": 111,
+        "distinct_speaker_count": 21,
+        "sample_speakers": [
+          "Corporate Office",
+          "Web",
+          "Membership No.",
+          "Address",
+          "MANAGEMENT",
+          "Moderator",
+          "Niyant Maru",
+          "Shashank Yagnick"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 31,
+        "header_cue_hits": 10,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "POLYCAB",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 24.0,
+      "pat_cagr_pct": 31.1,
+      "cumulative_5y_cfo_cr": 8856.0,
+      "cumulative_5y_pat_cr": 8756.0,
+      "cumulative_5y_cfo_to_pat_pct": 101.1
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 12204.0,
+        "ebitda_derived_cr": 1264.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1188.0,
+        "pat_cr": 917.0,
+        "cfo_cr": 512.0,
+        "cfo_to_pat_pct": 55.8,
+        "roce_pct": 21.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 14108.0,
+        "ebitda_derived_cr": 1843.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1707.0,
+        "pat_cr": 1282.0,
+        "cfo_cr": 1428.0,
+        "cfo_to_pat_pct": 111.4,
+        "roce_pct": 27.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 18039.0,
+        "ebitda_derived_cr": 2492.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 2359.0,
+        "pat_cr": 1803.0,
+        "cfo_cr": 1296.0,
+        "cfo_to_pat_pct": 71.9,
+        "roce_pct": 31.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 22408.0,
+        "ebitda_derived_cr": 2964.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 2701.0,
+        "pat_cr": 2046.0,
+        "cfo_cr": 1809.0,
+        "cfo_to_pat_pct": 88.4,
+        "roce_pct": 30.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 28884.0,
+        "ebitda_derived_cr": 4013.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 3613.0,
+        "pat_cr": 2708.0,
+        "cfo_cr": 3811.0,
+        "cfo_to_pat_pct": 140.7,
+        "roce_pct": 33.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 5906.0,
+        "ebitda_derived_cr": 858.0,
+        "ebitda_margin_derived_pct": 15.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 801.0,
+        "pat_cr": 600.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 6477.0,
+        "ebitda_derived_cr": 1021.0,
+        "ebitda_margin_derived_pct": 16.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 921.0,
+        "pat_cr": 693.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 7636.0,
+        "ebitda_derived_cr": 966.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 842.0,
+        "pat_cr": 630.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 8864.0,
+        "ebitda_derived_cr": 1161.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1049.0,
+        "pat_cr": 786.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 8210.0,
+        "ebitda_derived_cr": 1136.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1058.0,
+        "pat_cr": 797.0
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_cr": 9899.0,
+        "ebitda_derived_cr": 1422.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1306.0,
+        "pat_cr": 990.0
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "POLYCAB Concall Oct 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 12,
+        "cited_page": 12,
+        "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "POLYCAB Concall Jul 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_2_JUL_2026",
+        "doc_label": "POLYCAB Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "POLYCAB Concall May 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "During FY26, we incurred capex of INR 14.8 billion, in line with our annual guidance of INR 12 billion to INR 16 billion per annum.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_3_MAY_2026",
+        "doc_label": "POLYCAB Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "During FY26, we incurred capex of INR 14.8 billion, in line with our annual guidance of INR 12 billion to INR 16 billion per annum.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_2_JUL_2026",
+        "doc_label": "POLYCAB Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "POLYCAB Concall Jan 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Capital expenditure for the quarter was ₹ 3.4 billion, taking the 9M FY26 total to ₹ 10.9 billion, in-line with our Project Spring guidance of investing ₹ 12 billion to ₹ 16 billion annually through FY30.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_4_JAN_2026",
+        "doc_label": "POLYCAB Concall Jan 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c54bf2c3-22fa-45e1-bf1a-2194e7b46183.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "Capital expenditure for the quarter was ₹ 3.4 billion, taking the 9M FY26 total to ₹ 10.9 billion, in-line with our Project Spring guidance of investing ₹ 12 billion to ₹ 16 billion annually through FY30.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_3_MAY_2026",
+        "doc_label": "POLYCAB Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "And if I say 3% to 4%, you can make it 13% to 14% for the quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
+      "numbers_observed": "5Y Revenue CAGR 24.0%, PAT CAGR 31.1%; latest annual Revenue ₹28884.0 Cr, PAT ₹2708.0 Cr.",
+      "narrative_claimed": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 12,
+        "cited_page": 12,
+        "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
+      "numbers_observed": "5Y Cumulative CFO ₹8856.0 Cr vs Cumulative PAT ₹8756.0 Cr (CFO/PAT = 101.1%).",
+      "narrative_claimed": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_2_JUL_2026",
+        "doc_label": "POLYCAB Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
+      "numbers_observed": "Latest annual Derived EBITDA ₹4013.0 Cr (Margin 14.0%, derived) · ROCE 33.0%.",
+      "narrative_claimed": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (POLYCAB Concall Oct 2026 Transcript)",
+      "thesis": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 12,
+        "cited_page": 12,
+        "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (POLYCAB Concall Jul 2026 Transcript)",
+      "thesis": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_2_JUL_2026",
+        "doc_label": "POLYCAB Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (POLYCAB Concall Oct 2026 Transcript)",
+      "thesis": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_1_OCT_2026",
+        "doc_label": "POLYCAB Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (POLYCAB Concall May 2026 Transcript)",
+      "thesis": "The ECB maintained rates at 2% but revised its 2026 inflation projection sharply upward to 2.6% from 1.9% and also cutting the growth forecast.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_3_MAY_2026",
+        "doc_label": "POLYCAB Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "The ECB maintained rates at 2% but revised its 2026 inflation projection sharply upward to 2.6% from 1.9% and also cutting the growth forecast.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (POLYCAB Concall Jan 2026 Transcript)",
+      "thesis": "So, we have consistently passed on that cost price inflation to the end customers month-on-month, but we have taken a conscious call that such high 35% passing of inflation can't be done every month and hence, we will do it in a bit of a staggered manner.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_4_JAN_2026",
+        "doc_label": "POLYCAB Concall Jan 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c54bf2c3-22fa-45e1-bf1a-2194e7b46183.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "So, we have consistently passed on that cost price inflation to the end customers month-on-month, but we have taken a conscious call that such high 35% passing of inflation can't be done every month and hence, we will do it in a bit of a staggered manner.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (POLYCAB Concall May 2026 Transcript)",
+      "thesis": "Polycab India Limited May 06, 2026 Page 3 of 18 at 3.5% to 3.75% at its March meeting, revising the inflation projections upwards and flagging significant uncertainty.",
+      "citation": {
+        "verified": true,
+        "doc_id": "POLYCAB_CONCALL_3_MAY_2026",
+        "doc_label": "POLYCAB Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Polycab India Limited May 06, 2026 Page 3 of 18 at 3.5% to 3.75% at its March meeting, revising the inflation projections upwards and flagging significant uncertainty.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "POLYCAB",
+    "company_name": "Polycab India",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:priya_nair",
+        "name": "Priya Nair",
+        "headline": "SVP Channel Sales, Cables & FMEG · Ex-Polycab & Asian Paints",
+        "city": "Mumbai",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "ex_company",
+        "org": "Polycab India",
+        "role": "National Sales Manager — Wires & FMEG",
+        "tenure": "2018–2025",
+        "relation_label": "knows the company (Polycab India)",
+        "path": "You → Priya Nair (strength 5/5 · spoke 2 mos ago) → knows the company (Polycab India, 2018–2025)",
+        "expertise_tags": [
+          "cables & wires",
+          "channel inventory",
+          "copper pass-through",
+          "decorative paints"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "draft_opener": "Hi Priya — running a primary-source deep dive on Polycab India (POLYCAB) from their latest Annual Report and concalls. Given your experience at Polycab India (2018–2025), how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:mohan_das",
+        "name": "Mohan Das",
+        "headline": "VP Copper Sourcing & Rod Mill · Ex-Polycab (Halol)",
+        "city": "Vadodara",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 13 mos ago",
+        "bucket": "ex_company",
+        "org": "Polycab India",
+        "role": "Plant Head — Halol Wires & Copper",
+        "tenure": "2016–2024",
+        "relation_label": "knows the company (Polycab India)",
+        "path": "You → Mohan Das (strength 4/5 · spoke 13 mos ago) → knows the company (Polycab India, 2016–2024)",
+        "expertise_tags": [
+          "LME copper hedging",
+          "Ryker rod plant",
+          "backward integration",
+          "XLPE compounds"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "draft_opener": "Hi Mohan — running a primary-source deep dive on Polycab India (POLYCAB) from their latest Annual Report and concalls. Given your experience at Polycab India (2016–2024), how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:gaurav_singhania",
+        "name": "Gaurav Singhania",
+        "headline": "VP EHV Cables & EPC Bidding · Ex-KEI Industries & Polycab",
+        "city": "New Delhi",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 11 mos ago",
+        "bucket": "ex_company",
+        "org": "Polycab India",
+        "role": "AGM — Institutional Projects",
+        "tenure": "2015–2020",
+        "relation_label": "knows the company (Polycab India)",
+        "path": "You → Gaurav Singhania (strength 3/5 · spoke 11 mos ago) → knows the company (Polycab India, 2015–2020)",
+        "expertise_tags": [
+          "EHV cables",
+          "RDSS discom tenders",
+          "copper rod",
+          "export cables"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "draft_opener": "Hi Gaurav — running a primary-source deep dive on Polycab India (POLYCAB) from their latest Annual Report and concalls. Given your experience at Polycab India (2015–2020), how realistic is management's execution timeline on new capacity and margin guidance at Polycab India?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [],
+    "suppliers_customers": [],
+    "total_matched": 3
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 18,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

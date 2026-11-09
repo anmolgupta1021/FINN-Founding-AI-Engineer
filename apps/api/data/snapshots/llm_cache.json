@@ -105,44 +105,6 @@
     "text": "{\"items\": [{\"id\": \"bse:AARTIIND:4135b711-e7d5-462b-913b-2655a2a31162\", \"category\": \"press_release\", \"summary_1l\": \"Aarti Industries entered into an agreement with a global specialty chemical company.\"}, {\"id\": \"bse:HDFCBANK:3fda89e2-f430-4457-85ab-78d178775062\", \"category\": \"unclassified\", \"summary_1l\": \"HDFC Bank published newspaper advertisements regarding regulatory disclosures.\"}, {\"id\": \"nse:SUNPHARMA:106803030\", \"category\": \"unclassified\", \"summary_1l\": \"Sun Pharma published a notice regarding the opening of a window for physical shares.\"}, {\"id\": \"bse:SUNPHARMA:3d5124cc-2271-4d41-8f1d-53d8896d26d3\", \"category\": \"unclassified\", \"summary_1l\": \"Sun Pharma submitted the compliance certificate under SEBI DP Regulations.\"}]}",
     "thinking_tokens": 0
   },
-  "269ae62b143ed14b7b530e4b490a7f7d436ddd35a3bdc334d0c6f518a7b425fb": {
-    "created_at": "2026-11-09T06:50:16.109312+00:00",
-    "in_tokens": 300,
-    "model": "gemini-2.5-flash-lite",
-    "out_tokens": 110,
-    "parsed": {
-      "items": [
-        {
-          "category": "M&A",
-          "id": "g07",
-          "summary_1l": "SUNPHARMA: 14% strategic stake & licensing deal with Philogen S.p.A."
-        },
-        {
-          "category": "litigation",
-          "id": "g10",
-          "summary_1l": "INFY: EUR 42,000 administrative fine from Luxembourg data authority"
-        },
-        {
-          "category": "capex",
-          "id": "g28",
-          "summary_1l": "NAVINFLUOR: Board approves Rs 288 cr outlay for new Dahej AHF line"
-        },
-        {
-          "category": "management_change",
-          "id": "g29",
-          "summary_1l": "PIDILITIND: Sudhanshu Vats assumes charge as MD Designate"
-        },
-        {
-          "category": "unclassified",
-          "id": "g30",
-          "summary_1l": "JBCHEPHARM: Half-yearly related-party transaction disclosure (Reg 23(9))"
-        }
-      ]
-    },
-    "prompt_version": "cls-batch-v1",
-    "text": "{\"items\": [{\"id\": \"g07\", \"category\": \"M&A\", \"summary_1l\": \"SUNPHARMA: 14% strategic stake & licensing deal with Philogen S.p.A.\"}, {\"id\": \"g10\", \"category\": \"litigation\", \"summary_1l\": \"INFY: EUR 42,000 administrative fine from Luxembourg data authority\"}, {\"id\": \"g28\", \"category\": \"capex\", \"summary_1l\": \"NAVINFLUOR: Board approves Rs 288 cr outlay for new Dahej AHF line\"}, {\"id\": \"g29\", \"category\": \"management_change\", \"summary_1l\": \"PIDILITIND: Sudhanshu Vats assumes charge as MD Designate\"}, {\"id\": \"g30\", \"category\": \"unclassified\", \"summary_1l\": \"JBCHEPHARM: Half-yearly related-party transaction disclosure (Reg 23(9))\"}]}",
-    "thinking_tokens": 0
-  },
   "6544d961c1530a2d11eb8040cd4f9af9db217620d89e50e47787921bfe774e63": {
     "created_at": "2026-11-09T08:48:31.218256+00:00",
     "in_tokens": 1562,

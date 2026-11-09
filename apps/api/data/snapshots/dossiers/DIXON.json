@@ -1,0 +1,823 @@
+{
+  "symbol": "DIXON",
+  "company_name": "Dixon Technologies",
+  "sector": "EMS / electronics",
+  "bucket": "holding",
+  "is_lender": false,
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-09T10:52:55.241959+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/DIXON/consolidated/",
+  "business_model_1l": "Dixon Technologies (EMS / electronics) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (607 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "DIXON_AR_LATEST",
+      "label": "DIXON Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+      "size_kb": 15124.5,
+      "page_count": 520,
+      "non_empty_pages": 519,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "label": "DIXON Concall Nov 2026 Transcript",
+      "date_label": "Nov 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+      "size_kb": 888.3,
+      "page_count": 24,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 24,
+        "total_chars": 64165,
+        "speaker_turn_count": 133,
+        "distinct_speaker_count": 23,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah",
+          "Atul Lall",
+          "Saurabh Gupta",
+          "Key highlights for the quarter are as below",
+          "Mobile and other EMS businesses",
+          "Home Appliances"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 43,
+        "header_cue_hits": 12,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "DIXON_CONCALL_2_AUG_2026",
+      "label": "DIXON Concall Aug 2026 Transcript",
+      "date_label": "Aug 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+      "size_kb": 834.4,
+      "page_count": 21,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 58098,
+        "speaker_turn_count": 133,
+        "distinct_speaker_count": 15,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah",
+          "Atul Lall",
+          "Saurabh Gupta",
+          "Aditya Bhartia",
+          "Sameet Sinha",
+          "Siddhartha Bera"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 34,
+        "header_cue_hits": 11,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "DIXON_CONCALL_3_MAY_2026",
+      "label": "DIXON Concall May 2026 Transcript",
+      "date_label": "May 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
+      "size_kb": 832.3,
+      "page_count": 21,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 54297,
+        "speaker_turn_count": 162,
+        "distinct_speaker_count": 19,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah",
+          "Atul Lall",
+          "Saurabh Gupta",
+          "Pankaj Tibrewal",
+          "Aditya Bhartia",
+          "Siddhartha Bera"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 39,
+        "header_cue_hits": 10,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "DIXON_CONCALL_4_FEB_2026",
+      "label": "DIXON Concall Feb 2026 Transcript",
+      "date_label": "Feb 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
+      "size_kb": 1064.4,
+      "page_count": 21,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 57174,
+        "speaker_turn_count": 155,
+        "distinct_speaker_count": 24,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah",
+          "Atul Lall",
+          "Saurabh Gupta",
+          "Mobile and EMS",
+          "Consumer electronics",
+          "Refrigerators"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 38,
+        "header_cue_hits": 11,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "DIXON",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 46.2,
+      "pat_cagr_pct": 71.5,
+      "cumulative_5y_cfo_cr": 4515.0,
+      "cumulative_5y_pat_cr": 3697.0,
+      "cumulative_5y_cfo_to_pat_pct": 122.1
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 10697.0,
+        "ebitda_derived_cr": 384.0,
+        "ebitda_margin_derived_pct": 3.6,
+        "ebitda_status": "derived",
+        "pbt_cr": 255.0,
+        "pat_cr": 190.0,
+        "cfo_cr": 273.0,
+        "cfo_to_pat_pct": 143.7,
+        "roce_pct": 23.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 12192.0,
+        "ebitda_derived_cr": 519.0,
+        "ebitda_margin_derived_pct": 4.3,
+        "ebitda_status": "derived",
+        "pbt_cr": 345.0,
+        "pat_cr": 255.0,
+        "cfo_cr": 726.0,
+        "cfo_to_pat_pct": 284.7,
+        "roce_pct": 24.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 17691.0,
+        "ebitda_derived_cr": 705.0,
+        "ebitda_margin_derived_pct": 4.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 494.0,
+        "pat_cr": 375.0,
+        "cfo_cr": 584.0,
+        "cfo_to_pat_pct": 155.7,
+        "roce_pct": 29.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 38860.0,
+        "ebitda_derived_cr": 1515.0,
+        "ebitda_margin_derived_pct": 3.9,
+        "ebitda_status": "derived",
+        "pbt_cr": 1570.0,
+        "pat_cr": 1233.0,
+        "cfo_cr": 1150.0,
+        "cfo_to_pat_pct": 93.3,
+        "roce_pct": 40.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 48873.0,
+        "ebitda_derived_cr": 1873.0,
+        "ebitda_margin_derived_pct": 3.8,
+        "ebitda_status": "derived",
+        "pbt_cr": 2071.0,
+        "pat_cr": 1644.0,
+        "cfo_cr": 1782.0,
+        "cfo_to_pat_pct": 108.4,
+        "roce_pct": 29.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 12836.0,
+        "ebitda_derived_cr": 482.0,
+        "ebitda_margin_derived_pct": 3.8,
+        "ebitda_status": "derived",
+        "pbt_cr": 366.0,
+        "pat_cr": 280.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 14855.0,
+        "ebitda_derived_cr": 561.0,
+        "ebitda_margin_derived_pct": 3.8,
+        "ebitda_status": "derived",
+        "pbt_cr": 924.0,
+        "pat_cr": 746.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 10672.0,
+        "ebitda_derived_cr": 414.0,
+        "ebitda_margin_derived_pct": 3.9,
+        "ebitda_status": "derived",
+        "pbt_cr": 412.0,
+        "pat_cr": 321.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 10511.0,
+        "ebitda_derived_cr": 408.0,
+        "ebitda_margin_derived_pct": 3.9,
+        "ebitda_status": "derived",
+        "pbt_cr": 370.0,
+        "pat_cr": 298.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 15548.0,
+        "ebitda_derived_cr": 463.0,
+        "ebitda_margin_derived_pct": 3.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 869.0,
+        "pat_cr": 718.0
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_cr": 21794.0,
+        "ebitda_derived_cr": 597.0,
+        "ebitda_margin_derived_pct": 2.7,
+        "ebitda_status": "derived",
+        "pbt_cr": 532.0,
+        "pat_cr": 411.0
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "DIXON Concall Nov 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "DIXON Concall Aug 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_2_AUG_2026",
+        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 13,
+        "cited_page": 13,
+        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "DIXON Concall May 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_3_MAY_2026",
+        "doc_label": "DIXON Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_2_AUG_2026",
+        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "DIXON Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Dixon Technologies (India) Limited January 29, 2026 Page 4 of 20 and target to expand volumes of smartphone camera modules from 40 million units in this fiscal to 190 million to 200 million units per annum.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_4_FEB_2026",
+        "doc_label": "DIXON Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "Dixon Technologies (India) Limited January 29, 2026 Page 4 of 20 and target to expand volumes of smartphone camera modules from 40 million units in this fiscal to 190 million to 200 million units per annum.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_3_MAY_2026",
+        "doc_label": "DIXON Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
+      "numbers_observed": "5Y Revenue CAGR 46.2%, PAT CAGR 71.5%; latest annual Revenue ₹48873.0 Cr, PAT ₹1644.0 Cr.",
+      "narrative_claimed": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
+      "numbers_observed": "5Y Cumulative CFO ₹4515.0 Cr vs Cumulative PAT ₹3697.0 Cr (CFO/PAT = 122.1%).",
+      "narrative_claimed": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_2_AUG_2026",
+        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
+      "numbers_observed": "Latest annual Derived EBITDA ₹1873.0 Cr (Margin 3.8%, derived) · ROCE 29.0%.",
+      "narrative_claimed": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 13,
+        "cited_page": 13,
+        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (DIXON Concall Nov 2026 Transcript)",
+      "thesis": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (DIXON Concall Aug 2026 Transcript)",
+      "thesis": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_2_AUG_2026",
+        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (DIXON Concall Nov 2026 Transcript)",
+      "thesis": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 13,
+        "cited_page": 13,
+        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (DIXON Concall Aug 2026 Transcript)",
+      "thesis": "Mobile volume performance was aligned with temporary demand contraction seen across the broader smartphone market by 10% to 12%, while our top line witnessed a strong revenue growth due to higher input cost realization.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_2_AUG_2026",
+        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Mobile volume performance was aligned with temporary demand contraction seen across the broader smartphone market by 10% to 12%, while our top line witnessed a strong revenue growth due to higher input cost realization.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (DIXON Concall Feb 2026 Transcript)",
+      "thesis": "I mean, are you sure -- do you maintain this 20 million number for Vivo for FY '27 or there can be a downside risk to this?",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_4_FEB_2026",
+        "doc_label": "DIXON Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "I mean, are you sure -- do you maintain this 20 million number for Vivo for FY '27 or there can be a downside risk to this?",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (DIXON Concall May 2026 Transcript)",
+      "thesis": "The ROCE is 44.8% and working capital operating cycle is negative 8 days.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_3_MAY_2026",
+        "doc_label": "DIXON Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "The ROCE is 44.8% and working capital operating cycle is negative 8 days.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "DIXON",
+    "company_name": "Dixon Technologies",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:rohan_desai",
+        "name": "Rohan Desai",
+        "headline": "VP Finance, Industrial Automation · Ex-Dixon Technologies & Bosch India",
+        "city": "Bengaluru",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 5 wks ago",
+        "bucket": "ex_company",
+        "org": "Dixon Technologies",
+        "role": "GM Finance (Consumer EMS)",
+        "tenure": "2020–2024",
+        "relation_label": "knows the company (Dixon Technologies)",
+        "path": "You → Rohan Desai (strength 5/5 · spoke 5 wks ago) → knows the company (Dixon Technologies, 2020–2024)",
+        "expertise_tags": [
+          "EMS",
+          "industrial electronics",
+          "working capital",
+          "CEAMA"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "draft_opener": "Hi Rohan — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2020–2024), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:ritesh_malhotra",
+        "name": "Ritesh Malhotra",
+        "headline": "VP Smartphone EMS & Display Module · Ex-Dixon (Padget)",
+        "city": "Noida",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "ex_company",
+        "org": "Dixon Technologies",
+        "role": "VP Operations — Padget Electronics",
+        "tenure": "2019–2025",
+        "relation_label": "knows the company (Dixon Technologies)",
+        "path": "You → Ritesh Malhotra (strength 4/5 · spoke 2 mos ago) → knows the company (Dixon Technologies, 2019–2025)",
+        "expertise_tags": [
+          "mobile PLI",
+          "Motorola/Xiaomi ODM",
+          "display module",
+          "Noida EMS"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "draft_opener": "Hi Ritesh — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2019–2025), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:gautam_rao",
+        "name": "Gautam Rao",
+        "headline": "VP Washing Machine & Refrigerator ODM · Ex-Dixon Technologies",
+        "city": "Tirupati",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 3 mos ago",
+        "bucket": "ex_company",
+        "org": "Dixon Technologies",
+        "role": "Plant Head — Home Appliances",
+        "tenure": "2017–2024",
+        "relation_label": "knows the company (Dixon Technologies)",
+        "path": "You → Gautam Rao (strength 4/5 · spoke 3 mos ago) → knows the company (Dixon Technologies, 2017–2024)",
+        "expertise_tags": [
+          "semi-automatic WM",
+          "fully automatic WM",
+          "Voltas/Bosch ODM",
+          "backward tooling"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "draft_opener": "Hi Gautam — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2017–2024), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [
+      {
+        "contact_id": "contact:nilesh_patil",
+        "name": "Nilesh Patil",
+        "headline": "Head of Semicon OSAT Packaging · Ex-Kaynes Semicon",
+        "city": "Hyderabad",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "bucket": "competitors",
+        "org": "Kaynes Technology",
+        "role": "VP — Semiconductor Packaging",
+        "tenure": "2022–2025",
+        "relation_label": "competitor benchmark (Kaynes Technology · competitor (Both EMS manufacturers in industrial & consumer electronics))",
+        "path": "You → Nilesh Patil (strength 5/5 · spoke 2 wks ago) → knows the company (Kaynes Technology, 2022–2025)",
+        "expertise_tags": [
+          "OSAT subsidy",
+          "wire bonding",
+          "Sanand OSAT",
+          "power module packaging"
+        ],
+        "diligence_prompt": "how does Dixon Technologies's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "draft_opener": "Hi Nilesh — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2022–2025), how does Dixon Technologies's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:kavita_rao",
+        "name": "Kavita Rao",
+        "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
+        "city": "Chennai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 17 mos ago",
+        "bucket": "competitors",
+        "org": "Syrma SGS Technology",
+        "role": "Director — Strategic Sourcing",
+        "tenure": "2021–2025",
+        "relation_label": "competitor benchmark (Syrma SGS Technology · competitor (EMS peer in PCBA, box-build, and consumer electronics))",
+        "path": "You → Kavita Rao (strength 4/5 · spoke 17 mos ago) → knows the company (Syrma SGS Technology, 2021–2025)",
+        "expertise_tags": [
+          "EMS",
+          "PCB sourcing",
+          "jewellery retail",
+          "wearables"
+        ],
+        "diligence_prompt": "how does Dixon Technologies's pricing discipline and customer wallet share compare against Syrma SGS Technology on the ground?",
+        "draft_opener": "Hi Kavita — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Syrma SGS Technology (2021–2025), how does Dixon Technologies's pricing discipline and customer wallet share compare against Syrma SGS Technology on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:vivek_hegde",
+        "name": "Vivek Hegde",
+        "headline": "VP Aerospace & Industrial Box-Build · Ex-Kaynes Technology",
+        "city": "Mysuru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "bucket": "competitors",
+        "org": "Kaynes Technology",
+        "role": "GM — Operations & Strategic Accounts",
+        "tenure": "2018–2025",
+        "relation_label": "competitor benchmark (Kaynes Technology · competitor (Both EMS manufacturers in industrial & consumer electronics))",
+        "path": "You → Vivek Hegde (strength 4/5 · spoke 2 wks ago) → knows the company (Kaynes Technology, 2018–2025)",
+        "expertise_tags": [
+          "OSAT",
+          "high-density PCB",
+          "railway signalling",
+          "aerospace EMS"
+        ],
+        "diligence_prompt": "how does Dixon Technologies's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "draft_opener": "Hi Vivek — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2018–2025), how does Dixon Technologies's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:ashwin_pai",
+        "name": "Ashwin Pai",
+        "headline": "VP Autonomous Driving & ADAS · Ex-KPIT & Tata Elxsi",
+        "city": "Bengaluru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Practice Head — ADAS",
+        "tenure": "2019–2024",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Ashwin Pai (strength 4/5 · spoke 2 mos ago) → knows the company (KPIT Technologies, 2019–2024)",
+        "expertise_tags": [
+          "ADAS",
+          "middleware",
+          "European OEMs",
+          "Honda/Renault SDV"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "draft_opener": "Hi Ashwin — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2019–2024), how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:prateek_goel",
+        "name": "Prateek Goel",
+        "headline": "Director — Industrial Adhesives & B2B · Ex-Pidilite",
+        "city": "Mumbai",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 11 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Pidilite Industries",
+        "role": "Business Head — Industrial Products",
+        "tenure": "2017–2024",
+        "relation_label": "sector specialist (Pidilite Industries)",
+        "path": "You → Prateek Goel (strength 3/5 · spoke 11 mos ago) → knows the company (Pidilite Industries, 2017–2024)",
+        "expertise_tags": [
+          "B2B pigments",
+          "packaging adhesives",
+          "electronics adhesives",
+          "Huntsman Araldite"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "draft_opener": "Hi Prateek — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Pidilite Industries (2017–2024), how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:yashwant_rao",
+        "name": "Yashwant Rao",
+        "headline": "VP EV Battery Management Systems · Ex-KPIT Technologies",
+        "city": "Pune",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 18 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Senior Architect — Electrification",
+        "tenure": "2016–2023",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Yashwant Rao (strength 3/5 · spoke 18 mos ago) → knows the company (KPIT Technologies, 2016–2023)",
+        "expertise_tags": [
+          "BMS firmware",
+          "invertor control",
+          "Japanese OEMs",
+          "fixed-price ER&D"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "draft_opener": "Hi Yashwant — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2016–2023), how do you view sector-wide demand and regulatory tailwinds for Dixon Technologies (DIXON) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 9
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 15,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

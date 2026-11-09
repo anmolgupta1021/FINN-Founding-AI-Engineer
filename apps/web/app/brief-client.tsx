@@ -228,6 +228,177 @@ function formatTsShort(iso: string): string {
   return `${d} · ${t} IST`;
 }
 
+interface VerbatimCitation {
+  verified: boolean;
+  doc_id: string;
+  doc_label: string;
+  doc_type?: string;
+  pdf_url?: string;
+  page: number;
+  verbatim_quote: string;
+  match_score: number;
+  status: string;
+}
+
+interface DossierNetworkContact {
+  contact_id: string;
+  name: string;
+  headline: string;
+  city?: string;
+  strength: number;
+  degree: number;
+  recency: string;
+  bucket: string;
+  org: string;
+  role?: string;
+  tenure: string;
+  relation_label: string;
+  path: string;
+  expertise_tags: string[];
+  diligence_prompt: string;
+  draft_opener: string;
+  inferred_label: string;
+}
+
+interface CompanyDossier {
+  symbol: string;
+  company_name: string;
+  sector: string;
+  bucket: string;
+  is_lender: boolean;
+  ebitda_policy_note: string;
+  generated_at: string;
+  freshness: string;
+  primary_sources_only: boolean;
+  screener_url?: string;
+  business_model_1l: string;
+  executive_summary: string;
+  documents_manifest: Array<{
+    doc_id: string;
+    label: string;
+    date_label?: string;
+    doc_type: string;
+    is_latest_call?: boolean;
+    pdf_url: string;
+    size_kb: number;
+    page_count: number;
+    doctype_check?: {
+      is_transcript: boolean;
+      distinct_speaker_count: number;
+      speaker_turn_count: number;
+      has_qa: boolean;
+      promised_vs_delivered_testable: boolean;
+      promised_vs_delivered_note: string;
+    };
+  }>;
+  financial_trajectory: {
+    is_lender: boolean;
+    summary_stats: {
+      is_lender: boolean;
+      ebitda_label: string;
+      revenue_cagr_pct?: number;
+      pat_cagr_pct?: number;
+      cumulative_5y_cfo_cr?: number;
+      cumulative_5y_pat_cr?: number;
+      cumulative_5y_cfo_to_pat_pct?: number;
+    };
+    annual_5y: Array<{
+      period: string;
+      revenue_cr?: number | null;
+      revenue_or_nii_cr?: number | null;
+      ebitda_derived_cr?: number | null;
+      ebitda_margin_derived_pct?: number | null;
+      ppop_or_financing_profit_cr?: number | null;
+      financing_margin_pct?: number | null;
+      ebitda_status: string;
+      pbt_cr?: number | null;
+      pat_cr?: number | null;
+      cfo_cr?: number | null;
+      cfo_to_pat_pct?: number | null;
+      roce_pct?: number | null;
+      roce_or_roe_pct?: number | null;
+    }>;
+  };
+  segment_mix: Array<{
+    segment: string;
+    share_or_metric: string;
+    citation: VerbatimCitation;
+  }>;
+  promised_vs_delivered: Array<{
+    period_called: string;
+    is_latest_call: boolean;
+    promised_vs_delivered_testable: boolean;
+    topic: string;
+    promised_guidance: string;
+    promised_citation: VerbatimCitation;
+    delivered_summary: string;
+    delivered_citation?: VerbatimCitation | null;
+    verdict: string;
+  }>;
+  numbers_vs_narrative: Array<{
+    check_title: string;
+    numbers_observed: string;
+    narrative_claimed: string;
+    verdict: string;
+    citation: VerbatimCitation;
+  }>;
+  bull_case: Array<{
+    title: string;
+    thesis: string;
+    citation: VerbatimCitation;
+  }>;
+  bear_case: Array<{
+    title: string;
+    thesis: string;
+    citation: VerbatimCitation;
+  }>;
+  unanswered_diligence_questions: Array<{
+    topic: string;
+    status: string;
+    question_for_management_or_network: string;
+  }>;
+  network: {
+    symbol: string;
+    company_name: string;
+    inferred_label: string;
+    privacy_guarantee: string;
+    ex_company: DossierNetworkContact[];
+    competitors: DossierNetworkContact[];
+    suppliers_customers: DossierNetworkContact[];
+    total_matched: number;
+  };
+  verification_summary: {
+    total_documents_verified: number;
+    concall_transcripts_verified: number;
+    latest_call_marked_untestable: boolean;
+    total_verified_citations: number;
+    min_rapidfuzz_score: number;
+    quote_verification_rule: string;
+  };
+}
+
+interface PullJobState {
+  job_id: string;
+  symbol: string;
+  status: "running" | "completed" | "failed";
+  step: string;
+  progress_pct: number;
+  steps_log?: Array<{ ts: string; step: string; progress_pct: number }>;
+  error?: string | null;
+}
+
+const DEMO_DOSSIER_SYMBOLS = [
+  { symbol: "DIXON", label: "DIXON · Demo #1 (EMS)" },
+  { symbol: "SYRMA", label: "SYRMA · Demo #2 (EMS)" },
+  { symbol: "NAVINFLUOR", label: "NAVINFLUOR · Demo #3 (Fluorochem)" },
+  { symbol: "POLYCAB", label: "POLYCAB · Demo #4 (Cables & FMEG)" },
+];
+
+const GENERALISATION_DOSSIER_SYMBOLS = [
+  { symbol: "HDFCBANK", label: "HDFCBANK · Unseen Lender Path (No EBITDA)" },
+  { symbol: "TITAN", label: "TITAN · Unseen Consumer Discretionary" },
+];
+
 const NETWORK_QUICK_QUERIES = [
   "specialty chemicals",
   "ICICI Bank",
@@ -259,12 +430,24 @@ export function BriefClient() {
   const [networkLoading, setNetworkLoading] = useState<boolean>(true);
   const [expandedAskContactId, setExpandedAskContactId] = useState<string | null>(null);
 
+  const [dossierSymbol, setDossierSymbol] = useState<string>("DIXON");
+  const [customTickerInput, setCustomTickerInput] = useState<string>("");
+  const [dossier, setDossier] = useState<CompanyDossier | null>(null);
+  const [dossierLoading, setDossierLoading] = useState<boolean>(true);
+  const [dossierError, setDossierError] = useState<string | null>(null);
+  const [activeJob, setActiveJob] = useState<PullJobState | null>(null);
+  const [activeCitation, setActiveCitation] = useState<VerbatimCitation | null>(null);
+
   const cardDialogRef = useRef<HTMLDialogElement | null>(null);
   const rulesDialogRef = useRef<HTMLDialogElement | null>(null);
+  const citationDialogRef = useRef<HTMLDialogElement | null>(null);
 
   const cardDialogTitleId = useId();
   const rulesDialogTitleId = useId();
+  const citationDialogTitleId = useId();
   const resultsTableCaptionId = useId();
+  const trajectoryTableCaptionId = useId();
+  const pvdTableCaptionId = useId();
 
   useEffect(() => {
     let cancelled = false;
@@ -350,6 +533,107 @@ export function BriefClient() {
     }
     return attachLightDismissFallback(dialog, () => setRulesModalOpen(false));
   }, [rulesModalOpen]);
+
+  useEffect(() => {
+    const dialog = citationDialogRef.current;
+    if (!dialog) return;
+    if (activeCitation && !dialog.open) {
+      dialog.showModal();
+    } else if (!activeCitation && dialog.open) {
+      dialog.close();
+    }
+    return attachLightDismissFallback(dialog, () => setActiveCitation(null));
+  }, [activeCitation]);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`/api/v1/dossiers/${encodeURIComponent(dossierSymbol)}`, { cache: "no-store" })
+      .then(async (res) => {
+        if (res.status === 404) {
+          throw new Error(`NOT_BUILT:${dossierSymbol}`);
+        }
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        return (await res.json()) as CompanyDossier;
+      })
+      .then((json) => {
+        if (!cancelled) {
+          setDossier(json);
+          setDossierError(null);
+          setDossierLoading(false);
+        }
+      })
+      .catch((e: unknown) => {
+        if (!cancelled) {
+          setDossier(null);
+          setDossierError(e instanceof Error ? e.message : "Failed to load dossier");
+          setDossierLoading(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [dossierSymbol]);
+
+  useEffect(() => {
+    if (!activeJob || activeJob.status !== "running") return;
+    let cancelled = false;
+    const timer = setInterval(() => {
+      fetch(`/api/v1/jobs/${encodeURIComponent(activeJob.job_id)}`, { cache: "no-store" })
+        .then(async (res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return (await res.json()) as PullJobState;
+        })
+        .then((job) => {
+          if (cancelled) return;
+          setActiveJob(job);
+          if (job.status === "completed") {
+            fetch(`/api/v1/dossiers/${encodeURIComponent(job.symbol)}`, { cache: "no-store" })
+              .then((r) => (r.ok ? (r.json() as Promise<CompanyDossier>) : null))
+              .then((d) => {
+                if (d && !cancelled) {
+                  setDossier(d);
+                  setDossierError(null);
+                  setDossierLoading(false);
+                }
+              })
+              .catch(() => {});
+          }
+        })
+        .catch(() => {});
+    }, 1200);
+    return () => {
+      cancelled = true;
+      clearInterval(timer);
+    };
+  }, [activeJob]);
+
+  function selectDossierTicker(sym: string) {
+    const clean = sym.trim().toUpperCase();
+    if (!clean) return;
+    setDossierLoading(true);
+    setDossierError(null);
+    setActiveJob(null);
+    setDossierSymbol(clean);
+  }
+
+  function triggerBackgroundDossierBuild(sym: string) {
+    const clean = sym.trim().toUpperCase();
+    if (!clean) return;
+    setDossierSymbol(clean);
+    fetch(`/api/v1/dossiers/${encodeURIComponent(clean)}/build`, { method: "POST" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return (await res.json()) as PullJobState;
+      })
+      .then((job) => {
+        setActiveJob(job);
+      })
+      .catch((e: unknown) => {
+        setDossierError(e instanceof Error ? e.message : "Failed to start background job");
+      });
+  }
 
   const resultsSpotlights = (data?.deep_extracted_cards ?? []).filter(
     (c) => c.details?.kind === "results",
@@ -660,6 +944,16 @@ export function BriefClient() {
                           : `Open Verbatim Bio (${item.details?.filing_citation}) →`}
                       </button>
                     )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        selectDossierTicker(item.symbol);
+                        document.getElementById("pull-dossier-section")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="border border-rule bg-paper px-2.5 py-1 font-mono text-xs text-ink-2 hover:border-ink hover:text-ink"
+                    >
+                      Pull Dossier ({item.symbol}) →
+                    </button>
                   </div>
 
                   {/* Woven-in Network Hook Preview */}
@@ -763,6 +1057,592 @@ export function BriefClient() {
           </div>
         </section>
       )}
+
+      {/* [S5 & S7] Pull · Primary-Source Company Dossier & Background Job Poller */}
+      <section
+        id="pull-dossier-section"
+        aria-label="Pull Primary-Source Company Dossier"
+        className="space-y-4 border-t border-rule pt-4"
+      >
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <span className="kicker">
+              [S5] Pull · Primary-Source Research Dossier (Annual Report + 4 Verified Concall Transcripts Only)
+            </span>
+            <p className="mt-0.5 font-mono text-[11px] text-ink-2">
+              Every claim carries a clickable verbatim quote verified via{" "}
+              <code>rapidfuzz.partial_ratio &ge; 85</code>. Unsupported claims show{" "}
+              <strong>&ldquo;not found in filings&rdquo;</strong>.
+            </p>
+          </div>
+          <span className="font-mono text-[10px] text-up">
+            0 News · 0 Broker Notes · Primary Filings Only
+          </span>
+        </div>
+
+        {/* Demo Dossiers + Generalisation Dossiers + Any NSE Ticker Builder */}
+        <div className="space-y-2 border border-rule bg-paper-2 p-3 text-xs">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="font-mono text-[10px] uppercase text-muted">4 Demo Dossiers:</span>
+            {DEMO_DOSSIER_SYMBOLS.map((d) => (
+              <button
+                key={d.symbol}
+                type="button"
+                onClick={() => selectDossierTicker(d.symbol)}
+                className={`px-2 py-1 font-mono text-[11px] ${
+                  dossierSymbol === d.symbol
+                    ? "bg-ink text-paper"
+                    : "border border-rule bg-paper text-ink-2 hover:border-ink"
+                }`}
+              >
+                {d.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+            <span className="font-mono text-[10px] uppercase text-muted">2 Generalisation Tests:</span>
+            {GENERALISATION_DOSSIER_SYMBOLS.map((g) => (
+              <button
+                key={g.symbol}
+                type="button"
+                onClick={() => selectDossierTicker(g.symbol)}
+                className={`px-2 py-1 font-mono text-[11px] ${
+                  dossierSymbol === g.symbol
+                    ? "bg-ink text-paper"
+                    : "border border-rule bg-paper text-ink-2 hover:border-ink"
+                }`}
+              >
+                {g.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 border-t border-rule pt-2">
+            <label htmlFor="custom-dossier-ticker" className="font-mono text-[11px] text-ink-2">
+              Any NSE Ticker:
+            </label>
+            <input
+              id="custom-dossier-ticker"
+              type="text"
+              value={customTickerInput}
+              onChange={(e) => setCustomTickerInput(e.target.value.toUpperCase())}
+              placeholder="e.g. MARUTI, KAYNES, LAURUSLABS…"
+              className="w-56 border border-rule bg-paper px-2.5 py-1 font-mono text-xs text-ink"
+            />
+            <button
+              type="button"
+              onClick={() => {
+                if (customTickerInput.trim()) {
+                  selectDossierTicker(customTickerInput);
+                }
+              }}
+              className="border border-rule bg-paper px-2.5 py-1 font-mono text-xs text-ink hover:border-ink"
+            >
+              Load Snapshot
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const target = customTickerInput.trim() || dossierSymbol;
+                triggerBackgroundDossierBuild(target);
+              }}
+              className="border border-ink bg-ink px-2.5 py-1 font-mono text-xs text-paper hover:opacity-90"
+            >
+              [S7] Run Background Pull Job ({customTickerInput.trim() || dossierSymbol}) →
+            </button>
+          </div>
+        </div>
+
+        {/* [S7] Build-in-Progress Job Poller */}
+        {activeJob && (
+          <div className="border-l-2 border-accent bg-paper-2 p-3 text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 font-mono">
+              <div>
+                <span className="font-semibold text-ink">
+                  [S7] Background Pull Job · <code>{activeJob.job_id}</code> ({activeJob.symbol})
+                </span>
+                <span
+                  className={`ml-2 border px-1.5 py-0.5 text-[10px] uppercase ${
+                    activeJob.status === "completed"
+                      ? "border-up text-up"
+                      : activeJob.status === "failed"
+                        ? "border-signal text-signal"
+                        : "border-accent text-accent"
+                  }`}
+                >
+                  {activeJob.status} · {activeJob.progress_pct}%
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveJob(null)}
+                className="text-[11px] text-muted underline"
+              >
+                Dismiss
+              </button>
+            </div>
+            <p className="mt-1 font-mono text-[11px] text-ink-2">{activeJob.step}</p>
+            <div className="mt-2 h-1.5 w-full overflow-hidden bg-rule">
+              <div
+                className="h-full bg-accent transition-all duration-300"
+                style={{ width: `${Math.min(100, Math.max(5, activeJob.progress_pct))}%` }}
+              />
+            </div>
+            {activeJob.steps_log && activeJob.steps_log.length > 0 && (
+              <ul className="mt-2 space-y-0.5 font-mono text-[10px] text-muted">
+                {activeJob.steps_log.map((s, idx) => (
+                  <li key={idx}>
+                    [{s.progress_pct}%] {s.step}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {/* Dossier Body */}
+        {dossierLoading ? (
+          <div className="border border-rule bg-paper-2 p-4 font-mono text-xs text-muted">
+            Loading primary-source dossier for {dossierSymbol}…
+          </div>
+        ) : dossierError ? (
+          <div className="space-y-2 border border-amber bg-paper-2 p-4 text-xs">
+            <p className="font-mono text-amber">
+              {dossierError.startsWith("NOT_BUILT:")
+                ? `Dossier for ${dossierSymbol} is not precomputed in snapshots yet.`
+                : `Could not load dossier (${dossierError}).`}
+            </p>
+            <button
+              type="button"
+              onClick={() => triggerBackgroundDossierBuild(dossierSymbol)}
+              className="border border-ink bg-ink px-3 py-1.5 font-mono text-xs text-paper"
+            >
+              Trigger Background Pull Job for {dossierSymbol} →
+            </button>
+          </div>
+        ) : dossier ? (
+          <div className="space-y-4 border border-rule bg-paper p-3.5 sm:p-4">
+            {/* Dossier Title & Verification Header */}
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-rule pb-3">
+              <div className="space-y-1">
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
+                  <span className="text-base font-bold text-ink">{dossier.symbol}</span>
+                  <span className="text-ink-2">· {dossier.company_name}</span>
+                  <span className="border border-rule bg-paper-2 px-1.5 py-0.5 text-[10px] uppercase">
+                    {dossier.sector}
+                  </span>
+                  <span
+                    className={`border px-1.5 py-0.5 text-[10px] ${
+                      dossier.is_lender ? "border-amber text-amber" : "border-up text-up"
+                    }`}
+                  >
+                    {dossier.is_lender
+                      ? "EBITDA not meaningful for lenders (NII/PPOP/GNPA mode)"
+                      : "Derived Operating EBITDA mode"}
+                  </span>
+                </div>
+                <p className="font-serif text-[16px] leading-snug text-ink">
+                  {dossier.business_model_1l}
+                </p>
+                <p className="text-xs text-ink-2">{dossier.executive_summary}</p>
+              </div>
+              <div className="shrink-0 space-y-1 text-right font-mono text-[11px]">
+                <div className="border border-rule bg-paper-2 px-2 py-1 text-ink">
+                  ✓ {dossier.verification_summary.total_verified_citations} Verbatim Quotes Verified (min rapidfuzz{" "}
+                  {dossier.verification_summary.min_rapidfuzz_score}%)
+                </div>
+                {dossier.screener_url && (
+                  <a
+                    href={dossier.screener_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-accent underline"
+                  >
+                    Screener.in Primary Index ↗
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Verified Primary Filings Manifest (Doc-Type Check Badges) */}
+            <div className="space-y-1.5">
+              <span className="kicker">
+                Primary Source Corpus · Concall Doc-Type Check (Speakers + Q&amp;A Verified)
+              </span>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {dossier.documents_manifest.map((doc) => (
+                  <div key={doc.doc_id} className="border border-rule bg-paper-2 p-2.5 text-xs">
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="font-mono font-semibold text-ink">{doc.label}</span>
+                      <a
+                        href={doc.pdf_url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="shrink-0 font-mono text-[11px] text-accent underline"
+                      >
+                        PDF ({doc.page_count}p) ↗
+                      </a>
+                    </div>
+                    {doc.doctype_check ? (
+                      <div className="mt-1 space-y-0.5 font-mono text-[10px]">
+                        <div className="text-up">
+                          ✓ Transcript verified · {doc.doctype_check.distinct_speaker_count} speakers ·{" "}
+                          {doc.doctype_check.speaker_turn_count} turns · Q&amp;A:{" "}
+                          {doc.doctype_check.has_qa ? "Yes" : "No"}
+                        </div>
+                        {!doc.doctype_check.promised_vs_delivered_testable && (
+                          <div className="text-amber">
+                            ⚠ {doc.doctype_check.promised_vs_delivered_note}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="mt-1 font-mono text-[10px] text-ink-2">
+                        ✓ Primary Annual Report ({doc.size_kb} KB · {doc.page_count} pages)
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 5-Year Financial Trajectory Table (Sector-Aware) */}
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <span className="kicker">
+                  5-Year Financial Trajectory (₹ Cr) ·{" "}
+                  {dossier.is_lender ? "Lender Accounting (NII / PPOP / PAT)" : "Operating Trajectory & Cash Conversion"}
+                </span>
+                <span className="font-mono text-[11px] text-ink-2">
+                  {dossier.financial_trajectory.summary_stats.ebitda_label}
+                  {dossier.financial_trajectory.summary_stats.revenue_cagr_pct !== undefined &&
+                    ` · 5Y Rev CAGR: ${dossier.financial_trajectory.summary_stats.revenue_cagr_pct}%`}
+                  {!dossier.is_lender &&
+                    dossier.financial_trajectory.summary_stats.cumulative_5y_cfo_to_pat_pct !== undefined &&
+                    ` · 5Y Cum. CFO/PAT: ${dossier.financial_trajectory.summary_stats.cumulative_5y_cfo_to_pat_pct}%`}
+                </span>
+              </div>
+
+              <div
+                tabIndex={0}
+                role="region"
+                aria-labelledby={trajectoryTableCaptionId}
+                className="table-wrapper border border-rule"
+              >
+                <table className="text-left text-xs">
+                  <caption id={trajectoryTableCaptionId} className="sr-only">
+                    {dossier.company_name} 5-year financial trajectory in Crore Rupees
+                  </caption>
+                  <thead>
+                    <tr className="border-b border-rule font-mono text-[11px] uppercase text-muted">
+                      <th scope="col" className="px-2.5 py-2">
+                        Period
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        {dossier.is_lender ? "Interest / Revenue (₹ Cr)" : "Revenue (₹ Cr)"}
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        {dossier.is_lender ? "Financing Profit / PPOP" : "Derived EBITDA (₹ Cr)"}
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        {dossier.is_lender ? "Financing Margin %" : "Derived EBITDA %"}
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        PBT (₹ Cr)
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        PAT (₹ Cr)
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        {dossier.is_lender ? "EBITDA Policy" : "CFO / PAT %"}
+                      </th>
+                      <th scope="col" className="px-2.5 py-2 text-right">
+                        {dossier.is_lender ? "ROE %" : "ROCE %"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-rule">
+                    {dossier.financial_trajectory.annual_5y.map((yr) => (
+                      <tr key={yr.period}>
+                        <th scope="row" className="px-2.5 py-1.5 font-mono font-semibold text-ink">
+                          {yr.period}
+                        </th>
+                        <td className="num px-2.5 py-1.5 text-right text-ink">
+                          {(yr.revenue_cr ?? yr.revenue_or_nii_cr)?.toLocaleString("en-IN") ?? "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right text-ink">
+                          {(yr.ebitda_derived_cr ?? yr.ppop_or_financing_profit_cr)?.toLocaleString("en-IN") ?? "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right text-ink-2">
+                          {(yr.ebitda_margin_derived_pct ?? yr.financing_margin_pct) !== null &&
+                          (yr.ebitda_margin_derived_pct ?? yr.financing_margin_pct) !== undefined
+                            ? `${yr.ebitda_margin_derived_pct ?? yr.financing_margin_pct}%`
+                            : "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right text-ink">
+                          {yr.pbt_cr?.toLocaleString("en-IN") ?? "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right font-medium text-ink">
+                          {yr.pat_cr?.toLocaleString("en-IN") ?? "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right font-mono text-[11px] text-amber">
+                          {dossier.is_lender
+                            ? "EBITDA not meaningful for lenders"
+                            : yr.cfo_to_pat_pct !== null && yr.cfo_to_pat_pct !== undefined
+                              ? `${yr.cfo_to_pat_pct}%`
+                              : "—"}
+                        </td>
+                        <td className="num px-2.5 py-1.5 text-right text-ink-2">
+                          {(yr.roce_pct ?? yr.roce_or_roe_pct) !== null &&
+                          (yr.roce_pct ?? yr.roce_or_roe_pct) !== undefined
+                            ? `${yr.roce_pct ?? yr.roce_or_roe_pct}%`
+                            : "—"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Promised vs. Delivered Ledger (with Latest Call Untestable Rule) */}
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <span className="kicker">
+                  Promised vs. Delivered · Concall Guidance Track Record
+                </span>
+                <span className="font-mono text-[10px] text-amber">
+                  Latest call is forward guidance only — marked untestable until subsequent quarter is filed
+                </span>
+              </div>
+
+              <div
+                tabIndex={0}
+                role="region"
+                aria-labelledby={pvdTableCaptionId}
+                className="table-wrapper border border-rule"
+              >
+                <table className="text-left text-xs">
+                  <caption id={pvdTableCaptionId} className="sr-only">
+                    {dossier.company_name} Promised versus Delivered guidance comparison across the last 4 earnings calls
+                  </caption>
+                  <thead>
+                    <tr className="border-b border-rule font-mono text-[11px] uppercase text-muted">
+                      <th scope="col" className="px-2.5 py-2">
+                        Concall / Topic
+                      </th>
+                      <th scope="col" className="px-2.5 py-2">
+                        Promised Guidance (Primary Quote)
+                      </th>
+                      <th scope="col" className="px-2.5 py-2">
+                        Delivered Outcome / Testability
+                      </th>
+                      <th scope="col" className="px-2.5 py-2">
+                        Verdict
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-rule">
+                    {dossier.promised_vs_delivered.map((row, idx) => (
+                      <tr key={idx} className={row.is_latest_call ? "bg-paper-2" : ""}>
+                        <th scope="row" className="px-2.5 py-2 align-top font-mono text-ink">
+                          <div>{row.period_called}</div>
+                          <div className="mt-0.5 text-[11px] font-normal text-muted">{row.topic}</div>
+                        </th>
+                        <td className="px-2.5 py-2 align-top text-ink">
+                          <p>{row.promised_guidance}</p>
+                          {row.promised_citation?.verified && (
+                            <button
+                              type="button"
+                              onClick={() => setActiveCitation(row.promised_citation)}
+                              className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
+                            >
+                              [Cite: {row.promised_citation.doc_label}, p.{row.promised_citation.page} ·{" "}
+                              {row.promised_citation.match_score}%]
+                            </button>
+                          )}
+                        </td>
+                        <td className="px-2.5 py-2 align-top text-ink-2">
+                          <p>{row.delivered_summary}</p>
+                          {row.delivered_citation?.verified && (
+                            <button
+                              type="button"
+                              onClick={() => setActiveCitation(row.delivered_citation!)}
+                              className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
+                            >
+                              [Cite: {row.delivered_citation.doc_label}, p.{row.delivered_citation.page} ·{" "}
+                              {row.delivered_citation.match_score}%]
+                            </button>
+                          )}
+                        </td>
+                        <td className="px-2.5 py-2 align-top font-mono text-[11px]">
+                          <span
+                            className={`inline-block border px-1.5 py-0.5 ${
+                              !row.promised_vs_delivered_testable
+                                ? "border-amber bg-paper text-amber"
+                                : row.verdict === "Delivered"
+                                  ? "border-up text-up"
+                                  : row.verdict === "Missed"
+                                    ? "border-signal text-signal"
+                                    : "border-rule text-ink-2"
+                            }`}
+                          >
+                            {row.verdict}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Numbers vs. Narrative Checks */}
+            <div className="space-y-2">
+              <span className="kicker">
+                Numbers vs. Narrative · Strong-Model Reasoning (gemini-3.6-flash + thinking_budget=1024)
+              </span>
+              <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3">
+                {dossier.numbers_vs_narrative.map((chk, idx) => (
+                  <div key={idx} className="border border-rule bg-paper-2 p-3 text-xs">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-mono font-semibold text-ink">{chk.check_title}</span>
+                      <span className="border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] uppercase text-ink-2">
+                        {chk.verdict}
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-ink">
+                      <strong className="font-mono text-[10px] uppercase text-muted">Numbers: </strong>
+                      {chk.numbers_observed}
+                    </p>
+                    <p className="mt-1 text-ink-2">
+                      <strong className="font-mono text-[10px] uppercase text-muted">Narrative: </strong>
+                      {chk.narrative_claimed}
+                    </p>
+                    {chk.citation?.verified && (
+                      <button
+                        type="button"
+                        onClick={() => setActiveCitation(chk.citation)}
+                        className="mt-2 border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
+                      >
+                        [Cite: {chk.citation.doc_label}, p.{chk.citation.page} · {chk.citation.match_score}%]
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bull vs. Bear Case (3 Bull / 3 Bear with Verbatim Source Sheet Citations) */}
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div className="space-y-2 border border-rule bg-paper-2 p-3 text-xs">
+                <span className="kicker text-up">Primary-Source Bull Case (3 Verified Filings Claims)</span>
+                <div className="space-y-2.5">
+                  {dossier.bull_case.map((b, i) => (
+                    <div key={i} className="border-l-2 border-up pl-2.5">
+                      <div className="font-semibold text-ink">{b.title}</div>
+                      <p className="mt-0.5 text-ink-2">{b.thesis}</p>
+                      {b.citation?.verified && (
+                        <button
+                          type="button"
+                          onClick={() => setActiveCitation(b.citation)}
+                          className="mt-1 font-mono text-[10px] text-accent underline"
+                        >
+                          [Cite: {b.citation.doc_label}, p.{b.citation.page}] →
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-2 border border-rule bg-paper-2 p-3 text-xs">
+                <span className="kicker text-signal">Primary-Source Bear Case &amp; Filing Risks</span>
+                <div className="space-y-2.5">
+                  {dossier.bear_case.map((b, i) => (
+                    <div key={i} className="border-l-2 border-signal pl-2.5">
+                      <div className="font-semibold text-ink">{b.title}</div>
+                      <p className="mt-0.5 text-ink-2">{b.thesis}</p>
+                      {b.citation?.verified && (
+                        <button
+                          type="button"
+                          onClick={() => setActiveCitation(b.citation)}
+                          className="mt-1 font-mono text-[10px] text-accent underline"
+                        >
+                          [Cite: {b.citation.doc_label}, p.{b.citation.page}] →
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Explicit "not found in filings" Diligence Gaps */}
+            <div className="border border-rule bg-paper-2 p-3 text-xs">
+              <span className="kicker">
+                Where Filings Are Silent · Explicit &ldquo;not found in filings&rdquo; Guardrail
+              </span>
+              <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {dossier.unanswered_diligence_questions.map((u, i) => (
+                  <div key={i} className="border border-rule bg-paper p-2.5">
+                    <div className="flex items-center justify-between gap-2 font-mono text-[11px]">
+                      <span className="font-semibold text-ink">{u.topic}</span>
+                      <span className="border border-amber px-1.5 py-0.5 text-[10px] text-amber">
+                        {u.status}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-ink-2">{u.question_for_management_or_network}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Woven-In Network for Dossier (Ex-Company, Competitors, Suppliers/Customers) */}
+            <div className="space-y-2.5 border-t border-rule pt-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <span className="kicker">
+                  Woven-In Network for {dossier.symbol} · Ex-Company, Competitors &amp; Value-Chain Checks
+                </span>
+                <span className="font-mono text-[10px] text-amber">
+                  {dossier.network.inferred_label}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3">
+                {[
+                  { title: "Ex-Company (Knows the Company)", items: dossier.network.ex_company },
+                  { title: "Competitors", items: dossier.network.competitors },
+                  { title: "Suppliers / Customers / Sector", items: dossier.network.suppliers_customers },
+                ].map((group) => (
+                  <div key={group.title} className="border border-rule bg-paper-2 p-2.5 text-xs">
+                    <div className="font-mono text-[11px] font-semibold uppercase text-ink">
+                      {group.title} ({group.items.length})
+                    </div>
+                    {group.items.length === 0 ? (
+                      <p className="mt-1.5 text-[11px] text-muted">No contacts in this bucket.</p>
+                    ) : (
+                      <div className="mt-2 space-y-2">
+                        {group.items.map((ct) => (
+                          <div key={ct.contact_id} className="border border-rule bg-paper p-2">
+                            <div className="font-mono text-[11px] font-semibold text-ink">{ct.path}</div>
+                            <div className="mt-0.5 text-[11px] text-ink-2">{ct.headline}</div>
+                            <div className="mt-1 font-mono text-[10px] text-amber">{ct.inferred_label}</div>
+                            <div className="mt-1.5 border-l-2 border-accent pl-2 font-mono text-[10px] text-ink-2">
+                              &ldquo;{ct.draft_opener}&rdquo;
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </section>
 
       {/* [S8] Direct Network Query ("Ask FINN Network") */}
       <section aria-label="Ask your network" className="space-y-3 border-t border-rule pt-4">
@@ -1221,6 +2101,62 @@ export function BriefClient() {
             </div>
           </div>
         </div>
+      </dialog>
+
+      {/* [S6] Verbatim Source Sheet Modal */}
+      <dialog
+        ref={citationDialogRef}
+        {...({ closedby: "any" } as Record<string, unknown>)}
+        aria-labelledby={citationDialogTitleId}
+      >
+        {activeCitation && (
+          <div className="space-y-4 p-4 sm:p-5">
+            <div className="flex items-start justify-between gap-3 border-b border-rule pb-3">
+              <div>
+                <span className="kicker">[S6] Primary-Source Verbatim Quote Verification</span>
+                <h2 id={citationDialogTitleId} className="mt-1 font-serif text-[19px] text-ink">
+                  {activeCitation.doc_label} · Page {activeCitation.page}
+                </h2>
+              </div>
+              <form method="dialog">
+                <button
+                  type="submit"
+                  className="border border-rule bg-paper-2 px-2.5 py-1 font-mono text-xs text-ink"
+                >
+                  Close [Esc]
+                </button>
+              </form>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-2 border border-rule bg-paper-2 px-3 py-2 font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-up">
+                  ✓ Verified via rapidfuzz.partial_ratio ({activeCitation.match_score}% match)
+                </span>
+                <span className="text-muted">· Doc ID: {activeCitation.doc_id}</span>
+              </div>
+              {activeCitation.pdf_url && (
+                <a
+                  href={`${activeCitation.pdf_url}#page=${activeCitation.page}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-accent underline"
+                >
+                  Open Primary Filing PDF (p.{activeCitation.page}) ↗
+                </a>
+              )}
+            </div>
+
+            <div className="space-y-1.5">
+              <div className="font-mono text-[11px] uppercase text-muted">
+                Verbatim Substring Matched on Page {activeCitation.page}:
+              </div>
+              <blockquote className="border-l-2 border-accent bg-paper-2 p-3 font-serif text-[15px] leading-relaxed text-ink">
+                &ldquo;{activeCitation.verbatim_quote}&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        )}
       </dialog>
     </div>
   );

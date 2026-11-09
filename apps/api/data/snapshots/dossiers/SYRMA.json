@@ -1,0 +1,823 @@
+{
+  "symbol": "SYRMA",
+  "company_name": "Syrma SGS Technology",
+  "sector": "EMS / electronics",
+  "bucket": "watchlist",
+  "is_lender": false,
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-09T10:52:57.701734+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/SYRMA/consolidated/",
+  "business_model_1l": "Syrma SGS Technology (EMS / electronics) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (300 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "SYRMA_AR_LATEST",
+      "label": "SYRMA Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a57268a-76e7-4813-bfc8-86a0e2d02428.pdf",
+      "size_kb": 9824.7,
+      "page_count": 209,
+      "non_empty_pages": 209,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+      "label": "SYRMA Concall Nov 2026 Transcript",
+      "date_label": "Nov 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+      "size_kb": 581.8,
+      "page_count": 25,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 25,
+        "total_chars": 72831,
+        "speaker_turn_count": 138,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "M. No.",
+          "Place",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Shalin Choksy",
+          "Nikhil Gupta",
+          "Call. We have with us today",
+          "J.S. Gujral"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 30,
+        "header_cue_hits": 8,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "SYRMA_CONCALL_2_AUG_2026",
+      "label": "SYRMA Concall Aug 2026 Transcript",
+      "date_label": "Aug 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
+      "size_kb": 598.7,
+      "page_count": 28,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 28,
+        "total_chars": 73216,
+        "speaker_turn_count": 140,
+        "distinct_speaker_count": 29,
+        "sample_speakers": [
+          "M. No.",
+          "Place",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Nikhil Kandoi",
+          "Nikhil Gupta",
+          "J.S. Gujral",
+          "Jaidit Singh Brar"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 43,
+        "header_cue_hits": 7,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "SYRMA_CONCALL_3_JUN_2026",
+      "label": "SYRMA Concall Jun 2026 Transcript",
+      "date_label": "Jun 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=35f78458-fda9-4486-b457-33d418a9eca5.pdf",
+      "size_kb": 557.2,
+      "page_count": 20,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 20,
+        "total_chars": 56771,
+        "speaker_turn_count": 96,
+        "distinct_speaker_count": 19,
+        "sample_speakers": [
+          "M. No.",
+          "Place",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Aniruddha Joshi",
+          "Nikhil Gupta",
+          "J.S. Gujral",
+          "Bijay Agrawal"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 27,
+        "header_cue_hits": 8,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "SYRMA_CONCALL_4_FEB_2026",
+      "label": "SYRMA Concall Feb 2026 Transcript",
+      "date_label": "Feb 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=dc41d98a-6b79-42bb-b344-2870bbf678fa.pdf",
+      "size_kb": 777.4,
+      "page_count": 18,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 18,
+        "total_chars": 49526,
+        "speaker_turn_count": 96,
+        "distinct_speaker_count": 18,
+        "sample_speakers": [
+          "Membership No",
+          "Place",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Nikhil Kandoi",
+          "Nikhil Gupta",
+          "J.S. Gujral",
+          "Bijay Agrawal"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 26,
+        "header_cue_hits": 10,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "SYRMA",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 39.7,
+      "pat_cagr_pct": 44.7,
+      "cumulative_5y_cfo_cr": 274.0,
+      "cumulative_5y_pat_cr": 856.0,
+      "cumulative_5y_cfo_to_pat_pct": 32.0
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 1267.0,
+        "ebitda_derived_cr": 129.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 111.0,
+        "pat_cr": 79.0,
+        "cfo_cr": -13.0,
+        "cfo_to_pat_pct": -16.5,
+        "roce_pct": 16.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 2048.0,
+        "ebitda_derived_cr": 192.0,
+        "ebitda_margin_derived_pct": 9.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 179.0,
+        "pat_cr": 123.0,
+        "cfo_cr": -70.0,
+        "cfo_to_pat_pct": -56.9,
+        "roce_pct": 15.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 3154.0,
+        "ebitda_derived_cr": 203.0,
+        "ebitda_margin_derived_pct": 6.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 166.0,
+        "pat_cr": 124.0,
+        "cfo_cr": -109.0,
+        "cfo_to_pat_pct": -87.9,
+        "roce_pct": 10.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 3787.0,
+        "ebitda_derived_cr": 323.0,
+        "ebitda_margin_derived_pct": 9.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 237.0,
+        "pat_cr": 184.0,
+        "cfo_cr": 176.0,
+        "cfo_to_pat_pct": 95.7,
+        "roce_pct": 12.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 4819.0,
+        "ebitda_derived_cr": 546.0,
+        "ebitda_margin_derived_pct": 11.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 445.0,
+        "pat_cr": 346.0,
+        "cfo_cr": 290.0,
+        "cfo_to_pat_pct": 83.8,
+        "roce_pct": 17.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 944.0,
+        "ebitda_derived_cr": 87.0,
+        "ebitda_margin_derived_pct": 9.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 67.0,
+        "pat_cr": 50.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 1146.0,
+        "ebitda_derived_cr": 115.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 90.0,
+        "pat_cr": 66.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 1264.0,
+        "ebitda_derived_cr": 159.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 138.0,
+        "pat_cr": 110.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 1465.0,
+        "ebitda_derived_cr": 174.0,
+        "ebitda_margin_derived_pct": 12.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 150.0,
+        "pat_cr": 119.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 1589.0,
+        "ebitda_derived_cr": 162.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 141.0,
+        "pat_cr": 106.0
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_cr": 1990.0,
+        "ebitda_derived_cr": 193.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 165.0,
+        "pat_cr": 124.0
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "SYRMA Concall Nov 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "SYRMA Concall Aug 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
+        "doc_label": "SYRMA Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 17,
+        "cited_page": 17,
+        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "SYRMA Concall Jun 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "This year it's about INR1,452 crores and 8%, 10% growth, it should be about INR1,600 crores, INR1,500 crores, INR1,600 crores.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_3_JUN_2026",
+        "doc_label": "SYRMA Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=35f78458-fda9-4486-b457-33d418a9eca5.pdf",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "This year it's about INR1,452 crores and 8%, 10% growth, it should be about INR1,600 crores, INR1,500 crores, INR1,600 crores.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
+        "doc_label": "SYRMA Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "SYRMA Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "And we believe that we are in a good position to keep growing at profitable margin and which we have said that our objective is to grow a 30% growth on EBITDA, positive cash flows, 25%, 30%, 35% growth on top line.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_4_FEB_2026",
+        "doc_label": "SYRMA Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=dc41d98a-6b79-42bb-b344-2870bbf678fa.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "And we believe that we are in a good position to keep growing at profitable margin and which we have said that our objective is to grow a 30% growth on EBITDA, positive cash flows, 25%, 30%, 35% growth on top line.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_3_JUN_2026",
+        "doc_label": "SYRMA Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=35f78458-fda9-4486-b457-33d418a9eca5.pdf",
+        "page": 5,
+        "cited_page": 5,
+        "verbatim_quote": "Our top 5 customers contribute around 34% of revenue, top 10 around 47%, top 20 around 63% of my revenue on a full year basis, FY '26.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
+      "numbers_observed": "5Y Revenue CAGR 39.7%, PAT CAGR 44.7%; latest annual Revenue ₹4819.0 Cr, PAT ₹346.0 Cr.",
+      "narrative_claimed": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
+      "numbers_observed": "5Y Cumulative CFO ₹274.0 Cr vs Cumulative PAT ₹856.0 Cr (CFO/PAT = 32.0%).",
+      "narrative_claimed": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+      "verdict": "Watch closely",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
+        "doc_label": "SYRMA Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
+      "numbers_observed": "Latest annual Derived EBITDA ₹546.0 Cr (Margin 11.0%, derived) · ROCE 17.0%.",
+      "narrative_claimed": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 17,
+        "cited_page": 17,
+        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (SYRMA Concall Nov 2026 Transcript)",
+      "thesis": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (SYRMA Concall Aug 2026 Transcript)",
+      "thesis": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
+        "doc_label": "SYRMA Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (SYRMA Concall Nov 2026 Transcript)",
+      "thesis": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 17,
+        "cited_page": 17,
+        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (SYRMA Concall Nov 2026 Transcript)",
+      "thesis": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
+        "doc_label": "SYRMA Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
+        "page": 17,
+        "cited_page": 17,
+        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (SYRMA Annual Report 2026 (Annual Report))",
+      "thesis": "Revenue, margins, working capital and capital efficiency have advanced together, with revenue rising from ` 1,267 crores in FY22 to ` 4,819 crores in FY26 and the operating profile strengthening alongside it.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_AR_LATEST",
+        "doc_label": "SYRMA Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a57268a-76e7-4813-bfc8-86a0e2d02428.pdf",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "Revenue, margins, working capital and capital efficiency have advanced together, with revenue rising from ` 1,267 crores in FY22 to ` 4,819 crores in FY26 and the operating profile strengthening alongside it.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (SYRMA Annual Report 2026 (Annual Report))",
+      "thesis": "The outstanding amounts as at 31 March 2025 are H 80.81 million for cash credit and H 95.57 million for working capital loans, carrying an interest rate ranging from 8.00% to 10.03% per annum.",
+      "citation": {
+        "verified": true,
+        "doc_id": "SYRMA_AR_LATEST",
+        "doc_label": "SYRMA Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a57268a-76e7-4813-bfc8-86a0e2d02428.pdf",
+        "page": 122,
+        "cited_page": 122,
+        "verbatim_quote": "The outstanding amounts as at 31 March 2025 are H 80.81 million for cash credit and H 95.57 million for working capital loans, carrying an interest rate ranging from 8.00% to 10.03% per annum.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "SYRMA",
+    "company_name": "Syrma SGS Technology",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:kavita_rao",
+        "name": "Kavita Rao",
+        "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
+        "city": "Chennai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 17 mos ago",
+        "bucket": "ex_company",
+        "org": "Syrma SGS Technology",
+        "role": "Director — Strategic Sourcing",
+        "tenure": "2021–2025",
+        "relation_label": "knows the company (Syrma SGS Technology)",
+        "path": "You → Kavita Rao (strength 4/5 · spoke 17 mos ago) → knows the company (Syrma SGS Technology, 2021–2025)",
+        "expertise_tags": [
+          "EMS",
+          "PCB sourcing",
+          "jewellery retail",
+          "wearables"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "draft_opener": "Hi Kavita — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Syrma SGS Technology (2021–2025), how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:vivek_hegde",
+        "name": "Vivek Hegde",
+        "headline": "VP Aerospace & Industrial Box-Build · Ex-Kaynes Technology",
+        "city": "Mysuru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "bucket": "ex_company",
+        "org": "Syrma SGS Technology",
+        "role": "Plant Quality Lead",
+        "tenure": "2014–2018",
+        "relation_label": "knows the company (Syrma SGS Technology)",
+        "path": "You → Vivek Hegde (strength 4/5 · spoke 2 wks ago) → knows the company (Syrma SGS Technology, 2014–2018)",
+        "expertise_tags": [
+          "OSAT",
+          "high-density PCB",
+          "railway signalling",
+          "aerospace EMS"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "draft_opener": "Hi Vivek — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Syrma SGS Technology (2014–2018), how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:subhash_menon",
+        "name": "Subhash Menon",
+        "headline": "Head of Smart Meter & RFID Manufacturing · Ex-Syrma SGS",
+        "city": "Gurugram",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 7 wks ago",
+        "bucket": "ex_company",
+        "org": "Syrma SGS Technology",
+        "role": "VP — Northern Operations",
+        "tenure": "2019–2025",
+        "relation_label": "knows the company (Syrma SGS Technology)",
+        "path": "You → Subhash Menon (strength 4/5 · spoke 7 wks ago) → knows the company (Syrma SGS Technology, 2019–2025)",
+        "expertise_tags": [
+          "RFID tags",
+          "smart energy meters",
+          "medtech EMS",
+          "German EMS export"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "draft_opener": "Hi Subhash — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Syrma SGS Technology (2019–2025), how realistic is management's execution timeline on new capacity and margin guidance at Syrma SGS Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [
+      {
+        "contact_id": "contact:rohan_desai",
+        "name": "Rohan Desai",
+        "headline": "VP Finance, Industrial Automation · Ex-Dixon Technologies & Bosch India",
+        "city": "Bengaluru",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 5 wks ago",
+        "bucket": "competitors",
+        "org": "Dixon Technologies",
+        "role": "GM Finance (Consumer EMS)",
+        "tenure": "2020–2024",
+        "relation_label": "competitor benchmark (Dixon Technologies · competitor (EMS peer in PCBA, box-build, and consumer electronics))",
+        "path": "You → Rohan Desai (strength 5/5 · spoke 5 wks ago) → knows the company (Dixon Technologies, 2020–2024)",
+        "expertise_tags": [
+          "EMS",
+          "industrial electronics",
+          "working capital",
+          "CEAMA"
+        ],
+        "diligence_prompt": "how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "draft_opener": "Hi Rohan — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2020–2024), how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:nilesh_patil",
+        "name": "Nilesh Patil",
+        "headline": "Head of Semicon OSAT Packaging · Ex-Kaynes Semicon",
+        "city": "Hyderabad",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "bucket": "competitors",
+        "org": "Kaynes Technology",
+        "role": "VP — Semiconductor Packaging",
+        "tenure": "2022–2025",
+        "relation_label": "competitor benchmark (Kaynes Technology · competitor (Direct competitor in high-mix industrial/automotive EMS))",
+        "path": "You → Nilesh Patil (strength 5/5 · spoke 2 wks ago) → knows the company (Kaynes Technology, 2022–2025)",
+        "expertise_tags": [
+          "OSAT subsidy",
+          "wire bonding",
+          "Sanand OSAT",
+          "power module packaging"
+        ],
+        "diligence_prompt": "how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "draft_opener": "Hi Nilesh — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2022–2025), how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Kaynes Technology on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:ritesh_malhotra",
+        "name": "Ritesh Malhotra",
+        "headline": "VP Smartphone EMS & Display Module · Ex-Dixon (Padget)",
+        "city": "Noida",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "competitors",
+        "org": "Dixon Technologies",
+        "role": "VP Operations — Padget Electronics",
+        "tenure": "2019–2025",
+        "relation_label": "competitor benchmark (Dixon Technologies · competitor (EMS peer in PCBA, box-build, and consumer electronics))",
+        "path": "You → Ritesh Malhotra (strength 4/5 · spoke 2 mos ago) → knows the company (Dixon Technologies, 2019–2025)",
+        "expertise_tags": [
+          "mobile PLI",
+          "Motorola/Xiaomi ODM",
+          "display module",
+          "Noida EMS"
+        ],
+        "diligence_prompt": "how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "draft_opener": "Hi Ritesh — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2019–2025), how does Syrma SGS Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:ashwin_pai",
+        "name": "Ashwin Pai",
+        "headline": "VP Autonomous Driving & ADAS · Ex-KPIT & Tata Elxsi",
+        "city": "Bengaluru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Practice Head — ADAS",
+        "tenure": "2019–2024",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Ashwin Pai (strength 4/5 · spoke 2 mos ago) → knows the company (KPIT Technologies, 2019–2024)",
+        "expertise_tags": [
+          "ADAS",
+          "middleware",
+          "European OEMs",
+          "Honda/Renault SDV"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "draft_opener": "Hi Ashwin — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2019–2024), how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:prateek_goel",
+        "name": "Prateek Goel",
+        "headline": "Director — Industrial Adhesives & B2B · Ex-Pidilite",
+        "city": "Mumbai",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 11 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Pidilite Industries",
+        "role": "Business Head — Industrial Products",
+        "tenure": "2017–2024",
+        "relation_label": "sector specialist (Pidilite Industries)",
+        "path": "You → Prateek Goel (strength 3/5 · spoke 11 mos ago) → knows the company (Pidilite Industries, 2017–2024)",
+        "expertise_tags": [
+          "B2B pigments",
+          "packaging adhesives",
+          "electronics adhesives",
+          "Huntsman Araldite"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "draft_opener": "Hi Prateek — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at Pidilite Industries (2017–2024), how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:yashwant_rao",
+        "name": "Yashwant Rao",
+        "headline": "VP EV Battery Management Systems · Ex-KPIT Technologies",
+        "city": "Pune",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 18 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Senior Architect — Electrification",
+        "tenure": "2016–2023",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Yashwant Rao (strength 3/5 · spoke 18 mos ago) → knows the company (KPIT Technologies, 2016–2023)",
+        "expertise_tags": [
+          "BMS firmware",
+          "invertor control",
+          "Japanese OEMs",
+          "fixed-price ER&D"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "draft_opener": "Hi Yashwant — running a primary-source deep dive on Syrma SGS Technology (SYRMA) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2016–2023), how do you view sector-wide demand and regulatory tailwinds for Syrma SGS Technology (SYRMA) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 9
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 14,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

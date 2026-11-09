@@ -1,0 +1,742 @@
+{
+  "symbol": "HDFCBANK",
+  "company_name": "HDFC Bank",
+  "sector": "Private bank",
+  "bucket": "holding",
+  "is_lender": true,
+  "ebitda_policy_note": "EBITDA not meaningful for lenders — dossier evaluates NII/Revenue, PPOP (Financing Profit), PBT, PAT, and Gross/Net NPA.",
+  "generated_at": "2026-11-09T10:53:04.885209+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/HDFCBANK/consolidated/",
+  "business_model_1l": "HDFC Bank (Private bank) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (742 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+      "size_kb": 12370.9,
+      "page_count": 678,
+      "non_empty_pages": 677,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+      "label": "HDFCBANK Concall Oct 2026 Transcript",
+      "date_label": "Oct 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+      "size_kb": 468.7,
+      "page_count": 17,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 17,
+        "total_chars": 54363,
+        "speaker_turn_count": 83,
+        "distinct_speaker_count": 14,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "Moderator",
+          "Srinivasan Vaidyanathan",
+          "Sashidhar Jagdishan",
+          "Anup Bagchi",
+          "Mahrukh Adajania",
+          "Kaizad Bharucha",
+          "Kunal Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 27,
+        "header_cue_hits": 7,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+      "label": "HDFCBANK Concall Jul 2026 Transcript",
+      "date_label": "Jul 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+      "size_kb": 796.5,
+      "page_count": 17,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 17,
+        "total_chars": 54329,
+        "speaker_turn_count": 77,
+        "distinct_speaker_count": 13,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "Moderator",
+          "Srinivasan Vaidyanathan",
+          "Sashidhar Jagdishan",
+          "Mahrukh Adajania",
+          "Pranav Gundlapalle",
+          "Kunal Shah",
+          "Kaizad Bharucha"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 28,
+        "header_cue_hits": 5,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "label": "HDFCBANK Concall Apr 2026 Transcript",
+      "date_label": "Apr 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+      "size_kb": 408.3,
+      "page_count": 16,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 16,
+        "total_chars": 50908,
+        "speaker_turn_count": 79,
+        "distinct_speaker_count": 12,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "Moderator",
+          "Srinivasan Vaidyanathan",
+          "Sashidhar Jagdishan",
+          "Mahrukh Adajania",
+          "Kaizad Bharucha",
+          "Nitin Aggarwal",
+          "Kunal Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 21,
+        "header_cue_hits": 4,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_4_MAR_2026",
+      "label": "HDFCBANK Concall Mar 2026 Transcript",
+      "date_label": "Mar 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=56739132-e21e-4503-aeb6-85f4f53c1244.pdf",
+      "size_kb": 1189.9,
+      "page_count": 14,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 14,
+        "total_chars": 39691,
+        "speaker_turn_count": 108,
+        "distinct_speaker_count": 16,
+        "sample_speakers": [
+          "MANAGEMENT",
+          "Moderator",
+          "Srinivasan Vaidyanathan",
+          "Keki Mistry",
+          "Sashidhar Jagdishan",
+          "Kunal Shah",
+          "Kaitav Shah",
+          "Suresh Ganpathy"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 25,
+        "header_cue_hits": 2,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "HDFCBANK",
+    "is_lender": true,
+    "summary_stats": {
+      "is_lender": true,
+      "sector_accounting_mode": "lender_nii_ppop",
+      "ebitda_label": "EBITDA not meaningful for lenders",
+      "revenue_cagr_pct": 26.5,
+      "pat_cagr_pct": 20.0
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_or_nii_cr": 135936.0,
+        "ppop_or_financing_profit_cr": 20795.0,
+        "financing_margin_pct": 15.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 50873.0,
+        "pat_cr": 38151.0,
+        "roce_or_roe_pct": 17.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_or_nii_cr": 170754.0,
+        "ppop_or_financing_profit_cr": 29932.0,
+        "financing_margin_pct": 18.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 61498.0,
+        "pat_cr": 46149.0,
+        "roce_or_roe_pct": 17.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_or_nii_cr": 283649.0,
+        "ppop_or_financing_profit_cr": -44685.0,
+        "financing_margin_pct": -16.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 76569.0,
+        "pat_cr": 65446.0,
+        "roce_or_roe_pct": 17.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_or_nii_cr": 336367.0,
+        "ppop_or_financing_profit_cr": -34501.0,
+        "financing_margin_pct": -10.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 96242.0,
+        "pat_cr": 73440.0,
+        "roce_or_roe_pct": 14.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_or_nii_cr": 348615.0,
+        "ppop_or_financing_profit_cr": -40511.0,
+        "financing_margin_pct": -12.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 102141.0,
+        "pat_cr": 79219.0,
+        "roce_or_roe_pct": 14.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_or_nii_cr": 87372.0,
+        "ppop_or_financing_profit_cr": -24833.0,
+        "financing_margin_pct": -28.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 20850.0,
+        "pat_cr": 17090.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_or_nii_cr": 86994.0,
+        "ppop_or_financing_profit_cr": -4908.0,
+        "financing_margin_pct": -6.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 26659.0,
+        "pat_cr": 20364.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_or_nii_cr": 87067.0,
+        "ppop_or_financing_profit_cr": -12899.0,
+        "financing_margin_pct": -15.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 26961.0,
+        "pat_cr": 20691.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_or_nii_cr": 87182.0,
+        "ppop_or_financing_profit_cr": -2066.0,
+        "financing_margin_pct": -2.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 27672.0,
+        "pat_cr": 21074.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_or_nii_cr": 90575.0,
+        "ppop_or_financing_profit_cr": -15342.0,
+        "financing_margin_pct": -17.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 27193.0,
+        "pat_cr": 20383.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_or_nii_cr": 95132.0,
+        "ppop_or_financing_profit_cr": -5565.0,
+        "financing_margin_pct": -6.0,
+        "ebitda_cr": null,
+        "ebitda_status": "EBITDA not meaningful for lenders",
+        "pbt_cr": 28663.0,
+        "pat_cr": 21537.0,
+        "gross_npa_pct": null,
+        "net_npa_pct": null
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "HDFCBANK Concall Oct 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "HDFCBANK Concall Jul 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+        "page": 15,
+        "cited_page": 15,
+        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "HDFCBANK Concall Apr 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "I think while this quarter it could be a 20% mix in terms of deposits, etcetera, but I guess these things then normalize and in the medium to long term, I think it's been more or less stable, which is what we have seen over the last 10 years.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "HDFCBANK Concall Mar 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "The board has accepted his resignation with appreciation for his guidance and contribution during his tenure.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_4_MAR_2026",
+        "doc_label": "HDFCBANK Concall Mar 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=56739132-e21e-4503-aeb6-85f4f53c1244.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "The board has accepted his resignation with appreciation for his guidance and contribution during his tenure.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 7,
+        "cited_page": 7,
+        "verbatim_quote": "And you'll see that the average of the retail versus wholesale is about a percentage point or 2 different in this quarter, which in our earnings deck, you will notice that it is 82% against 84% or something, 82%, 83% against 84%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "NII / Revenue & PPOP Trajectory vs Lender Guidance",
+      "numbers_observed": "5Y Revenue/NII CAGR 26.5%, PAT CAGR 20.0%; latest annual PPOP ₹-40511.0 Cr (Margin -12.0%, EBITDA not meaningful for lenders).",
+      "narrative_claimed": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Asset Quality (GNPA / NNPA) & Credit Cost Discipline",
+      "numbers_observed": "Recent quarterly GNPA None% / NNPA None%; ROE 14.0%.",
+      "narrative_claimed": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+        "page": 15,
+        "cited_page": 15,
+        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (HDFCBANK Concall Oct 2026 Transcript)",
+      "thesis": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (HDFCBANK Concall Jul 2026 Transcript)",
+      "thesis": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+        "page": 15,
+        "cited_page": 15,
+        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (HDFCBANK Concall Oct 2026 Transcript)",
+      "thesis": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (HDFCBANK Annual Report 2026 (Annual Report))",
+      "thesis": "STRONG FINANCIALS J29,37,166 crore ADVANCES J31,05,250 crore DEPOSITS 1.15% GROSS NPA 19.7% CAPITAL ADEQUACY RATIO 1.94% RETURN ON AVERAGE ASSETS Prudent risk management and strong capital buffers enable consistent financial performance.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 34,
+        "cited_page": 34,
+        "verbatim_quote": "STRONG FINANCIALS J29,37,166 crore ADVANCES J31,05,250 crore DEPOSITS 1.15% GROSS NPA 19.7% CAPITAL ADEQUACY RATIO 1.94% RETURN ON AVERAGE ASSETS Prudent risk management and strong capital buffers enable consistent financial performance.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (HDFCBANK Concall Apr 2026 Transcript)",
+      "thesis": "Despite the drop in NIMs, the return on assets continue to be stable at 1.9% due to cost efficiencies with cost-to-income declining from 40.5% to 39.5% on a core basis and focus on quality growth reflecting in lower credit costs.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Despite the drop in NIMs, the return on assets continue to be stable at 1.9% due to cost efficiencies with cost-to-income declining from 40.5% to 39.5% on a core basis and focus on quality growth reflecting in lower credit costs.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (HDFCBANK Concall Apr 2026 Transcript)",
+      "thesis": "Seshadri, if you look at the cost growth that we have, we have seen that at a level almost at, call it, 6.5%, 7% or so is the full year, right?",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "Seshadri, if you look at the cost growth that we have, we have seen that at a level almost at, call it, 6.5%, 7% or so is the full year, right?",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "HDFCBANK",
+    "company_name": "HDFC Bank",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:nandini_subramanian",
+        "name": "Nandini Subramanian",
+        "headline": "SVP Regulatory Compliance & Audit · Ex-ICICI Bank Limited & HDFC Bank",
+        "city": "Mumbai",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 5 wks ago",
+        "bucket": "ex_company",
+        "org": "HDFC Bank Limited",
+        "role": "AVP — Internal Audit",
+        "tenure": "2012–2016",
+        "relation_label": "knows the company (HDFC Bank Limited)",
+        "path": "You → Nandini Subramanian (strength 5/5 · spoke 5 wks ago) → knows the company (HDFC Bank Limited, 2012–2016)",
+        "expertise_tags": [
+          "RBI inspection",
+          "bank compliance",
+          "retail banking risk",
+          "data privacy"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "draft_opener": "Hi Nandini — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at HDFC Bank Limited (2012–2016), how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:rahul_varma",
+        "name": "Rahul Varma",
+        "headline": "SVP Retail Credit & Cross-Sell · Ex-HDFC Bank & Bajaj Finance",
+        "city": "Mumbai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 3 mos ago",
+        "bucket": "ex_company",
+        "org": "HDFC Bank Limited",
+        "role": "Zonal Head — Retail Assets",
+        "tenure": "2018–2024",
+        "relation_label": "knows the company (HDFC Bank Limited)",
+        "path": "You → Rahul Varma (strength 4/5 · spoke 3 mos ago) → knows the company (HDFC Bank Limited, 2018–2024)",
+        "expertise_tags": [
+          "unsecured personal loans",
+          "LDR ratio",
+          "CASA mobilization",
+          "credit card NIM"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "draft_opener": "Hi Rahul — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at HDFC Bank Limited (2018–2024), how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:chitra_venkatesh",
+        "name": "Chitra Venkatesh",
+        "headline": "SVP Wholesale Credit & SME Banking · Ex-HDFC Bank",
+        "city": "Chennai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 4 mos ago",
+        "bucket": "ex_company",
+        "org": "HDFC Bank Limited",
+        "role": "Regional Credit Head — South",
+        "tenure": "2015–2024",
+        "relation_label": "knows the company (HDFC Bank Limited)",
+        "path": "You → Chitra Venkatesh (strength 4/5 · spoke 4 mos ago) → knows the company (HDFC Bank Limited, 2015–2024)",
+        "expertise_tags": [
+          "SME working capital",
+          "corporate book NIM",
+          "PSL compliance",
+          "HDFC Bank"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "draft_opener": "Hi Chitra — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at HDFC Bank Limited (2015–2024), how realistic is management's execution timeline on new capacity and margin guidance at HDFC Bank?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:devika_menon",
+        "name": "Devika Menon",
+        "headline": "MD — Fast Fashion & Value Apparel Sourcing · Ex-Trent (Zudio)",
+        "city": "Mumbai",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 16 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Trent Limited",
+        "role": "GM Merchandising & Sourcing — Zudio",
+        "tenure": "2018–2024",
+        "relation_label": "sector specialist (Trent Limited)",
+        "path": "You → Devika Menon (strength 5/5 · spoke 16 mos ago) → knows the company (Trent Limited, 2018–2024)",
+        "expertise_tags": [
+          "value retail",
+          "Zudio store economics",
+          "private label apparel",
+          "shrinkage"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "draft_opener": "Hi Devika — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at Trent Limited (2018–2024), how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:lakshmi_subramanian",
+        "name": "Lakshmi Subramanian",
+        "headline": "VP BFSI Large Deals · Ex-Infosys",
+        "city": "Bengaluru",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 17 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "Infosys Limited",
+        "role": "Client Partner — Banking",
+        "tenure": "2014–2023",
+        "relation_label": "sector specialist (Infosys Limited)",
+        "path": "You → Lakshmi Subramanian (strength 3/5 · spoke 17 mos ago) → knows the company (Infosys Limited, 2014–2023)",
+        "expertise_tags": [
+          "core banking transformation",
+          "GCC insourcing",
+          "Infosys Cobalt",
+          "European banks"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "draft_opener": "Hi Lakshmi — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at Infosys Limited (2014–2023), how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:arvind_raghavan",
+        "name": "Arvind Raghavan",
+        "headline": "EVP International Banking & Data Privacy · Ex-ICICI Bank Limited",
+        "city": "Mumbai",
+        "strength": 2,
+        "degree": 2,
+        "recency": "spoke 21 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "ICICI Bank Limited",
+        "role": "SVP — Overseas Banking Compliance & Data Privacy",
+        "tenure": "2015–2024",
+        "relation_label": "sector specialist (ICICI Bank Limited)",
+        "path": "You → Nandini Subramanian (strength 5/5 · spoke 5 wks ago) → Arvind Raghavan (2nd-degree · knows ICICI Bank Limited, 2015–2024)",
+        "expertise_tags": [
+          "overseas banking compliance",
+          "DPDP Act",
+          "RBI audit",
+          "BFSI governance"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "draft_opener": "Hi Arvind — running a primary-source deep dive on HDFC Bank (HDFCBANK) from their latest Annual Report and concalls. Given your experience at ICICI Bank Limited (2015–2024), how do you view sector-wide demand and regulatory tailwinds for HDFC Bank (HDFCBANK) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 6
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 19,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

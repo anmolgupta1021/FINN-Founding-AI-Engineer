@@ -1,0 +1,34 @@
+{
+  "job_dixon_dcde4385": {
+    "job_id": "job_dixon_dcde4385",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-09T10:54:45.653832+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-09T10:54:45.654328+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-09T10:54:45.654454+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-09T10:54:45.654545+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-09T10:54:45.653832+00:00",
+    "finished_at": "2026-11-09T10:54:45.654634+00:00",
+    "error": null
+  }
+}

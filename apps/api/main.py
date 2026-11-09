@@ -10,11 +10,18 @@ import os
 from datetime import UTC, datetime
 from pathlib import Path
 
-from fastapi import APIRouter, FastAPI, Query
+from fastapi import APIRouter, BackgroundTasks, FastAPI, HTTPException, Query
 
 from finn.llm.ledger import LLMLedger
 from finn.network.matcher import query_network
 from finn.pipeline.alerts import build_brief
+from finn.pull.builder import (
+    create_pull_job,
+    execute_pull_job_task,
+    get_dossier_by_symbol,
+    get_pull_job,
+    list_available_dossiers,
+)
 from finn.store import get_announcements, get_freshness_overview, get_portfolio, get_prices
 
 app = FastAPI(title="FINN API", version="0.4.0")
@@ -88,6 +95,41 @@ def network_ask(
     q: str = Query(default="", description="Natural language or keyword query for the investor network"),
 ) -> dict:
     return query_network(DATA_DIR, q)
+
+
+@router.get("/dossiers")
+def dossiers_index() -> dict:
+    return list_available_dossiers(DATA_DIR)
+
+
+@router.get("/dossiers/{symbol}")
+def dossier_detail(symbol: str) -> dict:
+    dossier = get_dossier_by_symbol(DATA_DIR, symbol)
+    if not dossier:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "symbol": symbol.upper(),
+                "status": "not_built",
+                "message": f"Dossier for {symbol.upper()} is not precomputed yet. POST /api/v1/dossiers/{symbol.upper()}/build to start a background research job.",
+            },
+        )
+    return dossier
+
+
+@router.post("/dossiers/{symbol}/build", status_code=202)
+def dossier_build(symbol: str, background_tasks: BackgroundTasks) -> dict:
+    job = create_pull_job(DATA_DIR, symbol)
+    background_tasks.add_task(execute_pull_job_task, DATA_DIR, job["job_id"], symbol)
+    return job
+
+
+@router.get("/jobs/{job_id}")
+def job_status(job_id: str) -> dict:
+    job = get_pull_job(DATA_DIR, job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail={"job_id": job_id, "error": "job_not_found"})
+    return job
 
 
 @router.get("/freshness")

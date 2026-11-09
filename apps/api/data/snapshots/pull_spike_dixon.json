@@ -1,6 +1,6 @@
 {
   "symbol": "DIXON",
-  "spiked_at": "2026-11-09T08:15:00.635034+00:00",
+  "spiked_at": "2026-11-09T10:27:46.006074+00:00",
   "screener_url": "https://www.screener.in/company/DIXON/consolidated/",
   "annual_reports_available": 10,
   "concalls_available": 37,
@@ -16,10 +16,12 @@
       "page_count": 520,
       "non_empty_pages": 516,
       "total_chars": 1446093,
-      "download_ms": 892,
-      "extract_ms": 596,
+      "download_ms": 1159,
+      "extract_ms": 598,
       "sample_page": 12,
-      "sample_excerpt": "Dixon Technologies (India) Limited_33rd AGM Notice 2025-26 10 2. In accordance with the revised Secretarial Standard-2 on General Meetings issued by the Institute of Company Secretaries of India (“ICSI”) as revised with effect from 1st April, 2024 read with Clarification / Guidance on applicability of Secretarial Standards - 1 and 2 dated 15th April, 2020 is"
+      "sample_excerpt": "Dixon Technologies (India) Limited_33rd AGM Notice 2025-26 10 2. In accordance with the revised Secretarial Standard-2 on General Meetings issued by the Institute of Company Secretaries of India (“ICSI”) as revised with effect from 1st April, 2024 read with Clarification / Guidance on applicability of Secretarial Standards - 1 and 2 dated 15th April, 2020 is",
+      "qa_sample_page": 7,
+      "qa_sample_excerpt": "Dixon Technologies (India) Limited_33rd AGM Notice 2025-26 5 “RESOLVED THAT pursuant to the provisions of Regulation 23(4) of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended from time to time (“Listing Regulations”), other applicable laws / statutory provisions, if any, (including any"
     },
     {
       "ok": true,
@@ -32,10 +34,37 @@
       "page_count": 24,
       "non_empty_pages": 24,
       "total_chars": 64142,
-      "download_ms": 676,
+      "download_ms": 1296,
       "extract_ms": 34,
       "sample_page": 2,
-      "sample_excerpt": "Page 1 of 23 “Dixon Technologies (India) Limited Q2 FY '27 Earnings Conference Call” October 30, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER – DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED"
+      "sample_excerpt": "Page 1 of 23 “Dixon Technologies (India) Limited Q2 FY '27 Earnings Conference Call” October 30, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER – DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED",
+      "qa_sample_page": 7,
+      "qa_sample_excerpt": "Dixon Technologies (India) Limited October 30, 2026 Page 6 of 23 Our focus is now moving beyond assembly towards increasing value addition with manufacturing of facility for which the line has been set up and exploring opportunities in mechanicals and power supply which will deepen localization and lead to margin improvement. With the scale and broader produ",
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 24,
+        "total_chars": 64165,
+        "speaker_turn_count": 133,
+        "distinct_speaker_count": 28,
+        "sample_speakers": [
+          "ISIN",
+          "Encl",
+          "Regd. Office",
+          "E-mail",
+          "CIN",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 43,
+        "header_cue_hits": 12,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
     },
     {
       "ok": true,
@@ -48,10 +77,37 @@
       "page_count": 21,
       "non_empty_pages": 21,
       "total_chars": 58078,
-      "download_ms": 618,
-      "extract_ms": 38,
+      "download_ms": 484,
+      "extract_ms": 34,
       "sample_page": 2,
-      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q1 FY '27 Earnings Conference Call” July 31, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER – DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED"
+      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q1 FY '27 Earnings Conference Call” July 31, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER – DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED",
+      "qa_sample_page": 7,
+      "qa_sample_excerpt": "Dixon Technologies (India) Limited July 31, 2026 Page 6 of 20 our play in the premium home entertainment ecosystem. IFPD and digital signage business were also impacted due to increase in the memory prices in the quarter. Refrigerators. Q1 saw a huge uptick in commodity prices prompting industry-wide older inventory liquidation and slower fresh purchase and ",
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 58098,
+        "speaker_turn_count": 133,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "ISIN",
+          "Encl",
+          "Regd. Office",
+          "E-mail",
+          "CIN",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 34,
+        "header_cue_hits": 11,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
     },
     {
       "ok": true,
@@ -64,10 +120,37 @@
       "page_count": 21,
       "non_empty_pages": 21,
       "total_chars": 54277,
-      "download_ms": 589,
-      "extract_ms": 28,
+      "download_ms": 499,
+      "extract_ms": 26,
       "sample_page": 2,
-      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q4 FY26 Earnings Conference Call” May 12, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER– DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED"
+      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q4 FY26 Earnings Conference Call” May 12, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR AND GROUP CHIEF FINANCIAL OFFICER– DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS LIMITED",
+      "qa_sample_page": 7,
+      "qa_sample_excerpt": "Dixon Technologies (India) Limited May 12, 2026 Page 6 of 20 temporary slowdown in industry demand due to geopolitical concerns and rising input costs, but we have actively procured advanced orders from customers with better price offerings for the upcoming quarters. Our focus remains on large screen smart, connected and premium models where we can different",
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 54297,
+        "speaker_turn_count": 162,
+        "distinct_speaker_count": 24,
+        "sample_speakers": [
+          "ISIN",
+          "Encl",
+          "Regd. Office",
+          "E-mail",
+          "CIN",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 39,
+        "header_cue_hits": 10,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
     },
     {
       "ok": true,
@@ -80,10 +163,37 @@
       "page_count": 21,
       "non_empty_pages": 21,
       "total_chars": 57154,
-      "download_ms": 545,
-      "extract_ms": 23,
+      "download_ms": 715,
+      "extract_ms": 39,
       "sample_page": 2,
-      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q3 FY '26 Earnings Conference Call” January 29, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR - FINANCE AND GROUP CHIEF FINANCIAL OFFICER– DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS"
+      "sample_excerpt": "Page 1 of 20 “Dixon Technologies (India) Limited Q3 FY '26 Earnings Conference Call” January 29, 2026 MANAGEMENT: MR. ATUL LALL – MANAGING DIRECTOR AND VICE CHAIRMAN – DIXON TECHNOLOGIES (INDIA) LIMITED MR. SAURABH GUPTA – DIRECTOR - FINANCE AND GROUP CHIEF FINANCIAL OFFICER– DIXON TECHNOLOGIES (INDIA) LIMITED MODERATOR: MR. TANAY SHAH – DAM CAPITAL ADVISORS",
+      "qa_sample_page": 7,
+      "qa_sample_excerpt": "Dixon Technologies (India) Limited January 29, 2026 Page 6 of 20 Our dedicated IT hardware product manufacturing unit in Chennai has successfully stabilized MICE production of laptops and AIOs for HPs and Asus. We have bagged order for desktops from one of our customers and we will start manufacturing in Q4 of this fiscal in Chennai, and also, in active disc",
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 21,
+        "total_chars": 57174,
+        "speaker_turn_count": 155,
+        "distinct_speaker_count": 29,
+        "sample_speakers": [
+          "ISIN",
+          "Encl",
+          "Regd. Office",
+          "E-mail",
+          "CIN",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Tanay Shah"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 38,
+        "header_cue_hits": 11,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
     }
   ]
 }

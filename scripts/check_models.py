@@ -50,7 +50,7 @@ def main() -> None:
             "Google AI Studio enforces free-tier limits per project (dynamic in AI Studio -> Rate Limits). "
             "Typical free-tier envelopes: Flash-Lite ~15 RPM / 250k TPM / 500-1000 RPD; "
             "Flash (thinking) ~10 RPM / 250k TPM / 250-500 RPD; thinking tokens count toward output tokens. "
-            "FINN stays well inside this by: (1) rules-first classification (~75%+ handled with 0 LLM calls), "
+            "FINN stays well inside this by: (1) rules-first classification (~40% handled by Stage-1 rules with 0 LLM calls), "
             "(2) batching remaining announcements up to 20 per call, and (3) sha256 content-hash caching."
         ),
         "available_gemini_models": [],

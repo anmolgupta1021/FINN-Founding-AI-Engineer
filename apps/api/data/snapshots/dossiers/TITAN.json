@@ -1,0 +1,702 @@
+{
+  "symbol": "TITAN",
+  "company_name": "Titan Company",
+  "sector": "Consumer / jewellery",
+  "bucket": "holding",
+  "is_lender": false,
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-09T10:53:07.215918+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/TITAN/consolidated/",
+  "business_model_1l": "Titan Company (Consumer / jewellery) — analyzed strictly from primary Annual Report & Concall Transcripts.",
+  "executive_summary": "Primary-source analysis across 5 filings (547 pages inspected).",
+  "documents_manifest": [
+    {
+      "doc_id": "TITAN_AR_LATEST",
+      "label": "TITAN Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1e85b157-d3b6-44c8-ab75-4776048dab00.pdf",
+      "size_kb": 11627.8,
+      "page_count": 473,
+      "non_empty_pages": 472,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "TITAN_CONCALL_1_AUG_2026",
+      "label": "TITAN Concall Aug 2026 Transcript",
+      "date_label": "Aug 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+      "size_kb": 417.9,
+      "page_count": 18,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 18,
+        "total_chars": 49144,
+        "speaker_turn_count": 107,
+        "distinct_speaker_count": 15,
+        "sample_speakers": [
+          "TITAN MANAGEMENT SPEAKERS",
+          "Moderator",
+          "Ajoy Chawla",
+          "Ashok Sonthalia",
+          "Videesha Sheth",
+          "Arun Narayan",
+          "Devanshu Bansal",
+          "Latika Chopra"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 27,
+        "header_cue_hits": 5,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "TITAN_CONCALL_2_JUN_2026",
+      "label": "TITAN Concall Jun 2026 Transcript",
+      "date_label": "Jun 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1a3bc0e3-c7ff-4887-a18a-f73fd400e8ca.pdf",
+      "size_kb": 437.5,
+      "page_count": 18,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 18,
+        "total_chars": 49263,
+        "speaker_turn_count": 128,
+        "distinct_speaker_count": 25,
+        "sample_speakers": [
+          "Sensitivity",
+          "TITAN MANAGEMENT SPEAKERS",
+          "Moderator",
+          "Ajoy Chawla",
+          "Devanshu Bansal",
+          "Ashok Sonthalia",
+          "Aditya Soman",
+          "Kuruvilla Markose"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 34,
+        "header_cue_hits": 3,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "TITAN_CONCALL_3_FEB_2026",
+      "label": "TITAN Concall Feb 2026 Transcript",
+      "date_label": "Feb 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+      "size_kb": 449.4,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 53774,
+        "speaker_turn_count": 122,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "Sensitivity",
+          "TITAN MANAGEMENT",
+          "Moderator",
+          "Ajoy Chawla",
+          "Ashok Sonthalia",
+          "Videesha Sheth",
+          "Arun Narayan",
+          "Manoj Menon"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 33,
+        "header_cue_hits": 7,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "TITAN_CONCALL_4_NOV_2025",
+      "label": "TITAN Concall Nov 2025 Transcript",
+      "date_label": "Nov 2025",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c3a5d70a-78ac-4407-aed7-e06b93e17a8f.pdf",
+      "size_kb": 478.5,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 54899,
+        "speaker_turn_count": 104,
+        "distinct_speaker_count": 23,
+        "sample_speakers": [
+          "TITAN MANAGEMENT",
+          "Moderator",
+          "C.K. Venkataraman",
+          "Manoj Menon",
+          "Ajoy Chawla",
+          "Mihir Shah",
+          "Ashok Sonthalia",
+          "Avi Mehta"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 36,
+        "header_cue_hits": 8,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "TITAN",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 32.1,
+      "pat_cagr_pct": 23.3,
+      "cumulative_5y_cfo_cr": 7390.0,
+      "cumulative_5y_pat_cr": 17378.0,
+      "cumulative_5y_cfo_to_pat_pct": 42.5
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 28799.0,
+        "ebitda_derived_cr": 3344.0,
+        "ebitda_margin_derived_pct": 12.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 2904.0,
+        "pat_cr": 2198.0,
+        "cfo_cr": -724.0,
+        "cfo_to_pat_pct": -32.9,
+        "roce_pct": 21.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 40575.0,
+        "ebitda_derived_cr": 4882.0,
+        "ebitda_margin_derived_pct": 12.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 4447.0,
+        "pat_cr": 3274.0,
+        "cfo_cr": 1370.0,
+        "cfo_to_pat_pct": 41.8,
+        "roce_pct": 25.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 51084.0,
+        "ebitda_derived_cr": 5292.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 4623.0,
+        "pat_cr": 3496.0,
+        "cfo_cr": 1695.0,
+        "cfo_to_pat_pct": 48.5,
+        "roce_pct": 23.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 60456.0,
+        "ebitda_derived_cr": 5694.0,
+        "ebitda_margin_derived_pct": 9.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 4535.0,
+        "pat_cr": 3337.0,
+        "cfo_cr": -541.0,
+        "cfo_to_pat_pct": -16.2,
+        "roce_pct": 19.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 87584.0,
+        "ebitda_derived_cr": 8357.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 6801.0,
+        "pat_cr": 5073.0,
+        "cfo_cr": 5590.0,
+        "cfo_to_pat_pct": 110.2,
+        "roce_pct": 21.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 16523.0,
+        "ebitda_derived_cr": 1830.0,
+        "ebitda_margin_derived_pct": 11.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1480.0,
+        "pat_cr": 1091.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 18725.0,
+        "ebitda_derived_cr": 1875.0,
+        "ebitda_margin_derived_pct": 10.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1522.0,
+        "pat_cr": 1120.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 25416.0,
+        "ebitda_derived_cr": 2713.0,
+        "ebitda_margin_derived_pct": 11.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 2223.0,
+        "pat_cr": 1684.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 26920.0,
+        "ebitda_derived_cr": 1938.0,
+        "ebitda_margin_derived_pct": 7.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 1577.0,
+        "pat_cr": 1179.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 21356.0,
+        "ebitda_derived_cr": 2890.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 2429.0,
+        "pat_cr": 1777.0
+      },
+      {
+        "quarter": "Sep 2026",
+        "revenue_cr": 20614.0,
+        "ebitda_derived_cr": 2983.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 3000.0,
+        "pat_cr": 2393.0
+      }
+    ]
+  },
+  "segment_mix": [],
+  "ar_highlights": [],
+  "promised_vs_delivered": [
+    {
+      "period_called": "TITAN Concall Aug 2026 Transcript",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "topic": "Latest Quarter Forward Outlook",
+      "promised_guidance": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)"
+    },
+    {
+      "period_called": "TITAN Concall Jun 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_2_JUN_2026",
+        "doc_label": "TITAN Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1a3bc0e3-c7ff-4887-a18a-f73fd400e8ca.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹20614.0 Cr, Derived Operating EBITDA ₹2983.0 Cr (14.0%), PAT ₹2393.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "TITAN Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_3_FEB_2026",
+        "doc_label": "TITAN Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹20614.0 Cr, Derived Operating EBITDA ₹2983.0 Cr (14.0%), PAT ₹2393.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_2_JUN_2026",
+        "doc_label": "TITAN Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1a3bc0e3-c7ff-4887-a18a-f73fd400e8ca.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    },
+    {
+      "period_called": "TITAN Concall Nov 2025 Transcript",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": true,
+      "topic": "Operational & Financial Execution vs Prior Call",
+      "promised_guidance": "So look, just to put some numbers, if you're expecting 15%, 17% jewellery growth or 15% to 20% of your guidance for the year, now with the rising gold prices, if you end up at 20% to 25% jewellery top line growth, will your EBIT growth also be at least",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_4_NOV_2025",
+        "doc_label": "TITAN Concall Nov 2025 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c3a5d70a-78ac-4407-aed7-e06b93e17a8f.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "So look, just to put some numbers, if you're expecting 15%, 17% jewellery growth or 15% to 20% of your guidance for the year, now with the rising gold prices, if you end up at 20% to 25% jewellery top line growth, will your EBIT growth also be at least",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹20614.0 Cr, Derived Operating EBITDA ₹2983.0 Cr (14.0%), PAT ₹2393.0 Cr.",
+      "delivered_citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_3_FEB_2026",
+        "doc_label": "TITAN Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+        "match_score": 100.0,
+        "status": "verified"
+      },
+      "verdict": "Delivered"
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
+      "numbers_observed": "5Y Revenue CAGR 32.1%, PAT CAGR 23.3%; latest annual Revenue ₹87584.0 Cr, PAT ₹5073.0 Cr.",
+      "narrative_claimed": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
+      "numbers_observed": "5Y Cumulative CFO ₹7390.0 Cr vs Cumulative PAT ₹17378.0 Cr (CFO/PAT = 42.5%).",
+      "narrative_claimed": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+      "verdict": "Watch closely",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_2_JUN_2026",
+        "doc_label": "TITAN Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1a3bc0e3-c7ff-4887-a18a-f73fd400e8ca.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
+      "numbers_observed": "Latest annual Derived EBITDA ₹8357.0 Cr (Margin 10.0%, derived) · ROCE 21.0%.",
+      "narrative_claimed": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+      "verdict": "Aligned",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_3_FEB_2026",
+        "doc_label": "TITAN Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #1 (TITAN Concall Aug 2026 Transcript)",
+      "thesis": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "So if you normalize for both these sides, then last Quarter 1 FY '26 watch EBIT margin was 18.6% compared to 17.8% normalized margin for this quarter.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #2 (TITAN Concall Jun 2026 Transcript)",
+      "thesis": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_2_JUN_2026",
+        "doc_label": "TITAN Concall Jun 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1a3bc0e3-c7ff-4887-a18a-f73fd400e8ca.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "So, this guidance of 15%-20%, you look more that we have the way we are running business, the way Indian macros are behaving, we believe 15% to 20%, three to five-year kind of horizon is certainly to be delivered on a CAGR basis kind of a thing.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Verified Primary-Filing Growth & Execution Driver #3 (TITAN Concall Feb 2026 Transcript)",
+      "thesis": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_3_FEB_2026",
+        "doc_label": "TITAN Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Jewellery is becoming -- and in quarter 3, particularly, it has become more dominant because of 40% growth, while other businesses have grown nicely, but they are 17%, 18%, 14%, 15%.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #1 (TITAN Concall Feb 2026 Transcript)",
+      "thesis": "The discount on making charges given that the -- it's a percentage and it would have gone up 70%, 80% in blended gold inflation.",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_3_FEB_2026",
+        "doc_label": "TITAN Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0ee5b68b-8f66-4705-9a84-9debaa9aae1d.pdf",
+        "page": 6,
+        "cited_page": 6,
+        "verbatim_quote": "The discount on making charges given that the -- it's a percentage and it would have gone up 70%, 80% in blended gold inflation.",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #2 (TITAN Concall Aug 2026 Transcript)",
+      "thesis": "So in a scenario where gold price inflation is zero, do you think we can sort of maintain a 18% to 20% kind of top line growth in that kind of a scenario?",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "So in a scenario where gold price inflation is zero, do you think we can sort of maintain a 18% to 20% kind of top line growth in that kind of a scenario?",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Filing-Disclosed Operational / Margin Risk #3 (TITAN Concall Aug 2026 Transcript)",
+      "thesis": "And in context of that, do you expect sort of the headwind on your margins to sort of maybe turn into a tailwind and you could see even with a slightly lower growth being able to deliver that 18% to 20% bottom line growth?",
+      "citation": {
+        "verified": true,
+        "doc_id": "TITAN_CONCALL_1_AUG_2026",
+        "doc_label": "TITAN Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f70a0a33-43cf-40b6-a753-67b06123e8de.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "And in context of that, do you expect sort of the headwind on your margins to sort of maybe turn into a tailwind and you could see even with a slightly lower growth being able to deliver that 18% to 20% bottom line growth?",
+        "match_score": 100.0,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Customer-level margin concentration & contract repricing lag",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+    }
+  ],
+  "network": {
+    "symbol": "TITAN",
+    "company_name": "Titan Company",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:ananya_krishnan",
+        "name": "Ananya Krishnan",
+        "headline": "Director — Jewellery Merchandising & Bullion Lease · Ex-Titan (Tanishq)",
+        "city": "Bengaluru",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 5 wks ago",
+        "bucket": "ex_company",
+        "org": "Titan Company",
+        "role": "Regional Business Head — South (Tanishq)",
+        "tenure": "2017–2025",
+        "relation_label": "knows the company (Titan Company)",
+        "path": "You → Ananya Krishnan (strength 5/5 · spoke 5 wks ago) → knows the company (Titan Company, 2017–2025)",
+        "expertise_tags": [
+          "studded jewellery ratio",
+          "lab-grown diamonds",
+          "gold metal loan",
+          "Kalyan vs Tanishq"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "draft_opener": "Hi Ananya — running a primary-source deep dive on Titan Company (TITAN) from their latest Annual Report and concalls. Given your experience at Titan Company (2017–2025), how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:kavita_rao",
+        "name": "Kavita Rao",
+        "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
+        "city": "Chennai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 17 mos ago",
+        "bucket": "ex_company",
+        "org": "Titan Company",
+        "role": "Supply Chain Head — Wearables & Jewellery Ops",
+        "tenure": "2016–2021",
+        "relation_label": "knows the company (Titan Company)",
+        "path": "You → Kavita Rao (strength 4/5 · spoke 17 mos ago) → knows the company (Titan Company, 2016–2021)",
+        "expertise_tags": [
+          "EMS",
+          "PCB sourcing",
+          "jewellery retail",
+          "wearables"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "draft_opener": "Hi Kavita — running a primary-source deep dive on Titan Company (TITAN) from their latest Annual Report and concalls. Given your experience at Titan Company (2016–2021), how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:varun_chawla",
+        "name": "Varun Chawla",
+        "headline": "Director — Treasury & Bullion Hedging · Ex-Titan",
+        "city": "Bengaluru",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 14 mos ago",
+        "bucket": "ex_company",
+        "org": "Titan Company",
+        "role": "AVP — Corporate Treasury",
+        "tenure": "2016–2023",
+        "relation_label": "knows the company (Titan Company)",
+        "path": "You → Varun Chawla (strength 3/5 · spoke 14 mos ago) → knows the company (Titan Company, 2016–2023)",
+        "expertise_tags": [
+          "gold lease rate",
+          "customs duty cut",
+          "MCX hedging",
+          "CaratLane"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "draft_opener": "Hi Varun — running a primary-source deep dive on Titan Company (TITAN) from their latest Annual Report and concalls. Given your experience at Titan Company (2016–2023), how realistic is management's execution timeline on new capacity and margin guidance at Titan Company?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:vikram_kulkarni",
+        "name": "Vikram Kulkarni",
+        "headline": "Chief Risk Officer, Digital & Rural NBFC · Ex-Bajaj Finance & CreditAccess Grameen",
+        "city": "Pune",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 3 mos ago",
+        "bucket": "suppliers_customers",
+        "org": "CreditAccess Grameen",
+        "role": "VP Credit & Collections",
+        "tenure": "2020–2025",
+        "relation_label": "sector specialist (CreditAccess Grameen)",
+        "path": "You → Vikram Kulkarni (strength 4/5 · spoke 3 mos ago) → knows the company (CreditAccess Grameen, 2020–2025)",
+        "expertise_tags": [
+          "microfinance",
+          "consumer durable lending",
+          "cyber risk",
+          "PAR 30+"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Titan Company (TITAN) over the next 4 quarters?",
+        "draft_opener": "Hi Vikram — running a primary-source deep dive on Titan Company (TITAN) from their latest Annual Report and concalls. Given your experience at CreditAccess Grameen (2020–2025), how do you view sector-wide demand and regulatory tailwinds for Titan Company (TITAN) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 4
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": true,
+    "total_verified_citations": 15,
+    "min_rapidfuzz_score": 100.0,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+  }
+}

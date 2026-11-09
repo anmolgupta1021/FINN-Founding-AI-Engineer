@@ -15,12 +15,13 @@ from typing import Any
 from finn.fetchers.screener import fetch_screener_documents
 from finn.pipeline.mgmt import download_filing_pdf, extract_pdf_pages_text
 from finn.pipeline.results import extract_results_from_pdf
+from finn.pull.doctype import verify_concall_transcript
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "apps" / "api" / "data"
 
 
-def _probe_pdf_doc(kind: str, label: str, url: str) -> dict[str, Any]:
+def _probe_pdf_doc(kind: str, label: str, url: str, *, is_latest_call: bool = False) -> dict[str, Any]:
     t0 = time.monotonic()
     try:
         pdf_bytes = download_filing_pdf(url, timeout_s=45.0)
@@ -45,7 +46,10 @@ def _probe_pdf_doc(kind: str, label: str, url: str) -> dict[str, Any]:
                 break
 
         excerpt = re.sub(r"\s+", " ", sample_page["text"]).strip()[:360]
-        return {
+        qa_sample_page = non_empty_pages[min(6, len(non_empty_pages) - 1)] if len(non_empty_pages) > 5 else sample_page
+        qa_excerpt = re.sub(r"\s+", " ", qa_sample_page["text"]).strip()[:360]
+
+        out: dict[str, Any] = {
             "ok": True,
             "kind": kind,
             "label": label,
@@ -60,7 +64,12 @@ def _probe_pdf_doc(kind: str, label: str, url: str) -> dict[str, Any]:
             "extract_ms": parse_ms,
             "sample_page": sample_page["page"],
             "sample_excerpt": excerpt,
+            "qa_sample_page": qa_sample_page["page"],
+            "qa_sample_excerpt": qa_excerpt,
         }
+        if kind == "concall_transcript":
+            out["doctype_check"] = verify_concall_transcript(pages, is_latest_call=is_latest_call)
+        return out
     except Exception as exc:  # noqa: BLE001
         return {
             "ok": False,
@@ -117,14 +126,21 @@ def main() -> None:
         if rep.get("sample_excerpt"):
             print(f"  p.{rep['sample_page']} excerpt: {rep['sample_excerpt'][:180]}…")
 
-    for cc in cc_list:
+    for idx, cc in enumerate(cc_list):
         print(f"\nFetching Concall Transcript ({cc['period']}): {cc['url']}")
-        rep = _probe_pdf_doc("concall_transcript", f"Concall {cc['period']}", cc["url"])
+        rep = _probe_pdf_doc(
+            "concall_transcript",
+            f"Concall {cc['period']}",
+            cc["url"],
+            is_latest_call=(idx == 0),
+        )
         results.append(rep)
+        dt_chk = rep.get("doctype_check") or {}
         print(
             f"  ok={rep.get('ok')} size={rep.get('size_mb')} MB pages={rep.get('page_count')} "
-            f"non_empty={rep.get('non_empty_pages')} chars={rep.get('total_chars')} "
-            f"dl={rep.get('download_ms')}ms extract={rep.get('extract_ms')}ms"
+            f"is_transcript={dt_chk.get('is_transcript')} speakers={dt_chk.get('distinct_speaker_count')} "
+            f"turns={dt_chk.get('speaker_turn_count')} has_qa={dt_chk.get('has_qa')} "
+            f"testable={dt_chk.get('promised_vs_delivered_testable')}"
         )
         if rep.get("sample_excerpt"):
             print(f"  p.{rep['sample_page']} excerpt: {rep['sample_excerpt'][:180]}…")

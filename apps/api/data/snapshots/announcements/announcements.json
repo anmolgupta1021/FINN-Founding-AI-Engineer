@@ -14,7 +14,7 @@
   },
   "total": 776,
   "rule_count": 339,
-  "llm_count": 52,
+  "llm_count": 73,
   "rule_pct": 43.7,
   "items": [
     {
@@ -285,14 +285,14 @@
             "metric": "NII",
             "cur": 13334.66,
             "prev_q": 12570.64,
-            "yoy_q": 10840.57,
+            "yoy_q": 10785.37,
             "qoq_pct": 6.1,
-            "yoy_pct": 23.0,
+            "yoy_pct": 23.6,
             "page": "Filing PDF p. 14 (derived)",
             "derived": true,
             "status": "derived",
             "margin_pct": null,
-            "verbatim_line": "Derived from p.14: Interest Income (21936.39) - Finance Cost (8601.73) | (Interest income 21,936.39 20,512.73 17,795.97)",
+            "verbatim_line": "Derived from p.14: Interest Income (21936.39) - Finance Cost (8601.73) | (Interest income 21.93639 20.512.73 17.795.97 42.449.12 34.940.62 72,776.01)",
             "screener_period": "Sep 2026",
             "screener_val": null,
             "screener_delta_pct": null
@@ -301,9 +301,9 @@
             "metric": "PPOP",
             "cur": 10703.29,
             "prev_q": 10142.44,
-            "yoy_q": 6610.21,
+            "yoy_q": 8688.49,
             "qoq_pct": 5.5,
-            "yoy_pct": 61.9,
+            "yoy_pct": 23.2,
             "page": "Filing PDF p. 14 (derived)",
             "derived": true,
             "status": "derived",
@@ -384,14 +384,14 @@
             "metric": "NII",
             "cur": 13334.66,
             "prev_q": 12570.64,
-            "yoy_q": 10840.57,
+            "yoy_q": 10785.37,
             "qoq_pct": 6.1,
-            "yoy_pct": 23.0,
+            "yoy_pct": 23.6,
             "page": "Filing PDF p. 14 (derived)",
             "derived": true,
             "status": "derived",
             "margin_pct": null,
-            "verbatim_line": "Derived from p.14: Interest Income (21936.39) - Finance Cost (8601.73) | (Interest income 21,936.39 20,512.73 17,795.97)",
+            "verbatim_line": "Derived from p.14: Interest Income (21936.39) - Finance Cost (8601.73) | (Interest income 21.93639 20.512.73 17.795.97 42.449.12 34.940.62 72,776.01)",
             "screener_period": "Sep 2026",
             "screener_val": null,
             "screener_delta_pct": null
@@ -400,9 +400,9 @@
             "metric": "PPOP",
             "cur": 10703.29,
             "prev_q": 10142.44,
-            "yoy_q": 6610.21,
+            "yoy_q": 8688.49,
             "qoq_pct": 5.5,
-            "yoy_pct": 61.9,
+            "yoy_pct": 23.2,
             "page": "Filing PDF p. 14 (derived)",
             "derived": true,
             "status": "derived",
@@ -6568,12 +6568,12 @@
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a4236076-bda6-4e69-bee9-3b5dcb93bfc3.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "investor_meetings",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "CREDITACC: Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation"
+      "summary_1l": "CreditAccess Grameen announced schedule of analyst or investor meet."
     },
     {
       "id": "bse:SUNPHARMA:d83a4284-52fc-4eb3-a6f2-f78ae853e650",
@@ -6773,11 +6773,11 @@
       "pdf_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_30092026174654_SEIntimationfor_Special_Window_30092026.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "SUNPHARMA: Newspaper Publication about the opening of Special Window for transfer of physical shares"
+      "summary_1l": "Sun Pharma published a notice regarding the opening of a window for physical shares."
     },
     {
       "id": "nse:GRAVITA:106803407",
@@ -7163,12 +7163,12 @@
       "subject": "Interim Business Update - September 2026",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/421fef52-c6da-460c-8f8e-ff8c013af334.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "press_release",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "CREDITACC: Interim Business Update - September 2026"
+      "summary_1l": "CreditAccess Grameen released its interim business update for September 2026."
     },
     {
       "id": "nse:TRENT:106806942",
@@ -7486,12 +7486,12 @@
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6165abb2-8e61-48a0-a7be-1052082fe01b.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "investor_meetings",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "ASIANPAINT: Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation"
+      "summary_1l": "Asian Paints announced schedule of analyst or investor meet."
     },
     {
       "id": "nse:CREDITACC:106809285",
@@ -7929,11 +7929,11 @@
       "pdf_url": "https://nsearchives.nseindia.com/corporate/Nisha_08102026170506_SEintimationcertunder745Sep2026signed.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "PIDILITIND: Pidilite Industries Limited has informed the Exchange about Certificate under SEBI (Depositories and Participants) Regulations, 2018 for…"
+      "summary_1l": "Pidilite Industries submitted depository participant compliance certificate."
     },
     {
       "id": "bse:GRAVITA:cb20299b-98a4-4c27-8525-7832dedf3c18",
@@ -8557,12 +8557,12 @@
       "subject": "Agreement With A Global Speciality Chemical Company.",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/92eec871-4124-4507-b744-d3914eb2b01a.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "press_release",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "AARTIIND: Agreement With A Global Speciality Chemical Company."
+      "summary_1l": "Aarti Industries entered into an agreement with a global specialty chemical company."
     },
     {
       "id": "nse:AARTIIND:106815792",
@@ -8625,12 +8625,12 @@
       "subject": "Laurus Labs Limited has informed the Exchange about Schedule of meet",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/LAURUSLABS_13102026164917_ConCallInt29102026.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "investor_meetings",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "LAURUSLABS: Laurus Labs Limited has informed the Exchange about Schedule of meet"
+      "summary_1l": "Laurus Labs informed the exchange about schedule of institutional meet."
     },
     {
       "id": "nse:PIDILITIND:106816020",
@@ -8779,11 +8779,11 @@
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d366fdf5-735e-4074-95a0-3aff58a1a054.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "SUNPHARMA: Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018"
+      "summary_1l": "Sun Pharma submitted the compliance certificate under SEBI DP Regulations."
     },
     {
       "id": "nse:SUNPHARMA:106817485",
@@ -8813,11 +8813,11 @@
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d913ddb6-b145-4f2e-8bbf-d3c21ffb7e94.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "GRAVITA: Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018"
+      "summary_1l": "Gravita India submitted compliance certificate under Reg 74(5)."
     },
     {
       "id": "nse:GRAVITA:106817672",
@@ -9237,12 +9237,12 @@
       "subject": "HDFC Bank Limited has informed the Exchange about Link of Recording",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/HDFCBANK_17102026220738_SEintimation-RECORDING-17oct2026.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "earnings_call",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "HDFCBANK: HDFC Bank Limited has informed the Exchange about Link of Recording"
+      "summary_1l": "HDFC Bank provided the link to the recording of earnings or investor call."
     },
     {
       "id": "bse:HDFCBANK:01894d11-473e-4d23-b680-8ff3a6ae8eb7",
@@ -9492,12 +9492,12 @@
       "subject": "Bajaj Finance Limited has informed the Exchange about issue of Securities",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_19102026175355_Issue_of_Securities_19102026.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "fund_raise",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "BAJFINANCE: Bajaj Finance Limited has informed the Exchange about issue of Securities"
+      "summary_1l": "Bajaj Finance informed the exchange about the issue of securities."
     },
     {
       "id": "bse:BAJFINANCE:913014a6-a273-4cfc-8a62-a2fccb69a061",
@@ -9748,11 +9748,11 @@
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/19d4c3c3-df05-444a-adfb-4edcffa3f847.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "HDFCBANK: Announcement under Regulation 30 (LODR)-Newspaper Publication"
+      "summary_1l": "HDFC Bank published newspaper advertisements regarding regulatory disclosures."
     },
     {
       "id": "nse:HDFCBANK:106824495",
@@ -10104,12 +10104,12 @@
       "subject": "Indian Energy Exchange Limited has informed the Exchange about Schedule of meet",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/IEX_23102026174957_IEX_Intimation_Earning_Call_Q2_Sep26_signed.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "investor_meetings",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "IEX: Indian Energy Exchange Limited has informed the Exchange about Schedule of meet"
+      "summary_1l": "Indian Energy Exchange informed about schedule of investor meet."
     },
     {
       "id": "bse:IEX:d695f613-b583-47d6-ade5-91afb714b818",
@@ -10853,11 +10853,11 @@
       "pdf_url": "https://nsearchives.nseindia.com/corporate/KPITTECH_27102026194517_NRC_Outcome_October_2026_S.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "KPITTECH: KPIT Technologies Limited has informed the Exchange about the grant of 54,100 Options to the eligible employees covered under the KPIT Te…"
+      "summary_1l": "KPIT Technologies granted options under its Restricted Stock Unit Plan."
     },
     {
       "id": "bse:KPITTECH:3dbdf4e9-0f9c-405e-bc2d-5601a79a1e98",
@@ -10870,11 +10870,11 @@
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fe0fd731-b8f8-4196-a639-066291bf6ef0.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "KPITTECH: Announcement Under Regulations 30 Of SEBI LODR - Grant Of Options To Eligible Employees"
+      "summary_1l": "KPIT Technologies announced the grant of options to eligible employees."
     },
     {
       "id": "bse:MARUTI:f567b375-6095-450c-ac90-15bcd62e5b39",
@@ -11108,11 +11108,11 @@
       "pdf_url": "https://nsearchives.nseindia.com/corporate/TITAN_28102026172546_SEnewspaperadlossofshares.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "Titan Company Limited has informed the Exchange about Copy of Newspaper Publication"
+      "summary_1l": "Titan Company informed about a copy of newspaper publication."
     },
     {
       "id": "nse:INFY:106832566",
@@ -11363,11 +11363,11 @@
       "pdf_url": "https://nsearchives.nseindia.com/corporate/NAVINFLUOR_29102026001243_uploadsigned.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "NAVINFLUOR: Navin Fluorine International Limited has informed the Exchange about General Updates"
+      "summary_1l": "Navin Fluorine International Limited submitted a general update."
     },
     {
       "id": "bse:ASIANPAINT:1e42f4cc-1281-4e85-abe4-874e9b70a670",
@@ -11447,12 +11447,12 @@
       "subject": "Announcement under Regulation 30 (LODR)-Acquisition",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c73e3261-ae9f-4d60-989f-ce7b298ca93e.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "M&A",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "LAURUSLABS: Announcement under Regulation 30 (LODR)-Acquisition"
+      "summary_1l": "Laurus Labs announced an acquisition."
     },
     {
       "id": "nse:INFY:106834219",
@@ -11498,12 +11498,12 @@
       "subject": "Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/35b12a6d-e165-42d3-a0d1-cbe42fe2a99f.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "press_release",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "INFY: Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced"
+      "summary_1l": "Winners of Qorus-Infosys Finacle Banking Innovation Awards 2026 announced."
     },
     {
       "id": "bse:LAURUSLABS:7b1df9a1-0d33-476c-beff-88631afb37a7",
@@ -12535,12 +12535,12 @@
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/082ec2fb-f975-4058-aadb-d27d3e69a02d.pdf",
       "is_demo_scenario": false,
-      "category": "unclassified",
-      "cls_method": "fallback",
+      "category": "investor_meetings",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "DIXON: Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome"
+      "summary_1l": "Dixon Technologies announced the outcome of analyst or investor meet."
     },
     {
       "id": "nse:NAVINFLUOR:106837833",
@@ -13250,11 +13250,11 @@
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6b5ac8ab-73ab-44fe-824a-d794314fe3cd.pdf",
       "is_demo_scenario": false,
       "category": "unclassified",
-      "cls_method": "fallback",
+      "cls_method": "llm",
       "cls_rule": null,
-      "cls_confidence": 0.5,
+      "cls_confidence": 0.8,
       "priority": 8,
-      "summary_1l": "KPITTECH: Intimation Regarding The Change In The Address Of The Corporate Office Of The Kfin Technologies Limited, Registrar And Share Transfer Age…"
+      "summary_1l": "Intimation regarding the change in address of the corporate office of RTA."
     },
     {
       "id": "nse:KPITTECH:106843088",
@@ -13648,5 +13648,8 @@
       "summary_1l": "SYRMA: Board Meeting Intimation for Intimation Of The Board Meeting Under Regulation 29 Of SEBI (Listing Obligations And Disclosure Requirements…"
     }
   ],
-  "fallback_count": 385
+  "fallback_count": 364,
+  "positive_rule_count": 290,
+  "noise_rule_count": 49,
+  "positive_rule_pct": 37.4
 }
