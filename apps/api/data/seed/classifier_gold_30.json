@@ -1,0 +1,215 @@
+{
+  "description": "30 hand-checked NSE/BSE corporate announcements spanning all 17 categories + 5 realistic ambiguous Reg-30 subjects that defer from rules to the cheap LLM classifier.",
+  "items": [
+    {
+      "id": "g01",
+      "symbol": "POLYCAB",
+      "raw_category": "Outcome of Board Meeting",
+      "subject": "Outcome of Board Meeting held on October 17, 2026 approving Unaudited Standalone and Consolidated Financial Results for Q2 FY27",
+      "expected_category": "results"
+    },
+    {
+      "id": "g02",
+      "symbol": "DIXON",
+      "raw_category": "Financial Results",
+      "subject": "Investor Presentation on Unaudited Financial Results for the quarter and half year ended September 30, 2026 (Q2 FY27)",
+      "expected_category": "results"
+    },
+    {
+      "id": "g03",
+      "symbol": "KAYNES",
+      "raw_category": "Change in Directorate / Key Managerial Personnel",
+      "subject": "Intimation under Regulation 30 of SEBI (LODR) - Appointment of Mr. Jairam Sampath as Chief Financial Officer and Key Managerial Personnel",
+      "expected_category": "management_change"
+    },
+    {
+      "id": "g04",
+      "symbol": "ASIANPAINT",
+      "raw_category": "Change in Directors/ Key Managerial Personnel/ Auditor/ Compliance Officer/ Share Transfer Agent",
+      "subject": "Resignation of Mr. R. J. Jeyamurugan as CFO and Company Secretary upon superannuation and appointment of incoming Chief Financial Officer",
+      "expected_category": "management_change"
+    },
+    {
+      "id": "g05",
+      "symbol": "AARTIIND",
+      "raw_category": "Capacity Addition / Expansion",
+      "subject": "Intimation under Regulation 30 - Commissioning of Phase-2 Nitro-toluene & Downstream Specialty Chemical Capacity Expansion of Rs. 450 crore at Jhagadia",
+      "expected_category": "capex"
+    },
+    {
+      "id": "g06",
+      "symbol": "PIIND",
+      "raw_category": "Acquisition",
+      "subject": "Execution of Share Purchase Agreement for acquisition of 100% stake in Plant Health Care Plc (UK) through wholly-owned subsidiary for GBP 32.8 million",
+      "expected_category": "M&A"
+    },
+    {
+      "id": "g07",
+      "symbol": "SUNPHARMA",
+      "raw_category": "Disclosure under Regulation 30",
+      "subject": "Sun Pharma signs definitive licensing and equity subscription pact with Philogen S.p.A. to co-develop and take a 14% strategic stake in dermatology biologics unit",
+      "expected_category": "M&A"
+    },
+    {
+      "id": "g08",
+      "symbol": "BAJFINANCE",
+      "raw_category": "Fund Raising",
+      "subject": "Outcome of Board Meeting - Approval of Raising of Funds up to Rs. 8,800 crore by way of Qualified Institutional Placement (QIP) and Preferential Issue",
+      "expected_category": "fund_raise"
+    },
+    {
+      "id": "g09",
+      "symbol": "IEX",
+      "raw_category": "Updates",
+      "subject": "Disclosure under Regulation 30 - Order passed by Central Electricity Regulatory Commission (CERC) on market coupling staff paper and ongoing litigation",
+      "expected_category": "litigation"
+    },
+    {
+      "id": "g10",
+      "symbol": "INFY",
+      "raw_category": "Disclosure under Regulation 30",
+      "subject": "Intimation under Para A of Part A of Schedule III - Receipt of administrative monetary fine of EUR 42,000 from Luxembourg data protection authority",
+      "expected_category": "litigation"
+    },
+    {
+      "id": "g11",
+      "symbol": "GRAVITA",
+      "raw_category": "SAST / Insider Trading",
+      "subject": "Disclosure under Regulation 7(2) of SEBI (Prohibition of Insider Trading) Regulations, 2015 - Open market purchase of shares by Promoter Trust",
+      "expected_category": "insider_trading"
+    },
+    {
+      "id": "g12",
+      "symbol": "DIXON",
+      "raw_category": "Concall / Earnings Call",
+      "subject": "Transcript of Q2 FY27 Earnings Conference Call held with Analysts and Institutional Investors on October 24, 2026",
+      "expected_category": "earnings_call"
+    },
+    {
+      "id": "g13",
+      "symbol": "KAYNES",
+      "raw_category": "Analyst / Investor Meet",
+      "subject": "Audio recording link of Post-Results Earnings Call for Q2 FY27 held on November 4, 2026",
+      "expected_category": "earnings_call"
+    },
+    {
+      "id": "g14",
+      "symbol": "TRENT",
+      "raw_category": "Analyst / Investor Meet",
+      "subject": "Intimation of Schedule of Analyst / Institutional Investor Meet (One-on-One and Group Meetings in Mumbai on November 12, 2026)",
+      "expected_category": "investor_meetings"
+    },
+    {
+      "id": "g15",
+      "symbol": "CREDITACC",
+      "raw_category": "Credit Rating",
+      "subject": "ICRA upgrades long-term credit rating to [ICRA]AA (Stable) and reaffirms [ICRA]A1+ on Rs. 3,500 crore bank facilities",
+      "expected_category": "credit_rating"
+    },
+    {
+      "id": "g16",
+      "symbol": "CAMS",
+      "raw_category": "Dividend",
+      "subject": "Declaration of Second Interim Dividend of Rs. 14.50 per equity share and fixation of Record Date as November 18, 2026",
+      "expected_category": "dividend"
+    },
+    {
+      "id": "g17",
+      "symbol": "TITAN",
+      "raw_category": "Corporate Action",
+      "subject": "Approval of Issue of Bonus Shares in the ratio of 1:1 and Sub-division / Stock Split of equity shares",
+      "expected_category": "bonus_split"
+    },
+    {
+      "id": "g18",
+      "symbol": "KPITTECH",
+      "raw_category": "Press Release / Media Release",
+      "subject": "Press Release: KPIT signs multi-year strategic partnership and bags USD 110M order win with European passenger car OEM for SDV middleware",
+      "expected_category": "press_release"
+    },
+    {
+      "id": "g19",
+      "symbol": "HDFCBANK",
+      "raw_category": "Shareholders Meeting",
+      "subject": "Notice of Postal Ballot seeking approval of Members via remote e-voting and Scrutinizer Report on Postal Ballot",
+      "expected_category": "postal_ballot"
+    },
+    {
+      "id": "g20",
+      "symbol": "MARUTI",
+      "raw_category": "AGM / EGM",
+      "subject": "Summary of Proceedings and Voting Results of the 43rd Annual General Meeting (AGM) held through Video Conferencing",
+      "expected_category": "agm_egm"
+    },
+    {
+      "id": "g21",
+      "symbol": "AARTIIND",
+      "raw_category": "Pledged Shares",
+      "subject": "Disclosure under Regulation 31(1) of SEBI (SAST) Regulations - Release of pledged shares by Promoter group entity",
+      "expected_category": "pledging"
+    },
+    {
+      "id": "g22",
+      "symbol": "INFY",
+      "raw_category": "ESOP / ESPS",
+      "subject": "Allotment of 1,42,580 equity shares under Infosys Expanded Stock Ownership Plan (ESOP) 2019",
+      "expected_category": "unclassified"
+    },
+    {
+      "id": "g23",
+      "symbol": "HDFCBANK",
+      "raw_category": "Loss of Share Certificates",
+      "subject": "Intimation under Regulation 39(3) regarding Loss of Share Certificate and Issue of Duplicate Share Certificate to folio holders",
+      "expected_category": "unclassified"
+    },
+    {
+      "id": "g24",
+      "symbol": "TITAN",
+      "raw_category": "Compliance Certificate",
+      "subject": "Certificate under Regulation 74(5) of SEBI (Depositories and Participants) Regulations, 2018 for the quarter ended September 30, 2026",
+      "expected_category": "unclassified"
+    },
+    {
+      "id": "g25",
+      "symbol": "POLYCAB",
+      "raw_category": "Change in Auditor",
+      "subject": "Appointment of Secretarial Auditor and Cost Auditor for FY 2026-27 pursuant to Regulation 30",
+      "expected_category": "unclassified"
+    },
+    {
+      "id": "g26",
+      "symbol": "MARUTI",
+      "raw_category": "Newspaper Publication",
+      "subject": "Newspaper Publication regarding Notice of Transfer of Unclaimed Dividend and Equity Shares to IEPF Authority",
+      "expected_category": "unclassified"
+    },
+    {
+      "id": "g27",
+      "symbol": "SYRMA",
+      "raw_category": "Newspaper Publication",
+      "subject": "Newspaper Publication of Extract of Unaudited Consolidated Financial Results for Q2 FY27 in Financial Express and Jansatta",
+      "expected_category": "results"
+    },
+    {
+      "id": "g28",
+      "symbol": "NAVINFLUOR",
+      "raw_category": "General Updates",
+      "subject": "Board approves Rs. 288 crore outlay for new anhydrous hydrogen fluoride (AHF) line at Dahej site to be funded via internal accruals",
+      "expected_category": "capex"
+    },
+    {
+      "id": "g29",
+      "symbol": "PIDILITIND",
+      "raw_category": "General Updates",
+      "subject": "Mr. Sudhanshu Vats assumes charge as Managing Director Designate following transition of executive responsibilities",
+      "expected_category": "management_change"
+    },
+    {
+      "id": "g30",
+      "symbol": "LAURUSLABS",
+      "raw_category": "General Updates",
+      "subject": "Submission of Half-Yearly Related Party Transactions disclosure under Regulation 23(9) for the half-year ended September 30, 2026",
+      "expected_category": "unclassified"
+    }
+  ]
+}

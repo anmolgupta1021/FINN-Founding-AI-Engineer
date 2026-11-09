@@ -1,0 +1,13 @@
+{
+  "links": [
+    {"src": "DIXON",      "dst": "KAYNES",     "kind": "competitor", "note": "Both EMS manufacturers in industrial & consumer electronics"},
+    {"src": "SYRMA",      "dst": "DIXON",      "kind": "competitor", "note": "EMS peer in PCBA, box-build, and consumer electronics"},
+    {"src": "SYRMA",      "dst": "KAYNES",     "kind": "competitor", "note": "Direct competitor in high-mix industrial/automotive EMS"},
+    {"src": "AARTIIND",   "dst": "PIIND",      "kind": "supplier",   "note": "Specialty benzene/toluene intermediates supplied to agrochem CSM"},
+    {"src": "NAVINFLUOR", "dst": "PIIND",      "kind": "competitor", "note": "Fluorochemical CDMO/CSM peer serving global agro & pharma"},
+    {"src": "NAVINFLUOR", "dst": "AARTIIND",   "kind": "competitor", "note": "Specialty fluorination overlap"},
+    {"src": "KPITTECH",   "dst": "MARUTI",     "kind": "supplier",   "note": "Embedded automotive software & SDV engineering partner to OEMs"},
+    {"src": "PIDILITIND", "dst": "ASIANPAINT", "kind": "competitor", "note": "Waterproofing and construction chemicals overlap in retail channel"},
+    {"src": "LAURUSLABS", "dst": "SUNPHARMA",  "kind": "competitor", "note": "API, synthesis CDMO, and formulations peer"}
+  ]
+}
