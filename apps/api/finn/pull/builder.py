@@ -24,10 +24,9 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from finn.constants import LENDER_SYMBOLS
 from finn.llm.router import LLMRouter
 from finn.network.matcher import match_contacts_for_dossier
-from finn.pipeline.results import LENDER_SYMBOLS
-from finn.pull.chunker import fetch_company_primary_corpus
 from finn.pull.verifier import NOT_FOUND_IN_FILINGS, verify_citation
 from finn.store import get_portfolio
 
@@ -189,6 +188,7 @@ def build_company_dossier(
 
     if progress_cb:
         progress_cb(f"Downloading Annual Report & 4 Concall PDFs for {sym}", 35)
+    from finn.pull.chunker import fetch_company_primary_corpus
     corpus = fetch_company_primary_corpus(sym, c_root)
     docs_by_id = corpus["docs_by_id"]
     trajectory = corpus["trajectory"]

@@ -20,10 +20,10 @@ import hashlib
 import re
 from typing import Any
 
+from finn.constants import LENDER_SYMBOLS
 from finn.fetchers.screener import fetch_screener_quarterly
 from finn.pipeline.mgmt import download_filing_pdf, extract_pdf_pages_text
 
-LENDER_SYMBOLS: frozenset[str] = frozenset({"HDFCBANK", "BAJFINANCE", "CREDITACC", "CAMS"})
 LENDER_EBITDA_LABEL = "EBITDA not meaningful for lenders"
 PLAUSIBLE_EBITDA_MARGIN_MIN_PCT = 2.0
 PLAUSIBLE_EBITDA_MARGIN_MAX_PCT = 55.0

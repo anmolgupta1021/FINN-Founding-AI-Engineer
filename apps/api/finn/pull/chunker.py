@@ -19,10 +19,9 @@ from pathlib import Path
 from typing import Any
 
 import httpx
-from bs4 import BeautifulSoup
 
+from finn.constants import LENDER_SYMBOLS
 from finn.pipeline.mgmt import download_filing_pdf, extract_pdf_pages_text
-from finn.pipeline.results import LENDER_SYMBOLS
 from finn.pull.doctype import verify_concall_transcript
 
 HEADERS = {
@@ -116,6 +115,8 @@ def _parse_screener_table(section) -> dict[str, dict[str, float | None]]:
 
 def extract_financial_trajectory(html: str, symbol: str) -> dict[str, Any]:
     """Extract 5-year annual trajectory and recent quarterly trajectory from Screener HTML."""
+    from bs4 import BeautifulSoup
+
     sym = symbol.upper()
     is_lender = sym in LENDER_SYMBOLS
     soup = BeautifulSoup(html, "lxml")
@@ -258,6 +259,8 @@ def extract_financial_trajectory(html: str, symbol: str) -> dict[str, Any]:
 
 def parse_screener_document_links(html: str) -> dict[str, Any]:
     """Extract latest Annual Report link and last 4 Concall Transcript links from Screener HTML."""
+    from bs4 import BeautifulSoup
+
     soup = BeautifulSoup(html, "lxml")
     ar_links: list[dict[str, str]] = []
     for li in soup.select(".documents.annual-reports ul.list-links li"):
