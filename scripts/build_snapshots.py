@@ -22,7 +22,6 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
-
 from finn.fetchers.bse import fetch_bse_announcements
 from finn.fetchers.nse import fetch_nse_announcements
 from finn.fetchers.prices import fetch_eod_prices_live
@@ -235,44 +234,33 @@ def main() -> None:
     ann_path.write_text(json.dumps(ann_snapshot, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWrote {ann_path.relative_to(ROOT)} -> provenance={ann_snapshot['provenance']}")
 
-    # 4. Build 40 fresh real announcements for user labelling (stratified across categories/symbols)
+    # 4. Build 40 fresh real announcements for user labelling (strict uniform random sample, seed=42)
     EVAL_DIR.mkdir(parents=True, exist_ok=True)
     eval_path = EVAL_DIR / "real_announcements_40_to_label.json"
     if not eval_path.exists():
-        by_cat: dict[str, list[dict[str, Any]]] = {}
-        for x in items:
-            by_cat.setdefault(x["category"], []).append(x)
-        picked: list[dict[str, Any]] = []
-        picked_ids: set[str] = set()
-        # Round-robin across categories so the 40-item sample isn't 35 routine filings
-        while len(picked) < min(40, len(items)):
-            added = False
-            for cat in CATEGORIES:
-                bucket = by_cat.get(cat, [])
-                while bucket and bucket[0]["id"] in picked_ids:
-                    bucket.pop(0)
-                if bucket and len(picked) < 40:
-                    row = bucket.pop(0)
-                    picked_ids.add(row["id"])
-                    picked.append(
-                        {
-                            "idx": len(picked) + 1,
-                            "id": row["id"],
-                            "symbol": row["symbol"],
-                            "source": row["source"],
-                            "ts": row["ts"],
-                            "raw_category": row["raw_category"],
-                            "subject": row["subject"],
-                            "pdf_url": row["pdf_url"],
-                            "user_label": "",
-                        }
-                    )
-                    added = True
-            if not added:
-                break
+        import random
+
+        rng = random.Random(42)
+        pool = sorted(items, key=lambda x: x["id"])
+        sampled = rng.sample(pool, min(40, len(pool)))
+        picked = [
+            {
+                "idx": idx + 1,
+                "id": row["id"],
+                "symbol": row["symbol"],
+                "source": row["source"],
+                "ts": row["ts"],
+                "raw_category": row["raw_category"],
+                "subject": row["subject"],
+                "pdf_url": row["pdf_url"],
+                "user_label": "",
+            }
+            for idx, row in enumerate(sampled)
+        ]
         eval_path.write_text(
             json.dumps(
                 {
+                    "sampling_method": "Uniform random sample without replacement (random.Random(42).sample across all 776 real NSE/BSE filings, sorted by id)",
                     "instructions": (
                         "Fill in `user_label` for each of the 40 real exchange announcements using one of the "
                         "17 allowed categories, then run `PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/eval_classifier.py`."
@@ -286,7 +274,7 @@ def main() -> None:
             )
             + "\n"
         )
-        print(f"Wrote {eval_path.relative_to(ROOT)} ({len(picked)} fresh real announcements for user labelling)")
+        print(f"Wrote {eval_path.relative_to(ROOT)} ({len(picked)} uniformly random real announcements for user labelling)")
 
 
 if __name__ == "__main__":

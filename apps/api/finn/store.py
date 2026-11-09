@@ -384,3 +384,37 @@ def get_company_links(data_dir: Path) -> list[dict[str, Any]]:
     if not p.exists():
         return []
     return json.loads(p.read_text(encoding="utf-8")).get("links", [])
+
+
+def get_contact_links(data_dir: Path) -> list[dict[str, Any]]:
+    url = _db_url()
+    if url:
+        try:
+            import psycopg
+
+            with psycopg.connect(url, connect_timeout=3) as conn, conn.cursor() as cur:
+                cur.execute(
+                    "SELECT src_contact_id, dst_contact_id, kind, overlap_org, overlap_years, strength, note "
+                    "FROM contact_links"
+                )
+                rows = cur.fetchall()
+                if rows:
+                    return [
+                        {
+                            "src": r[0],
+                            "dst": r[1],
+                            "kind": r[2],
+                            "overlap_org": r[3],
+                            "overlap_years": r[4],
+                            "strength": r[5],
+                            "note": r[6],
+                        }
+                        for r in rows
+                    ]
+        except (OSError, RuntimeError, ValueError):
+            pass
+
+    p = data_dir / "seed" / "network" / "contact_links.json"
+    if not p.exists():
+        return []
+    return json.loads(p.read_text(encoding="utf-8")).get("links", [])

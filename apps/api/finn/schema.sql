@@ -107,3 +107,14 @@ CREATE TABLE IF NOT EXISTS contacts (
     notes_enc        TEXT,
     affiliations_json JSONB NOT NULL DEFAULT '[]'::jsonb
 );
+
+CREATE TABLE IF NOT EXISTS contact_links (
+    src_contact_id   TEXT NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
+    dst_contact_id   TEXT NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
+    kind             TEXT NOT NULL,
+    overlap_org      TEXT,
+    overlap_years    TEXT,
+    strength         INTEGER NOT NULL DEFAULT 4 CHECK (strength BETWEEN 1 AND 5),
+    note             TEXT,
+    PRIMARY KEY (src_contact_id, dst_contact_id, kind)
+);

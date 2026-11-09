@@ -9,8 +9,12 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-
-from finn.store import get_announcements, get_freshness_overview, get_portfolio, get_prices
+from finn.store import (
+    get_announcements,
+    get_freshness_overview,
+    get_portfolio,
+    get_prices,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 API_DIR = ROOT / "apps" / "api"
@@ -238,6 +242,33 @@ def main() -> None:
                         json.dumps(ct.get("affiliations", [])),
                     ),
                 )
+
+            cl_path = DATA_DIR / "seed" / "network" / "contact_links.json"
+            if cl_path.exists():
+                contact_links = json.loads(cl_path.read_text(encoding="utf-8")).get("links", [])
+                for cl in contact_links:
+                    cur.execute(
+                        """
+                        INSERT INTO contact_links (
+                          src_contact_id, dst_contact_id, kind, overlap_org, overlap_years, strength, note
+                        )
+                        VALUES (%s, %s, %s, %s, %s, %s, %s)
+                        ON CONFLICT (src_contact_id, dst_contact_id, kind) DO UPDATE SET
+                          overlap_org = EXCLUDED.overlap_org,
+                          overlap_years = EXCLUDED.overlap_years,
+                          strength = EXCLUDED.strength,
+                          note = EXCLUDED.note
+                        """,
+                        (
+                            cl["src"],
+                            cl["dst"],
+                            cl["kind"],
+                            cl.get("overlap_org"),
+                            cl.get("overlap_years"),
+                            cl.get("strength", 4),
+                            cl.get("note"),
+                        ),
+                    )
         conn.commit()
     print("Neon schema applied and seeded successfully.")
 

@@ -13,10 +13,11 @@ from pathlib import Path
 from fastapi import APIRouter, FastAPI, Query
 
 from finn.llm.ledger import LLMLedger
+from finn.network.matcher import query_network
 from finn.pipeline.alerts import build_brief
 from finn.store import get_announcements, get_freshness_overview, get_portfolio, get_prices
 
-app = FastAPI(title="FINN API", version="0.3.0")
+app = FastAPI(title="FINN API", version="0.4.0")
 router = APIRouter(prefix="/api/v1")
 
 # Snapshots are committed inside the API service (apps/api/data) so they ship in the function bundle.
@@ -80,6 +81,13 @@ def brief(
         price_move_min=price_move_min,
         portfolio_only=portfolio_only,
     )
+
+
+@router.get("/network/ask")
+def network_ask(
+    q: str = Query(default="", description="Natural language or keyword query for the investor network"),
+) -> dict:
+    return query_network(DATA_DIR, q)
 
 
 @router.get("/freshness")

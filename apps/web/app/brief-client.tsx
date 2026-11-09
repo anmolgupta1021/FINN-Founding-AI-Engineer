@@ -7,6 +7,7 @@ interface NetworkHook {
   name: string;
   headline: string;
   city?: string;
+  degree?: number;
   strength: number;
   last_contacted?: string;
   recency: string;
@@ -28,6 +29,8 @@ interface ResultsRow {
   yoy_pct: number;
   page: string;
   derived: boolean;
+  status?: "reported" | "derived" | "unreliable";
+  margin_pct?: number | null;
   verbatim_line?: string;
   screener_period?: string;
   screener_val?: number | null;
@@ -38,6 +41,8 @@ interface FilingDetails {
   kind?: "results" | "management_change";
   symbol?: string;
   period?: string;
+  is_lender?: boolean;
+  lender_note?: string | null;
   unit?: string;
   raw_filing_unit?: string;
   pdf_url?: string;
@@ -50,6 +55,21 @@ interface FilingDetails {
   rows?: ResultsRow[];
   brief_profile_verbatim?: string;
   page_verbatim_excerpt?: string;
+}
+
+interface NetworkAskResponse {
+  query: string;
+  count: number;
+  total_contacts: number;
+  total_links: number;
+  inferred_label: string;
+  privacy_guarantee: string;
+  results: Array<
+    NetworkHook & {
+      score?: number;
+      education?: Array<{ school: string; degree: string; year: number }>;
+    }
+  >;
 }
 
 interface BriefItem {
@@ -208,6 +228,16 @@ function formatTsShort(iso: string): string {
   return `${d} · ${t} IST`;
 }
 
+const NETWORK_QUICK_QUERIES = [
+  "specialty chemicals",
+  "ICICI Bank",
+  "Cummins",
+  "Cohance",
+  "EMS working capital",
+  "IIT Kanpur",
+  "microfinance PAR 30",
+];
+
 export function BriefClient() {
   const [windowHours, setWindowHours] = useState<number>(24);
   const [asOf, setAsOf] = useState<string>("2026-11-06T23:59:59+05:30");
@@ -223,6 +253,11 @@ export function BriefClient() {
   const [activeCard, setActiveCard] = useState<BriefItem | null>(null);
   const [rulesModalOpen, setRulesModalOpen] = useState<boolean>(false);
   const [expandedHookId, setExpandedHookId] = useState<string | null>(null);
+
+  const [networkQuery, setNetworkQuery] = useState<string>("specialty chemicals");
+  const [networkData, setNetworkData] = useState<NetworkAskResponse | null>(null);
+  const [networkLoading, setNetworkLoading] = useState<boolean>(true);
+  const [expandedAskContactId, setExpandedAskContactId] = useState<string | null>(null);
 
   const cardDialogRef = useRef<HTMLDialogElement | null>(null);
   const rulesDialogRef = useRef<HTMLDialogElement | null>(null);
@@ -266,6 +301,33 @@ export function BriefClient() {
       cancelled = true;
     };
   }, [windowHours, asOf, volMultMin, priceMoveMin, portfolioOnly]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const params = new URLSearchParams({
+      q: networkQuery,
+      limit: "8",
+    });
+    fetch(`/api/v1/network/ask?${params.toString()}`, { cache: "no-store" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return (await res.json()) as NetworkAskResponse;
+      })
+      .then((json) => {
+        if (!cancelled) {
+          setNetworkData(json);
+          setNetworkLoading(false);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setNetworkLoading(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [networkQuery]);
 
   useEffect(() => {
     const dialog = cardDialogRef.current;
@@ -702,6 +764,110 @@ export function BriefClient() {
         </section>
       )}
 
+      {/* [S8] Direct Network Query ("Ask FINN Network") */}
+      <section aria-label="Ask your network" className="space-y-3 border-t border-rule pt-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <span className="kicker">
+              [S8] Ask Your Network · {networkData?.total_contacts ?? 64} Synthetic Contacts ·{" "}
+              {networkData?.total_links ?? 24} Graph Edges (1st &amp; 2nd Degree)
+            </span>
+          </div>
+          <span className="font-mono text-[10px] text-amber">
+            inferred from employer/tenure overlap, synthetic network
+          </span>
+        </div>
+
+        <div className="space-y-2 border border-rule bg-paper-2 p-3">
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <input
+              type="search"
+              aria-label="Query your network by company, sector, expertise, or alma mater"
+              placeholder="Who do I know in specialty chemicals, ICICI Bank, Cummins, EMS, IIT Kanpur…"
+              value={networkQuery}
+              onChange={(e) => setNetworkQuery(e.target.value)}
+              className="w-full border border-rule bg-paper px-3 py-1.5 font-mono text-xs text-ink placeholder:text-muted"
+            />
+          </div>
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="font-mono text-[10px] uppercase text-muted">Quick queries:</span>
+            {NETWORK_QUICK_QUERIES.map((q) => (
+              <button
+                key={q}
+                type="button"
+                onClick={() => setNetworkQuery(q)}
+                className={`px-2 py-0.5 font-mono text-[11px] ${
+                  networkQuery === q
+                    ? "bg-ink text-paper"
+                    : "border border-rule bg-paper text-ink-2 hover:border-ink"
+                }`}
+              >
+                {q}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {networkLoading && !networkData ? (
+          <p className="text-xs text-muted">Searching 1st &amp; 2nd degree network graph…</p>
+        ) : (networkData?.results.length ?? 0) === 0 ? (
+          <p className="text-xs text-muted">
+            No matching contacts in synthetic graph for &ldquo;{networkQuery}&rdquo;.
+          </p>
+        ) : (
+          <div className="space-y-2">
+            {networkData?.results.slice(0, 6).map((c) => {
+              const isOpen = expandedAskContactId === c.contact_id;
+              return (
+                <div key={c.contact_id} className="border border-rule bg-paper p-3 text-xs">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="font-mono font-semibold text-ink">{c.path}</span>
+                      <span
+                        className={`border px-1.5 py-0.5 font-mono text-[10px] ${
+                          c.degree === 2
+                            ? "border-accent text-accent"
+                            : "border-rule bg-paper-2 text-ink-2"
+                        }`}
+                      >
+                        {c.degree === 2 ? "2nd-degree warm intro" : `1st-degree · ${c.strength}/5`}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedAskContactId(isOpen ? null : c.contact_id)
+                      }
+                      className="font-mono text-[11px] text-accent underline"
+                    >
+                      {isOpen ? "Hide details" : "Why + Opener →"}
+                    </button>
+                  </div>
+                  <p className="mt-1 text-ink-2">{c.headline}</p>
+                  <p className="mt-0.5 font-mono text-[10px] text-amber">{c.inferred_label}</p>
+
+                  {isOpen && (
+                    <div className="mt-2.5 space-y-2 border-t border-rule pt-2">
+                      <ul className="list-disc space-y-1 pl-4 text-ink-2">
+                        {c.why_reasons.map((r, i) => (
+                          <li key={i}>{r}</li>
+                        ))}
+                      </ul>
+                      <div className="border-l-2 border-accent bg-paper-2 px-2.5 py-2 font-mono text-[11px] text-ink">
+                        <div className="text-[10px] uppercase text-muted">
+                          Deterministic 2-line opener (zero LLM sees network):
+                        </div>
+                        <p className="mt-0.5">&ldquo;{c.draft_opener}&rdquo;</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
+
       {/* [S2 & S3] Modal Dialog for Results Card & Management-Change Card */}
       <dialog
         ref={cardDialogRef}
@@ -761,6 +927,12 @@ export function BriefClient() {
             {/* [S3] Results Card Table */}
             {activeCard.details?.kind === "results" && activeCard.details.rows && (
               <div className="space-y-2.5">
+                {activeCard.details.is_lender && (
+                  <div className="border-l-2 border-amber bg-paper-2 px-3 py-2 font-mono text-xs text-amber">
+                    <strong>{activeCard.details.lender_note ?? "EBITDA not meaningful for lenders"}</strong> — showing sector-appropriate NII, PPOP, PBT &amp; PAT.
+                  </div>
+                )}
+
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                   <span className="font-mono text-ink-2">
                     All figures normalized to <strong>{activeCard.details.unit}</strong> (raw PDF unit:{" "}
@@ -806,7 +978,7 @@ export function BriefClient() {
                           Screener.in
                         </th>
                         <th scope="col" className="px-3 py-2 text-right">
-                          Cross-Check
+                          Status / Cross-Check
                         </th>
                         <th scope="col" className="px-3 py-2">
                           Source Page
@@ -817,6 +989,7 @@ export function BriefClient() {
                       {activeCard.details.rows.map((row) => {
                         const delta = row.screener_delta_pct;
                         const mismatch = delta !== null && delta !== undefined && Math.abs(delta) > 1.0;
+                        const isUnreliable = row.status === "unreliable";
                         return (
                           <tr key={row.metric}>
                             <th scope="row" className="px-3 py-2 font-mono font-semibold text-ink">
@@ -824,9 +997,16 @@ export function BriefClient() {
                               {row.derived && (
                                 <span
                                   title={row.verbatim_line ?? "Derived from PDF lines"}
-                                  className="ml-1.5 border border-amber px-1 py-0.5 text-[10px] font-normal text-amber"
+                                  className={`ml-1.5 border px-1 py-0.5 text-[10px] font-normal ${
+                                    isUnreliable
+                                      ? "border-signal text-signal"
+                                      : "border-amber text-amber"
+                                  }`}
                                 >
-                                  derived
+                                  {isUnreliable ? "unreliable" : "derived"}
+                                  {row.margin_pct !== null && row.margin_pct !== undefined
+                                    ? ` · ${row.margin_pct.toFixed(1)}% margin`
+                                    : ""}
                                 </span>
                               )}
                             </th>
@@ -855,8 +1035,19 @@ export function BriefClient() {
                                 : "—"}
                             </td>
                             <td className="num px-3 py-2 text-right">
-                              {delta === null || delta === undefined ? (
-                                <span className="text-muted">n/a</span>
+                              {isUnreliable ? (
+                                <span className="border border-signal bg-paper-2 px-1.5 py-0.5 text-[11px] text-signal">
+                                  unreliable (margin {row.margin_pct ?? "—"}%)
+                                </span>
+                              ) : row.derived ? (
+                                <span className="border border-amber bg-paper-2 px-1.5 py-0.5 text-[11px] text-amber">
+                                  derived
+                                  {delta !== null && delta !== undefined
+                                    ? ` (Δ ${delta > 0 ? "+" : ""}${delta.toFixed(2)}% vs screener)`
+                                    : ""}
+                                </span>
+                              ) : delta === null || delta === undefined ? (
+                                <span className="text-muted">reported</span>
                               ) : mismatch ? (
                                 <span className="border border-amber bg-paper-2 px-1.5 py-0.5 text-[11px] text-amber">
                                   Δ {delta > 0 ? "+" : ""}

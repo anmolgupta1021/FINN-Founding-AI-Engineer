@@ -26,9 +26,13 @@ def test_real_40_eval_file_structure() -> None:
     raw = json.loads(EVAL_FILE.read_text())
     assert raw["count"] == 40
     assert len(raw["items"]) == 40
+    assert "Uniform random sample without replacement" in raw["sampling_method"]
     res = classify_announcements(raw["items"], router=None, allow_llm=False)
     assert res["total"] == 40
-    assert res["rule_count"] >= 25
+    # 13 positive category rules + 3 noise rules = 16 rule hits; 24 unclassified fall-through are NOT counted as rule hits
+    assert res["rule_count"] == 16
+    assert res["fallback_count"] == 24
+    assert res["rule_count"] + res["fallback_count"] == 40
 
 
 def test_priority_ordering_material_vs_routine() -> None:

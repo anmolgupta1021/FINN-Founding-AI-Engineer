@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from finn.network.matcher import INFERRED_SYNTHETIC_LABEL
+from finn.pipeline.results import LENDER_EBITDA_LABEL, check_ebitda_plausibility
 from main import app
 
 client = TestClient(app)
@@ -25,11 +26,18 @@ def test_brief_default_24h_frozen_clock():
     item = hdfc_mgmt[0]
     assert "ICICI" in item["details"]["brief_profile_verbatim"]
     assert item["details"]["cited_page"] == 3
-    assert len(item["network_hooks"]) >= 1
+    assert len(item["network_hooks"]) >= 2
     top_hook = item["network_hooks"][0]
     assert top_hook["name"] == "Nandini Subramanian"
     assert "ICICI Bank Limited" in top_hook["path"]
     assert top_hook["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+
+    # Also verify 2nd-degree warm intro path on HDFCBANK filing
+    deg2 = [h for h in item["network_hooks"] if h.get("degree") == 2]
+    assert len(deg2) >= 1
+    assert "Nandini Subramanian" in deg2[0]["path"]
+    assert "Arvind Raghavan" in deg2[0]["path"]
+    assert deg2[0]["inferred_label"] == INFERRED_SYNTHETIC_LABEL
 
 
 def test_brief_triggered_alerts_and_threshold_tuning():
@@ -45,7 +53,7 @@ def test_brief_triggered_alerts_and_threshold_tuning():
     assert len(loose_alerts) > len(strict_alerts)
 
 
-def test_brief_deep_extracted_results_and_reconnect_nudges():
+def test_brief_deep_extracted_results_sector_aware_and_reconnect_nudges():
     r = client.get("/api/v1/brief?window_hours=168")
     assert r.status_code == 200
     body = r.json()
@@ -54,12 +62,62 @@ def test_brief_deep_extracted_results_and_reconnect_nudges():
         x for x in body["deep_extracted_cards"] if (x.get("details") or {}).get("kind") == "results"
     ]
     polycab = next(x for x in results_cards if x["symbol"] == "POLYCAB")
+    assert polycab["details"]["is_lender"] is False
+    assert polycab["details"]["lender_note"] is None
     rows = {row["metric"]: row for row in polycab["details"]["rows"]}
     assert rows["Revenue"]["cur"] == 9898.90
     assert rows["Revenue"]["screener_val"] == 9899.0
     assert abs(rows["Revenue"]["screener_delta_pct"]) <= 0.05
+    assert rows["EBITDA"]["derived"] is True
+    assert rows["EBITDA"]["status"] == "derived"
+    assert rows["EBITDA"]["margin_pct"] == 14.4
+
+    # Lender results card: BAJFINANCE must NOT show EBITDA; shows NII, PPOP, PBT, PAT + lender_note
+    bajfin = next(x for x in results_cards if x["symbol"] == "BAJFINANCE")
+    assert bajfin["details"]["is_lender"] is True
+    assert bajfin["details"]["lender_note"] == LENDER_EBITDA_LABEL
+    bf_metrics = [row["metric"] for row in bajfin["details"]["rows"]]
+    assert "EBITDA" not in bf_metrics
+    assert bf_metrics == ["NII", "PPOP", "PBT", "PAT"]
+    bf_rows = {row["metric"]: row for row in bajfin["details"]["rows"]}
+    assert bf_rows["NII"]["cur"] == 13334.66
+    assert bf_rows["PPOP"]["cur"] == 10703.29
+    assert bf_rows["PBT"]["cur"] == 8537.20
+    assert bf_rows["PAT"]["cur"] == 6366.57
 
     assert len(body["reconnect_nudges"]) >= 1
     for nudge in body["reconnect_nudges"]:
         assert nudge["months_stale"] >= 4
         assert nudge["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+
+
+def test_ebitda_plausibility_check():
+    status_ok, margin_ok = check_ebitda_plausibility(1422.49, 9898.90)
+    assert status_ok == "derived"
+    assert margin_ok == 14.4
+
+    status_low, margin_low = check_ebitda_plausibility(50.0, 10000.0)
+    assert status_low == "unreliable"
+    assert margin_low == 0.5
+
+    status_high, margin_high = check_ebitda_plausibility(7500.0, 10000.0)
+    assert status_high == "unreliable"
+    assert margin_high == 75.0
+
+
+def test_network_ask_endpoint_1st_and_2nd_degree():
+    r = client.get("/api/v1/network/ask?q=ICICI+Bank&limit=6")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["total_contacts"] == 64
+    assert body["total_links"] == 24
+    assert body["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+    assert len(body["results"]) >= 2
+
+    deg1 = [c for c in body["results"] if c["degree"] == 1]
+    deg2 = [c for c in body["results"] if c["degree"] == 2]
+    assert len(deg1) >= 1
+    assert len(deg2) >= 1
+    assert any("Arvind Raghavan" in c["path"] for c in deg2)
+    for c in body["results"]:
+        assert c["inferred_label"] == INFERRED_SYNTHETIC_LABEL

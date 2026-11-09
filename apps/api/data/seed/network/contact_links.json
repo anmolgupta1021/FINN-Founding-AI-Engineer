@@ -1,0 +1,223 @@
+{
+  "owner": "investor:meera_iyer",
+  "synthetic_notice": "Second-degree edges between synthetic contacts for warm-intro pathfinding.",
+  "count": 24,
+  "links": [
+    {
+      "src": "contact:nandini_subramanian",
+      "dst": "contact:arvind_raghavan",
+      "kind": "ex_colleague",
+      "overlap_org": "ICICI Bank Limited",
+      "overlap_years": "2016–2023",
+      "strength": 5,
+      "note": "Co-led RBI compliance & overseas banking privacy inspections at ICICI Bank HQ."
+    },
+    {
+      "src": "contact:siddharth_kulkarni",
+      "dst": "contact:rajeshwari_deshmukh",
+      "kind": "ex_colleague",
+      "overlap_org": "Cummins Group in India",
+      "overlap_years": "2011–2017",
+      "strength": 5,
+      "note": "Served together on Cummins India strategy & engine business leadership in Pune."
+    },
+    {
+      "src": "contact:vikram_kulkarni",
+      "dst": "contact:tanmay_joshi",
+      "kind": "ex_colleague",
+      "overlap_org": "Bajaj Finance Ltd",
+      "overlap_years": "2018–2020",
+      "strength": 4,
+      "note": "Worked together on Bajaj Finance IT risk & cyber controls in Pune."
+    },
+    {
+      "src": "contact:rohan_desai",
+      "dst": "contact:ritesh_malhotra",
+      "kind": "ex_colleague",
+      "overlap_org": "Dixon Technologies",
+      "overlap_years": "2020–2024",
+      "strength": 5,
+      "note": "Finance & mobile PLI operations counterparts at Dixon Noida."
+    },
+    {
+      "src": "contact:rohan_desai",
+      "dst": "contact:arjun_mehta",
+      "kind": "alma_mater",
+      "overlap_org": "IIT Kanpur",
+      "overlap_years": "2007–2011",
+      "strength": 5,
+      "note": "IIT Kanpur batchmates ('11)."
+    },
+    {
+      "src": "contact:arjun_mehta",
+      "dst": "contact:prashant_deshpande",
+      "kind": "ex_colleague",
+      "overlap_org": "Aarti Industries",
+      "overlap_years": "2017–2018",
+      "strength": 4,
+      "note": "Overlapped on Vapi/Jhagadia chemical engineering projects."
+    },
+    {
+      "src": "contact:priya_nair",
+      "dst": "contact:gaurav_singhania",
+      "kind": "ex_colleague",
+      "overlap_org": "Polycab India",
+      "overlap_years": "2018–2020",
+      "strength": 4,
+      "note": "Channel vs institutional cable sales peers at Polycab."
+    },
+    {
+      "src": "contact:vivek_hegde",
+      "dst": "contact:kavita_rao",
+      "kind": "industry_peer",
+      "overlap_org": "Syrma SGS Technology",
+      "overlap_years": "2016–2018",
+      "strength": 4,
+      "note": "EMS sourcing and quality network in Chennai/Mysuru."
+    },
+    {
+      "src": "contact:meghna_reddy",
+      "dst": "contact:madhavan_iyengar",
+      "kind": "ex_colleague",
+      "overlap_org": "Laurus Labs",
+      "overlap_years": "2023–2024",
+      "strength": 4,
+      "note": "Hyderabad/Vizag pharma governance and operations."
+    },
+    {
+      "src": "contact:saurabh_chatterjee",
+      "dst": "contact:manish_parekh",
+      "kind": "ex_colleague",
+      "overlap_org": "Asian Paints",
+      "overlap_years": "2015–2016",
+      "strength": 4,
+      "note": "Paints & waterproofing strategy peers."
+    },
+    {
+      "src": "contact:nikhil_sharma",
+      "dst": "contact:shashank_verma",
+      "kind": "ex_colleague",
+      "overlap_org": "Maruti Suzuki India",
+      "overlap_years": "2016–2024",
+      "strength": 5,
+      "note": "Powertrain sourcing and Rohtak R&D calibration counterparts at Maruti."
+    },
+    {
+      "src": "contact:nikhil_sharma",
+      "dst": "contact:rohan_desai",
+      "kind": "alma_mater",
+      "overlap_org": "IIT Kanpur",
+      "overlap_years": "2007–2011",
+      "strength": 5,
+      "note": "Mechanical engineering hostel wingmates at IIT Kanpur."
+    },
+    {
+      "src": "contact:ananya_krishnan",
+      "dst": "contact:varun_chawla",
+      "kind": "ex_colleague",
+      "overlap_org": "Titan Company",
+      "overlap_years": "2017–2023",
+      "strength": 4,
+      "note": "Tanishq jewellery merchandising and gold lease treasury team."
+    },
+    {
+      "src": "contact:devika_menon",
+      "dst": "contact:neha_kapoor",
+      "kind": "ex_colleague",
+      "overlap_org": "Trent Limited",
+      "overlap_years": "2018–2024",
+      "strength": 5,
+      "note": "Zudio sourcing & real-estate store rollout duo."
+    },
+    {
+      "src": "contact:pallavi_joshi",
+      "dst": "contact:anirudh_bhatia",
+      "kind": "ex_colleague",
+      "overlap_org": "Sun Pharmaceutical Industries",
+      "overlap_years": "2016–2023",
+      "strength": 4,
+      "note": "US regulatory filings and specialty commercial strategy at Sun Pharma."
+    },
+    {
+      "src": "contact:karthik_narayanan",
+      "dst": "contact:pooja_mahajan",
+      "kind": "ex_colleague",
+      "overlap_org": "Infosys Limited",
+      "overlap_years": "2015–2020",
+      "strength": 4,
+      "note": "Infosys cloud delivery peers."
+    },
+    {
+      "src": "contact:karthik_narayanan",
+      "dst": "contact:swati_kulkarni",
+      "kind": "ex_colleague",
+      "overlap_org": "Computer Age Management Services",
+      "overlap_years": "2020–2024",
+      "strength": 5,
+      "note": "Co-architected RTA Core and MFCentral at CAMS."
+    },
+    {
+      "src": "contact:harish_venkataraman",
+      "dst": "contact:aditya_srinivasan",
+      "kind": "ex_colleague",
+      "overlap_org": "Indian Energy Exchange",
+      "overlap_years": "2018–2023",
+      "strength": 5,
+      "note": "Market operations & Green DAM product leads at IEX."
+    },
+    {
+      "src": "contact:deepak_agarwal",
+      "dst": "contact:jai_kishen",
+      "kind": "ex_colleague",
+      "overlap_org": "Gravita India",
+      "overlap_years": "2017–2023",
+      "strength": 4,
+      "note": "Domestic vs African recycling plant leads at Gravita."
+    },
+    {
+      "src": "contact:nandini_subramanian",
+      "dst": "contact:mohan_das",
+      "kind": "alma_mater",
+      "overlap_org": "PSG College of Technology",
+      "overlap_years": "2010–2012",
+      "strength": 3,
+      "note": "PSG Tech alumni network."
+    },
+    {
+      "src": "contact:siddharth_kulkarni",
+      "dst": "contact:yashwant_rao",
+      "kind": "alma_mater",
+      "overlap_org": "University of Michigan",
+      "overlap_years": "2009–2011",
+      "strength": 4,
+      "note": "Ann Arbor engineering alumni & KPIT electrification colleagues."
+    },
+    {
+      "src": "contact:shweta_bansal",
+      "dst": "contact:suresh_babu",
+      "kind": "ex_colleague",
+      "overlap_org": "PI Industries",
+      "overlap_years": "2018–2023",
+      "strength": 4,
+      "note": "CSM business development and Panoli technical scale-up at PI Industries."
+    },
+    {
+      "src": "contact:vivek_hegde",
+      "dst": "contact:nilesh_patil",
+      "kind": "ex_colleague",
+      "overlap_org": "Kaynes Technology",
+      "overlap_years": "2022–2025",
+      "strength": 5,
+      "note": "Mysuru box-build and Hyderabad/Sanand OSAT packaging leads at Kaynes."
+    },
+    {
+      "src": "contact:rahul_varma",
+      "dst": "contact:kunal_parekh",
+      "kind": "ex_colleague",
+      "overlap_org": "HDFC Bank Limited",
+      "overlap_years": "2018–2024",
+      "strength": 4,
+      "note": "Retail assets and ALM treasury counterparts at HDFC Bank."
+    }
+  ]
+}

@@ -22,6 +22,7 @@ from finn.network.matcher import (
 from finn.store import (
     get_announcements,
     get_company_links,
+    get_contact_links,
     get_contacts,
     get_freshness_overview,
     get_portfolio,
@@ -219,6 +220,7 @@ def build_brief(
     ann_all = get_announcements(data_dir, window_hours=None, as_of_ts=as_of_ts)
     contacts_payload = get_contacts(data_dir)
     links = get_company_links(data_dir)
+    contact_links = get_contact_links(data_dir)
     freshness = get_freshness_overview(data_dir)
 
     company_by_sym: dict[str, dict[str, Any]] = {}
@@ -239,7 +241,9 @@ def build_brief(
         comp = company_by_sym.get(sym, {"symbol": sym, "name": sym, "sector": "—", "mcap": "—", "in_portfolio": False})
         p_raw = prices_by_sym.get(sym)
         price_ctx = _price_bar_as_of(p_raw, anchor_date_str) if p_raw else None
-        net_matches = match_contacts_for_announcement(item, contacts, links, ref_date=anchor_date)
+        net_matches = match_contacts_for_announcement(
+            item, contacts, links, contact_links=contact_links, ref_date=anchor_date
+        )
         return {
             **item,
             "company_name": comp.get("name", sym),
