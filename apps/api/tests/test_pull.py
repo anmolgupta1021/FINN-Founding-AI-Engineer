@@ -53,6 +53,19 @@ def test_verify_citation_accepts_verbatim_and_rejects_invented() -> None:
     assert bad["verified"] is False
     assert bad["status"] == NOT_FOUND_IN_FILINGS
 
+    # Number mismatch rejection test: text is close but number 48% is changed to 75%
+    num_mismatch = verify_citation(
+        {
+            "doc_id": "DIXON_CONCALL_1",
+            "page": 5,
+            "verbatim_quote": "Atul Lall: Our mobile EMS volume grew 75% year-on-year in Q2 FY27, and we are on track",
+        },
+        docs_by_id,
+    )
+    assert num_mismatch["verified"] is False
+    assert num_mismatch["numbers_verified"] is False
+    assert "75" in num_mismatch["missing_numbers"]
+
 
 def test_extract_financial_trajectory_sector_aware_lender_vs_non_lender() -> None:
     sample_html = """

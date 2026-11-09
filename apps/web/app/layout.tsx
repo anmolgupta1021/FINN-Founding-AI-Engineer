@@ -6,6 +6,7 @@ import "@fontsource/ibm-plex-sans/600.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
+import { SwRegister } from "./sw-register";
 
 export const metadata: Metadata = {
   title: "FINN",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full">
+        <SwRegister />
         <div className="mx-auto max-w-[560px] px-4 pb-[env(safe-area-inset-bottom)] pt-[max(env(safe-area-inset-top),12px)]">
           {children}
         </div>

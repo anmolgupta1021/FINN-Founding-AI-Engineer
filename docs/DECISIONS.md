@@ -98,6 +98,12 @@ This file feeds the final writeup.
 ### D-025 · 9 Nov · Serverless Runtime Dependency Isolation (`constants.py` vs Pipeline Scraping)
 *Why:* runtime crash on Vercel (`HTTP 500`) occurred because `finn/pull/builder.py` imported `LENDER_SYMBOLS` from `finn/pipeline/results.py`, which transitively pulled in `finn/fetchers/screener.py` (`from bs4 import BeautifulSoup`). Per `D-013`, `bs4` and `pdfplumber` are pipeline dependencies intentionally excluded from the production function bundle. Resolved by isolating `LENDER_SYMBOLS` into `finn/constants.py` with zero third-party dependencies and lazy-loading `BeautifulSoup` and `fetch_company_primary_corpus` only during offline/batch extraction. The deployed API serves all 11 endpoints with 100% snapshot fallback and zero scraping dependencies.
 
+### D-026 · 9 Nov · Strict Verifier Hardening (>=90.0% + Token Numerical Verification), Re-Appointment Demotion, and P5 Offline PWA Service Worker
+*Why:*
+1. **Strict Verifier Hardening (`finn/pull/verifier.py`):** Raised fuzzy ratio threshold to `MIN_QUOTE_MATCH_SCORE = 90.0%` and added `numbers_verified` check (`_extract_numbers()`), requiring that every numerical token in a cited quote exists verbatim on the cited page. All 98 citations across all 6 committed dossiers (`DIXON`, `SYRMA`, `NAVINFLUOR`, `POLYCAB`, `HDFCBANK`, `TITAN`) re-verified with `100.0%` match score and `numbers_verified = True` (0 claims dropped).
+2. **Re-Appointment Labeling & Demotion:** Re-appointments (`BAJFINANCE` CISO Mr. Prashant Verma, `DIXON` Whole-Time Director Mr. Sunil Vachani) explicitly state `"Re-appointment"` in their headline/summary and are demoted to priority `72` so they rank below fresh appointments (`84–94`). "Spoke N weeks ago" recency phrases are strictly anchored to the demo clock (`2026-11-06T23:59:59+05:30`).
+3. **P5 Progressive Web App & Offline Drill (`sw.js` + `/cost`):** Added Cache-First / Stale-While-Revalidate service worker (`apps/web/public/sw.js`) and `/cost` page exposing the immutable SHA-256 LLM call ledger (`/api/v1/llm/ledger`). When network is completely disconnected during the offline drill, the app shell and primary snapshots continue to serve seamlessly without throwing network errors.
+
 ---
 
 ## Deliberately left out (running list)

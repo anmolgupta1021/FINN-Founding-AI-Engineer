@@ -314,6 +314,9 @@
         "cited_page": 16,
         "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
@@ -336,6 +339,9 @@
         "cited_page": 4,
         "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
@@ -349,6 +355,9 @@
         "cited_page": 13,
         "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -369,6 +378,9 @@
         "cited_page": 18,
         "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
@@ -382,6 +394,9 @@
         "cited_page": 4,
         "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -402,6 +417,9 @@
         "cited_page": 5,
         "verbatim_quote": "Dixon Technologies (India) Limited January 29, 2026 Page 4 of 20 and target to expand volumes of smartphone camera modules from 40 million units in this fiscal to 190 million to 200 million units per annum.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
@@ -415,6 +433,9 @@
         "cited_page": 18,
         "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -436,6 +457,9 @@
         "cited_page": 16,
         "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -454,6 +478,9 @@
         "cited_page": 4,
         "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -472,6 +499,9 @@
         "cited_page": 13,
         "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -490,6 +520,9 @@
         "cited_page": 16,
         "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -506,6 +539,9 @@
         "cited_page": 4,
         "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -522,6 +558,9 @@
         "cited_page": 13,
         "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -540,6 +579,9 @@
         "cited_page": 4,
         "verbatim_quote": "Mobile volume performance was aligned with temporary demand contraction seen across the broader smartphone market by 10% to 12%, while our top line witnessed a strong revenue growth due to higher input cost realization.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -556,6 +598,9 @@
         "cited_page": 11,
         "verbatim_quote": "I mean, are you sure -- do you maintain this 20 million number for Vivo for FY '27 or there can be a downside risk to this?",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -572,6 +617,9 @@
         "cited_page": 8,
         "verbatim_quote": "The ROCE is 44.8% and working capital operating cycle is negative 8 days.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -816,8 +864,9 @@
     "total_documents_verified": 5,
     "concall_transcripts_verified": 4,
     "latest_call_marked_untestable": true,
-    "total_verified_citations": 15,
+    "total_verified_citations": 16,
+    "dropped_citations_count": 0,
     "min_rapidfuzz_score": 100.0,
-    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
   }
 }

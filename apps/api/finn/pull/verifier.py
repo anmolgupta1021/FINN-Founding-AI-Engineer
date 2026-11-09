@@ -18,7 +18,12 @@ from typing import Any
 from rapidfuzz import fuzz
 
 NOT_FOUND_IN_FILINGS = "not found in filings"
-MIN_QUOTE_MATCH_SCORE = 85.0
+MIN_QUOTE_MATCH_SCORE = 90.0
+
+
+def _extract_numbers(text: str) -> list[str]:
+    """Extract integer and decimal numbers (ignoring standalone punctuation)."""
+    return re.findall(r"\b\d+(?:\.\d+)?\b", text or "")
 
 
 def _norm_ws(text: str) -> str:
@@ -109,7 +114,15 @@ def verify_citation(
                 best_score = score
                 best_page = pno
 
-    verified = best_score >= min_score
+    quote_nums = _extract_numbers(quote)
+    page_text = pages.get(best_page, "")
+    missing_nums = [n for n in quote_nums if not re.search(rf"\b{re.escape(n)}\b", page_text)]
+    numbers_verified = len(missing_nums) == 0
+
+    verified = (best_score >= min_score) and numbers_verified
+    status = "verified" if verified else NOT_FOUND_IN_FILINGS
+    reason = None if verified else ("numbers_mismatch" if not numbers_verified else "low_match_score")
+
     return {
         "verified": verified,
         "doc_id": doc_id,
@@ -120,7 +133,10 @@ def verify_citation(
         "cited_page": cited_page,
         "verbatim_quote": quote,
         "match_score": round(best_score, 1),
-        "status": "verified" if verified else NOT_FOUND_IN_FILINGS,
+        "numbers_verified": numbers_verified,
+        "missing_numbers": missing_nums if not numbers_verified else [],
+        "reason": reason,
+        "status": status,
     }
 
 

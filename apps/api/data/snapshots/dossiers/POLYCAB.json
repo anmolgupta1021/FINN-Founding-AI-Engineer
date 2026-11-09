@@ -314,6 +314,9 @@
         "cited_page": 12,
         "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
@@ -336,6 +339,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
@@ -349,6 +355,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -369,6 +378,9 @@
         "cited_page": 9,
         "verbatim_quote": "During FY26, we incurred capex of INR 14.8 billion, in line with our annual guidance of INR 12 billion to INR 16 billion per annum.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
@@ -382,6 +394,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -402,6 +417,9 @@
         "cited_page": 5,
         "verbatim_quote": "Capital expenditure for the quarter was ₹ 3.4 billion, taking the 9M FY26 total to ₹ 10.9 billion, in-line with our Project Spring guidance of investing ₹ 12 billion to ₹ 16 billion annually through FY30.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹9899.0 Cr, Derived Operating EBITDA ₹1422.0 Cr (14.0%), PAT ₹990.0 Cr.",
@@ -415,6 +433,9 @@
         "cited_page": 18,
         "verbatim_quote": "And if I say 3% to 4%, you can make it 13% to 14% for the quarter.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -436,6 +457,9 @@
         "cited_page": 12,
         "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -454,6 +478,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -472,6 +499,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -490,6 +520,9 @@
         "cited_page": 12,
         "verbatim_quote": "But if you look at our numbers, comparing with Quarter 1 and what we have achieved in Quarter 2, we have gained around 85% increase in our quarter-over-quarter growth.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -506,6 +539,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -522,6 +558,9 @@
         "cited_page": 6,
         "verbatim_quote": "EBITDA increased by 36% year-on-year, with margins remaining healthy at 14.1%, while profit after tax grew by 38% year-on-year, translating into PAT margins of 9.9%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -540,6 +579,9 @@
         "cited_page": 4,
         "verbatim_quote": "The ECB maintained rates at 2% but revised its 2026 inflation projection sharply upward to 2.6% from 1.9% and also cutting the growth forecast.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -556,6 +598,9 @@
         "cited_page": 8,
         "verbatim_quote": "So, we have consistently passed on that cost price inflation to the end customers month-on-month, but we have taken a conscious call that such high 35% passing of inflation can't be done every month and hence, we will do it in a bit of a staggered manner.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -572,6 +617,9 @@
         "cited_page": 4,
         "verbatim_quote": "Polycab India Limited May 06, 2026 Page 3 of 18 at 3.5% to 3.75% at its March meeting, revising the inflation projections upwards and flagging significant uncertainty.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -670,8 +718,9 @@
     "total_documents_verified": 5,
     "concall_transcripts_verified": 4,
     "latest_call_marked_untestable": true,
-    "total_verified_citations": 18,
+    "total_verified_citations": 16,
+    "dropped_citations_count": 0,
     "min_rapidfuzz_score": 100.0,
-    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
   }
 }

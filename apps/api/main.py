@@ -103,6 +103,7 @@ def dossiers_index() -> dict:
 
 
 @router.get("/dossiers/{symbol}")
+@router.get("/dossier/{symbol}")
 def dossier_detail(symbol: str) -> dict:
     dossier = get_dossier_by_symbol(DATA_DIR, symbol)
     if not dossier:

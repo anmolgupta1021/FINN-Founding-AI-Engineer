@@ -62,5 +62,69 @@
     "started_at": "2026-11-09T11:01:41.772845+00:00",
     "finished_at": "2026-11-09T11:01:41.778015+00:00",
     "error": null
+  },
+  "job_dixon_5f79e6d8": {
+    "job_id": "job_dixon_5f79e6d8",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-09T11:34:40.762180+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-09T11:34:40.762880+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-09T11:34:40.763011+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-09T11:34:40.763126+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-09T11:34:40.762180+00:00",
+    "finished_at": "2026-11-09T11:34:40.763234+00:00",
+    "error": null
+  },
+  "job_dixon_98de45c4": {
+    "job_id": "job_dixon_98de45c4",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-09T11:40:25.533015+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-09T11:40:25.533733+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-09T11:40:25.533891+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-09T11:40:25.534015+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-09T11:40:25.533015+00:00",
+    "finished_at": "2026-11-09T11:40:25.534134+00:00",
+    "error": null
   }
 }

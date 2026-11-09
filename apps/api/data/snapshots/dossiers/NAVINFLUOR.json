@@ -314,6 +314,9 @@
         "cited_page": 5,
         "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
@@ -336,6 +339,9 @@
         "cited_page": 5,
         "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
@@ -349,6 +355,9 @@
         "cited_page": 11,
         "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -369,6 +378,9 @@
         "cited_page": 5,
         "verbatim_quote": "For the full year FY26, net operating revenues grew to INR3,314 crores, reflecting a growth of 41%, supported by broad-based momentum across specialty chemicals, CDMO and HPP.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
@@ -382,6 +394,9 @@
         "cited_page": 5,
         "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -402,6 +417,9 @@
         "cited_page": 6,
         "verbatim_quote": "Operating PBT increased to INR243 crores versus INR98 crores in Q3 FY25 and INR179 crores in Q2 FY26, marking a growth of 149% year-on-year and 36% sequential growth.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
@@ -415,6 +433,9 @@
         "cited_page": 4,
         "verbatim_quote": "Quarter 4 FY26 revenue grew 20% year-on-year at INR393 crores, driven by improved realization and volume growth.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       },
       "verdict": "Delivered"
@@ -436,6 +457,9 @@
         "cited_page": 5,
         "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -454,6 +478,9 @@
         "cited_page": 5,
         "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -472,6 +499,9 @@
         "cited_page": 11,
         "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -490,6 +520,9 @@
         "cited_page": 5,
         "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -506,6 +539,9 @@
         "cited_page": 5,
         "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -522,6 +558,9 @@
         "cited_page": 11,
         "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -540,6 +579,9 @@
         "cited_page": 319,
         "verbatim_quote": "Cash Credit and Working Capital Loans (i) The Cash credit, Working capital loans, Buyers credit and Packing credit in Foreign currency carry interest rate of 4.09% - 7.40% (Previous year: 5.80% - 9.60%).",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -556,6 +598,9 @@
         "cited_page": 104,
         "verbatim_quote": "Further, global headline inflation is expected to rise from 4.1% in 2025 to 4.4% in 2026 and then moderate to 3.7% in 2027.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     },
@@ -572,6 +617,9 @@
         "cited_page": 6,
         "verbatim_quote": "As of December 31, FY25, our net debt-to-equity ratio stood at 0.03x and net working capital was below 80 days of sales.",
         "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
         "status": "verified"
       }
     }
@@ -792,8 +840,9 @@
     "total_documents_verified": 5,
     "concall_transcripts_verified": 4,
     "latest_call_marked_untestable": true,
-    "total_verified_citations": 17,
+    "total_verified_citations": 16,
+    "dropped_citations_count": 0,
     "min_rapidfuzz_score": 100.0,
-    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'"
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
   }
 }

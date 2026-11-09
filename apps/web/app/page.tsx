@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BriefClient } from "./brief-client";
 
 /**
@@ -14,7 +15,16 @@ export default function Home() {
           <h1 className="font-serif text-[28px] font-semibold tracking-tight">FINN</h1>
           <span className="font-mono text-[11px] text-muted">Push · Pull · Network</span>
         </div>
-        <span className="kicker">Meera Iyer · 18 Holdings</span>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/cost"
+            className="font-mono text-[11px] text-muted underline decoration-rule hover:text-ink"
+            title="View LLM Ledger, costs and token usage"
+          >
+            /cost
+          </Link>
+          <span className="kicker">Meera Iyer · 18 Holdings</span>
+        </div>
       </header>
 
       <BriefClient />
