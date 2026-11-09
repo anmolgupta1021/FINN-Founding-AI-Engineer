@@ -11,6 +11,7 @@ __pycache__/
 apps/web/.next/
 apps/web/out/
 .vercel/
+.vercel
 
 # secrets — never commit
 .env
