@@ -234,13 +234,7 @@ def get_announcements(
 
     # Demo-clock mode: default anchor is the frozen snapshot's latest timestamp (`demo_clock_default`),
     # or a user-chosen `as_of_ts` ISO string (or "live" for current wall clock).
-    parsed_ts = []
-    for x in items:
-        try:
-            parsed_ts.append(datetime.fromisoformat(str(x["ts"])))
-        except ValueError:
-            pass
-    default_anchor = max(parsed_ts) if parsed_ts else datetime.now(UTC)
+    default_anchor = datetime.fromisoformat("2026-11-06T23:59:59+05:30")
 
     if as_of_ts and as_of_ts.lower() == "live":
         anchor = datetime.now(UTC)
@@ -332,3 +326,61 @@ def get_freshness_overview(data_dir: Path) -> dict[str, Any]:
             "actual_free_tier_spend_inr": ledger["actual_free_tier_spend_inr"],
         },
     }
+
+
+def get_contacts(data_dir: Path) -> dict[str, Any]:
+    url = _db_url()
+    if url:
+        try:
+            import psycopg
+
+            with psycopg.connect(url, connect_timeout=3) as conn, conn.cursor() as cur:
+                cur.execute(
+                    "SELECT id, name, headline, city, strength, last_contacted::text, "
+                    "expertise_tags, notes_enc, affiliations_json FROM contacts ORDER BY strength DESC, name"
+                )
+                rows = cur.fetchall()
+                if rows:
+                    contacts = [
+                        {
+                            "id": r[0],
+                            "name": r[1],
+                            "headline": r[2],
+                            "city": r[3],
+                            "strength": r[4],
+                            "last_contacted": r[5],
+                            "expertise_tags": r[6] or [],
+                            "notes": r[7],
+                            "affiliations": r[8] or [],
+                        }
+                        for r in rows
+                    ]
+                    return {"source": "neon", "contacts": contacts}
+        except (OSError, RuntimeError, ValueError):
+            pass
+
+    p = data_dir / "seed" / "network" / "contacts.json"
+    if not p.exists():
+        return {"source": "empty", "contacts": []}
+    raw = json.loads(p.read_text(encoding="utf-8"))
+    return {"source": "snapshot", "contacts": raw.get("contacts", [])}
+
+
+def get_company_links(data_dir: Path) -> list[dict[str, Any]]:
+    url = _db_url()
+    if url:
+        try:
+            import psycopg
+
+            with psycopg.connect(url, connect_timeout=3) as conn, conn.cursor() as cur:
+                cur.execute("SELECT src_symbol, dst_symbol, kind, note FROM company_links")
+                rows = cur.fetchall()
+                if rows:
+                    return [{"src": r[0], "dst": r[1], "kind": r[2], "note": r[3]} for r in rows]
+        except (OSError, RuntimeError, ValueError):
+            pass
+
+    p = data_dir / "seed" / "company_links.json"
+    if not p.exists():
+        return []
+    return json.loads(p.read_text(encoding="utf-8")).get("links", [])

@@ -19,10 +19,10 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 
 ## 0:20 – 0:55 · Management change → **[S2] Event: KMP / SMP / Board appointment**
 
-- Top item in the `24h` frozen window (`2026-11-06`): **"HDFC Bank appoints Mr. V. N. Srivatsan as Head - Direct to Consumer (SMP)"** or **"Asian Paints appoints Mr. Leo Puri as Independent Director"** (or in `14d`: **"KPIT Technologies appoints Mr. Anant Talaulicar as Lead Independent Director"**) — all 100% real NSE filings.
+- Top item in the `24h` frozen window (`2026-11-06`): **"HDFC Bank Limited — Change in Management (Mr. V. N. Srivatsan)"** (or in `14d`: **"KPIT Technologies — Appointment of Mr. Anant Talaulicar as Lead Independent Director"** / **"Laurus Labs — Appointment of Mr. Kundan Kumar Jha"**) — all 100% real NSE filings.
 - Event screen shows, in order:
   1. One-line *what happened*, direct NSE PDF link + page cite + SHA-256 hash.
-  2. **Who they are** — verbatim SEBI LODR "brief profile" extracted directly from the filing PDF (e.g., `HDFCBANK` p.3 of 3: IIM Ahmedabad PGDM, ex-President & Global Business Head at Olam Agri; `ASIANPAINT` p.1 of 2: Oxford & Cambridge Master's, ex-Chairman JP Morgan South & SE Asia, MD UTI AMC, Senior Partner McKinsey).
+  2. **Who they are** — verbatim SEBI LODR "brief profile" extracted directly from the filing PDF (e.g., `HDFCBANK` p.3 of 3: ~34 years experience, 25 years in BFSI, ex-Head – Compliance: Overseas Banking & Data Privacy Officer at **ICICI Bank Limited**, MBA from **PSG College of Technology**; `KPITTECH` p.4 of 8: ex-Chairman & MD of **Cummins Group in India** 2004–2017, M.S. **University of Michigan**; `LAURUSLABS` p.2 of 2: ex-CS & Head of Legal at **Cohance Lifesciences** and **Dr. Reddy's Laboratories**).
   3. **Who to call** — `You → <Contact> (strong · spoke 5 wks ago) → overlapped at <prior employer>`.
      Label directly under the path: *"inferred from employer/tenure overlap, synthetic network"*.
   4. Tap → "Why this person" (3 bullet reasons) + a drafted 2-line opener (deterministic template, no LLM sees the network).

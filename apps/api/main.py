@@ -13,9 +13,10 @@ from pathlib import Path
 from fastapi import APIRouter, FastAPI, Query
 
 from finn.llm.ledger import LLMLedger
+from finn.pipeline.alerts import build_brief
 from finn.store import get_announcements, get_freshness_overview, get_portfolio, get_prices
 
-app = FastAPI(title="FINN API", version="0.2.0")
+app = FastAPI(title="FINN API", version="0.3.0")
 router = APIRouter(prefix="/api/v1")
 
 # Snapshots are committed inside the API service (apps/api/data) so they ship in the function bundle.
@@ -60,6 +61,24 @@ def announcements(
         as_of_ts=as_of,
         symbol=symbol,
         include_demo=include_demo,
+    )
+
+
+@router.get("/brief")
+def brief(
+    window_hours: int = Query(default=24, ge=1, le=1080),
+    as_of: str | None = Query(default=None, description="ISO timestamp for demo clock, or 'live'"),
+    vol_mult_min: float = Query(default=2.0, ge=1.0, le=10.0),
+    price_move_min: float = Query(default=2.5, ge=0.5, le=20.0),
+    portfolio_only: bool = Query(default=False),
+) -> dict:
+    return build_brief(
+        DATA_DIR,
+        window_hours=window_hours,
+        as_of_ts=as_of,
+        vol_mult_min=vol_mult_min,
+        price_move_min=price_move_min,
+        portfolio_only=portfolio_only,
     )
 
 

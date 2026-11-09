@@ -1,24 +1,23 @@
-import { StatusStrip } from "./status-strip";
+import { BriefClient } from "./brief-client";
 
 /**
- * P0 shell. Proves: PWA install, typography/tokens, and the web → api route via Vercel Services.
- * The real Brief (S1 in docs/DEMO_SCRIPT.md) replaces the body in P2.
+ * FINN — Phase 2 Push ("The Brief", [S1]–[S4] in docs/DEMO_SCRIPT.md).
+ * Mobile-first, calm paper & ink layout with deterministic Demo Clock,
+ * real NSE/BSE PDF provenance, live PDF-extracted Results vs Screener cross-check,
+ * verbatim SEBI LODR KMP bios, and woven-in synthetic network overlaps.
  */
 export default function Home() {
   return (
     <main>
       <header className="flex items-baseline justify-between border-b border-ink pb-2">
-        <h1 className="font-serif text-[28px] font-semibold tracking-tight">FINN</h1>
-        <span className="kicker">ENAM · Morning Brief</span>
+        <div className="flex items-baseline gap-2.5">
+          <h1 className="font-serif text-[28px] font-semibold tracking-tight">FINN</h1>
+          <span className="font-mono text-[11px] text-muted">Push · Pull · Network</span>
+        </div>
+        <span className="kicker">Meera Iyer · 18 Holdings</span>
       </header>
 
-      <section className="border-b border-rule py-4">
-        <p className="font-serif text-[20px] leading-snug">
-          What changed, why it matters, and who you know who can explain it.
-        </p>
-      </section>
-
-      <StatusStrip />
+      <BriefClient />
     </main>
   );
 }

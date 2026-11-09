@@ -80,3 +80,51 @@ body {
   text-transform: uppercase;
   color: var(--muted);
 }
+
+/* Modal dialog scroll containment & backdrop (modern-web-guidance: prevent-page-scroll-under-modal-dialog & light-dismiss-a-dialog) */
+dialog:modal {
+  overscroll-behavior: contain;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 0;
+  max-width: min(620px, calc(100vw - 1.5rem));
+  max-height: min(86vh, 760px);
+  width: 100%;
+  margin: auto;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(22, 21, 15, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* Responsive financial results table wrapper (modern-web-guidance: responsive-table) */
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  max-block-size: min(460px, 75vh);
+  container-type: inline-size;
+}
+
+.table-wrapper table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-wrapper thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+  background: var(--paper-2);
+}
+
+.table-wrapper tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: var(--paper);
+}

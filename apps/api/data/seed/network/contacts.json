@@ -3,18 +3,66 @@
   "synthetic_notice": "All contacts in this file are fictional (synthetic). Real people named in exchange filings are never added here; overlaps are inferred from employer/tenure and labelled in the UI.",
   "contacts": [
     {
+      "id": "contact:nandini_subramanian",
+      "name": "Nandini Subramanian",
+      "headline": "SVP Regulatory Compliance & Audit · Ex-ICICI Bank Limited",
+      "city": "Mumbai",
+      "strength": 5,
+      "last_contacted": "2026-09-28",
+      "expertise_tags": ["RBI inspection", "bank compliance", "retail banking risk", "data privacy"],
+      "email": "nandini.subramanian.synth@example.invalid",
+      "notes": "Led RBI statutory inspection readiness at ICICI Bank Mumbai HQ (2016–2023). Knows the wholesale and overseas compliance bench across ICICI and HDFC Bank closely.",
+      "affiliations": [
+        {"org": "ICICI Bank Limited", "symbol": null, "role": "DVP — Regulatory Compliance & Overseas Subsidiaries", "start": 2016, "end": 2023, "kind": "work"},
+        {"org": "HDFC Bank Limited", "symbol": "HDFCBANK", "role": "AVP — Internal Audit", "start": 2012, "end": 2016, "kind": "work"},
+        {"org": "PSG College of Technology", "symbol": null, "role": "MBA Finance", "start": 2010, "end": 2012, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:siddharth_kulkarni",
+      "name": "Siddharth Kulkarni",
+      "headline": "VP Powertrain & Commercial Vehicle Strategy · Ex-Cummins India",
+      "city": "Pune",
+      "strength": 5,
+      "last_contacted": "2026-09-14",
+      "expertise_tags": ["automotive ER&D", "SDV middleware", "powertrain", "Cummins ecosystem"],
+      "email": "siddharth.kulkarni.synth@example.invalid",
+      "notes": "Worked directly with the Cummins India executive leadership in Pune from 2011 to 2018; now advises tier-1 automotive software suppliers around KPIT.",
+      "affiliations": [
+        {"org": "Cummins Group in India", "symbol": null, "role": "Director — Corporate Strategy & JV Operations", "start": 2011, "end": 2018, "kind": "work"},
+        {"org": "KPIT Technologies", "symbol": "KPITTECH", "role": "Program Director — Powertrain & eMobility", "start": 2018, "end": 2022, "kind": "work"},
+        {"org": "University of Michigan", "symbol": null, "role": "M.S. Mechanical Engineering", "start": 2009, "end": 2011, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:meghna_reddy",
+      "name": "Meghna Reddy",
+      "headline": "General Counsel & VP Corporate Secretarial · Ex-Dr. Reddy's & Cohance",
+      "city": "Hyderabad",
+      "strength": 4,
+      "last_contacted": "2026-08-22",
+      "expertise_tags": ["pharma compliance", "CDMO M&A", "USFDA remediation", "SEBI LODR"],
+      "email": "meghna.reddy.synth@example.invalid",
+      "notes": "Hyderabad pharma legal veteran; worked alongside the secretarial and legal leadership at both Dr. Reddy's and Cohance Lifesciences.",
+      "affiliations": [
+        {"org": "Cohance Lifesciences Limited", "symbol": null, "role": "Associate VP — Legal & Secretarial", "start": 2021, "end": 2025, "kind": "work"},
+        {"org": "Dr. Reddy's Laboratories Limited", "symbol": null, "role": "Senior Legal Counsel — API & Global Generics", "start": 2015, "end": 2021, "kind": "work"},
+        {"org": "Laurus Labs", "symbol": "LAURUSLABS", "role": "External Governance Advisor", "start": 2025, "end": 2026, "kind": "work"}
+      ]
+    },
+    {
       "id": "contact:rohan_desai",
       "name": "Rohan Desai",
-      "headline": "VP Finance, Industrial Automation · Ex-Bosch India",
+      "headline": "VP Finance, Industrial Automation · Ex-Bosch India & Dixon",
       "city": "Bengaluru",
       "strength": 5,
       "last_contacted": "2026-10-02",
-      "expertise_tags": ["EMS", "industrial electronics", "working capital", "autos"],
+      "expertise_tags": ["EMS", "industrial electronics", "working capital", "CEAMA"],
       "email": "rohan.desai.synth@example.invalid",
-      "notes": "Met at Bengaluru EMS roundtable. Sharp on Kaynes vs Syrma receivable days and industrial PCBA margins.",
+      "notes": "Met at Bengaluru EMS roundtable. Sharp on Kaynes vs Syrma receivable days, Dixon PLI milestones, and industrial PCBA margins.",
       "affiliations": [
         {"org": "Bosch India", "symbol": null, "role": "Senior Finance Manager", "start": 2015, "end": 2020, "kind": "work"},
-        {"org": "Dixon Technologies", "symbol": "DIXON", "role": "GM Finance (Consumer EMS)", "start": 2020, "end": 2023, "kind": "work"},
+        {"org": "Dixon Technologies", "symbol": "DIXON", "role": "GM Finance (Consumer EMS)", "start": 2020, "end": 2024, "kind": "work"},
         {"org": "IIT Kanpur", "symbol": null, "role": "B.Tech Mechanical", "start": 2007, "end": 2011, "kind": "edu"}
       ]
     },
@@ -24,60 +72,119 @@
       "headline": "Head of Operations, Specialty Intermediates · Ex-Aarti Industries",
       "city": "Mumbai",
       "strength": 4,
-      "last_contacted": "2025-09-04",
+      "last_contacted": "2025-08-14",
       "expertise_tags": ["specialty chemicals", "fluorination", "China+1 agrochem", "capex execution"],
       "email": "arjun.mehta.synth@example.invalid",
-      "notes": "Classmate from IITK '11. Ran Vapi nitration/hydrogenation unit at Aarti; knows PI and Navin Fluorine plant heads well.",
+      "notes": "Classmate from IITK '11. Ran Vapi nitration/hydrogenation unit at Aarti; knows PI Industries and Navin Fluorine plant heads well.",
       "affiliations": [
         {"org": "Aarti Industries", "symbol": "AARTIIND", "role": "VP Manufacturing (Vapi & Jhagadia)", "start": 2017, "end": 2024, "kind": "work"},
         {"org": "Navin Fluorine International", "symbol": "NAVINFLUOR", "role": "Process Lead, Dewas", "start": 2013, "end": 2017, "kind": "work"},
+        {"org": "PI Industries", "symbol": "PIIND", "role": "Process Engineer — Jambusar CSM", "start": 2011, "end": 2013, "kind": "work"},
         {"org": "IIT Kanpur", "symbol": null, "role": "B.Tech Chemical", "start": 2007, "end": 2011, "kind": "edu"}
       ]
     },
     {
       "id": "contact:priya_nair",
       "name": "Priya Nair",
-      "headline": "SVP Channel Sales, Cables & FMEG · Ex-Polycab",
+      "headline": "SVP Channel Sales, Cables & FMEG · Ex-Polycab & Asian Paints",
       "city": "Mumbai",
       "strength": 5,
       "last_contacted": "2026-08-19",
-      "expertise_tags": ["cables & wires", "channel inventory", "copper pass-through", "EPC"],
+      "expertise_tags": ["cables & wires", "channel inventory", "copper pass-through", "decorative paints"],
       "email": "priya.nair.synth@example.invalid",
-      "notes": "Worked closely with Polycab west-zone distributors; candid on dealer stocking vs primary billing.",
+      "notes": "Worked closely with Polycab west-zone distributors and Asian Paints dealer network; candid on dealer stocking vs primary billing.",
       "affiliations": [
-        {"org": "Polycab India", "symbol": "POLYCAB", "role": "National Sales Manager — Wires", "start": 2018, "end": 2024, "kind": "work"},
-        {"org": "Asian Paints", "symbol": "ASIANPAINT", "role": "Area Sales Manager", "start": 2014, "end": 2018, "kind": "work"},
+        {"org": "Polycab India", "symbol": "POLYCAB", "role": "National Sales Manager — Wires & FMEG", "start": 2018, "end": 2025, "kind": "work"},
+        {"org": "Asian Paints", "symbol": "ASIANPAINT", "role": "Regional Sales Manager — West", "start": 2014, "end": 2018, "kind": "work"},
         {"org": "SPJIMR Mumbai", "symbol": null, "role": "PGDM", "start": 2012, "end": 2014, "kind": "edu"}
       ]
     },
     {
       "id": "contact:vikram_kulkarni",
       "name": "Vikram Kulkarni",
-      "headline": "Chief Risk Officer, Rural NBFC · Ex-CreditAccess Grameen",
-      "city": "Bengaluru",
+      "headline": "Chief Risk Officer, Digital & Rural NBFC · Ex-Bajaj Finance & CreditAccess",
+      "city": "Pune",
       "strength": 4,
       "last_contacted": "2026-07-11",
-      "expertise_tags": ["microfinance", "rural lending", "PAR 30+", "Karnataka/Maharashtra JLG"],
+      "expertise_tags": ["microfinance", "consumer durable lending", "cyber risk", "PAR 30+"],
       "email": "vikram.kulkarni.synth@example.invalid",
-      "notes": "Deep field view on borrower leverage in North Karnataka and Bihar MFI collection efficiency.",
+      "notes": "Deep field view on borrower leverage in Maharashtra/Karnataka and Bajaj Finance IT/risk governance in Pune.",
       "affiliations": [
-        {"org": "CreditAccess Grameen", "symbol": "CREDITACC", "role": "VP Credit & Collections", "start": 2019, "end": 2025, "kind": "work"},
-        {"org": "Bajaj Finance", "symbol": "BAJFINANCE", "role": "Regional Risk Manager — Rural", "start": 2015, "end": 2019, "kind": "work"}
+        {"org": "CreditAccess Grameen", "symbol": "CREDITACC", "role": "VP Credit & Collections", "start": 2020, "end": 2025, "kind": "work"},
+        {"org": "Bajaj Finance Ltd", "symbol": "BAJFINANCE", "role": "Zonal Risk & IT Controls Head — Pune", "start": 2016, "end": 2020, "kind": "work"}
       ]
     },
     {
       "id": "contact:kavita_rao",
       "name": "Kavita Rao",
-      "headline": "VP Procurement, Consumer Electronics · Ex-Syrma SGS & Titan",
+      "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
       "city": "Chennai",
-      "strength": 3,
-      "last_contacted": "2026-03-15",
-      "expertise_tags": ["EMS", "PCB sourcing", "PLI scheme", "wearables"],
+      "strength": 4,
+      "last_contacted": "2025-06-10",
+      "expertise_tags": ["EMS", "PCB sourcing", "jewellery retail", "wearables", "gold hedging"],
       "email": "kavita.rao.synth@example.invalid",
-      "notes": "Knows component import duties and ODM vs OEM margin split at Syrma, Dixon, and Kaynes.",
+      "notes": "Knows component import duties at Syrma/Kaynes and Titan CaratLane/Tanishq bullion lease economics.",
       "affiliations": [
         {"org": "Syrma SGS Technology", "symbol": "SYRMA", "role": "Director — Strategic Sourcing", "start": 2021, "end": 2025, "kind": "work"},
-        {"org": "Titan Company", "symbol": "TITAN", "role": "Supply Chain Manager — Wearables", "start": 2016, "end": 2021, "kind": "work"}
+        {"org": "Titan Company", "symbol": "TITAN", "role": "Supply Chain Head — Wearables & Jewellery Ops", "start": 2016, "end": 2021, "kind": "work"}
+      ]
+    },
+    {
+      "id": "contact:devika_menon",
+      "name": "Devika Menon",
+      "headline": "MD — Fast Fashion & Value Apparel Sourcing · Ex-Trent (Zudio)",
+      "city": "Mumbai",
+      "strength": 5,
+      "last_contacted": "2025-07-02",
+      "expertise_tags": ["value retail", "Zudio store economics", "private label apparel", "shrinkage"],
+      "email": "devika.menon.synth@example.invalid",
+      "notes": "Scaled Zudio vendor cluster in Tirupur and Surat; tracks Trent store additions and like-for-like SSG closely.",
+      "affiliations": [
+        {"org": "Trent Limited", "symbol": "TRENT", "role": "GM Merchandising & Sourcing — Zudio", "start": 2018, "end": 2024, "kind": "work"},
+        {"org": "NIFT Mumbai", "symbol": null, "role": "B.FTech", "start": 2010, "end": 2014, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:harish_venkataraman",
+      "name": "Harish Venkataraman",
+      "headline": "VP Power Markets & Short-Term Trading · Ex-IEX",
+      "city": "New Delhi",
+      "strength": 4,
+      "last_contacted": "2025-05-19",
+      "expertise_tags": ["power exchanges", "CERC market coupling", "DAM/RTM volumes", "REC trading"],
+      "email": "harish.venkataraman.synth@example.invalid",
+      "notes": "Former head of BD at Indian Energy Exchange; best source on CERC market-coupling hearings and bilateral vs exchange volume shift.",
+      "affiliations": [
+        {"org": "Indian Energy Exchange", "symbol": "IEX", "role": "AVP — Market Operations & Regulatory Affairs", "start": 2017, "end": 2023, "kind": "work"}
+      ]
+    },
+    {
+      "id": "contact:anirudh_bhatia",
+      "name": "Anirudh Bhatia",
+      "headline": "SVP Specialty Generics & US Commercial · Ex-Sun Pharma",
+      "city": "Mumbai",
+      "strength": 3,
+      "last_contacted": "2025-04-11",
+      "expertise_tags": ["specialty pharma", "Ilumya/Winlevi", "USFDA", "domestic chronic therapies"],
+      "email": "anirudh.bhatia.synth@example.invalid",
+      "notes": "Managed Sun Pharma's dermatology & ophthalmology specialty portfolio launch metrics.",
+      "affiliations": [
+        {"org": "Sun Pharmaceutical Industries", "symbol": "SUNPHARMA", "role": "VP — Specialty Commercial Strategy", "start": 2016, "end": 2023, "kind": "work"}
+      ]
+    },
+    {
+      "id": "contact:karthik_narayanan",
+      "name": "Karthik Narayanan",
+      "headline": "Principal Architect, Core Banking & BFSI Cloud · Ex-Infosys & CAMS",
+      "city": "Chennai",
+      "strength": 4,
+      "last_contacted": "2025-09-01",
+      "expertise_tags": ["IT services deal ramp", "RTA platforms", "mutual fund registrar", "AI productivity"],
+      "email": "karthik.narayanan.synth@example.invalid",
+      "notes": "Led CAMS mutual fund transfer-agency modernization and Infosys US regional bank accounts.",
+      "affiliations": [
+        {"org": "Computer Age Management Services", "symbol": "CAMS", "role": "VP Technology — RTA Core", "start": 2020, "end": 2024, "kind": "work"},
+        {"org": "Infosys Limited", "symbol": "INFY", "role": "Senior Delivery Manager — FS", "start": 2013, "end": 2020, "kind": "work"}
       ]
     }
   ]
