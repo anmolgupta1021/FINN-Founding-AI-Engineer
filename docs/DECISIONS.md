@@ -50,6 +50,16 @@ This file feeds the final writeup.
 ### D-013 · 9 Nov · Lean deploy bundle: pipeline deps are kept out of the Vercel function
 *Why:* yfinance, pandas, pdfplumber and bs4 live in a `pipeline` dependency group used locally and in CI. The deployed API carries only FastAPI, psycopg, httpx, google-genai, rapidfuzz and pypdfium2. That means faster cold starts and a smaller attack surface.
 
+### D-014 · 9 Nov · Live ticker validation caught `JBCHEPHARM` delisting → swapped to `LAURUSLABS`
+*Why:* live `yfinance` validation across all 22 NSE tickers succeeded on 21/22 (`as_of: 2026-11-09`) and flagged `$JBCHEPHARM.NS` / `.BO` as delisted (merged into Torrent Pharma). Swapped the 4th outside-portfolio research company to `LAURUSLABS` (Laurus Labs, BSE `540222`, API/CDMO peer to `SUNPHARMA` and `PIIND`). All 22/22 symbols now validate cleanly.
+
+### D-015 · 9 Nov · NSE & BSE block standard `httpx` (HTTP 403), but succeed with Chrome TLS impersonation (`curl_cffi`)
+*Why:* probing `www.nseindia.com/api/corporate-announcements` and `api.bseindia.com` with standard Python `httpx` returned HTTP 403 (Akamai / Cloudflare TLS JA3 fingerprint rejection). Switching both fetchers (`finn/fetchers/nse.py` and `bse.py`) to `curl_cffi.requests.Session(impersonate="chrome")` unlocked live responses (`HTTP 200`: 30 live NSE announcements + 28 live BSE announcements across our 5-stock probe).
+*Tradeoff:* datacenter IPs (Vercel / GitHub Actions) can still be IP-blocked by Akamai even with Chrome TLS impersonation, so `scripts/build_snapshots.py` runs locally, records `exchange_probe.json`, and commits `announcements.json`.
+
+### D-016 · 9 Nov · 2-stage announcement classifier benchmark: 83.3% rules / 16.7% LLM, 30/30 accuracy
+*Why:* tested `finn/pipeline/classify.py` against a 30-announcement hand-checked benchmark (`data/seed/classifier_gold_30.json`) spanning all 17 categories plus adversarial noise (newspaper ads, Reg 74(5), loss of share certificates, secretarial auditor appointment, ESOP allotments) and 5 ambiguous Reg-30 items. Stage 1 rules handled 25/30 (83.3%) with 25/25 precision; Stage 2 batch LLM handled the remaining 5/30 (16.7%) for 30/30 overall accuracy.
+
 ---
 
 ## Deliberately left out (running list)
