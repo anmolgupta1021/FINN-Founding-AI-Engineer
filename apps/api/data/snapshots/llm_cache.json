@@ -1,4 +1,110 @@
 {
+  "07c97ad660b7a33540c4dfb3cd83a944e4856be9ca669f8c84bf8708ea3b1874": {
+    "created_at": "2026-11-09T08:48:36.672281+00:00",
+    "in_tokens": 1027,
+    "model": "gemini-3.5-flash-lite",
+    "out_tokens": 738,
+    "parsed": {
+      "items": [
+        {
+          "category": "investor_meetings",
+          "id": "nse:TRENT:106849393",
+          "summary_1l": "Trent Limited has informed the Exchange about Intimation of schedule of Analyst / Institutional Investors Meeting"
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:LAURUSLABS:106849478",
+          "summary_1l": "Laurus Labs Limited has submitted a copy of newspaper publication"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:LAURUSLABS:d36f7b57-4fb6-4b22-a4e7-c18f196448d8",
+          "summary_1l": "Announcement under Regulation 30 regarding newspaper publication"
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:NAVINFLUOR:106850130",
+          "summary_1l": "Navin Fluorine International Limited has submitted the earnings call transcript"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:PIIND:5fea9c99-8c10-43f5-b4c3-3181c1faf7fd",
+          "summary_1l": "Announcement under Regulation 30 regarding newspaper publication"
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:SYRMA:106850762",
+          "summary_1l": "Syrma SGS Technology Limited has submitted the earnings call transcript"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:TITAN:f1b76f73-5eea-417e-8914-8caef01ebf2f",
+          "summary_1l": "Announcement under Regulation 30 regarding newspaper publication"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:POLYCAB:e3733e07-d1a7-4b44-ade2-d9a6882e69fb",
+          "summary_1l": "Polycab India Limited has announced an analyst and investor meet intimation"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:POLYCAB:106851763",
+          "summary_1l": "Polycab India Limited has informed the Exchange about Analyst(s)/Investor(s) meet"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:BAJFINANCE:62fe4e58-cfce-4996-aa60-1e2f715e50e5",
+          "summary_1l": "Bajaj Finance Limited has submitted the half yearly report for FY2026-27"
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:BAJFINANCE:106852542",
+          "summary_1l": "Bajaj Finance Limited has provided general updates to the exchange"
+        },
+        {
+          "category": "fund_raise",
+          "id": "bse:BAJFINANCE:6cae5e85-e0dc-4fa9-8f43-11b4bedd4333",
+          "summary_1l": "Board meeting intimation for determining price of warrants to be issued to promoter"
+        }
+      ]
+    },
+    "prompt_version": "cls-batch-v1",
+    "text": "{\"items\": [{\"id\": \"nse:TRENT:106849393\", \"category\": \"investor_meetings\", \"summary_1l\": \"Trent Limited has informed the Exchange about Intimation of schedule of Analyst / Institutional Investors Meeting\"}, {\"id\": \"nse:LAURUSLABS:106849478\", \"category\": \"unclassified\", \"summary_1l\": \"Laurus Labs Limited has submitted a copy of newspaper publication\"}, {\"id\": \"bse:LAURUSLABS:d36f7b57-4fb6-4b22-a4e7-c18f196448d8\", \"category\": \"unclassified\", \"summary_1l\": \"Announcement under Regulation 30 regarding newspaper publication\"}, {\"id\": \"nse:NAVINFLUOR:106850130\", \"category\": \"earnings_call\", \"summary_1l\": \"Navin Fluorine International Limited has submitted the earnings call transcript\"}, {\"id\": \"bse:PIIND:5fea9c99-8c10-43f5-b4c3-3181c1faf7fd\", \"category\": \"unclassified\", \"summary_1l\": \"Announcement under Regulation 30 regarding newspaper publication\"}, {\"id\": \"nse:SYRMA:106850762\", \"category\": \"earnings_call\", \"summary_1l\": \"Syrma SGS Technology Limited has submitted the earnings call transcript\"}, {\"id\": \"bse:TITAN:f1b76f73-5eea-417e-8914-8caef01ebf2f\", \"category\": \"unclassified\", \"summary_1l\": \"Announcement under Regulation 30 regarding newspaper publication\"}, {\"id\": \"bse:POLYCAB:e3733e07-d1a7-4b44-ade2-d9a6882e69fb\", \"category\": \"investor_meetings\", \"summary_1l\": \"Polycab India Limited has announced an analyst and investor meet intimation\"}, {\"id\": \"nse:POLYCAB:106851763\", \"category\": \"investor_meetings\", \"summary_1l\": \"Polycab India Limited has informed the Exchange about Analyst(s)/Investor(s) meet\"}, {\"id\": \"bse:BAJFINANCE:62fe4e58-cfce-4996-aa60-1e2f715e50e5\", \"category\": \"unclassified\", \"summary_1l\": \"Bajaj Finance Limited has submitted the half yearly report for FY2026-27\"}, {\"id\": \"nse:BAJFINANCE:106852542\", \"category\": \"unclassified\", \"summary_1l\": \"Bajaj Finance Limited has provided general updates to the exchange\"}, {\"id\": \"bse:BAJFINANCE:6cae5e85-e0dc-4fa9-8f43-11b4bedd4333\", \"category\": \"fund_raise\", \"summary_1l\": \"Board meeting intimation for determining price of warrants to be issued to promoter\"}]}",
+    "thinking_tokens": 0
+  },
+  "17087b3b7b36f3fa513615ac1d2778abdaae9f442413501a81de096348bccd51": {
+    "created_at": "2026-11-09T08:46:42.122309+00:00",
+    "in_tokens": 449,
+    "model": "gemini-3.5-flash-lite",
+    "out_tokens": 273,
+    "parsed": {
+      "items": [
+        {
+          "category": "press_release",
+          "id": "bse:AARTIIND:4135b711-e7d5-462b-913b-2655a2a31162",
+          "summary_1l": "Aarti Industries entered into an agreement with a global specialty chemical company."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:HDFCBANK:3fda89e2-f430-4457-85ab-78d178775062",
+          "summary_1l": "HDFC Bank published newspaper advertisements regarding regulatory disclosures."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:SUNPHARMA:106803030",
+          "summary_1l": "Sun Pharma published a notice regarding the opening of a window for physical shares."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:SUNPHARMA:3d5124cc-2271-4d41-8f1d-53d8896d26d3",
+          "summary_1l": "Sun Pharma submitted the compliance certificate under SEBI DP Regulations."
+        }
+      ]
+    },
+    "prompt_version": "cls-batch-v1",
+    "text": "{\"items\": [{\"id\": \"bse:AARTIIND:4135b711-e7d5-462b-913b-2655a2a31162\", \"category\": \"press_release\", \"summary_1l\": \"Aarti Industries entered into an agreement with a global specialty chemical company.\"}, {\"id\": \"bse:HDFCBANK:3fda89e2-f430-4457-85ab-78d178775062\", \"category\": \"unclassified\", \"summary_1l\": \"HDFC Bank published newspaper advertisements regarding regulatory disclosures.\"}, {\"id\": \"nse:SUNPHARMA:106803030\", \"category\": \"unclassified\", \"summary_1l\": \"Sun Pharma published a notice regarding the opening of a window for physical shares.\"}, {\"id\": \"bse:SUNPHARMA:3d5124cc-2271-4d41-8f1d-53d8896d26d3\", \"category\": \"unclassified\", \"summary_1l\": \"Sun Pharma submitted the compliance certificate under SEBI DP Regulations.\"}]}",
+    "thinking_tokens": 0
+  },
   "269ae62b143ed14b7b530e4b490a7f7d436ddd35a3bdc334d0c6f518a7b425fb": {
     "created_at": "2026-11-09T06:50:16.109312+00:00",
     "in_tokens": 300,
@@ -35,6 +141,345 @@
     },
     "prompt_version": "cls-batch-v1",
     "text": "{\"items\": [{\"id\": \"g07\", \"category\": \"M&A\", \"summary_1l\": \"SUNPHARMA: 14% strategic stake & licensing deal with Philogen S.p.A.\"}, {\"id\": \"g10\", \"category\": \"litigation\", \"summary_1l\": \"INFY: EUR 42,000 administrative fine from Luxembourg data authority\"}, {\"id\": \"g28\", \"category\": \"capex\", \"summary_1l\": \"NAVINFLUOR: Board approves Rs 288 cr outlay for new Dahej AHF line\"}, {\"id\": \"g29\", \"category\": \"management_change\", \"summary_1l\": \"PIDILITIND: Sudhanshu Vats assumes charge as MD Designate\"}, {\"id\": \"g30\", \"category\": \"unclassified\", \"summary_1l\": \"JBCHEPHARM: Half-yearly related-party transaction disclosure (Reg 23(9))\"}]}",
+    "thinking_tokens": 0
+  },
+  "6544d961c1530a2d11eb8040cd4f9af9db217620d89e50e47787921bfe774e63": {
+    "created_at": "2026-11-09T08:48:31.218256+00:00",
+    "in_tokens": 1562,
+    "model": "gemini-3.5-flash-lite",
+    "out_tokens": 1152,
+    "parsed": {
+      "items": [
+        {
+          "category": "press_release",
+          "id": "nse:SUNPHARMA:106843482",
+          "summary_1l": "Sun Pharma responds to exchange clarification regarding news of eye-care drug production halt."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:NAVINFLUOR:ac0252f8-be56-4101-9021-a134dbe6977f",
+          "summary_1l": "Navin Fluorine International Limited submits newspaper publication."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:NAVINFLUOR:106844335",
+          "summary_1l": "Newspaper advertisement regarding special window for transfer and demat of physical shares."
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:SUNPHARMA:106845480",
+          "summary_1l": "Sun Pharmaceutical Industries Limited submits earnings call transcript."
+        },
+        {
+          "category": "results",
+          "id": "bse:PIIND:c7192181-2726-4d45-8ff9-02693e650353",
+          "summary_1l": "PI Industries Limited board meeting outcome for financial results."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:GRAVITA:106845617",
+          "summary_1l": "Gravita India Limited submits outcome of analyst and institutional investor meet."
+        },
+        {
+          "category": "results",
+          "id": "bse:PIIND:9c9819aa-3b37-4dff-8d15-532f67e1b6fc",
+          "summary_1l": "PI Industries Limited financial results for the quarter and half year ended September 30, 2026."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:GRAVITA:106845664",
+          "summary_1l": "Gravita India Limited intimates schedule of upcoming investor meeting."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:GRAVITA:a962a84a-3dd8-4677-aa35-df6934d5c7ce",
+          "summary_1l": "Gravita India Limited announces schedule for analyst and investor meet."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:PIIND:106845920",
+          "summary_1l": "PI Industries Limited submits investor presentation."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:PIIND:15b57806-4f9e-4626-9b84-c97b4ccf82ee",
+          "summary_1l": "PI Industries Limited submits investor presentation for stakeholders."
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:IEX:106846370",
+          "summary_1l": "Indian Energy Exchange Limited submits conference call transcript."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:CAMS:106846395",
+          "summary_1l": "Computer Age Management Services Limited intimates schedule of investor meet."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:CAMS:85a81f2a-3887-408d-9f53-7ea81a97936c",
+          "summary_1l": "CAMS announces schedule for analyst and investor meet."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:NAVINFLUOR:0e11d0a9-1574-4886-b2b1-c3e1a52bea41",
+          "summary_1l": "Navin Fluorine submits newspaper publication under SEBI regulations."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:NAVINFLUOR:106846468",
+          "summary_1l": "Navin Fluorine submits disclosure under regulation 30 of SEBI LODR."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:GRAVITA:106847060",
+          "summary_1l": "Gravita India Limited intimates schedule of investor meeting."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:GRAVITA:106847115",
+          "summary_1l": "Gravita India Limited submits outcome of the investor meeting."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:GRAVITA:106847165",
+          "summary_1l": "Gravita India Limited announces cancellation of scheduled investor meeting."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:GRAVITA:6696b03f-8270-4140-8174-5321862019dc",
+          "summary_1l": "Gravita India Limited submits outcome of analyst and investor meet."
+        }
+      ]
+    },
+    "prompt_version": "cls-batch-v1",
+    "text": "{\"items\": [{\"id\": \"nse:SUNPHARMA:106843482\", \"category\": \"press_release\", \"summary_1l\": \"Sun Pharma responds to exchange clarification regarding news of eye-care drug production halt.\"}, {\"id\": \"bse:NAVINFLUOR:ac0252f8-be56-4101-9021-a134dbe6977f\", \"category\": \"unclassified\", \"summary_1l\": \"Navin Fluorine International Limited submits newspaper publication.\"}, {\"id\": \"nse:NAVINFLUOR:106844335\", \"category\": \"unclassified\", \"summary_1l\": \"Newspaper advertisement regarding special window for transfer and demat of physical shares.\"}, {\"id\": \"nse:SUNPHARMA:106845480\", \"category\": \"earnings_call\", \"summary_1l\": \"Sun Pharmaceutical Industries Limited submits earnings call transcript.\"}, {\"id\": \"bse:PIIND:c7192181-2726-4d45-8ff9-02693e650353\", \"category\": \"results\", \"summary_1l\": \"PI Industries Limited board meeting outcome for financial results.\"}, {\"id\": \"nse:GRAVITA:106845617\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited submits outcome of analyst and institutional investor meet.\"}, {\"id\": \"bse:PIIND:9c9819aa-3b37-4dff-8d15-532f67e1b6fc\", \"category\": \"results\", \"summary_1l\": \"PI Industries Limited financial results for the quarter and half year ended September 30, 2026.\"}, {\"id\": \"nse:GRAVITA:106845664\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited intimates schedule of upcoming investor meeting.\"}, {\"id\": \"bse:GRAVITA:a962a84a-3dd8-4677-aa35-df6934d5c7ce\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited announces schedule for analyst and investor meet.\"}, {\"id\": \"nse:PIIND:106845920\", \"category\": \"investor_meetings\", \"summary_1l\": \"PI Industries Limited submits investor presentation.\"}, {\"id\": \"bse:PIIND:15b57806-4f9e-4626-9b84-c97b4ccf82ee\", \"category\": \"investor_meetings\", \"summary_1l\": \"PI Industries Limited submits investor presentation for stakeholders.\"}, {\"id\": \"nse:IEX:106846370\", \"category\": \"earnings_call\", \"summary_1l\": \"Indian Energy Exchange Limited submits conference call transcript.\"}, {\"id\": \"nse:CAMS:106846395\", \"category\": \"investor_meetings\", \"summary_1l\": \"Computer Age Management Services Limited intimates schedule of investor meet.\"}, {\"id\": \"bse:CAMS:85a81f2a-3887-408d-9f53-7ea81a97936c\", \"category\": \"investor_meetings\", \"summary_1l\": \"CAMS announces schedule for analyst and investor meet.\"}, {\"id\": \"bse:NAVINFLUOR:0e11d0a9-1574-4886-b2b1-c3e1a52bea41\", \"category\": \"unclassified\", \"summary_1l\": \"Navin Fluorine submits newspaper publication under SEBI regulations.\"}, {\"id\": \"nse:NAVINFLUOR:106846468\", \"category\": \"unclassified\", \"summary_1l\": \"Navin Fluorine submits disclosure under regulation 30 of SEBI LODR.\"}, {\"id\": \"nse:GRAVITA:106847060\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited intimates schedule of investor meeting.\"}, {\"id\": \"nse:GRAVITA:106847115\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited submits outcome of the investor meeting.\"}, {\"id\": \"nse:GRAVITA:106847165\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited announces cancellation of scheduled investor meeting.\"}, {\"id\": \"bse:GRAVITA:6696b03f-8270-4140-8174-5321862019dc\", \"category\": \"investor_meetings\", \"summary_1l\": \"Gravita India Limited submits outcome of analyst and investor meet.\"}]}",
+    "thinking_tokens": 0
+  },
+  "6fc61142d8ad4eafa59cd77c10bd73468879b9dd9081a7f2ec1f11ef11d94d56": {
+    "created_at": "2026-11-09T08:46:40.813812+00:00",
+    "in_tokens": 1666,
+    "model": "gemini-3.5-flash-lite",
+    "out_tokens": 1432,
+    "parsed": {
+      "items": [
+        {
+          "category": "unclassified",
+          "id": "nse:NAVINFLUOR:106833470",
+          "summary_1l": "Navin Fluorine International Limited submitted a general update."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:DIXON:491a2b6d-04d1-46b9-a9d6-cbb68f0d0120",
+          "summary_1l": "Dixon Technologies announced the outcome of analyst or investor meet."
+        },
+        {
+          "category": "management_change",
+          "id": "nse:TITAN:106848400",
+          "summary_1l": "Noel N. Tata retired as Director and Vice-Chairman of Titan Company."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:KPITTECH:6d63d4ee-8385-435a-a754-5c9cd8f47463",
+          "summary_1l": "Intimation regarding the change in address of the corporate office of RTA."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:GRAVITA:820e7aae-dbff-4bbb-aba0-e108e39d729e",
+          "summary_1l": "Gravita India submitted compliance certificate under Reg 74(5)."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:TITAN:106832541",
+          "summary_1l": "Titan Company informed about a copy of newspaper publication."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:CREDITACC:db18a2a3-2015-4772-a69e-60ee72534531",
+          "summary_1l": "CreditAccess Grameen announced schedule of analyst or investor meet."
+        },
+        {
+          "category": "management_change",
+          "id": "nse:TITAN:106848291",
+          "summary_1l": "Titan Company informed the exchange regarding a change in its auditors."
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:HDFCBANK:106821374",
+          "summary_1l": "HDFC Bank provided the link to the recording of earnings or investor call."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:KPITTECH:106831000",
+          "summary_1l": "KPIT Technologies granted options under its Restricted Stock Unit Plan."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:ASIANPAINT:7f60e27d-7ac3-4edd-b35e-172c734a7e53",
+          "summary_1l": "Asian Paints announced schedule of analyst or investor meet."
+        },
+        {
+          "category": "press_release",
+          "id": "bse:CREDITACC:584e728d-8223-492a-b5c1-9a0582b42ab8",
+          "summary_1l": "CreditAccess Grameen released its interim business update for September 2026."
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:KPITTECH:3dbdf4e9-0f9c-405e-bc2d-5601a79a1e98",
+          "summary_1l": "KPIT Technologies announced the grant of options to eligible employees."
+        },
+        {
+          "category": "M&A",
+          "id": "bse:LAURUSLABS:1c40368c-93aa-4496-bd45-36b33930760c",
+          "summary_1l": "Laurus Labs announced an acquisition."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:LAURUSLABS:106816016",
+          "summary_1l": "Laurus Labs informed the exchange about schedule of institutional meet."
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:IEX:106826758",
+          "summary_1l": "Indian Energy Exchange informed about schedule of investor meet."
+        },
+        {
+          "category": "press_release",
+          "id": "bse:INFY:7a84603f-bc08-4550-8369-4a85e398b56d",
+          "summary_1l": "Winners of Qorus-Infosys Finacle Banking Innovation Awards 2026 announced."
+        },
+        {
+          "category": "press_release",
+          "id": "nse:SUNPHARMA:106843482",
+          "summary_1l": "Sun Pharma responded to exchange clarification regarding recent news reports."
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:PIDILITIND:106811375",
+          "summary_1l": "Pidilite Industries submitted depository participant compliance certificate."
+        },
+        {
+          "category": "fund_raise",
+          "id": "nse:BAJFINANCE:106822208",
+          "summary_1l": "Bajaj Finance informed the exchange about the issue of securities."
+        }
+      ]
+    },
+    "prompt_version": "cls-batch-v1",
+    "text": "{\n  \"items\": [\n    {\n      \"id\": \"nse:NAVINFLUOR:106833470\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"Navin Fluorine International Limited submitted a general update.\"\n    },\n    {\n      \"id\": \"bse:DIXON:491a2b6d-04d1-46b9-a9d6-cbb68f0d0120\",\n      \"category\": \"investor_meetings\",\n      \"summary_1l\": \"Dixon Technologies announced the outcome of analyst or investor meet.\"\n    },\n    {\n      \"id\": \"nse:TITAN:106848400\",\n      \"category\": \"management_change\",\n      \"summary_1l\": \"Noel N. Tata retired as Director and Vice-Chairman of Titan Company.\"\n    },\n    {\n      \"id\": \"bse:KPITTECH:6d63d4ee-8385-435a-a754-5c9cd8f47463\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"Intimation regarding the change in address of the corporate office of RTA.\"\n    },\n    {\n      \"id\": \"bse:GRAVITA:820e7aae-dbff-4bbb-aba0-e108e39d729e\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"Gravita India submitted compliance certificate under Reg 74(5).\"\n    },\n    {\n      \"id\": \"nse:TITAN:106832541\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"Titan Company informed about a copy of newspaper publication.\"\n    },\n    {\n      \"id\": \"bse:CREDITACC:db18a2a3-2015-4772-a69e-60ee72534531\",\n      \"category\": \"investor_meetings\",\n      \"summary_1l\": \"CreditAccess Grameen announced schedule of analyst or investor meet.\"\n    },\n    {\n      \"id\": \"nse:TITAN:106848291\",\n      \"category\": \"management_change\",\n      \"summary_1l\": \"Titan Company informed the exchange regarding a change in its auditors.\"\n    },\n    {\n      \"id\": \"nse:HDFCBANK:106821374\",\n      \"category\": \"earnings_call\",\n      \"summary_1l\": \"HDFC Bank provided the link to the recording of earnings or investor call.\"\n    },\n    {\n      \"id\": \"nse:KPITTECH:106831000\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"KPIT Technologies granted options under its Restricted Stock Unit Plan.\"\n    },\n    {\n      \"id\": \"bse:ASIANPAINT:7f60e27d-7ac3-4edd-b35e-172c734a7e53\",\n      \"category\": \"investor_meetings\",\n      \"summary_1l\": \"Asian Paints announced schedule of analyst or investor meet.\"\n    },\n    {\n      \"id\": \"bse:CREDITACC:584e728d-8223-492a-b5c1-9a0582b42ab8\",\n      \"category\": \"press_release\",\n      \"summary_1l\": \"CreditAccess Grameen released its interim business update for September 2026.\"\n    },\n    {\n      \"id\": \"bse:KPITTECH:3dbdf4e9-0f9c-405e-bc2d-5601a79a1e98\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"KPIT Technologies announced the grant of options to eligible employees.\"\n    },\n    {\n      \"id\": \"bse:LAURUSLABS:1c40368c-93aa-4496-bd45-36b33930760c\",\n      \"category\": \"M&A\",\n      \"summary_1l\": \"Laurus Labs announced an acquisition.\"\n    },\n    {\n      \"id\": \"nse:LAURUSLABS:106816016\",\n      \"category\": \"investor_meetings\",\n      \"summary_1l\": \"Laurus Labs informed the exchange about schedule of institutional meet.\"\n    },\n    {\n      \"id\": \"nse:IEX:106826758\",\n      \"category\": \"investor_meetings\",\n      \"summary_1l\": \"Indian Energy Exchange informed about schedule of investor meet.\"\n    },\n    {\n      \"id\": \"bse:INFY:7a84603f-bc08-4550-8369-4a85e398b56d\",\n      \"category\": \"press_release\",\n      \"summary_1l\": \"Winners of Qorus-Infosys Finacle Banking Innovation Awards 2026 announced.\"\n    },\n    {\n      \"id\": \"nse:SUNPHARMA:106843482\",\n      \"category\": \"press_release\",\n      \"summary_1l\": \"Sun Pharma responded to exchange clarification regarding recent news reports.\"\n    },\n    {\n      \"id\": \"nse:PIDILITIND:106811375\",\n      \"category\": \"unclassified\",\n      \"summary_1l\": \"Pidilite Industries submitted depository participant compliance certificate.\"\n    },\n    {\n      \"id\": \"nse:BAJFINANCE:106822208\",\n      \"category\": \"fund_raise\",\n      \"summary_1l\": \"Bajaj Finance informed the exchange about the issue of securities.\"\n    }\n  ]\n}",
+    "thinking_tokens": 0
+  },
+  "8522c10bcac11f56b86d76158d5874decc11d5f897350600117fcf991e84fc54": {
+    "created_at": "2026-11-09T08:48:34.509008+00:00",
+    "in_tokens": 1690,
+    "model": "gemini-3.5-flash-lite",
+    "out_tokens": 1331,
+    "parsed": {
+      "items": [
+        {
+          "category": "investor_meetings",
+          "id": "nse:SUNPHARMA:106847279",
+          "summary_1l": "Sun Pharmaceutical Industries Limited has informed the Exchange about Schedule of meet"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:SUNPHARMA:78a3ce2d-446b-4f51-a324-fe3260d4b875",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation"
+        },
+        {
+          "category": "results",
+          "id": "bse:TITAN:f812f3fb-5c87-411c-b6b5-0a8a027d1968",
+          "summary_1l": "Board Meeting Outcome for Outcome Of The Board Meeting In Accordance With The SEBI Regulations"
+        },
+        {
+          "category": "results",
+          "id": "bse:TITAN:ee6123a8-c373-465b-9347-34adbc250091",
+          "summary_1l": "Outcome Of The Board Meeting In Accordance With The SEBI Regulations"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:TITAN:0a5a3742-0860-4183-8398-4af9b686b08f",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Investor Presentation"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:TITAN:106847693",
+          "summary_1l": "Titan Company Limited has informed the Exchange about Investor Presentation"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:PIIND:5bff416b-08d4-4393-837b-d70b6cd21fac",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:TITAN:01951765-180f-4be0-9dd6-b9d6cf3c536b",
+          "summary_1l": "Certificate Pursuant To SEBI Circular No. SEBI/HO/DDHS/P/CIR/2021/613 Dated August 10, 2021"
+        },
+        {
+          "category": "unclassified",
+          "id": "nse:TITAN:106848049",
+          "summary_1l": "Titan Company Limited has informed the Exchange about Certificate pursuant to SEBI Circular"
+        },
+        {
+          "category": "unclassified",
+          "id": "bse:TITAN:abc5d7e8-36f5-44ee-8678-5d4995a63a8e",
+          "summary_1l": "Intimation of Repayment of Commercial Paper (CP)"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:SYRMA:526a4596-0bdf-4918-a4ed-91242ce9590e",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:SYRMA:106848277",
+          "summary_1l": "Intimation under Regulation 30 for participating in Investor Meeting"
+        },
+        {
+          "category": "management_change",
+          "id": "bse:TITAN:ab8859c9-d283-43d7-aeb2-07a2556f1b08",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Appointment of Statutory Auditor/s"
+        },
+        {
+          "category": "management_change",
+          "id": "nse:TITAN:106848291",
+          "summary_1l": "Titan Company Limited has informed the Exchange regarding Change in Auditors"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "nse:SYRMA:106848339",
+          "summary_1l": "Syrma Sgs Technology Limited has informed the Exchange about Schedule of meet"
+        },
+        {
+          "category": "management_change",
+          "id": "bse:TITAN:9fe24176-bed0-4206-9717-23b4afe63ad4",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Retirement"
+        },
+        {
+          "category": "management_change",
+          "id": "nse:TITAN:106848400",
+          "summary_1l": "Titan Company Limited has informed the Exchange about Retirement of Mr. Noel N. Tata"
+        },
+        {
+          "category": "earnings_call",
+          "id": "nse:TITAN:106848795",
+          "summary_1l": "Titan Company Limited has informed the Exchange about Analyst Call Recording"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:TITAN:db01e383-01c4-4d7d-a65a-64d127833002",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome"
+        },
+        {
+          "category": "investor_meetings",
+          "id": "bse:TRENT:08a97585-c1de-4883-b15d-c0e2aba71a19",
+          "summary_1l": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation"
+        }
+      ]
+    },
+    "prompt_version": "cls-batch-v1",
+    "text": "{\"items\": [{\"id\": \"nse:SUNPHARMA:106847279\", \"category\": \"investor_meetings\", \"summary_1l\": \"Sun Pharmaceutical Industries Limited has informed the Exchange about Schedule of meet\"}, {\"id\": \"bse:SUNPHARMA:78a3ce2d-446b-4f51-a324-fe3260d4b875\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation\"}, {\"id\": \"bse:TITAN:f812f3fb-5c87-411c-b6b5-0a8a027d1968\", \"category\": \"results\", \"summary_1l\": \"Board Meeting Outcome for Outcome Of The Board Meeting In Accordance With The SEBI Regulations\"}, {\"id\": \"bse:TITAN:ee6123a8-c373-465b-9347-34adbc250091\", \"category\": \"results\", \"summary_1l\": \"Outcome Of The Board Meeting In Accordance With The SEBI Regulations\"}, {\"id\": \"bse:TITAN:0a5a3742-0860-4183-8398-4af9b686b08f\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Investor Presentation\"}, {\"id\": \"nse:TITAN:106847693\", \"category\": \"investor_meetings\", \"summary_1l\": \"Titan Company Limited has informed the Exchange about Investor Presentation\"}, {\"id\": \"bse:PIIND:5bff416b-08d4-4393-837b-d70b6cd21fac\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome\"}, {\"id\": \"bse:TITAN:01951765-180f-4be0-9dd6-b9d6cf3c536b\", \"category\": \"unclassified\", \"summary_1l\": \"Certificate Pursuant To SEBI Circular No. SEBI/HO/DDHS/P/CIR/2021/613 Dated August 10, 2021\"}, {\"id\": \"nse:TITAN:106848049\", \"category\": \"unclassified\", \"summary_1l\": \"Titan Company Limited has informed the Exchange about Certificate pursuant to SEBI Circular\"}, {\"id\": \"bse:TITAN:abc5d7e8-36f5-44ee-8678-5d4995a63a8e\", \"category\": \"unclassified\", \"summary_1l\": \"Intimation of Repayment of Commercial Paper (CP)\"}, {\"id\": \"bse:SYRMA:526a4596-0bdf-4918-a4ed-91242ce9590e\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation\"}, {\"id\": \"nse:SYRMA:106848277\", \"category\": \"investor_meetings\", \"summary_1l\": \"Intimation under Regulation 30 for participating in Investor Meeting\"}, {\"id\": \"bse:TITAN:ab8859c9-d283-43d7-aeb2-07a2556f1b08\", \"category\": \"management_change\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Appointment of Statutory Auditor/s\"}, {\"id\": \"nse:TITAN:106848291\", \"category\": \"management_change\", \"summary_1l\": \"Titan Company Limited has informed the Exchange regarding Change in Auditors\"}, {\"id\": \"nse:SYRMA:106848339\", \"category\": \"investor_meetings\", \"summary_1l\": \"Syrma Sgs Technology Limited has informed the Exchange about Schedule of meet\"}, {\"id\": \"bse:TITAN:9fe24176-bed0-4206-9717-23b4afe63ad4\", \"category\": \"management_change\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Retirement\"}, {\"id\": \"nse:TITAN:106848400\", \"category\": \"management_change\", \"summary_1l\": \"Titan Company Limited has informed the Exchange about Retirement of Mr. Noel N. Tata\"}, {\"id\": \"nse:TITAN:106848795\", \"category\": \"earnings_call\", \"summary_1l\": \"Titan Company Limited has informed the Exchange about Analyst Call Recording\"}, {\"id\": \"bse:TITAN:db01e383-01c4-4d7d-a65a-64d127833002\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome\"}, {\"id\": \"bse:TRENT:08a97585-c1de-4883-b15d-c0e2aba71a19\", \"category\": \"investor_meetings\", \"summary_1l\": \"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation\"}]}",
     "thinking_tokens": 0
   }
 }

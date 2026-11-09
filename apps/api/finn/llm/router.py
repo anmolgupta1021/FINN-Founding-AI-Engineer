@@ -24,8 +24,8 @@ from finn.llm.privacy import assert_no_private_network_data
 
 ModelTier = Literal["bulk", "strong"]
 
-DEFAULT_BULK_MODEL = "gemini-2.5-flash-lite"
-DEFAULT_STRONG_MODEL = "gemini-2.5-flash"
+DEFAULT_BULK_MODEL = "gemini-3.5-flash-lite"
+DEFAULT_STRONG_MODEL = "gemini-3.6-flash"
 
 
 def resolve_configured_models(data_dir: Path) -> dict[str, Any]:
@@ -187,7 +187,6 @@ class LLMRouter:
         from google import genai
         from google.genai import types
 
-        client = genai.Client(api_key=api_key)
         cfg_kwargs: dict[str, Any] = {"system_instruction": system, "temperature": 0.1}
         if response_schema is not None:
             cfg_kwargs["response_mime_type"] = "application/json"
@@ -196,11 +195,27 @@ class LLMRouter:
             cfg_kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=thinking_budget)
 
         prompt_text = contents if isinstance(contents, str) else json.dumps(contents, ensure_ascii=False)
-        resp = client.models.generate_content(
-            model=model,
-            contents=prompt_text,
-            config=types.GenerateContentConfig(**cfg_kwargs),
-        )
+        client = genai.Client(vertexai=False, api_key=api_key)
+        candidate_models = [model]
+        if "flash-lite" in model and "gemini-3.1-flash-lite" not in candidate_models:
+            candidate_models.append("gemini-3.1-flash-lite")
+        elif "flash" in model and "gemini-3.5-flash" not in candidate_models:
+            candidate_models.append("gemini-3.5-flash")
+
+        last_exc: Exception | None = None
+        resp = None
+        for cand_model in candidate_models:
+            try:
+                resp = client.models.generate_content(
+                    model=cand_model,
+                    contents=prompt_text,
+                    config=types.GenerateContentConfig(**cfg_kwargs),
+                )
+                break
+            except Exception as exc:  # noqa: BLE001
+                last_exc = exc
+        if resp is None:
+            raise last_exc or RuntimeError("Gemini call failed")
         usage = getattr(resp, "usage_metadata", None)
         in_tok = int(getattr(usage, "prompt_token_count", 0) or 0)
         out_tok = int(getattr(usage, "candidates_token_count", 0) or 0)

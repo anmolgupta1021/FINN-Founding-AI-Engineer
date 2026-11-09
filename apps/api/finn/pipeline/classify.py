@@ -401,7 +401,8 @@ def classify_announcements(
                 )
                 parsed_items = (resp.get("parsed") or {}).get("items") or []
                 by_id = {str(x.get("id")): x for x in parsed_items if isinstance(x, dict)}
-            except (RuntimeError, ValueError, OSError):
+            except Exception as exc:  # noqa: BLE001
+                print(f"[classify_announcements] Stage-2 LLM batch error: {exc}")
                 by_id = {}
 
             for i in batch_idx:

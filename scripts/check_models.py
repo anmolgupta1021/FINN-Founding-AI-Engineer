@@ -18,17 +18,18 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "apps" / "api" / "data"
 OUT_PATH = DATA_DIR / "snapshots" / "verified_models.json"
 
-# Candidate order (newest first; falls back gracefully to whichever the account has enabled)
+# Candidate order (newest live Gemini 3.x models first; falls back gracefully)
 BULK_CANDIDATES = [
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
     "gemini-2.5-flash-lite",
-    "gemini-2.5-flash-lite-preview-06-17",
-    "gemini-2.0-flash-lite",
-    "gemini-2.5-flash",
 ]
 STRONG_CANDIDATES = [
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
     "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-2.0-flash",
 ]
 
 
@@ -69,18 +70,29 @@ def main() -> None:
     from google import genai
     from google.genai import types
 
-    client = genai.Client(api_key=api_key)
+    modes_to_try = [False]
     listed: list[str] = []
-    for m in client.models.list():
-        name = (getattr(m, "name", "") or "").replace("models/", "")
-        if name.startswith("gemini-"):
-            listed.append(name)
-    listed.sort()
+    for mode in modes_to_try:
+        try:
+            c_try = genai.Client(vertexai=mode, api_key=api_key)
+            for m in c_try.models.list():
+                name = (getattr(m, "name", "") or "").replace("models/", "").replace("publishers/google/models/", "")
+                if name.startswith("gemini-"):
+                    listed.append(name)
+            if listed:
+                report["vertexai_express_mode"] = mode
+                break
+        except Exception as e:  # noqa: BLE001
+            print(f"Note (vertexai={mode}): models.list() -> {str(e)[:140]}")
+    if not listed:
+        listed = sorted(set(BULK_CANDIDATES + STRONG_CANDIDATES))
+    else:
+        listed.sort()
+        print(f"Found {len(listed)} gemini-* models on this key:")
+        for name in listed:
+            if any(k in name for k in ("flash", "pro")):
+                print("  -", name)
     report["available_gemini_models"] = listed
-    print(f"Found {len(listed)} gemini-* models on this key:")
-    for name in listed:
-        if any(k in name for k in ("flash", "pro")):
-            print("  -", name)
 
     # Pick bulk (prefer flash-lite) and strong (prefer flash with thinking)
     flash_lites = [m for m in listed if "flash-lite" in m and "tts" not in m and "image" not in m]
@@ -101,26 +113,30 @@ def main() -> None:
             if not cand or cand in seen:
                 continue
             seen.add(cand)
-            t0 = time.monotonic()
-            try:
-                cfg = types.GenerateContentConfig(max_output_tokens=16, temperature=0.0)
-                if thinking_budget > 0:
-                    cfg.thinking_config = types.ThinkingConfig(thinking_budget=thinking_budget)
-                r = client.models.generate_content(model=cand, contents="Reply with OK", config=cfg)
-                ms = int((time.monotonic() - t0) * 1000)
-                usage = getattr(r, "usage_metadata", None)
-                report["pings"][cand] = {
-                    "ok": True,
-                    "latency_ms": ms,
-                    "in_tokens": getattr(usage, "prompt_token_count", 0),
-                    "out_tokens": getattr(usage, "candidates_token_count", 0),
-                    "thinking_tokens": getattr(usage, "thoughts_token_count", 0),
-                }
-                print(f"  [PASS] {cand} ({ms} ms)")
-                return cand
-            except Exception as e:  # noqa: BLE001
-                report["pings"][cand] = {"ok": False, "error": str(e)[:200]}
-                print(f"  [FAIL] {cand}: {str(e)[:120]}")
+            for mode in modes_to_try:
+                t0 = time.monotonic()
+                try:
+                    c_try = genai.Client(vertexai=mode, api_key=api_key)
+                    cfg = types.GenerateContentConfig(max_output_tokens=16, temperature=0.0)
+                    if thinking_budget > 0:
+                        cfg.thinking_config = types.ThinkingConfig(thinking_budget=thinking_budget)
+                    r = c_try.models.generate_content(model=cand, contents="Reply with OK", config=cfg)
+                    ms = int((time.monotonic() - t0) * 1000)
+                    usage = getattr(r, "usage_metadata", None)
+                    report["vertexai_express_mode"] = mode
+                    report["pings"][cand] = {
+                        "ok": True,
+                        "vertexai": mode,
+                        "latency_ms": ms,
+                        "in_tokens": getattr(usage, "prompt_token_count", 0),
+                        "out_tokens": getattr(usage, "candidates_token_count", 0),
+                        "thinking_tokens": getattr(usage, "thoughts_token_count", 0),
+                    }
+                    print(f"  [PASS] {cand} (vertexai={mode}, {ms} ms)")
+                    return cand
+                except Exception as e:  # noqa: BLE001
+                    report["pings"][f"{cand}:vertexai={mode}"] = {"ok": False, "error": str(e)[:200]}
+                    print(f"  [FAIL] {cand} (vertexai={mode}): {str(e)[:120]}")
         return None
 
     print("\nPinging bulk (Flash-Lite) candidates:")

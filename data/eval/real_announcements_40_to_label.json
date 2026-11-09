@@ -31,7 +31,11 @@
       "raw_category": "General Updates",
       "subject": "Navin Fluorine International Limited has informed the Exchange about General Updates",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/NAVINFLUOR_29102026001243_uploadsigned.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Navin Fluorine International Limited submitted a general update."
     },
     {
       "idx": 2,
@@ -42,7 +46,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/082ec2fb-f975-4058-aadb-d27d3e69a02d.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "investor_meetings",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "investor_meetings",
+      "stage2_llm_summary_1l": "Dixon Technologies announced the outcome of analyst or investor meet."
     },
     {
       "idx": 3,
@@ -53,7 +61,10 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a933af17-dee7-4d6f-a87c-48a70b3a532f.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 4,
@@ -64,7 +75,11 @@
       "raw_category": "Retirement",
       "subject": "Titan Company Limited has informed the Exchange about Retirement of Mr. Noel N. Tata as Director and Vice-Chairman",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/TITAN_05112026185140_SENNTata.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "management_change",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "management_change",
+      "stage2_llm_summary_1l": "Noel N. Tata retired as Director and Vice-Chairman of Titan Company."
     },
     {
       "idx": 5,
@@ -75,7 +90,10 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6553175c-988b-4d84-8dec-a791639db0b2.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 6,
@@ -86,7 +104,10 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/44e17494-dcff-4413-8b83-3d3a47d2e850.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "earnings_call",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 7,
@@ -97,7 +118,11 @@
       "raw_category": "Company Update",
       "subject": "Intimation Regarding The Change In The Address Of The Corporate Office Of The Kfin Technologies Limited, Registrar And Share Transfer Agent With Effect From December 1, 2026.",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6b5ac8ab-73ab-44fe-824a-d794314fe3cd.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Intimation regarding the change in address of the corporate office of RTA."
     },
     {
       "idx": 8,
@@ -108,7 +133,11 @@
       "raw_category": "Company Update",
       "subject": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d913ddb6-b145-4f2e-8bbf-d3c21ffb7e94.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Gravita India submitted compliance certificate under Reg 74(5)."
     },
     {
       "idx": 9,
@@ -119,7 +148,11 @@
       "raw_category": "Copy of Newspaper Publication",
       "subject": "Titan Company Limited has informed the Exchange about Copy of Newspaper Publication",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/TITAN_28102026172546_SEnewspaperadlossofshares.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Titan Company informed about a copy of newspaper publication."
     },
     {
       "idx": 10,
@@ -130,7 +163,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a4236076-bda6-4e69-bee9-3b5dcb93bfc3.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "investor_meetings",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "investor_meetings",
+      "stage2_llm_summary_1l": "CreditAccess Grameen announced schedule of analyst or investor meet."
     },
     {
       "idx": 11,
@@ -141,7 +178,10 @@
       "raw_category": "Press Release",
       "subject": "Polycab India Limited has informed the Exchange regarding a press release dated October 13, 2026, titled \"Press Release on NCLAT Order\".",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/POLYCAB_13102026164554_StockExchangeIntimation-Press_Release.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 12,
@@ -152,7 +192,11 @@
       "raw_category": "Change in Auditors",
       "subject": "Titan Company Limited has informed the Exchange regarding Change in Auditors of the company.",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/TITAN_05112026183608_SEappoinmentofstatutoryauditor.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "management_change",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "management_change",
+      "stage2_llm_summary_1l": "Titan Company informed the exchange regarding a change in its auditors."
     },
     {
       "idx": 13,
@@ -163,7 +207,11 @@
       "raw_category": "Analysts/Institutional Investor Meet/Con. Call Updates",
       "subject": "HDFC Bank Limited has informed the Exchange about Link of Recording",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/HDFCBANK_17102026220738_SEintimation-RECORDING-17oct2026.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "earnings_call",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "earnings_call",
+      "stage2_llm_summary_1l": "HDFC Bank provided the link to the recording of earnings or investor call."
     },
     {
       "idx": 14,
@@ -174,7 +222,10 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/dfaacd5b-dcf9-42fe-8283-fb22842aab13.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 15,
@@ -185,7 +236,11 @@
       "raw_category": "General Updates",
       "subject": "KPIT Technologies Limited has informed the Exchange about the grant of 54,100 Options to the eligible employees covered under the KPIT Technologies Limited - Restricted Stock Unit Plan 2022",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/KPITTECH_27102026194517_NRC_Outcome_October_2026_S.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "KPIT Technologies granted options under its Restricted Stock Unit Plan."
     },
     {
       "idx": 16,
@@ -196,7 +251,10 @@
       "raw_category": "Updates",
       "subject": "Asian Paints Limited has informed the Exchange regarding 'This is to inform you that a meeting of the Board of Directors of the Company will be held on Thursday, 29th October 2026, inter alia, to consider the declaration of interim dividend, if any, for the financial year ending 31st March 2027.  It is further informed that the record date for payment of interim dividend, if declared, will be Wednesday, 4th November 2026.'.",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/ASIANPAINT_06102026190837_BMintimationtoStockExchangesOct26.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "dividend",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 17,
@@ -207,7 +265,10 @@
       "raw_category": "Board Meeting",
       "subject": "Board Meeting Intimation for Consideration Of Financial Results Of The Company For The Quarter And Half Year Ended 30Th September 2026",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5396794f-3b65-4561-84ad-2cb5f8774f02.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "results",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 18,
@@ -218,7 +279,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6165abb2-8e61-48a0-a7be-1052082fe01b.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "investor_meetings",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "investor_meetings",
+      "stage2_llm_summary_1l": "Asian Paints announced schedule of analyst or investor meet."
     },
     {
       "idx": 19,
@@ -229,7 +294,11 @@
       "raw_category": "Company Update",
       "subject": "Interim Business Update - September 2026",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/421fef52-c6da-460c-8f8e-ff8c013af334.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "press_release",
+      "stage2_llm_summary_1l": "CreditAccess Grameen released its interim business update for September 2026."
     },
     {
       "idx": 20,
@@ -240,7 +309,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement Under Regulations 30 Of SEBI LODR - Grant Of Options To Eligible Employees",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fe0fd731-b8f8-4196-a639-066291bf6ef0.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "KPIT Technologies announced the grant of options to eligible employees."
     },
     {
       "idx": 21,
@@ -251,7 +324,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Acquisition",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c73e3261-ae9f-4d60-989f-ce7b298ca93e.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "M&A",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "M&A",
+      "stage2_llm_summary_1l": "Laurus Labs announced an acquisition."
     },
     {
       "idx": 22,
@@ -262,7 +339,10 @@
       "raw_category": "Shareholders meeting",
       "subject": "Gravita India Limited has informed the Exchange regarding Proceedings of Annual General Meeting held on September 28, 2026",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/GRAVITA_28092026201522_Proceeding28092026Final.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "agm_egm",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 23,
@@ -273,7 +353,11 @@
       "raw_category": "Analysts/Institutional Investor Meet/Con. Call Updates",
       "subject": "Laurus Labs Limited has informed the Exchange about Schedule of meet",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/LAURUSLABS_13102026164917_ConCallInt29102026.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "investor_meetings",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "investor_meetings",
+      "stage2_llm_summary_1l": "Laurus Labs informed the exchange about schedule of institutional meet."
     },
     {
       "idx": 24,
@@ -284,7 +368,10 @@
       "raw_category": "AGM/EGM",
       "subject": "Shareholder Meeting / Postal Ballot-Scrutinizer\"s Report",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ddc90afe-51c7-4e86-984c-dbb5d641c44e.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "postal_ballot",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 25,
@@ -295,7 +382,11 @@
       "raw_category": "Analysts/Institutional Investor Meet/Con. Call Updates",
       "subject": "Indian Energy Exchange Limited has informed the Exchange about Schedule of meet",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/IEX_23102026174957_IEX_Intimation_Earning_Call_Q2_Sep26_signed.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "investor_meetings",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "investor_meetings",
+      "stage2_llm_summary_1l": "Indian Energy Exchange informed about schedule of investor meet."
     },
     {
       "idx": 26,
@@ -306,7 +397,11 @@
       "raw_category": "Company Update",
       "subject": "Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/35b12a6d-e165-42d3-a0d1-cbe42fe2a99f.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "press_release",
+      "stage2_llm_summary_1l": "Winners of Qorus-Infosys Finacle Banking Innovation Awards 2026 announced."
     },
     {
       "idx": 27,
@@ -317,7 +412,11 @@
       "raw_category": "News Verification",
       "subject": "The Exchange has sought clarification from Sun Pharmaceutical Industries Limited with respect to recent news item captioned India orders Sun Pharma to halt eye-care drug production at plant after quality lapses.  The response from the Company is attached.",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_04112026100317_Reply_to_SEs_-_Rumour_Verification02112026.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "press_release",
+      "stage2_llm_summary_1l": "Sun Pharma responded to exchange clarification regarding recent news reports."
     },
     {
       "idx": 28,
@@ -328,7 +427,11 @@
       "raw_category": "Certificate under SEBI (Depositories and Participants) Regulations, 2018",
       "subject": "Pidilite Industries Limited has informed the Exchange about Certificate under SEBI (Depositories and Participants) Regulations, 2018 for the quarter ended 30.09.2026",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/Nisha_08102026170506_SEintimationcertunder745Sep2026signed.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Pidilite Industries submitted depository participant compliance certificate."
     },
     {
       "idx": 29,
@@ -339,7 +442,10 @@
       "raw_category": "Press Release",
       "subject": "Sun Pharma Establishes Endowed Professorship at Mount Sinai to Advance Dermatologic Care",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_06102026182517_SEintimationPRforMSP.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 30,
@@ -350,7 +456,10 @@
       "raw_category": "Shareholders meeting",
       "subject": "Aarti Industries Limited has submitted the Exchange a copy Srutinizers report of  Extraordinary General Meeting held on October 31, 2026. Further, the company has informed the Exchange regarding voting results.",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/AARTIIND_02112026110503_AARTIIND_44.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "agm_egm",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 31,
@@ -361,7 +470,10 @@
       "raw_category": "Insider Trading / SAST",
       "subject": "Closure of Trading Window",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2128e446-b78e-43c2-9e76-08f258992edb.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 32,
@@ -372,7 +484,11 @@
       "raw_category": "Issue of Securities",
       "subject": "Bajaj Finance Limited has informed the Exchange about issue of Securities",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_19102026175355_Issue_of_Securities_19102026.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "fund_raise",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "fund_raise",
+      "stage2_llm_summary_1l": "Bajaj Finance informed the exchange about the issue of securities."
     },
     {
       "idx": 33,
@@ -383,7 +499,10 @@
       "raw_category": "Analysts/Institutional Investor Meet/Con. Call Updates",
       "subject": "KPIT Technologies Limited has informed the Exchange about Post Earnings Conference Call of the Company is scheduled on Wednesday, October 28, 2026, at 17:30 Hrs. (IST). The details of the said call are enclosed",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/KPITTECH_21102026173055_KPIT_Earnings_Call_Intimation_Signed.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "earnings_call",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 34,
@@ -394,7 +513,10 @@
       "raw_category": "Company Update",
       "subject": "Newspaper Advertisement Of The Financial Results For The Quarter & Half Year Ended September 30, 2026",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5ecc3975-51dc-4d25-8b9b-f0c78f6dac49.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "results",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 35,
@@ -405,7 +527,11 @@
       "raw_category": "Company Update",
       "subject": "Agreement With A Global Speciality Chemical Company.",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/92eec871-4124-4507-b744-d3914eb2b01a.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "press_release",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "press_release",
+      "stage2_llm_summary_1l": "Aarti Industries entered into an agreement with a global specialty chemical company."
     },
     {
       "idx": 36,
@@ -416,7 +542,11 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/19d4c3c3-df05-444a-adfb-4edcffa3f847.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "HDFC Bank published newspaper advertisements regarding regulatory disclosures."
     },
     {
       "idx": 37,
@@ -427,7 +557,11 @@
       "raw_category": "Copy of Newspaper Publication",
       "subject": "Newspaper Publication about the opening of Special Window for transfer of physical shares",
       "pdf_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_30092026174654_SEIntimationfor_Special_Window_30092026.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Sun Pharma published a notice regarding the opening of a window for physical shares."
     },
     {
       "idx": 38,
@@ -438,7 +572,11 @@
       "raw_category": "Company Update",
       "subject": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d366fdf5-735e-4074-95a0-3aff58a1a054.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "unclassified",
+      "final_cls_method": "llm",
+      "stage2_llm_predicted": "unclassified",
+      "stage2_llm_summary_1l": "Sun Pharma submitted the compliance certificate under SEBI DP Regulations."
     },
     {
       "idx": 39,
@@ -449,7 +587,10 @@
       "raw_category": "AGM/EGM",
       "subject": "Shareholder Meeting / Postal Ballot-Outcome of Postal_Ballot",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "postal_ballot",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     },
     {
       "idx": 40,
@@ -460,7 +601,10 @@
       "raw_category": "Company Update",
       "subject": "Announcement under Regulation 30 (LODR)-Scheme of Arrangement",
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2c2c299b-f7bf-4edd-b15e-cedb0a5a14a8.pdf",
-      "user_label": ""
+      "user_label": "",
+      "final_predicted": "M&A",
+      "final_cls_method": "rule",
+      "stage2_llm_predicted": null
     }
   ]
 }

@@ -35,6 +35,17 @@ def main() -> None:
     res = classify_announcements(items, router=router, allow_llm=True)
     by_id = {x["id"]: x for x in res["items"]}
 
+    for row in items:
+        pred = by_id[row["id"]]
+        row["final_predicted"] = pred["category"]
+        row["final_cls_method"] = pred["cls_method"]
+        if pred["cls_method"] == "llm":
+            row["stage2_llm_predicted"] = pred["category"]
+            row["stage2_llm_summary_1l"] = pred.get("summary_1l")
+        else:
+            row["stage2_llm_predicted"] = None
+    EVAL_FILE.write_text(json.dumps(raw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
     total = res["total"]
     pos_rule_hits = [
         x for x in res["items"] if x["cls_method"] == "rule" and x["category"] != "unclassified"
@@ -62,6 +73,7 @@ def main() -> None:
         f"Unclassified Fall-Through       : {len(fallthrough_unclassified)}/{total} "
         f"({round(len(fallthrough_unclassified) / total * 100, 1)}%) [NOT counted as rule hits]"
     )
+    print(f"LLM Ledger Summary              : {json.dumps(router.ledger.summary())}")
 
     labelled = [row for row in items if (row.get("user_label") or "").strip()]
     if not labelled:

@@ -1,10 +1,47 @@
 {
-  "verified_at": "2026-11-09T06:55:43.460936+00:00",
-  "key_present": false,
+  "verified_at": "2026-11-09T08:46:33.085977+00:00",
+  "key_present": true,
   "free_tier_rate_limits_note": "Google AI Studio enforces free-tier limits per project (dynamic in AI Studio -> Rate Limits). Typical free-tier envelopes: Flash-Lite ~15 RPM / 250k TPM / 500-1000 RPD; Flash (thinking) ~10 RPM / 250k TPM / 250-500 RPD; thinking tokens count toward output tokens. FINN stays well inside this by: (1) rules-first classification (~75%+ handled with 0 LLM calls), (2) batching remaining announcements up to 20 per call, and (3) sha256 content-hash caching.",
-  "available_gemini_models": [],
-  "bulk_model": "gemini-2.5-flash-lite",
-  "strong_model": "gemini-2.5-flash",
+  "available_gemini_models": [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-pro",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-4-argon",
+    "gemini-embedding-001",
+    "gemini-embedding-2",
+    "gemini-nano-banana-2.1",
+    "gemini-omni-flash-preview"
+  ],
+  "bulk_model": "gemini-3.5-flash-lite",
+  "strong_model": "gemini-3.6-flash",
   "strong_thinking_budget": 2048,
-  "pings": {}
+  "pings": {
+    "gemini-3.5-flash-lite": {
+      "ok": true,
+      "vertexai": false,
+      "latency_ms": 1199,
+      "in_tokens": 4,
+      "out_tokens": 1,
+      "thinking_tokens": null
+    },
+    "gemini-3.6-flash": {
+      "ok": true,
+      "vertexai": false,
+      "latency_ms": 2324,
+      "in_tokens": 4,
+      "out_tokens": null,
+      "thinking_tokens": 13
+    }
+  },
+  "vertexai_express_mode": false
 }
