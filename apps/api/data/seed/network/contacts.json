@@ -1,0 +1,84 @@
+{
+  "owner": "investor:meera_iyer",
+  "synthetic_notice": "All contacts in this file are fictional (synthetic). Real people named in exchange filings are never added here; overlaps are inferred from employer/tenure and labelled in the UI.",
+  "contacts": [
+    {
+      "id": "contact:rohan_desai",
+      "name": "Rohan Desai",
+      "headline": "VP Finance, Industrial Automation · Ex-Bosch India",
+      "city": "Bengaluru",
+      "strength": 5,
+      "last_contacted": "2026-10-02",
+      "expertise_tags": ["EMS", "industrial electronics", "working capital", "autos"],
+      "email": "rohan.desai.synth@example.invalid",
+      "notes": "Met at Bengaluru EMS roundtable. Sharp on Kaynes vs Syrma receivable days and industrial PCBA margins.",
+      "affiliations": [
+        {"org": "Bosch India", "symbol": null, "role": "Senior Finance Manager", "start": 2015, "end": 2020, "kind": "work"},
+        {"org": "Dixon Technologies", "symbol": "DIXON", "role": "GM Finance (Consumer EMS)", "start": 2020, "end": 2023, "kind": "work"},
+        {"org": "IIT Kanpur", "symbol": null, "role": "B.Tech Mechanical", "start": 2007, "end": 2011, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:arjun_mehta",
+      "name": "Arjun Mehta",
+      "headline": "Head of Operations, Specialty Intermediates · Ex-Aarti Industries",
+      "city": "Mumbai",
+      "strength": 4,
+      "last_contacted": "2025-09-04",
+      "expertise_tags": ["specialty chemicals", "fluorination", "China+1 agrochem", "capex execution"],
+      "email": "arjun.mehta.synth@example.invalid",
+      "notes": "Classmate from IITK '11. Ran Vapi nitration/hydrogenation unit at Aarti; knows PI and Navin Fluorine plant heads well.",
+      "affiliations": [
+        {"org": "Aarti Industries", "symbol": "AARTIIND", "role": "VP Manufacturing (Vapi & Jhagadia)", "start": 2017, "end": 2024, "kind": "work"},
+        {"org": "Navin Fluorine International", "symbol": "NAVINFLUOR", "role": "Process Lead, Dewas", "start": 2013, "end": 2017, "kind": "work"},
+        {"org": "IIT Kanpur", "symbol": null, "role": "B.Tech Chemical", "start": 2007, "end": 2011, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:priya_nair",
+      "name": "Priya Nair",
+      "headline": "SVP Channel Sales, Cables & FMEG · Ex-Polycab",
+      "city": "Mumbai",
+      "strength": 5,
+      "last_contacted": "2026-08-19",
+      "expertise_tags": ["cables & wires", "channel inventory", "copper pass-through", "EPC"],
+      "email": "priya.nair.synth@example.invalid",
+      "notes": "Worked closely with Polycab west-zone distributors; candid on dealer stocking vs primary billing.",
+      "affiliations": [
+        {"org": "Polycab India", "symbol": "POLYCAB", "role": "National Sales Manager — Wires", "start": 2018, "end": 2024, "kind": "work"},
+        {"org": "Asian Paints", "symbol": "ASIANPAINT", "role": "Area Sales Manager", "start": 2014, "end": 2018, "kind": "work"},
+        {"org": "SPJIMR Mumbai", "symbol": null, "role": "PGDM", "start": 2012, "end": 2014, "kind": "edu"}
+      ]
+    },
+    {
+      "id": "contact:vikram_kulkarni",
+      "name": "Vikram Kulkarni",
+      "headline": "Chief Risk Officer, Rural NBFC · Ex-CreditAccess Grameen",
+      "city": "Bengaluru",
+      "strength": 4,
+      "last_contacted": "2026-07-11",
+      "expertise_tags": ["microfinance", "rural lending", "PAR 30+", "Karnataka/Maharashtra JLG"],
+      "email": "vikram.kulkarni.synth@example.invalid",
+      "notes": "Deep field view on borrower leverage in North Karnataka and Bihar MFI collection efficiency.",
+      "affiliations": [
+        {"org": "CreditAccess Grameen", "symbol": "CREDITACC", "role": "VP Credit & Collections", "start": 2019, "end": 2025, "kind": "work"},
+        {"org": "Bajaj Finance", "symbol": "BAJFINANCE", "role": "Regional Risk Manager — Rural", "start": 2015, "end": 2019, "kind": "work"}
+      ]
+    },
+    {
+      "id": "contact:kavita_rao",
+      "name": "Kavita Rao",
+      "headline": "VP Procurement, Consumer Electronics · Ex-Syrma SGS & Titan",
+      "city": "Chennai",
+      "strength": 3,
+      "last_contacted": "2026-03-15",
+      "expertise_tags": ["EMS", "PCB sourcing", "PLI scheme", "wearables"],
+      "email": "kavita.rao.synth@example.invalid",
+      "notes": "Knows component import duties and ODM vs OEM margin split at Syrma, Dixon, and Kaynes.",
+      "affiliations": [
+        {"org": "Syrma SGS Technology", "symbol": "SYRMA", "role": "Director — Strategic Sourcing", "start": 2021, "end": 2025, "kind": "work"},
+        {"org": "Titan Company", "symbol": "TITAN", "role": "Supply Chain Manager — Wearables", "start": 2016, "end": 2021, "kind": "work"}
+      ]
+    }
+  ]
+}
