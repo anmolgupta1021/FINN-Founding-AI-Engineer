@@ -95,6 +95,9 @@ This file feeds the final writeup.
 2. **Sector-Aware Lender Generalisation (`HDFCBANK`):** `HDFCBANK.json` sets `is_lender = True`, displays `"EBITDA not meaningful for lenders"`, sets `ebitda_cr = None` across all 5Y and quarterly rows, and evaluates Revenue/NII, Financing Profit (PPOP), Financing Margin, PBT, PAT, ROE, and Gross/Net NPA.
 3. **Background Job & Polling (`[S7]`):** `POST /api/v1/dossiers/{symbol}/build` enqueues an async background task (`202 Accepted`) and writes progress steps (`15%` → `35%` → `55%` → `72%` → `86%` → `94%` → `100%`) polled via `GET /api/v1/jobs/{job_id}`.
 
+### D-025 · 9 Nov · Serverless Runtime Dependency Isolation (`constants.py` vs Pipeline Scraping)
+*Why:* runtime crash on Vercel (`HTTP 500`) occurred because `finn/pull/builder.py` imported `LENDER_SYMBOLS` from `finn/pipeline/results.py`, which transitively pulled in `finn/fetchers/screener.py` (`from bs4 import BeautifulSoup`). Per `D-013`, `bs4` and `pdfplumber` are pipeline dependencies intentionally excluded from the production function bundle. Resolved by isolating `LENDER_SYMBOLS` into `finn/constants.py` with zero third-party dependencies and lazy-loading `BeautifulSoup` and `fetch_company_primary_corpus` only during offline/batch extraction. The deployed API serves all 11 endpoints with 100% snapshot fallback and zero scraping dependencies.
+
 ---
 
 ## Deliberately left out (running list)
