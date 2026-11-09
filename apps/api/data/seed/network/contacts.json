@@ -1,12 +1,12 @@
 {
   "owner": "investor:meera_iyer",
   "synthetic_notice": "All 64 contacts in this file are fictional (synthetic). Real people named in exchange filings are never added here; overlaps are inferred deterministically from employer/tenure/alma-mater and labelled 'inferred from employer/tenure overlap, synthetic network'.",
-  "count": 64,
+  "count": 67,
   "contacts": [
     {
       "id": "contact:nandini_subramanian",
       "name": "Nandini Subramanian",
-      "headline": "SVP Regulatory Compliance & Audit · Ex-ICICI Bank Limited & HDFC Bank",
+      "headline": "SVP Regulatory Compliance & Audit \u00b7 Ex-ICICI Bank Limited & HDFC Bank",
       "city": "Mumbai",
       "strength": 5,
       "last_contacted": "2026-09-28",
@@ -18,12 +18,12 @@
         "BFSI"
       ],
       "email": "nandini.subramanian.synth@example.invalid",
-      "notes": "Led RBI statutory inspection readiness at ICICI Bank Mumbai HQ (2016–2023). Knows the overseas subsidiaries & compliance bench across ICICI and HDFC Bank closely.",
+      "notes": "Led RBI statutory inspection readiness at ICICI Bank Mumbai HQ (2016\u20132023). Knows the overseas subsidiaries & compliance bench across ICICI and HDFC Bank closely.",
       "affiliations": [
         {
           "org": "ICICI Bank Limited",
           "symbol": null,
-          "role": "DVP — Regulatory Compliance & Overseas Subsidiaries",
+          "role": "DVP \u2014 Regulatory Compliance & Overseas Subsidiaries",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -31,7 +31,7 @@
         {
           "org": "HDFC Bank Limited",
           "symbol": "HDFCBANK",
-          "role": "AVP — Internal Audit",
+          "role": "AVP \u2014 Internal Audit",
           "start": 2012,
           "end": 2016,
           "kind": "work"
@@ -49,7 +49,7 @@
     {
       "id": "contact:arvind_raghavan",
       "name": "Arvind Raghavan",
-      "headline": "EVP International Banking & Data Privacy · Ex-ICICI Bank Limited",
+      "headline": "EVP International Banking & Data Privacy \u00b7 Ex-ICICI Bank Limited",
       "city": "Mumbai",
       "strength": 2,
       "last_contacted": "2025-02-14",
@@ -65,7 +65,7 @@
         {
           "org": "ICICI Bank Limited",
           "symbol": null,
-          "role": "SVP — Overseas Banking Compliance & Data Privacy",
+          "role": "SVP \u2014 Overseas Banking Compliance & Data Privacy",
           "start": 2015,
           "end": 2024,
           "kind": "work"
@@ -83,7 +83,7 @@
     {
       "id": "contact:siddharth_kulkarni",
       "name": "Siddharth Kulkarni",
-      "headline": "VP Powertrain & Commercial Vehicle Strategy · Ex-Cummins Group in India & KPIT",
+      "headline": "VP Powertrain & Commercial Vehicle Strategy \u00b7 Ex-Cummins Group in India & KPIT",
       "city": "Pune",
       "strength": 5,
       "last_contacted": "2026-09-14",
@@ -100,7 +100,7 @@
         {
           "org": "Cummins Group in India",
           "symbol": null,
-          "role": "Director — Corporate Strategy & JV Operations",
+          "role": "Director \u2014 Corporate Strategy & JV Operations",
           "start": 2011,
           "end": 2018,
           "kind": "work"
@@ -108,7 +108,7 @@
         {
           "org": "KPIT Technologies",
           "symbol": "KPITTECH",
-          "role": "Program Director — Powertrain & eMobility",
+          "role": "Program Director \u2014 Powertrain & eMobility",
           "start": 2018,
           "end": 2023,
           "kind": "work"
@@ -126,7 +126,7 @@
     {
       "id": "contact:rajeshwari_deshmukh",
       "name": "Rajeshwari Deshmukh",
-      "headline": "Operating Partner, Industrial & Auto · Ex-Cummins India & Mahindra",
+      "headline": "Operating Partner, Industrial & Auto \u00b7 Ex-Cummins India & Mahindra",
       "city": "Pune",
       "strength": 2,
       "last_contacted": "2025-01-19",
@@ -137,12 +137,12 @@
         "Pune auto cluster"
       ],
       "email": "rajeshwari.deshmukh.synth@example.invalid",
-      "notes": "2nd-degree via Siddharth Kulkarni. Served on Cummins India leadership council (2008–2017) during Anant Talaulicar's chairmanship.",
+      "notes": "2nd-degree via Siddharth Kulkarni. Served on Cummins India leadership council (2008\u20132017) during Anant Talaulicar's chairmanship.",
       "affiliations": [
         {
           "org": "Cummins Group in India",
           "symbol": null,
-          "role": "VP — Engine Business Unit",
+          "role": "VP \u2014 Engine Business Unit",
           "start": 2008,
           "end": 2017,
           "kind": "work"
@@ -150,7 +150,7 @@
         {
           "org": "Mahindra & Mahindra",
           "symbol": null,
-          "role": "SVP — Farm Equipment Strategy",
+          "role": "SVP \u2014 Farm Equipment Strategy",
           "start": 2017,
           "end": 2023,
           "kind": "work"
@@ -160,7 +160,7 @@
     {
       "id": "contact:meghna_reddy",
       "name": "Meghna Reddy",
-      "headline": "General Counsel & VP Corporate Secretarial · Ex-Cohance Lifesciences & Dr. Reddy's",
+      "headline": "General Counsel & VP Corporate Secretarial \u00b7 Ex-Cohance Lifesciences & Dr. Reddy's",
       "city": "Hyderabad",
       "strength": 4,
       "last_contacted": "2026-08-22",
@@ -177,7 +177,7 @@
         {
           "org": "Cohance Lifesciences Limited",
           "symbol": null,
-          "role": "Associate VP — Legal & Secretarial",
+          "role": "Associate VP \u2014 Legal & Secretarial",
           "start": 2021,
           "end": 2025,
           "kind": "work"
@@ -185,7 +185,7 @@
         {
           "org": "Dr. Reddy's Laboratories Limited",
           "symbol": null,
-          "role": "Senior Legal Counsel — API & Global Generics",
+          "role": "Senior Legal Counsel \u2014 API & Global Generics",
           "start": 2015,
           "end": 2021,
           "kind": "work"
@@ -203,7 +203,7 @@
     {
       "id": "contact:vikram_kulkarni",
       "name": "Vikram Kulkarni",
-      "headline": "Chief Risk Officer, Digital & Rural NBFC · Ex-Bajaj Finance & CreditAccess Grameen",
+      "headline": "Chief Risk Officer, Digital & Rural NBFC \u00b7 Ex-Bajaj Finance & CreditAccess Grameen",
       "city": "Pune",
       "strength": 4,
       "last_contacted": "2026-07-11",
@@ -228,7 +228,7 @@
         {
           "org": "Bajaj Finance Ltd",
           "symbol": "BAJFINANCE",
-          "role": "Zonal Risk & IT Controls Head — Pune",
+          "role": "Zonal Risk & IT Controls Head \u2014 Pune",
           "start": 2016,
           "end": 2020,
           "kind": "work"
@@ -238,7 +238,7 @@
     {
       "id": "contact:tanmay_joshi",
       "name": "Tanmay Joshi",
-      "headline": "VP Information Security & Cloud Governance · Ex-Bajaj Finance Ltd",
+      "headline": "VP Information Security & Cloud Governance \u00b7 Ex-Bajaj Finance Ltd",
       "city": "Pune",
       "strength": 2,
       "last_contacted": "2025-03-08",
@@ -249,12 +249,12 @@
         "CISSP"
       ],
       "email": "tanmay.joshi.synth@example.invalid",
-      "notes": "2nd-degree via Vikram Kulkarni. Built Bajaj Finance's Cyber Risk SOC alongside the CISO team in Pune (2018–2024).",
+      "notes": "2nd-degree via Vikram Kulkarni. Built Bajaj Finance's Cyber Risk SOC alongside the CISO team in Pune (2018\u20132024).",
       "affiliations": [
         {
           "org": "Bajaj Finance Ltd",
           "symbol": "BAJFINANCE",
-          "role": "AVP — Cyber Risk & Application Security",
+          "role": "AVP \u2014 Cyber Risk & Application Security",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -272,7 +272,7 @@
     {
       "id": "contact:rohan_desai",
       "name": "Rohan Desai",
-      "headline": "VP Finance, Industrial Automation · Ex-Dixon Technologies & Bosch India",
+      "headline": "VP Finance, Industrial Automation \u00b7 Ex-Dixon Technologies & Bosch India",
       "city": "Bengaluru",
       "strength": 5,
       "last_contacted": "2026-10-02",
@@ -315,7 +315,7 @@
     {
       "id": "contact:arjun_mehta",
       "name": "Arjun Mehta",
-      "headline": "Head of Operations, Specialty Intermediates · Ex-Aarti Industries & Navin Fluorine",
+      "headline": "Head of Operations, Specialty Intermediates \u00b7 Ex-Aarti Industries & Navin Fluorine",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2025-08-14",
@@ -348,7 +348,7 @@
         {
           "org": "PI Industries",
           "symbol": "PIIND",
-          "role": "Process Engineer — Jambusar CSM",
+          "role": "Process Engineer \u2014 Jambusar CSM",
           "start": 2011,
           "end": 2013,
           "kind": "work"
@@ -366,7 +366,7 @@
     {
       "id": "contact:kavita_rao",
       "name": "Kavita Rao",
-      "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
+      "headline": "VP Procurement, Consumer Electronics & Jewellery \u00b7 Ex-Syrma SGS & Titan",
       "city": "Chennai",
       "strength": 4,
       "last_contacted": "2025-06-10",
@@ -383,7 +383,7 @@
         {
           "org": "Syrma SGS Technology",
           "symbol": "SYRMA",
-          "role": "Director — Strategic Sourcing",
+          "role": "Director \u2014 Strategic Sourcing",
           "start": 2021,
           "end": 2025,
           "kind": "work"
@@ -391,7 +391,7 @@
         {
           "org": "Titan Company",
           "symbol": "TITAN",
-          "role": "Supply Chain Head — Wearables & Jewellery Ops",
+          "role": "Supply Chain Head \u2014 Wearables & Jewellery Ops",
           "start": 2016,
           "end": 2021,
           "kind": "work"
@@ -409,7 +409,7 @@
     {
       "id": "contact:devika_menon",
       "name": "Devika Menon",
-      "headline": "MD — Fast Fashion & Value Apparel Sourcing · Ex-Trent (Zudio)",
+      "headline": "MD \u2014 Fast Fashion & Value Apparel Sourcing \u00b7 Ex-Trent (Zudio)",
       "city": "Mumbai",
       "strength": 5,
       "last_contacted": "2025-07-02",
@@ -426,7 +426,7 @@
         {
           "org": "Trent Limited",
           "symbol": "TRENT",
-          "role": "GM Merchandising & Sourcing — Zudio",
+          "role": "GM Merchandising & Sourcing \u2014 Zudio",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -444,7 +444,7 @@
     {
       "id": "contact:harish_venkataraman",
       "name": "Harish Venkataraman",
-      "headline": "VP Power Markets & Short-Term Trading · Ex-IEX",
+      "headline": "VP Power Markets & Short-Term Trading \u00b7 Ex-IEX",
       "city": "New Delhi",
       "strength": 4,
       "last_contacted": "2025-05-19",
@@ -461,7 +461,7 @@
         {
           "org": "Indian Energy Exchange",
           "symbol": "IEX",
-          "role": "AVP — Market Operations & Regulatory Affairs",
+          "role": "AVP \u2014 Market Operations & Regulatory Affairs",
           "start": 2017,
           "end": 2023,
           "kind": "work"
@@ -471,7 +471,7 @@
     {
       "id": "contact:priya_nair",
       "name": "Priya Nair",
-      "headline": "SVP Channel Sales, Cables & FMEG · Ex-Polycab & Asian Paints",
+      "headline": "SVP Channel Sales, Cables & FMEG \u00b7 Ex-Polycab & Asian Paints",
       "city": "Mumbai",
       "strength": 5,
       "last_contacted": "2026-08-19",
@@ -488,7 +488,7 @@
         {
           "org": "Polycab India",
           "symbol": "POLYCAB",
-          "role": "National Sales Manager — Wires & FMEG",
+          "role": "National Sales Manager \u2014 Wires & FMEG",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -496,7 +496,7 @@
         {
           "org": "Asian Paints",
           "symbol": "ASIANPAINT",
-          "role": "Regional Sales Manager — West",
+          "role": "Regional Sales Manager \u2014 West",
           "start": 2014,
           "end": 2018,
           "kind": "work"
@@ -514,7 +514,7 @@
     {
       "id": "contact:anirudh_bhatia",
       "name": "Anirudh Bhatia",
-      "headline": "SVP Specialty Generics & US Commercial · Ex-Sun Pharma",
+      "headline": "SVP Specialty Generics & US Commercial \u00b7 Ex-Sun Pharma",
       "city": "Mumbai",
       "strength": 3,
       "last_contacted": "2025-04-11",
@@ -531,7 +531,7 @@
         {
           "org": "Sun Pharmaceutical Industries",
           "symbol": "SUNPHARMA",
-          "role": "VP — Specialty Commercial Strategy",
+          "role": "VP \u2014 Specialty Commercial Strategy",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -549,7 +549,7 @@
     {
       "id": "contact:karthik_narayanan",
       "name": "Karthik Narayanan",
-      "headline": "Principal Architect, Core Banking & BFSI Cloud · Ex-Infosys & CAMS",
+      "headline": "Principal Architect, Core Banking & BFSI Cloud \u00b7 Ex-Infosys & CAMS",
       "city": "Chennai",
       "strength": 4,
       "last_contacted": "2025-09-01",
@@ -566,7 +566,7 @@
         {
           "org": "Computer Age Management Services",
           "symbol": "CAMS",
-          "role": "VP Technology — RTA Core",
+          "role": "VP Technology \u2014 RTA Core",
           "start": 2020,
           "end": 2024,
           "kind": "work"
@@ -574,7 +574,7 @@
         {
           "org": "Infosys Limited",
           "symbol": "INFY",
-          "role": "Senior Delivery Manager — FS",
+          "role": "Senior Delivery Manager \u2014 FS",
           "start": 2013,
           "end": 2020,
           "kind": "work"
@@ -584,7 +584,7 @@
     {
       "id": "contact:saurabh_chatterjee",
       "name": "Saurabh Chatterjee",
-      "headline": "Director — Institutional Equities & Governance · Ex-UTI AMC & McKinsey",
+      "headline": "Director \u2014 Institutional Equities & Governance \u00b7 Ex-UTI AMC & McKinsey",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-09-10",
@@ -600,7 +600,7 @@
         {
           "org": "UTI AMC",
           "symbol": null,
-          "role": "VP — Equities Research",
+          "role": "VP \u2014 Equities Research",
           "start": 2014,
           "end": 2019,
           "kind": "work"
@@ -626,7 +626,7 @@
     {
       "id": "contact:nikhil_sharma",
       "name": "Nikhil Sharma",
-      "headline": "VP Supply Chain & Vendor Development · Ex-Maruti Suzuki",
+      "headline": "VP Supply Chain & Vendor Development \u00b7 Ex-Maruti Suzuki",
       "city": "Gurugram",
       "strength": 5,
       "last_contacted": "2026-10-12",
@@ -642,7 +642,7 @@
         {
           "org": "Maruti Suzuki India",
           "symbol": "MARUTI",
-          "role": "DGM — Powertrain & Electronics Sourcing",
+          "role": "DGM \u2014 Powertrain & Electronics Sourcing",
           "start": 2015,
           "end": 2024,
           "kind": "work"
@@ -660,7 +660,7 @@
     {
       "id": "contact:deepak_agarwal",
       "name": "Deepak Agarwal",
-      "headline": "COO, Non-Ferrous Recycling & Lead Smelting · Ex-Gravita India",
+      "headline": "COO, Non-Ferrous Recycling & Lead Smelting \u00b7 Ex-Gravita India",
       "city": "Jaipur",
       "strength": 4,
       "last_contacted": "2025-10-05",
@@ -677,7 +677,7 @@
         {
           "org": "Gravita India",
           "symbol": "GRAVITA",
-          "role": "VP — Operations & Recycling Plants",
+          "role": "VP \u2014 Operations & Recycling Plants",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -687,7 +687,7 @@
     {
       "id": "contact:manish_parekh",
       "name": "Manish Parekh",
-      "headline": "SVP Trade & Construction Chemicals · Ex-Pidilite Industries",
+      "headline": "SVP Trade & Construction Chemicals \u00b7 Ex-Pidilite Industries",
       "city": "Mumbai",
       "strength": 5,
       "last_contacted": "2026-09-25",
@@ -704,7 +704,7 @@
         {
           "org": "Pidilite Industries",
           "symbol": "PIDILITIND",
-          "role": "VP — Sales & Marketing (Consumer & Bazaar)",
+          "role": "VP \u2014 Sales & Marketing (Consumer & Bazaar)",
           "start": 2016,
           "end": 2024,
           "kind": "work"
@@ -712,7 +712,7 @@
         {
           "org": "Asian Paints",
           "symbol": "ASIANPAINT",
-          "role": "Brand Manager — Waterproofing",
+          "role": "Brand Manager \u2014 Waterproofing",
           "start": 2012,
           "end": 2016,
           "kind": "work"
@@ -722,7 +722,7 @@
     {
       "id": "contact:vivek_hegde",
       "name": "Vivek Hegde",
-      "headline": "VP Aerospace & Industrial Box-Build · Ex-Kaynes Technology",
+      "headline": "VP Aerospace & Industrial Box-Build \u00b7 Ex-Kaynes Technology",
       "city": "Mysuru",
       "strength": 4,
       "last_contacted": "2026-10-18",
@@ -739,7 +739,7 @@
         {
           "org": "Kaynes Technology",
           "symbol": "KAYNES",
-          "role": "GM — Operations & Strategic Accounts",
+          "role": "GM \u2014 Operations & Strategic Accounts",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -757,7 +757,7 @@
     {
       "id": "contact:shweta_bansal",
       "name": "Shweta Bansal",
-      "headline": "Head of Agrochem CSM Commercialization · Ex-PI Industries & SRF",
+      "headline": "Head of Agrochem CSM Commercialization \u00b7 Ex-PI Industries & SRF",
       "city": "Udaipur",
       "strength": 4,
       "last_contacted": "2026-06-15",
@@ -774,7 +774,7 @@
         {
           "org": "PI Industries",
           "symbol": "PIIND",
-          "role": "AVP — CSM Business Development & Program Mgmt",
+          "role": "AVP \u2014 CSM Business Development & Program Mgmt",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -782,7 +782,7 @@
         {
           "org": "SRF Limited",
           "symbol": null,
-          "role": "Senior Manager — Specialty Chemicals",
+          "role": "Senior Manager \u2014 Specialty Chemicals",
           "start": 2014,
           "end": 2018,
           "kind": "work"
@@ -792,7 +792,7 @@
     {
       "id": "contact:gaurav_singhania",
       "name": "Gaurav Singhania",
-      "headline": "VP EHV Cables & EPC Bidding · Ex-KEI Industries & Polycab",
+      "headline": "VP EHV Cables & EPC Bidding \u00b7 Ex-KEI Industries & Polycab",
       "city": "New Delhi",
       "strength": 3,
       "last_contacted": "2025-11-12",
@@ -809,7 +809,7 @@
         {
           "org": "KEI Industries",
           "symbol": null,
-          "role": "VP — Institutional & EHV Sales",
+          "role": "VP \u2014 Institutional & EHV Sales",
           "start": 2020,
           "end": 2025,
           "kind": "work"
@@ -817,7 +817,7 @@
         {
           "org": "Polycab India",
           "symbol": "POLYCAB",
-          "role": "AGM — Institutional Projects",
+          "role": "AGM \u2014 Institutional Projects",
           "start": 2015,
           "end": 2020,
           "kind": "work"
@@ -827,7 +827,7 @@
     {
       "id": "contact:ananya_krishnan",
       "name": "Ananya Krishnan",
-      "headline": "Director — Jewellery Merchandising & Bullion Lease · Ex-Titan (Tanishq)",
+      "headline": "Director \u2014 Jewellery Merchandising & Bullion Lease \u00b7 Ex-Titan (Tanishq)",
       "city": "Bengaluru",
       "strength": 5,
       "last_contacted": "2026-09-30",
@@ -844,7 +844,7 @@
         {
           "org": "Titan Company",
           "symbol": "TITAN",
-          "role": "Regional Business Head — South (Tanishq)",
+          "role": "Regional Business Head \u2014 South (Tanishq)",
           "start": 2017,
           "end": 2025,
           "kind": "work"
@@ -862,7 +862,7 @@
     {
       "id": "contact:rahul_varma",
       "name": "Rahul Varma",
-      "headline": "SVP Retail Credit & Cross-Sell · Ex-HDFC Bank & Bajaj Finance",
+      "headline": "SVP Retail Credit & Cross-Sell \u00b7 Ex-HDFC Bank & Bajaj Finance",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-08-05",
@@ -879,7 +879,7 @@
         {
           "org": "HDFC Bank Limited",
           "symbol": "HDFCBANK",
-          "role": "Zonal Head — Retail Assets",
+          "role": "Zonal Head \u2014 Retail Assets",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -887,7 +887,7 @@
         {
           "org": "Bajaj Finance Ltd",
           "symbol": "BAJFINANCE",
-          "role": "Product Head — Urban Personal Loans",
+          "role": "Product Head \u2014 Urban Personal Loans",
           "start": 2014,
           "end": 2018,
           "kind": "work"
@@ -897,7 +897,7 @@
     {
       "id": "contact:pooja_mahajan",
       "name": "Pooja Mahajan",
-      "headline": "VP Global Delivery — GenAI & Cloud Migration · Ex-Infosys",
+      "headline": "VP Global Delivery \u2014 GenAI & Cloud Migration \u00b7 Ex-Infosys",
       "city": "Bengaluru",
       "strength": 4,
       "last_contacted": "2026-10-08",
@@ -914,7 +914,7 @@
         {
           "org": "Infosys Limited",
           "symbol": "INFY",
-          "role": "AVP & Delivery Head — Retail & CPG",
+          "role": "AVP & Delivery Head \u2014 Retail & CPG",
           "start": 2015,
           "end": 2025,
           "kind": "work"
@@ -932,7 +932,7 @@
     {
       "id": "contact:sanjay_mutha",
       "name": "Sanjay Mutha",
-      "headline": "Zonal Operations Head, Microfinance · Ex-CreditAccess Grameen & Spandana",
+      "headline": "Zonal Operations Head, Microfinance \u00b7 Ex-CreditAccess Grameen & Spandana",
       "city": "Belagavi",
       "strength": 3,
       "last_contacted": "2025-07-22",
@@ -948,7 +948,7 @@
         {
           "org": "CreditAccess Grameen",
           "symbol": "CREDITACC",
-          "role": "Divisional Manager — Operations",
+          "role": "Divisional Manager \u2014 Operations",
           "start": 2017,
           "end": 2023,
           "kind": "work"
@@ -966,7 +966,7 @@
     {
       "id": "contact:prashant_deshpande",
       "name": "Prashant Deshpande",
-      "headline": "Head of HFO & Fluoropolymers Engineering · Ex-Navin Fluorine",
+      "headline": "Head of HFO & Fluoropolymers Engineering \u00b7 Ex-Navin Fluorine",
       "city": "Surat",
       "strength": 5,
       "last_contacted": "2026-09-18",
@@ -983,7 +983,7 @@
         {
           "org": "Navin Fluorine International",
           "symbol": "NAVINFLUOR",
-          "role": "GM — Projects & Process Engineering (Dahej)",
+          "role": "GM \u2014 Projects & Process Engineering (Dahej)",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -1001,7 +1001,7 @@
     {
       "id": "contact:madhavan_iyengar",
       "name": "Madhavan Iyengar",
-      "headline": "SVP API Operations & ARV Synthesis · Ex-Laurus Labs & Divi's",
+      "headline": "SVP API Operations & ARV Synthesis \u00b7 Ex-Laurus Labs & Divi's",
       "city": "Visakhapatnam",
       "strength": 4,
       "last_contacted": "2026-07-29",
@@ -1018,7 +1018,7 @@
         {
           "org": "Laurus Labs",
           "symbol": "LAURUSLABS",
-          "role": "VP — Manufacturing (Visakhapatnam)",
+          "role": "VP \u2014 Manufacturing (Visakhapatnam)",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -1036,7 +1036,7 @@
     {
       "id": "contact:ritesh_malhotra",
       "name": "Ritesh Malhotra",
-      "headline": "VP Smartphone EMS & Display Module · Ex-Dixon (Padget)",
+      "headline": "VP Smartphone EMS & Display Module \u00b7 Ex-Dixon (Padget)",
       "city": "Noida",
       "strength": 4,
       "last_contacted": "2026-09-04",
@@ -1047,12 +1047,12 @@
         "Noida EMS"
       ],
       "email": "ritesh_malhotra.synth@example.invalid",
-      "notes": "Domain specialist on DIXON (Dixon Technologies): VP Operations — Padget Electronics (2019–2025). Alumni cluster: IIT Kanpur.",
+      "notes": "Domain specialist on DIXON (Dixon Technologies): VP Operations \u2014 Padget Electronics (2019\u20132025). Alumni cluster: IIT Kanpur.",
       "affiliations": [
         {
           "org": "Dixon Technologies",
           "symbol": "DIXON",
-          "role": "VP Operations — Padget Electronics",
+          "role": "VP Operations \u2014 Padget Electronics",
           "start": 2019,
           "end": 2025,
           "kind": "work"
@@ -1070,7 +1070,7 @@
     {
       "id": "contact:sneha_sundaram",
       "name": "Sneha Sundaram",
-      "headline": "Head of Alternates & AIF Registry · Ex-CAMS",
+      "headline": "Head of Alternates & AIF Registry \u00b7 Ex-CAMS",
       "city": "Chennai",
       "strength": 3,
       "last_contacted": "2025-06-18",
@@ -1081,12 +1081,12 @@
         "insurance repository"
       ],
       "email": "sneha_sundaram.synth@example.invalid",
-      "notes": "Domain specialist on CAMS (Computer Age Management Services): AVP — AIF & Wealth Services (2018–2024). Alumni cluster: ICAI.",
+      "notes": "Domain specialist on CAMS (Computer Age Management Services): AVP \u2014 AIF & Wealth Services (2018\u20132024). Alumni cluster: ICAI.",
       "affiliations": [
         {
           "org": "Computer Age Management Services",
           "symbol": "CAMS",
-          "role": "AVP — AIF & Wealth Services",
+          "role": "AVP \u2014 AIF & Wealth Services",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -1104,7 +1104,7 @@
     {
       "id": "contact:kiran_mazumdar_shah_synth",
       "name": "Kiran Nadkarni",
-      "headline": "Director — Bio-CDMO & Cell Therapy · Ex-Laurus Bio",
+      "headline": "Director \u2014 Bio-CDMO & Cell Therapy \u00b7 Ex-Laurus Bio",
       "city": "Bengaluru",
       "strength": 3,
       "last_contacted": "2025-11-02",
@@ -1115,12 +1115,12 @@
         "CDMO"
       ],
       "email": "kiran_mazumdar_shah_synth.synth@example.invalid",
-      "notes": "Domain specialist on LAURUSLABS (Laurus Labs): Director — Biologics Operations (2020–2025). Alumni cluster: IIT Bombay.",
+      "notes": "Domain specialist on LAURUSLABS (Laurus Labs): Director \u2014 Biologics Operations (2020\u20132025). Alumni cluster: IIT Bombay.",
       "affiliations": [
         {
           "org": "Laurus Labs",
           "symbol": "LAURUSLABS",
-          "role": "Director — Biologics Operations",
+          "role": "Director \u2014 Biologics Operations",
           "start": 2020,
           "end": 2025,
           "kind": "work"
@@ -1138,7 +1138,7 @@
     {
       "id": "contact:ashwin_pai",
       "name": "Ashwin Pai",
-      "headline": "VP Autonomous Driving & ADAS · Ex-KPIT & Tata Elxsi",
+      "headline": "VP Autonomous Driving & ADAS \u00b7 Ex-KPIT & Tata Elxsi",
       "city": "Bengaluru",
       "strength": 4,
       "last_contacted": "2026-08-12",
@@ -1149,12 +1149,12 @@
         "Honda/Renault SDV"
       ],
       "email": "ashwin_pai.synth@example.invalid",
-      "notes": "Domain specialist on KPITTECH (KPIT Technologies): Practice Head — ADAS (2019–2024). Alumni cluster: IIT Madras.",
+      "notes": "Domain specialist on KPITTECH (KPIT Technologies): Practice Head \u2014 ADAS (2019\u20132024). Alumni cluster: IIT Madras.",
       "affiliations": [
         {
           "org": "KPIT Technologies",
           "symbol": "KPITTECH",
-          "role": "Practice Head — ADAS",
+          "role": "Practice Head \u2014 ADAS",
           "start": 2019,
           "end": 2024,
           "kind": "work"
@@ -1172,7 +1172,7 @@
     {
       "id": "contact:neha_kapoor",
       "name": "Neha Kapoor",
-      "headline": "GM Store Expansion & Real Estate · Ex-Trent (Westside & Star)",
+      "headline": "GM Store Expansion & Real Estate \u00b7 Ex-Trent (Westside & Star)",
       "city": "Mumbai",
       "strength": 3,
       "last_contacted": "2025-05-09",
@@ -1183,12 +1183,12 @@
         "retail capex"
       ],
       "email": "neha_kapoor.synth@example.invalid",
-      "notes": "Domain specialist on TRENT (Trent Limited): Head — Retail Real Estate (West) (2017–2024). Alumni cluster: SPJIMR Mumbai.",
+      "notes": "Domain specialist on TRENT (Trent Limited): Head \u2014 Retail Real Estate (West) (2017\u20132024). Alumni cluster: SPJIMR Mumbai.",
       "affiliations": [
         {
           "org": "Trent Limited",
           "symbol": "TRENT",
-          "role": "Head — Retail Real Estate (West)",
+          "role": "Head \u2014 Retail Real Estate (West)",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -1206,7 +1206,7 @@
     {
       "id": "contact:abhishek_tiwari",
       "name": "Abhishek Tiwari",
-      "headline": "VP Decorative Coatings R&D · Ex-Asian Paints & Berger",
+      "headline": "VP Decorative Coatings R&D \u00b7 Ex-Asian Paints & Berger",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-07-19",
@@ -1217,12 +1217,12 @@
         "tinting machines"
       ],
       "email": "abhishek_tiwari.synth@example.invalid",
-      "notes": "Domain specialist on ASIANPAINT (Asian Paints): Principal Scientist — Polymers (2015–2024). Alumni cluster: IIT Bombay.",
+      "notes": "Domain specialist on ASIANPAINT (Asian Paints): Principal Scientist \u2014 Polymers (2015\u20132024). Alumni cluster: IIT Bombay.",
       "affiliations": [
         {
           "org": "Asian Paints",
           "symbol": "ASIANPAINT",
-          "role": "Principal Scientist — Polymers",
+          "role": "Principal Scientist \u2014 Polymers",
           "start": 2015,
           "end": 2024,
           "kind": "work"
@@ -1240,7 +1240,7 @@
     {
       "id": "contact:varun_chawla",
       "name": "Varun Chawla",
-      "headline": "Director — Treasury & Bullion Hedging · Ex-Titan",
+      "headline": "Director \u2014 Treasury & Bullion Hedging \u00b7 Ex-Titan",
       "city": "Bengaluru",
       "strength": 3,
       "last_contacted": "2025-08-29",
@@ -1251,12 +1251,12 @@
         "CaratLane"
       ],
       "email": "varun_chawla.synth@example.invalid",
-      "notes": "Domain specialist on TITAN (Titan Company): AVP — Corporate Treasury (2016–2023). Alumni cluster: IIM Ahmedabad.",
+      "notes": "Domain specialist on TITAN (Titan Company): AVP \u2014 Corporate Treasury (2016\u20132023). Alumni cluster: IIM Ahmedabad.",
       "affiliations": [
         {
           "org": "Titan Company",
           "symbol": "TITAN",
-          "role": "AVP — Corporate Treasury",
+          "role": "AVP \u2014 Corporate Treasury",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -1274,7 +1274,7 @@
     {
       "id": "contact:rohit_bhargava",
       "name": "Rohit Bhargava",
-      "headline": "SVP Arena & Nexa Dealership Network · Ex-Maruti Suzuki",
+      "headline": "SVP Arena & Nexa Dealership Network \u00b7 Ex-Maruti Suzuki",
       "city": "New Delhi",
       "strength": 4,
       "last_contacted": "2026-09-21",
@@ -1285,12 +1285,12 @@
         "rural auto demand"
       ],
       "email": "rohit_bhargava.synth@example.invalid",
-      "notes": "Domain specialist on MARUTI (Maruti Suzuki India): Zonal Business Head — North (2014–2024). Alumni cluster: IIM Bangalore.",
+      "notes": "Domain specialist on MARUTI (Maruti Suzuki India): Zonal Business Head \u2014 North (2014\u20132024). Alumni cluster: IIM Bangalore.",
       "affiliations": [
         {
           "org": "Maruti Suzuki India",
           "symbol": "MARUTI",
-          "role": "Zonal Business Head — North",
+          "role": "Zonal Business Head \u2014 North",
           "start": 2014,
           "end": 2024,
           "kind": "work"
@@ -1308,7 +1308,7 @@
     {
       "id": "contact:pallavi_joshi",
       "name": "Pallavi Joshi",
-      "headline": "VP US Generics Regulatory Affairs · Ex-Sun Pharma (Halol)",
+      "headline": "VP US Generics Regulatory Affairs \u00b7 Ex-Sun Pharma (Halol)",
       "city": "Vadodara",
       "strength": 5,
       "last_contacted": "2026-10-01",
@@ -1319,12 +1319,12 @@
         "cGMP"
       ],
       "email": "pallavi_joshi.synth@example.invalid",
-      "notes": "Domain specialist on SUNPHARMA (Sun Pharmaceutical Industries): VP — Global Regulatory Affairs (2015–2025). Alumni cluster: ICSI.",
+      "notes": "Domain specialist on SUNPHARMA (Sun Pharmaceutical Industries): VP \u2014 Global Regulatory Affairs (2015\u20132025). Alumni cluster: ICSI.",
       "affiliations": [
         {
           "org": "Sun Pharmaceutical Industries",
           "symbol": "SUNPHARMA",
-          "role": "VP — Global Regulatory Affairs",
+          "role": "VP \u2014 Global Regulatory Affairs",
           "start": 2015,
           "end": 2025,
           "kind": "work"
@@ -1342,7 +1342,7 @@
     {
       "id": "contact:tarun_khandelwal",
       "name": "Tarun Khandelwal",
-      "headline": "Head of Plastic & Aluminium Recycling · Ex-Gravita India",
+      "headline": "Head of Plastic & Aluminium Recycling \u00b7 Ex-Gravita India",
       "city": "Jaipur",
       "strength": 3,
       "last_contacted": "2025-04-25",
@@ -1353,12 +1353,12 @@
         "Mundra SEZ"
       ],
       "email": "tarun_khandelwal.synth@example.invalid",
-      "notes": "Domain specialist on GRAVITA (Gravita India): GM — Non-Lead verticals (2018–2024). Alumni cluster: IIT Kanpur.",
+      "notes": "Domain specialist on GRAVITA (Gravita India): GM \u2014 Non-Lead verticals (2018\u20132024). Alumni cluster: IIT Kanpur.",
       "affiliations": [
         {
           "org": "Gravita India",
           "symbol": "GRAVITA",
-          "role": "GM — Non-Lead verticals",
+          "role": "GM \u2014 Non-Lead verticals",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -1376,7 +1376,7 @@
     {
       "id": "contact:aditya_srinivasan",
       "name": "Aditya Srinivasan",
-      "headline": "VP Bilateral & Green Power Markets · Ex-IEX",
+      "headline": "VP Bilateral & Green Power Markets \u00b7 Ex-IEX",
       "city": "New Delhi",
       "strength": 4,
       "last_contacted": "2026-08-14",
@@ -1387,12 +1387,12 @@
         "tariffs"
       ],
       "email": "aditya_srinivasan.synth@example.invalid",
-      "notes": "Domain specialist on IEX (Indian Energy Exchange): Head — New Product Development (2018–2024). Alumni cluster: IIT Kanpur.",
+      "notes": "Domain specialist on IEX (Indian Energy Exchange): Head \u2014 New Product Development (2018\u20132024). Alumni cluster: IIT Kanpur.",
       "affiliations": [
         {
           "org": "Indian Energy Exchange",
           "symbol": "IEX",
-          "role": "Head — New Product Development",
+          "role": "Head \u2014 New Product Development",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -1410,7 +1410,7 @@
     {
       "id": "contact:chitra_venkatesh",
       "name": "Chitra Venkatesh",
-      "headline": "SVP Wholesale Credit & SME Banking · Ex-HDFC Bank",
+      "headline": "SVP Wholesale Credit & SME Banking \u00b7 Ex-HDFC Bank",
       "city": "Chennai",
       "strength": 4,
       "last_contacted": "2026-06-30",
@@ -1421,12 +1421,12 @@
         "HDFC Bank"
       ],
       "email": "chitra_venkatesh.synth@example.invalid",
-      "notes": "Domain specialist on HDFCBANK (HDFC Bank Limited): Regional Credit Head — South (2015–2024). Alumni cluster: IIM Bangalore.",
+      "notes": "Domain specialist on HDFCBANK (HDFC Bank Limited): Regional Credit Head \u2014 South (2015\u20132024). Alumni cluster: IIM Bangalore.",
       "affiliations": [
         {
           "org": "HDFC Bank Limited",
           "symbol": "HDFCBANK",
-          "role": "Regional Credit Head — South",
+          "role": "Regional Credit Head \u2014 South",
           "start": 2015,
           "end": 2024,
           "kind": "work"
@@ -1444,7 +1444,7 @@
     {
       "id": "contact:mohan_das",
       "name": "Mohan Das",
-      "headline": "VP Copper Sourcing & Rod Mill · Ex-Polycab (Halol)",
+      "headline": "VP Copper Sourcing & Rod Mill \u00b7 Ex-Polycab (Halol)",
       "city": "Vadodara",
       "strength": 4,
       "last_contacted": "2025-09-17",
@@ -1455,12 +1455,12 @@
         "XLPE compounds"
       ],
       "email": "mohan_das.synth@example.invalid",
-      "notes": "Domain specialist on POLYCAB (Polycab India): Plant Head — Halol Wires & Copper (2016–2024). Alumni cluster: PSG College of Technology.",
+      "notes": "Domain specialist on POLYCAB (Polycab India): Plant Head \u2014 Halol Wires & Copper (2016\u20132024). Alumni cluster: PSG College of Technology.",
       "affiliations": [
         {
           "org": "Polycab India",
           "symbol": "POLYCAB",
-          "role": "Plant Head — Halol Wires & Copper",
+          "role": "Plant Head \u2014 Halol Wires & Copper",
           "start": 2016,
           "end": 2024,
           "kind": "work"
@@ -1478,7 +1478,7 @@
     {
       "id": "contact:prateek_goel",
       "name": "Prateek Goel",
-      "headline": "Director — Industrial Adhesives & B2B · Ex-Pidilite",
+      "headline": "Director \u2014 Industrial Adhesives & B2B \u00b7 Ex-Pidilite",
       "city": "Mumbai",
       "strength": 3,
       "last_contacted": "2025-12-01",
@@ -1489,12 +1489,12 @@
         "Huntsman Araldite"
       ],
       "email": "prateek_goel.synth@example.invalid",
-      "notes": "Domain specialist on PIDILITIND (Pidilite Industries): Business Head — Industrial Products (2017–2024). Alumni cluster: SPJIMR Mumbai.",
+      "notes": "Domain specialist on PIDILITIND (Pidilite Industries): Business Head \u2014 Industrial Products (2017\u20132024). Alumni cluster: SPJIMR Mumbai.",
       "affiliations": [
         {
           "org": "Pidilite Industries",
           "symbol": "PIDILITIND",
-          "role": "Business Head — Industrial Products",
+          "role": "Business Head \u2014 Industrial Products",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -1512,7 +1512,7 @@
     {
       "id": "contact:alok_nanda",
       "name": "Alok Nanda",
-      "headline": "VP Nitric Acid & Downstream Chlorination · Ex-Aarti Industries",
+      "headline": "VP Nitric Acid & Downstream Chlorination \u00b7 Ex-Aarti Industries",
       "city": "Vapi",
       "strength": 3,
       "last_contacted": "2025-05-27",
@@ -1523,12 +1523,12 @@
         "agro intermediates"
       ],
       "email": "alok_nanda.synth@example.invalid",
-      "notes": "Domain specialist on AARTIIND (Aarti Industries): GM — Process Safety & Operations (2015–2023). Alumni cluster: IIT Bombay.",
+      "notes": "Domain specialist on AARTIIND (Aarti Industries): GM \u2014 Process Safety & Operations (2015\u20132023). Alumni cluster: IIT Bombay.",
       "affiliations": [
         {
           "org": "Aarti Industries",
           "symbol": "AARTIIND",
-          "role": "GM — Process Safety & Operations",
+          "role": "GM \u2014 Process Safety & Operations",
           "start": 2015,
           "end": 2023,
           "kind": "work"
@@ -1546,7 +1546,7 @@
     {
       "id": "contact:subhash_menon",
       "name": "Subhash Menon",
-      "headline": "Head of Smart Meter & RFID Manufacturing · Ex-Syrma SGS",
+      "headline": "Head of Smart Meter & RFID Manufacturing \u00b7 Ex-Syrma SGS",
       "city": "Gurugram",
       "strength": 4,
       "last_contacted": "2026-09-12",
@@ -1557,12 +1557,12 @@
         "German EMS export"
       ],
       "email": "subhash_menon.synth@example.invalid",
-      "notes": "Domain specialist on SYRMA (Syrma SGS Technology): VP — Northern Operations (2019–2025). Alumni cluster: IIT Madras.",
+      "notes": "Domain specialist on SYRMA (Syrma SGS Technology): VP \u2014 Northern Operations (2019\u20132025). Alumni cluster: IIT Madras.",
       "affiliations": [
         {
           "org": "Syrma SGS Technology",
           "symbol": "SYRMA",
-          "role": "VP — Northern Operations",
+          "role": "VP \u2014 Northern Operations",
           "start": 2019,
           "end": 2025,
           "kind": "work"
@@ -1580,7 +1580,7 @@
     {
       "id": "contact:divya_shetty",
       "name": "Divya Shetty",
-      "headline": "VP Consumer Durable Co-Branded Cards · Ex-Bajaj Finance",
+      "headline": "VP Consumer Durable Co-Branded Cards \u00b7 Ex-Bajaj Finance",
       "city": "Pune",
       "strength": 3,
       "last_contacted": "2025-08-03",
@@ -1591,12 +1591,12 @@
         "fintech partnerships"
       ],
       "email": "divya_shetty.synth@example.invalid",
-      "notes": "Domain specialist on BAJFINANCE (Bajaj Finance Ltd): AVP — Co-brand & EMI Network (2017–2024). Alumni cluster: IIM Ahmedabad.",
+      "notes": "Domain specialist on BAJFINANCE (Bajaj Finance Ltd): AVP \u2014 Co-brand & EMI Network (2017\u20132024). Alumni cluster: IIM Ahmedabad.",
       "affiliations": [
         {
           "org": "Bajaj Finance Ltd",
           "symbol": "BAJFINANCE",
-          "role": "AVP — Co-brand & EMI Network",
+          "role": "AVP \u2014 Co-brand & EMI Network",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -1614,7 +1614,7 @@
     {
       "id": "contact:hemant_shah",
       "name": "Hemant Shah",
-      "headline": "CFO — Specialty Chemicals Peer · Ex-Navin Fluorine & Deepak Nitrite",
+      "headline": "CFO \u2014 Specialty Chemicals Peer \u00b7 Ex-Navin Fluorine & Deepak Nitrite",
       "city": "Vadodara",
       "strength": 4,
       "last_contacted": "2026-07-04",
@@ -1625,12 +1625,12 @@
         "chemical cycle"
       ],
       "email": "hemant_shah.synth@example.invalid",
-      "notes": "Domain specialist on NAVINFLUOR (Navin Fluorine International): VP — Finance & Commercial (2016–2023). Alumni cluster: ICAI.",
+      "notes": "Domain specialist on NAVINFLUOR (Navin Fluorine International): VP \u2014 Finance & Commercial (2016\u20132023). Alumni cluster: ICAI.",
       "affiliations": [
         {
           "org": "Navin Fluorine International",
           "symbol": "NAVINFLUOR",
-          "role": "VP — Finance & Commercial",
+          "role": "VP \u2014 Finance & Commercial",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -1648,7 +1648,7 @@
     {
       "id": "contact:lakshmi_subramanian",
       "name": "Lakshmi Subramanian",
-      "headline": "VP BFSI Large Deals · Ex-Infosys",
+      "headline": "VP BFSI Large Deals \u00b7 Ex-Infosys",
       "city": "Bengaluru",
       "strength": 3,
       "last_contacted": "2025-06-02",
@@ -1659,12 +1659,12 @@
         "European banks"
       ],
       "email": "lakshmi_subramanian.synth@example.invalid",
-      "notes": "Domain specialist on INFY (Infosys Limited): Client Partner — Banking (2014–2023). Alumni cluster: PSG College of Technology.",
+      "notes": "Domain specialist on INFY (Infosys Limited): Client Partner \u2014 Banking (2014\u20132023). Alumni cluster: PSG College of Technology.",
       "affiliations": [
         {
           "org": "Infosys Limited",
           "symbol": "INFY",
-          "role": "Client Partner — Banking",
+          "role": "Client Partner \u2014 Banking",
           "start": 2014,
           "end": 2023,
           "kind": "work"
@@ -1682,7 +1682,7 @@
     {
       "id": "contact:nilesh_patil",
       "name": "Nilesh Patil",
-      "headline": "Head of Semicon OSAT Packaging · Ex-Kaynes Semicon",
+      "headline": "Head of Semicon OSAT Packaging \u00b7 Ex-Kaynes Semicon",
       "city": "Hyderabad",
       "strength": 5,
       "last_contacted": "2026-10-20",
@@ -1693,12 +1693,12 @@
         "power module packaging"
       ],
       "email": "nilesh_patil.synth@example.invalid",
-      "notes": "Domain specialist on KAYNES (Kaynes Technology): VP — Semiconductor Packaging (2022–2025). Alumni cluster: IIT Madras.",
+      "notes": "Domain specialist on KAYNES (Kaynes Technology): VP \u2014 Semiconductor Packaging (2022\u20132025). Alumni cluster: IIT Madras.",
       "affiliations": [
         {
           "org": "Kaynes Technology",
           "symbol": "KAYNES",
-          "role": "VP — Semiconductor Packaging",
+          "role": "VP \u2014 Semiconductor Packaging",
           "start": 2022,
           "end": 2025,
           "kind": "work"
@@ -1716,7 +1716,7 @@
     {
       "id": "contact:reshma_kazi",
       "name": "Reshma Kazi",
-      "headline": "VP Rural Micro-Enterprise Loans · Ex-CreditAccess Grameen",
+      "headline": "VP Rural Micro-Enterprise Loans \u00b7 Ex-CreditAccess Grameen",
       "city": "Pune",
       "strength": 4,
       "last_contacted": "2026-08-27",
@@ -1727,12 +1727,12 @@
         "asset quality"
       ],
       "email": "reshma_kazi.synth@example.invalid",
-      "notes": "Domain specialist on CREDITACC (CreditAccess Grameen): Head — Retail Finance & New Initiatives (2018–2025). Alumni cluster: SPJIMR Mumbai.",
+      "notes": "Domain specialist on CREDITACC (CreditAccess Grameen): Head \u2014 Retail Finance & New Initiatives (2018\u20132025). Alumni cluster: SPJIMR Mumbai.",
       "affiliations": [
         {
           "org": "CreditAccess Grameen",
           "symbol": "CREDITACC",
-          "role": "Head — Retail Finance & New Initiatives",
+          "role": "Head \u2014 Retail Finance & New Initiatives",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -1750,7 +1750,7 @@
     {
       "id": "contact:suresh_babu",
       "name": "Suresh Babu",
-      "headline": "GM EHS & Process Scale-Up · Ex-PI Industries (Panoli)",
+      "headline": "GM EHS & Process Scale-Up \u00b7 Ex-PI Industries (Panoli)",
       "city": "Bharuch",
       "strength": 3,
       "last_contacted": "2025-07-14",
@@ -1761,12 +1761,12 @@
         "Japanese CSM audits"
       ],
       "email": "suresh_babu.synth@example.invalid",
-      "notes": "Domain specialist on PIIND (PI Industries): DGM — Technical Services & Scale-Up (2015–2023). Alumni cluster: IIT Kanpur.",
+      "notes": "Domain specialist on PIIND (PI Industries): DGM \u2014 Technical Services & Scale-Up (2015\u20132023). Alumni cluster: IIT Kanpur.",
       "affiliations": [
         {
           "org": "PI Industries",
           "symbol": "PIIND",
-          "role": "DGM — Technical Services & Scale-Up",
+          "role": "DGM \u2014 Technical Services & Scale-Up",
           "start": 2015,
           "end": 2023,
           "kind": "work"
@@ -1784,7 +1784,7 @@
     {
       "id": "contact:vishal_kapadia",
       "name": "Vishal Kapadia",
-      "headline": "VP FMEG Fans & Switches · Ex-Havells & Polycab",
+      "headline": "VP FMEG Fans & Switches \u00b7 Ex-Havells & Polycab",
       "city": "Mumbai",
       "strength": 3,
       "last_contacted": "2025-10-19",
@@ -1795,12 +1795,12 @@
         "switches & switchgear"
       ],
       "email": "vishal_kapadia.synth@example.invalid",
-      "notes": "Domain specialist on POLYCAB (Polycab India): Business Head — FMEG Fans (2019–2024). Alumni cluster: IIM Bangalore.",
+      "notes": "Domain specialist on POLYCAB (Polycab India): Business Head \u2014 FMEG Fans (2019\u20132024). Alumni cluster: IIM Bangalore.",
       "affiliations": [
         {
           "org": "Polycab India",
           "symbol": "POLYCAB",
-          "role": "Business Head — FMEG Fans",
+          "role": "Business Head \u2014 FMEG Fans",
           "start": 2019,
           "end": 2024,
           "kind": "work"
@@ -1818,7 +1818,7 @@
     {
       "id": "contact:aparna_sen",
       "name": "Aparna Sen",
-      "headline": "Director — Beauty & Personal Care Private Label · Ex-Trent",
+      "headline": "Director \u2014 Beauty & Personal Care Private Label \u00b7 Ex-Trent",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-09-09",
@@ -1829,12 +1829,12 @@
         "fast turn inventory"
       ],
       "email": "aparna_sen.synth@example.invalid",
-      "notes": "Domain specialist on TRENT (Trent Limited): Category Head — Beauty & Accessories (2019–2025). Alumni cluster: IIM Ahmedabad.",
+      "notes": "Domain specialist on TRENT (Trent Limited): Category Head \u2014 Beauty & Accessories (2019\u20132025). Alumni cluster: IIM Ahmedabad.",
       "affiliations": [
         {
           "org": "Trent Limited",
           "symbol": "TRENT",
-          "role": "Category Head — Beauty & Accessories",
+          "role": "Category Head \u2014 Beauty & Accessories",
           "start": 2019,
           "end": 2025,
           "kind": "work"
@@ -1852,7 +1852,7 @@
     {
       "id": "contact:gautam_rao",
       "name": "Gautam Rao",
-      "headline": "VP Washing Machine & Refrigerator ODM · Ex-Dixon Technologies",
+      "headline": "VP Washing Machine & Refrigerator ODM \u00b7 Ex-Dixon Technologies",
       "city": "Tirupati",
       "strength": 4,
       "last_contacted": "2026-08-01",
@@ -1863,12 +1863,12 @@
         "backward tooling"
       ],
       "email": "gautam_rao.synth@example.invalid",
-      "notes": "Domain specialist on DIXON (Dixon Technologies): Plant Head — Home Appliances (2017–2024). Alumni cluster: PSG College of Technology.",
+      "notes": "Domain specialist on DIXON (Dixon Technologies): Plant Head \u2014 Home Appliances (2017\u20132024). Alumni cluster: PSG College of Technology.",
       "affiliations": [
         {
           "org": "Dixon Technologies",
           "symbol": "DIXON",
-          "role": "Plant Head — Home Appliances",
+          "role": "Plant Head \u2014 Home Appliances",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -1886,7 +1886,7 @@
     {
       "id": "contact:swati_kulkarni",
       "name": "Swati Kulkarni",
-      "headline": "Head of Mutual Fund Distributor Tech · Ex-CAMS (MFCentral)",
+      "headline": "Head of Mutual Fund Distributor Tech \u00b7 Ex-CAMS (MFCentral)",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-09-29",
@@ -1897,12 +1897,12 @@
         "non-MF revenue"
       ],
       "email": "swati_kulkarni.synth@example.invalid",
-      "notes": "Domain specialist on CAMS (Computer Age Management Services): VP — Digital Products (2018–2024). Alumni cluster: IIT Bombay.",
+      "notes": "Domain specialist on CAMS (Computer Age Management Services): VP \u2014 Digital Products (2018\u20132024). Alumni cluster: IIT Bombay.",
       "affiliations": [
         {
           "org": "Computer Age Management Services",
           "symbol": "CAMS",
-          "role": "VP — Digital Products",
+          "role": "VP \u2014 Digital Products",
           "start": 2018,
           "end": 2024,
           "kind": "work"
@@ -1920,7 +1920,7 @@
     {
       "id": "contact:yashwant_rao",
       "name": "Yashwant Rao",
-      "headline": "VP EV Battery Management Systems · Ex-KPIT Technologies",
+      "headline": "VP EV Battery Management Systems \u00b7 Ex-KPIT Technologies",
       "city": "Pune",
       "strength": 3,
       "last_contacted": "2025-05-15",
@@ -1931,12 +1931,12 @@
         "fixed-price ER&D"
       ],
       "email": "yashwant_rao.synth@example.invalid",
-      "notes": "Domain specialist on KPITTECH (KPIT Technologies): Senior Architect — Electrification (2016–2023). Alumni cluster: University of Michigan.",
+      "notes": "Domain specialist on KPITTECH (KPIT Technologies): Senior Architect \u2014 Electrification (2016\u20132023). Alumni cluster: University of Michigan.",
       "affiliations": [
         {
           "org": "KPIT Technologies",
           "symbol": "KPITTECH",
-          "role": "Senior Architect — Electrification",
+          "role": "Senior Architect \u2014 Electrification",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -1954,7 +1954,7 @@
     {
       "id": "contact:rekha_iyer",
       "name": "Rekha Iyer",
-      "headline": "SVP International Eye Care & CaratLane · Ex-Titan",
+      "headline": "SVP International Eye Care & CaratLane \u00b7 Ex-Titan",
       "city": "Bengaluru",
       "strength": 3,
       "last_contacted": "2025-09-23",
@@ -1965,12 +1965,12 @@
         "omni-channel"
       ],
       "email": "rekha_iyer.synth@example.invalid",
-      "notes": "Domain specialist on TITAN (Titan Company): VP — New Businesses (2015–2023). Alumni cluster: SPJIMR Mumbai.",
+      "notes": "Domain specialist on TITAN (Titan Company): VP \u2014 New Businesses (2015\u20132023). Alumni cluster: SPJIMR Mumbai.",
       "affiliations": [
         {
           "org": "Titan Company",
           "symbol": "TITAN",
-          "role": "VP — New Businesses",
+          "role": "VP \u2014 New Businesses",
           "start": 2015,
           "end": 2023,
           "kind": "work"
@@ -1988,7 +1988,7 @@
     {
       "id": "contact:shashank_verma",
       "name": "Shashank Verma",
-      "headline": "VP EV & Hybrid Powertrain Testing · Ex-Maruti Suzuki (Rohtak R&D)",
+      "headline": "VP EV & Hybrid Powertrain Testing \u00b7 Ex-Maruti Suzuki (Rohtak R&D)",
       "city": "Rohtak",
       "strength": 4,
       "last_contacted": "2026-08-18",
@@ -1999,12 +1999,12 @@
         "airbag cost"
       ],
       "email": "shashank_verma.synth@example.invalid",
-      "notes": "Domain specialist on MARUTI (Maruti Suzuki India): Chief Engineer — Powertrain Calibration (2016–2025). Alumni cluster: IIT Kanpur.",
+      "notes": "Domain specialist on MARUTI (Maruti Suzuki India): Chief Engineer \u2014 Powertrain Calibration (2016\u20132025). Alumni cluster: IIT Kanpur.",
       "affiliations": [
         {
           "org": "Maruti Suzuki India",
           "symbol": "MARUTI",
-          "role": "Chief Engineer — Powertrain Calibration",
+          "role": "Chief Engineer \u2014 Powertrain Calibration",
           "start": 2016,
           "end": 2025,
           "kind": "work"
@@ -2022,7 +2022,7 @@
     {
       "id": "contact:nalini_chawla",
       "name": "Nalini Chawla",
-      "headline": "VP Domestic Branded Formulations · Ex-Sun Pharma",
+      "headline": "VP Domestic Branded Formulations \u00b7 Ex-Sun Pharma",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-07-22",
@@ -2033,12 +2033,12 @@
         "field force"
       ],
       "email": "nalini_chawla.synth@example.invalid",
-      "notes": "Domain specialist on SUNPHARMA (Sun Pharmaceutical Industries): Marketing Head — Chronic Care (2017–2024). Alumni cluster: IIM Ahmedabad.",
+      "notes": "Domain specialist on SUNPHARMA (Sun Pharmaceutical Industries): Marketing Head \u2014 Chronic Care (2017\u20132024). Alumni cluster: IIM Ahmedabad.",
       "affiliations": [
         {
           "org": "Sun Pharmaceutical Industries",
           "symbol": "SUNPHARMA",
-          "role": "Marketing Head — Chronic Care",
+          "role": "Marketing Head \u2014 Chronic Care",
           "start": 2017,
           "end": 2024,
           "kind": "work"
@@ -2056,7 +2056,7 @@
     {
       "id": "contact:jai_kishen",
       "name": "Jai Kishen",
-      "headline": "Head of Ghana & Senegal Smelting Ops · Ex-Gravita India",
+      "headline": "Head of Ghana & Senegal Smelting Ops \u00b7 Ex-Gravita India",
       "city": "Jaipur",
       "strength": 3,
       "last_contacted": "2025-06-28",
@@ -2067,12 +2067,12 @@
         "African subsidiaries"
       ],
       "email": "jai_kishen.synth@example.invalid",
-      "notes": "Domain specialist on GRAVITA (Gravita India): AVP — International Operations (2016–2023). Alumni cluster: ICAI.",
+      "notes": "Domain specialist on GRAVITA (Gravita India): AVP \u2014 International Operations (2016\u20132023). Alumni cluster: ICAI.",
       "affiliations": [
         {
           "org": "Gravita India",
           "symbol": "GRAVITA",
-          "role": "AVP — International Operations",
+          "role": "AVP \u2014 International Operations",
           "start": 2016,
           "end": 2023,
           "kind": "work"
@@ -2090,7 +2090,7 @@
     {
       "id": "contact:priti_desai",
       "name": "Priti Desai",
-      "headline": "VP Waterproofing & Project Sales · Ex-Pidilite & Asian Paints",
+      "headline": "VP Waterproofing & Project Sales \u00b7 Ex-Pidilite & Asian Paints",
       "city": "Ahmedabad",
       "strength": 4,
       "last_contacted": "2026-09-05",
@@ -2101,12 +2101,12 @@
         "tile adhesives"
       ],
       "email": "priti_desai.synth@example.invalid",
-      "notes": "Domain specialist on PIDILITIND (Pidilite Industries): Zonal Head — Construction Chemicals (2018–2025). Alumni cluster: IIM Bangalore.",
+      "notes": "Domain specialist on PIDILITIND (Pidilite Industries): Zonal Head \u2014 Construction Chemicals (2018\u20132025). Alumni cluster: IIM Bangalore.",
       "affiliations": [
         {
           "org": "Pidilite Industries",
           "symbol": "PIDILITIND",
-          "role": "Zonal Head — Construction Chemicals",
+          "role": "Zonal Head \u2014 Construction Chemicals",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -2124,7 +2124,7 @@
     {
       "id": "contact:suhas_joshi",
       "name": "Suhas Joshi",
-      "headline": "VP Industrial & Medical PCB Assembly · Ex-Kaynes & Syrma",
+      "headline": "VP Industrial & Medical PCB Assembly \u00b7 Ex-Kaynes & Syrma",
       "city": "Bengaluru",
       "strength": 3,
       "last_contacted": "2025-07-08",
@@ -2135,12 +2135,12 @@
         "RoHS"
       ],
       "email": "suhas_joshi.synth@example.invalid",
-      "notes": "Domain specialist on KAYNES (Kaynes Technology): DGM — Aerospace & Defense EMS (2017–2023). Alumni cluster: IIT Madras.",
+      "notes": "Domain specialist on KAYNES (Kaynes Technology): DGM \u2014 Aerospace & Defense EMS (2017\u20132023). Alumni cluster: IIT Madras.",
       "affiliations": [
         {
           "org": "Kaynes Technology",
           "symbol": "KAYNES",
-          "role": "DGM — Aerospace & Defense EMS",
+          "role": "DGM \u2014 Aerospace & Defense EMS",
           "start": 2017,
           "end": 2023,
           "kind": "work"
@@ -2158,7 +2158,7 @@
     {
       "id": "contact:amrita_garg",
       "name": "Amrita Garg",
-      "headline": "VP Green Certificate & Carbon Markets · Ex-IEX (IGX)",
+      "headline": "VP Green Certificate & Carbon Markets \u00b7 Ex-IEX (IGX)",
       "city": "New Delhi",
       "strength": 3,
       "last_contacted": "2025-10-11",
@@ -2169,12 +2169,12 @@
         "power derivatives"
       ],
       "email": "amrita_garg.synth@example.invalid",
-      "notes": "Domain specialist on IEX (Indian Energy Exchange): AVP — Strategy & IGX (2019–2024). Alumni cluster: IIM Ahmedabad.",
+      "notes": "Domain specialist on IEX (Indian Energy Exchange): AVP \u2014 Strategy & IGX (2019\u20132024). Alumni cluster: IIM Ahmedabad.",
       "affiliations": [
         {
           "org": "Indian Energy Exchange",
           "symbol": "IEX",
-          "role": "AVP — Strategy & IGX",
+          "role": "AVP \u2014 Strategy & IGX",
           "start": 2019,
           "end": 2024,
           "kind": "work"
@@ -2192,7 +2192,7 @@
     {
       "id": "contact:kunal_parekh",
       "name": "Kunal Parekh",
-      "headline": "VP Treasury & ALM · Ex-HDFC Bank",
+      "headline": "VP Treasury & ALM \u00b7 Ex-HDFC Bank",
       "city": "Mumbai",
       "strength": 4,
       "last_contacted": "2026-10-15",
@@ -2203,12 +2203,12 @@
         "NIM trajectory"
       ],
       "email": "kunal_parekh.synth@example.invalid",
-      "notes": "Domain specialist on HDFCBANK (HDFC Bank Limited): SVP — Balance Sheet Management (2016–2025). Alumni cluster: ICAI.",
+      "notes": "Domain specialist on HDFCBANK (HDFC Bank Limited): SVP \u2014 Balance Sheet Management (2016\u20132025). Alumni cluster: ICAI.",
       "affiliations": [
         {
           "org": "HDFC Bank Limited",
           "symbol": "HDFCBANK",
-          "role": "SVP — Balance Sheet Management",
+          "role": "SVP \u2014 Balance Sheet Management",
           "start": 2016,
           "end": 2025,
           "kind": "work"
@@ -2226,7 +2226,7 @@
     {
       "id": "contact:mahesh_reddy",
       "name": "Mahesh Reddy",
-      "headline": "VP Synthesis & Oncology API · Ex-Laurus Labs",
+      "headline": "VP Synthesis & Oncology API \u00b7 Ex-Laurus Labs",
       "city": "Hyderabad",
       "strength": 4,
       "last_contacted": "2026-09-16",
@@ -2237,12 +2237,12 @@
         "FDA EIR"
       ],
       "email": "mahesh_reddy.synth@example.invalid",
-      "notes": "Domain specialist on LAURUSLABS (Laurus Labs): GM — Custom Synthesis R&D (2018–2025). Alumni cluster: IIT Bombay.",
+      "notes": "Domain specialist on LAURUSLABS (Laurus Labs): GM \u2014 Custom Synthesis R&D (2018\u20132025). Alumni cluster: IIT Bombay.",
       "affiliations": [
         {
           "org": "Laurus Labs",
           "symbol": "LAURUSLABS",
-          "role": "GM — Custom Synthesis R&D",
+          "role": "GM \u2014 Custom Synthesis R&D",
           "start": 2018,
           "end": 2025,
           "kind": "work"
@@ -2254,6 +2254,84 @@
           "start": 2012,
           "end": 2016,
           "kind": "edu"
+        }
+      ]
+    },
+    {
+      "id": "contact:vikramaditya_joshi",
+      "name": "Vikramaditya Joshi",
+      "headline": "VP Risk Architecture & Infosec Governance \u00b7 Ex-Bajaj Finance Ltd",
+      "city": "Pune",
+      "strength": 4,
+      "last_contacted": "2026-08-15",
+      "expertise_tags": [
+        "cyber risk",
+        "NBFC governance",
+        "infosec",
+        "Bajaj CISO controls"
+      ],
+      "email": "vikramaditya.joshi.synth@example.invalid",
+      "notes": "Co-designed Pune infosec controls alongside the CISO team at Bajaj Finance (2017\u20132023).",
+      "affiliations": [
+        {
+          "org": "Bajaj Finance Ltd",
+          "symbol": "BAJFINANCE",
+          "role": "VP \u2014 Infosec & Risk Architecture",
+          "start": 2017,
+          "end": 2023,
+          "kind": "work"
+        }
+      ]
+    },
+    {
+      "id": "contact:harish_balasubramanian",
+      "name": "Harish Balasubramanian",
+      "headline": "Senior FMCG & Consumer Analyst \u00b7 Ex-Titan Company & Consumer Research",
+      "city": "Bengaluru",
+      "strength": 4,
+      "last_contacted": "2026-09-10",
+      "expertise_tags": [
+        "jewellery retail",
+        "Titan watches",
+        "consumer discretionary",
+        "store unit economics"
+      ],
+      "email": "harish.balasubramanian.synth@example.invalid",
+      "notes": "Covered Titan Company and consumer discretionary retail operations across South India.",
+      "affiliations": [
+        {
+          "org": "Titan Company Limited",
+          "symbol": "TITAN",
+          "role": "Senior Manager \u2014 Retail Expansion & Analytics",
+          "start": 2016,
+          "end": 2024,
+          "kind": "work"
+        }
+      ]
+    },
+    {
+      "id": "contact:rohit_malhotra",
+      "name": "Rohit Malhotra",
+      "headline": "VP EMS Supply Chain & Padget Operations \u00b7 Ex-Dixon Technologies",
+      "city": "Noida",
+      "strength": 5,
+      "last_contacted": "2026-09-02",
+      "expertise_tags": [
+        "mobile PLI",
+        "EMS working capital",
+        "Noida Padget assembly",
+        "consumer electronics"
+      ],
+      "email": "rohit.malhotra.synth@example.invalid",
+      "notes": "Oversaw smartphone EMS assembly lines and component vendor terms at Dixon Padget facilities.",
+      "affiliations": [
+        {
+          "org": "Dixon Technologies",
+          "symbol": "DIXON",
+          "role": "VP Operations \u2014 Padget Electronics",
+          "start": 2018,
+          "end": 2025,
+          "kind": "work"
         }
       ]
     }

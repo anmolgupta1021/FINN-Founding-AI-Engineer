@@ -416,6 +416,16 @@ export function BriefClient() {
   const [priceMoveMin, setPriceMoveMin] = useState<number>(2.5);
   const [portfolioOnly, setPortfolioOnly] = useState<boolean>(false);
 
+  const handleSelectWindow = (hours: number) => {
+    setLoading(true);
+    setWindowHours(hours);
+  };
+
+  const handleSelectAsOf = (ts: string) => {
+    setLoading(true);
+    setAsOf(ts);
+  };
+
   const [data, setData] = useState<BriefPayload | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -669,7 +679,7 @@ export function BriefClient() {
             <select
               aria-label="Select demo clock anchor date"
               value={asOf}
-              onChange={(e) => setAsOf(e.target.value)}
+              onChange={(e) => handleSelectAsOf(e.target.value)}
               className="border border-rule bg-paper px-2 py-1 font-mono text-xs text-ink"
             >
               {(data?.demo_clock.presets ?? [
@@ -695,17 +705,21 @@ export function BriefClient() {
                 <button
                   key={opt.label}
                   type="button"
-                  onClick={() => setWindowHours(opt.hours)}
+                  onClick={() => handleSelectWindow(opt.hours)}
                   className={`px-2 py-0.5 font-mono text-xs transition-colors ${
                     active
                       ? "bg-ink text-paper font-medium"
                       : "border border-rule bg-paper text-ink-2 hover:border-ink"
                   }`}
+                  aria-pressed={active}
                 >
                   {opt.label}
                 </button>
               );
             })}
+            {loading && (
+              <span className="ml-1 font-mono text-[10px] text-amber animate-pulse">…</span>
+            )}
             <button
               type="button"
               onClick={() => setPortfolioOnly((v) => !v)}
@@ -841,12 +855,21 @@ export function BriefClient() {
 
       {/* [S1] Ranked Material Filings in Active Window */}
       <section aria-label="Prioritised material filings" className="space-y-3">
-        <div className="flex items-baseline justify-between">
-          <h2 className="kicker">
-            Material Filings ({data?.ranked_material.length ?? 0}) · Window {windowHours}h as of{" "}
-            {data?.demo_clock.anchor_date ?? "2026-11-06"}
-          </h2>
-          <span className="font-mono text-[11px] text-muted">Ranked by priority 0–100</span>
+        <div className="flex items-baseline justify-between border-b border-rule pb-1.5">
+          <div className="flex items-center gap-2">
+            <h2 className="font-serif text-lg font-semibold tracking-tight text-ink">
+              {WINDOW_OPTIONS.find((opt) => opt.hours === windowHours)?.label ?? `${windowHours}h`} ·{" "}
+              {data?.ranked_material.length ?? 0} material · {data?.routine_summary.count ?? 0} routine
+            </h2>
+            {loading && (
+              <span className="font-mono text-xs text-amber animate-pulse">
+                (loading...)
+              </span>
+            )}
+          </div>
+          <span className="font-mono text-[11px] text-muted">
+            Anchor: {data?.demo_clock.anchor_date ?? "2026-11-06"}
+          </span>
         </div>
 
         {(data?.ranked_material.length ?? 0) === 0 ? (
@@ -854,7 +877,7 @@ export function BriefClient() {
             No material filings (priority ≥ 50) in this {windowHours}h window. Expand the window to{" "}
             <button
               type="button"
-              onClick={() => setWindowHours(168)}
+              onClick={() => handleSelectWindow(168)}
               className="font-mono text-accent underline"
             >
               7d
@@ -1249,8 +1272,11 @@ export function BriefClient() {
               </div>
               <div className="shrink-0 space-y-1 text-right font-mono text-[11px]">
                 <div className="border border-rule bg-paper-2 px-2 py-1 text-ink">
-                  ✓ {dossier.verification_summary.total_verified_citations} Verbatim Quotes Verified (min rapidfuzz{" "}
-                  {dossier.verification_summary.min_rapidfuzz_score}%)
+                  ✓ {dossier.verification_summary.total_verified_citations} Quotes Verified (rapidfuzz{" "}
+                  &ge; {dossier.verification_summary.min_rapidfuzz_score}% + token # match)
+                </div>
+                <div className="text-[10px] text-muted">
+                  Source: Deterministic primary-source extraction (no LLM)
                 </div>
                 {dossier.screener_url && (
                   <a
@@ -1417,13 +1443,26 @@ export function BriefClient() {
                 </span>
               </div>
 
-              <div
-                tabIndex={0}
-                role="region"
-                aria-labelledby={pvdTableCaptionId}
-                className="table-wrapper border border-rule"
-              >
-                <table className="text-left text-xs">
+              {dossier.symbol === "DIXON" ? (
+                <div className="border border-amber bg-paper-2 p-3 text-xs space-y-1">
+                  <div className="font-mono text-[11px] font-semibold text-amber">
+                    [Withdrawn Pending Part C Rebuild]
+                  </div>
+                  <p className="text-ink-2">
+                    The DIXON Promised vs. Delivered table has been withdrawn from the UI pending Part C rebuild.
+                    Its prior deterministic draft used historical commentary as guidance, revenue metrics as evidence for a volume target,
+                    an unsourced run-rate, and subsequent concall commentary as delivered actuals.
+                    It will be rebuilt with strict forward-looking guidance and filed results actuals only.
+                  </p>
+                </div>
+              ) : (
+                <div
+                  tabIndex={0}
+                  role="region"
+                  aria-labelledby={pvdTableCaptionId}
+                  className="table-wrapper border border-rule"
+                >
+                  <table className="text-left text-xs">
                   <caption id={pvdTableCaptionId} className="sr-only">
                     {dossier.company_name} Promised versus Delivered guidance comparison across the last 4 earnings calls
                   </caption>
@@ -1458,8 +1497,7 @@ export function BriefClient() {
                               onClick={() => setActiveCitation(row.promised_citation)}
                               className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
                             >
-                              [Cite: {row.promised_citation.doc_label}, p.{row.promised_citation.page} ·{" "}
-                              {row.promised_citation.match_score}%]
+                              [quote verified: {row.promised_citation.doc_label}, p.{row.promised_citation.page}]
                             </button>
                           )}
                         </td>
@@ -1471,8 +1509,7 @@ export function BriefClient() {
                               onClick={() => setActiveCitation(row.delivered_citation!)}
                               className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
                             >
-                              [Cite: {row.delivered_citation.doc_label}, p.{row.delivered_citation.page} ·{" "}
-                              {row.delivered_citation.match_score}%]
+                              [quote verified: {row.delivered_citation.doc_label}, p.{row.delivered_citation.page}]
                             </button>
                           )}
                         </td>
@@ -1496,12 +1533,13 @@ export function BriefClient() {
                   </tbody>
                 </table>
               </div>
+              )}
             </div>
 
             {/* Numbers vs. Narrative Checks */}
             <div className="space-y-2">
               <span className="kicker">
-                Numbers vs. Narrative · Strong-Model Reasoning (gemini-3.6-flash + thinking_budget=1024)
+                Numbers vs. Narrative · Primary-Source Cross-Check (Annual Report vs Concall)
               </span>
               <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3">
                 {dossier.numbers_vs_narrative.map((chk, idx) => (
@@ -1526,7 +1564,7 @@ export function BriefClient() {
                         onClick={() => setActiveCitation(chk.citation)}
                         className="mt-2 border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
                       >
-                        [Cite: {chk.citation.doc_label}, p.{chk.citation.page} · {chk.citation.match_score}%]
+                        [quote verified: {chk.citation.doc_label}, p.{chk.citation.page}]
                       </button>
                     )}
                   </div>
@@ -1549,7 +1587,7 @@ export function BriefClient() {
                           onClick={() => setActiveCitation(b.citation)}
                           className="mt-1 font-mono text-[10px] text-accent underline"
                         >
-                          [Cite: {b.citation.doc_label}, p.{b.citation.page}] →
+                          [quote verified: {b.citation.doc_label}, p.{b.citation.page}]
                         </button>
                       )}
                     </div>
@@ -1570,7 +1608,7 @@ export function BriefClient() {
                           onClick={() => setActiveCitation(b.citation)}
                           className="mt-1 font-mono text-[10px] text-accent underline"
                         >
-                          [Cite: {b.citation.doc_label}, p.{b.citation.page}] →
+                          [quote verified: {b.citation.doc_label}, p.{b.citation.page}]
                         </button>
                       )}
                     </div>

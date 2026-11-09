@@ -179,6 +179,11 @@ export default function CostPage() {
           (<code className="font-mono text-[11px]">llm_ledger.jsonl</code>) hashed by SHA-256 prompt content.
           Private investor network data never enters prompts.
         </p>
+        <p className="border-t border-rule/60 pt-1 text-muted">
+          <strong>Dossier Generation Disclosure:</strong> All 6 committed company dossiers were generated via
+          deterministic primary-source extraction (regex and financial table extraction from Annual Reports and concall transcripts),
+          with zero LLM calls. The 5 calls recorded in the ledger belong strictly to corporate announcement classification batches.
+        </p>
       </div>
 
       {/* Metric Cards Grid */}

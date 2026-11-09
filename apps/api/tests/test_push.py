@@ -124,7 +124,7 @@ def test_network_ask_endpoint_1st_and_2nd_degree():
     r = client.get("/api/v1/network/ask?q=ICICI+Bank&limit=6")
     assert r.status_code == 200
     body = r.json()
-    assert body["total_contacts"] == 64
+    assert body["total_contacts"] == 67
     assert body["total_links"] == 24
     assert body["inferred_label"] == INFERRED_SYNTHETIC_LABEL
     assert len(body["results"]) >= 2
@@ -136,3 +136,32 @@ def test_network_ask_endpoint_1st_and_2nd_degree():
     assert any("Arvind Raghavan" in c["path"] for c in deg2)
     for c in body["results"]:
         assert c["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+
+
+def test_brief_window_scrubber_monotonicity():
+    """A5: Assert count(24h) <= count(3d) <= count(7d) <= count(14d), and counts are not all equal."""
+    windows = [24, 72, 168, 336]
+    material_counts = []
+    routine_counts = []
+    total_counts = []
+
+    for w in windows:
+        r = client.get(f"/api/v1/brief?window_hours={w}&as_of=2026-11-06T23:59:59%2B05:30")
+        assert r.status_code == 200
+        data = r.json()
+        mat = len(data.get("ranked_material", []))
+        rout = data.get("routine_summary", {}).get("count", 0)
+        tot = mat + rout
+        material_counts.append(mat)
+        routine_counts.append(rout)
+        total_counts.append(tot)
+
+    # Monotonicity check
+    assert material_counts[0] <= material_counts[1] <= material_counts[2] <= material_counts[3]
+    assert routine_counts[0] <= routine_counts[1] <= routine_counts[2] <= routine_counts[3]
+    assert total_counts[0] <= total_counts[1] <= total_counts[2] <= total_counts[3]
+
+    # Verify counts are strictly not all equal
+    assert material_counts[0] < material_counts[-1]
+    assert routine_counts[0] < routine_counts[-1]
+    assert total_counts[0] < total_counts[-1]

@@ -15,7 +15,12 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 - Below: **3–5 ranked items** in large serif headlines; then a single collapsed line:
   `+ 23 routine filings across 11 companies (ESOP, compliance, newspaper ads…)`.
 - *"Meera has 18 holdings and 40-odd filings overnight. FINN shows her the four that matter and buries the rest — but never hides them."*
-- Tap the window scrubber → `7d` → list re-ranks instantly. Back to `24h`.
+- **Manual Verification Checklist — Scrubber Presets:** Tap each preset in the window scrubber:
+  - Tap `24h` → displays `24h · 9 material · 15 routine`
+  - Tap `3d` → displays `3d · 30 material · 50 routine`
+  - Tap `7d` → displays `7d · 43 material · 105 routine`
+  - Tap `14d` → displays `14d · 128 material · 243 routine`
+  - Notice active counts in the header and loading indicator `(loading...)` while fetching. Tap back to `24h`.
 
 ## 0:20 – 0:55 · Management change → **[S2] Event: KMP / SMP / Board appointment**
 
@@ -46,7 +51,7 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 ## 1:40 – 2:35 · Pull → **[S5] Company dossier**
 
 - Tap the command bar → type `SYRMA` (not in portfolio) → **[S5] Dossier: Syrma SGS** (precomputed + committed).
-- Header: `Built from FY25 Annual Report + 4 concall transcripts · 312 claims verified · cost ₹1.40`.
+- Header: `Built from FY25 Annual Report + 4 concall transcripts · 98 quotes verified · deterministic primary-source extraction`.
 - Section order (scroll):
   1. **Promised vs Delivered** (hero) — last 4 quarters. Each row: guidance quote (speaker, quarter, page) → what was reported → verdict chip `Delivered / Missed / Goalposts moved / Not found in filings`.
   2. **Trajectory** — 5-yr sparklines: revenue, EBITDA margin, PAT, CFO/PAT.
@@ -82,6 +87,8 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 | S7 | Build-in-progress (job polling) | P4 |
 | S8 | Ask results (network query) + person card | P3/P5 |
 
-## Backup plan during a live demo
+## Backup plan & Verification Status during a live demo
+- **Offline Drill:** Service worker (`sw.js`) caches shell and snapshot API responses. Interactive simulation with Chrome DevTools offline mode is marked **unverified** until tested in a live browser window.
+- **Git Repository:** Local git repository only; no remote is configured (`git remote -v` is empty).
 - Network dies → every screen reads committed snapshots; freshness chips flip to `Snapshot`. Nothing else changes.
 - Live build of an unknown ticker slow/blocked → show the pre-built 4th dossier; explain the job model.
