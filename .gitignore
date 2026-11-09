@@ -1,0 +1,24 @@
+# deps / envs
+node_modules/
+.venv/
+.uv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# builds
+apps/web/.next/
+apps/web/out/
+.vercel/
+
+# secrets — never commit
+.env
+.env.*
+!.env.example
+
+# local caches (raw PDFs are re-downloadable; only extracted text snapshots are committed)
+.cache/
+apps/api/data/raw/
+
+.DS_Store
