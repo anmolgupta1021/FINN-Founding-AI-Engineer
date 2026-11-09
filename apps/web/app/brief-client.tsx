@@ -11,6 +11,7 @@ interface NetworkHook {
   strength: number;
   last_contacted?: string;
   recency: string;
+  days_since_contact?: number;
   expertise_tags: string[];
   path: string;
   overlap_org?: string;
@@ -1600,7 +1601,9 @@ export function BriefClient() {
                         }`}
                       >
                         {c.degree === 2
-                          ? (c.strength <= 2 || c.days_since_contact >= 60 ? "2nd-degree path (stale target)" : "2nd-degree intro")
+                          ? (c.strength <= 2 || (c.days_since_contact ?? 0) >= 60 || c.recency.includes("mos")
+                              ? "2nd-degree path (stale target)"
+                              : "2nd-degree intro")
                           : `1st-degree · ${c.strength}/5`}
                       </span>
                     </div>
