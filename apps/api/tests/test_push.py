@@ -50,7 +50,8 @@ def test_brief_default_24h_frozen_clock():
     assert "overlapped at Cummins Group in India (filing states 2004–2017)" in kpit_talaulicar["network_hooks"][0]["path"]
     kpit_deg2 = [h for h in kpit_talaulicar["network_hooks"] if h.get("degree") == 2]
     assert len(kpit_deg2) == 1
-    assert "Siddharth Kulkarni" in kpit_deg2[0]["path"]
+    assert "via Siddharth Kulkarni" in kpit_deg2[0]["path"]
+    assert "target last contacted" in kpit_deg2[0]["path"]
     assert "Rajeshwari Deshmukh" in kpit_deg2[0]["path"]
     assert "filing states 2004–2017" in kpit_deg2[0]["path"]
 

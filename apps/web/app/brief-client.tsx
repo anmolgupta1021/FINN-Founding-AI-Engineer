@@ -1599,7 +1599,9 @@ export function BriefClient() {
                             : "border-rule bg-paper-2 text-ink-2"
                         }`}
                       >
-                        {c.degree === 2 ? "2nd-degree warm intro" : `1st-degree · ${c.strength}/5`}
+                        {c.degree === 2
+                          ? (c.strength <= 2 || c.days_since_contact >= 60 ? "2nd-degree path (stale target)" : "2nd-degree intro")
+                          : `1st-degree · ${c.strength}/5`}
                       </span>
                     </div>
                     <button

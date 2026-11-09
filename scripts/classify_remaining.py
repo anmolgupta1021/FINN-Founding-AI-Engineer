@@ -5,7 +5,7 @@ of 20, queries `gemini-3.5-flash-lite` via `LLMRouter`, records every call in
 `llm_ledger.jsonl` and `llm_cache.json`, and updates `announcements.json`.
 
 Usage:
-    export GEMINI_API_KEY="AIzaSy..."
+    export GEMINI_API_KEY="your-gemini-key"
     PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/classify_remaining.py
 """
 
@@ -36,7 +36,7 @@ def main() -> None:
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         print("ERROR: GEMINI_API_KEY is not set in environment or .env.local.")
-        print("To run, execute: export GEMINI_API_KEY=\"AIzaSy...\" && PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/classify_remaining.py")
+        print("To run, execute: export GEMINI_API_KEY=\"<key>\" && PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/classify_remaining.py")
         sys.exit(1)
 
     data = json.loads(SNAP_PATH.read_text(encoding="utf-8"))

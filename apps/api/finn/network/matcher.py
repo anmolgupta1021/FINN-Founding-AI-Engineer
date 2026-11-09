@@ -246,12 +246,16 @@ def match_contacts_for_announcement(
             bridge_ct, edge = bridge_pair
             b_days = _days_since(bridge_ct.get("last_contacted"), anchor)
             b_recency = _recency_phrase(b_days)
+            t_days = _days_since(ct.get("last_contacted"), anchor)
+            t_recency_phrase = _recency_phrase(t_days)
+            target_recency_label = f"target last contacted {t_recency_phrase.replace('spoke ', '')}"
             path_str = (
-                f"You → {bridge_ct['name']} (strength {bridge_ct['strength']}/5 · {b_recency}) "
+                f"You → via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
                 f"→ {ct['name']} (2nd-degree · overlapped at {overlap_org}, filing states {filing_tenure[0]}–{filing_tenure[1]})"
             )
             reasons.append(
-                f"Warm 2nd-degree intro via {bridge_ct['name']} ({edge.get('kind', 'ex_colleague')} at {edge.get('overlap_org')}, {edge.get('overlap_years')})."
+                f"2nd-degree intro via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
+                f"({edge.get('kind', 'ex_colleague')} at {edge.get('overlap_org')}, {edge.get('overlap_years')})."
             )
             b_first = bridge_ct["name"].split()[0]
             opener = (
@@ -508,12 +512,17 @@ def query_network(
         if degree == 2 and bridge_pair is not None:
             bridge_ct, edge = bridge_pair
             b_days = _days_since(bridge_ct.get("last_contacted"), anchor)
+            b_recency = _recency_phrase(b_days)
+            t_days = _days_since(ct.get("last_contacted"), anchor)
+            t_recency_phrase = _recency_phrase(t_days)
+            target_recency_label = f"target last contacted {t_recency_phrase.replace('spoke ', '')}"
             path_str = (
-                f"You → {bridge_ct['name']} ({bridge_ct['strength']}/5 · {_recency_phrase(b_days)}) "
+                f"You → via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
                 f"→ {ct['name']} (2nd-degree via {edge.get('overlap_org')}, {edge.get('overlap_years')})"
             )
             reasons.append(
-                f"2nd-degree warm intro via {bridge_ct['name']} ({edge.get('note') or edge.get('overlap_org')})."
+                f"2nd-degree intro via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
+                f"({edge.get('note') or edge.get('overlap_org')})."
             )
             opener = (
                 f"Hi {bridge_ct['name'].split()[0]} — exploring {query or overlap_org} right now. "
@@ -637,8 +646,9 @@ def match_contacts_for_dossier(
         if degree_val == 2 and bridge_val is not None:
             b_ct, _edge = bridge_val
             b_days = _days_since(b_ct.get("last_contacted"), anchor)
+            target_recency_label = f"target last contacted {recency_val.replace('spoke ', '')}"
             path_str = (
-                f"You → {b_ct['name']} (strength {b_ct['strength']}/5 · {_recency_phrase(b_days)}) "
+                f"You → via {b_ct['name']} ({_recency_phrase(b_days)}); {target_recency_label} "
                 f"→ {contact['name']} (2nd-degree · knows {org}, {tenure})"
             )
         else:
