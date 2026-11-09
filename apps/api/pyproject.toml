@@ -1,0 +1,37 @@
+[project]
+name = "finn-api"
+version = "0.1.0"
+description = "FINN backend: read API over Neon + committed snapshots, Pull research pipeline"
+requires-python = ">=3.12"
+# Runtime deps only — this is what ships in the Vercel Python function. Keep it lean.
+dependencies = [
+  "fastapi>=0.115",
+  "httpx>=0.27",
+  "pydantic>=2.8",
+  "psycopg[binary]>=3.2",
+  "google-genai>=1.0",
+  "rapidfuzz>=3.9",
+  "pypdfium2>=4.30",
+]
+
+[dependency-groups]
+# Local/CI batch pipeline only (scripts/build_snapshots.py etc.) — never deployed.
+pipeline = [
+  "yfinance>=0.2.50",
+  "pandas>=2.2",
+  "pdfplumber>=0.11",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.3",
+  "python-dotenv>=1.0",
+]
+dev = [
+  "uvicorn[standard]>=0.30",
+  "pytest>=8.3",
+  "ruff>=0.6",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100

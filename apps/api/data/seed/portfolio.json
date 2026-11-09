@@ -1,0 +1,31 @@
+{
+  "investor": "Meera Iyer (demo persona)",
+  "as_of": "2026-11-09",
+  "note": "Symbols validated against live NSE/yfinance in P1; any renamed symbol is swapped and logged in DECISIONS.md.",
+  "companies": [
+    {"symbol": "HDFCBANK",  "name": "HDFC Bank",                    "sector": "Private bank",            "mcap": "large"},
+    {"symbol": "INFY",      "name": "Infosys",                      "sector": "IT services",             "mcap": "large"},
+    {"symbol": "TITAN",     "name": "Titan Company",                "sector": "Consumer / jewellery",    "mcap": "large"},
+    {"symbol": "ASIANPAINT","name": "Asian Paints",                 "sector": "Paints",                  "mcap": "large"},
+    {"symbol": "BAJFINANCE","name": "Bajaj Finance",                "sector": "NBFC / consumer lending", "mcap": "large"},
+    {"symbol": "SUNPHARMA", "name": "Sun Pharmaceutical",           "sector": "Pharma",                  "mcap": "large"},
+    {"symbol": "MARUTI",    "name": "Maruti Suzuki",                "sector": "Autos",                   "mcap": "large"},
+    {"symbol": "TRENT",     "name": "Trent",                        "sector": "Retail",                  "mcap": "large"},
+    {"symbol": "POLYCAB",   "name": "Polycab India",                "sector": "Cables & wires",          "mcap": "mid"},
+    {"symbol": "DIXON",     "name": "Dixon Technologies",           "sector": "EMS / electronics",       "mcap": "mid"},
+    {"symbol": "KAYNES",    "name": "Kaynes Technology",            "sector": "EMS / electronics",       "mcap": "mid"},
+    {"symbol": "PIIND",     "name": "PI Industries",                "sector": "Agrochem / CSM",          "mcap": "mid"},
+    {"symbol": "AARTIIND",  "name": "Aarti Industries",             "sector": "Specialty chemicals",     "mcap": "mid"},
+    {"symbol": "CREDITACC", "name": "CreditAccess Grameen",         "sector": "Microfinance / rural",    "mcap": "mid"},
+    {"symbol": "CAMS",      "name": "Computer Age Management Svcs", "sector": "Financial infrastructure","mcap": "mid"},
+    {"symbol": "KPITTECH",  "name": "KPIT Technologies",            "sector": "Auto software",           "mcap": "mid"},
+    {"symbol": "IEX",       "name": "Indian Energy Exchange",       "sector": "Power exchange",          "mcap": "small"},
+    {"symbol": "GRAVITA",   "name": "Gravita India",                "sector": "Recycling / metals",      "mcap": "small"}
+  ],
+  "research": [
+    {"symbol": "DIXON",      "in_portfolio": true},
+    {"symbol": "SYRMA",      "in_portfolio": false, "why": "EMS competitor to DIXON and KAYNES"},
+    {"symbol": "NAVINFLUOR", "in_portfolio": false, "why": "Specialty chemicals; peer to AARTIIND"},
+    {"symbol": "PIDILITIND", "in_portfolio": false, "why": "Adjacent to ASIANPAINT"}
+  ]
+}

@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/*
+  FINN design tokens — "paper & ink".
+  One accent (ink blue) for interaction, one signal (oxblood) for material events,
+  amber only for honesty states (snapshot/derived/mismatch). No gradients. Hairline rules.
+*/
+:root {
+  --paper: #f6f4ef;
+  --paper-2: #efece4;
+  --ink: #16150f;
+  --ink-2: #3a3830;
+  --muted: #6b675c;
+  --rule: #d9d4c7;
+  --accent: #1f3a5f;
+  --signal: #8a2b1d;
+  --amber: #8a5a00;
+  --up: #1d5c3a;
+  --down: #8a2b1d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12110d;
+    --paper-2: #1b1a15;
+    --ink: #ece8dd;
+    --ink-2: #c9c4b6;
+    --muted: #8f8a7c;
+    --rule: #2e2c25;
+    --accent: #9db7d9;
+    --signal: #e08a76;
+    --amber: #d9a441;
+    --up: #7fc39b;
+    --down: #e08a76;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-signal: var(--signal);
+  --color-amber: var(--amber);
+  --color-up: var(--up);
+  --color-down: var(--down);
+
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* Tabular figures everywhere numbers live */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Small caps label used for section kickers */
+.kicker {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
