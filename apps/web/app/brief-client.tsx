@@ -457,7 +457,6 @@ export function BriefClient() {
   const citationDialogTitleId = useId();
   const resultsTableCaptionId = useId();
   const trajectoryTableCaptionId = useId();
-  const pvdTableCaptionId = useId();
 
   useEffect(() => {
     let cancelled = false;
@@ -1268,7 +1267,6 @@ export function BriefClient() {
                 <p className="font-serif text-[16px] leading-snug text-ink">
                   {dossier.business_model_1l}
                 </p>
-                <p className="text-xs text-ink-2">{dossier.executive_summary}</p>
               </div>
               <div className="shrink-0 space-y-1 text-right font-mono text-[11px]">
                 <div className="border border-rule bg-paper-2 px-2 py-1 text-ink">
@@ -1288,6 +1286,30 @@ export function BriefClient() {
                     Screener.in Primary Index ↗
                   </a>
                 )}
+              </div>
+            </div>
+
+            {/* Grounding & Section Status Disclosure Header */}
+            <div className="border border-rule bg-paper-2 p-3 text-xs space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="kicker">Primary-Source Grounding Status</span>
+                <span className="font-mono text-[10px] uppercase text-muted">Strict Provenance</span>
+              </div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 pt-1">
+                <div className="border-l-2 border-up pl-2 space-y-0.5">
+                  <div className="font-semibold text-up font-mono text-[11px]">✓ Shown (Deterministic Extracts Only):</div>
+                  <p className="text-ink-2">
+                    Primary filings manifest (AR + concalls), 5-year financial trajectory (₹ Cr), consolidated balance sheet &amp; margin metrics,
+                    doctype checks, and verbatim filing quotes.
+                  </p>
+                </div>
+                <div className="border-l-2 border-amber pl-2 space-y-0.5">
+                  <div className="font-semibold text-amber font-mono text-[11px]">⏳ Hidden (Pending Part C LLM Rebuild):</div>
+                  <p className="text-ink-2">
+                    Promised vs Delivered track record &amp; verdicts, Numbers vs Narrative synthesis, Bull/Bear investment cases,
+                    and authored narrative summaries — withdrawn until regenerated from verified claim IDs.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -1432,188 +1454,17 @@ export function BriefClient() {
               </div>
             </div>
 
-            {/* Promised vs. Delivered Ledger (with Latest Call Untestable Rule) */}
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <span className="kicker">
-                  Promised vs. Delivered · Concall Guidance Track Record
-                </span>
-                <span className="font-mono text-[10px] text-amber">
-                  Latest call is forward guidance only — marked untestable until subsequent quarter is filed
-                </span>
+            {/* Authored Sections Hidden Pending Part C Rebuild */}
+            <div className="border border-rule bg-paper-2 p-3.5 text-xs space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="kicker text-muted">Analysis Sections Status</span>
+                <span className="font-mono text-[10px] text-amber uppercase">Pending Part C Rebuild</span>
               </div>
-
-              {dossier.symbol === "DIXON" ? (
-                <div className="border border-amber bg-paper-2 p-3 text-xs space-y-1">
-                  <div className="font-mono text-[11px] font-semibold text-amber">
-                    [Withdrawn Pending Part C Rebuild]
-                  </div>
-                  <p className="text-ink-2">
-                    The DIXON Promised vs. Delivered table has been withdrawn from the UI pending Part C rebuild.
-                    Its prior deterministic draft used historical commentary as guidance, revenue metrics as evidence for a volume target,
-                    an unsourced run-rate, and subsequent concall commentary as delivered actuals.
-                    It will be rebuilt with strict forward-looking guidance and filed results actuals only.
-                  </p>
-                </div>
-              ) : (
-                <div
-                  tabIndex={0}
-                  role="region"
-                  aria-labelledby={pvdTableCaptionId}
-                  className="table-wrapper border border-rule"
-                >
-                  <table className="text-left text-xs">
-                  <caption id={pvdTableCaptionId} className="sr-only">
-                    {dossier.company_name} Promised versus Delivered guidance comparison across the last 4 earnings calls
-                  </caption>
-                  <thead>
-                    <tr className="border-b border-rule font-mono text-[11px] uppercase text-muted">
-                      <th scope="col" className="px-2.5 py-2">
-                        Concall / Topic
-                      </th>
-                      <th scope="col" className="px-2.5 py-2">
-                        Promised Guidance (Primary Quote)
-                      </th>
-                      <th scope="col" className="px-2.5 py-2">
-                        Delivered Outcome / Testability
-                      </th>
-                      <th scope="col" className="px-2.5 py-2">
-                        Verdict
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-rule">
-                    {dossier.promised_vs_delivered.map((row, idx) => (
-                      <tr key={idx} className={row.is_latest_call ? "bg-paper-2" : ""}>
-                        <th scope="row" className="px-2.5 py-2 align-top font-mono text-ink">
-                          <div>{row.period_called}</div>
-                          <div className="mt-0.5 text-[11px] font-normal text-muted">{row.topic}</div>
-                        </th>
-                        <td className="px-2.5 py-2 align-top text-ink">
-                          <p>{row.promised_guidance}</p>
-                          {row.promised_citation?.verified && (
-                            <button
-                              type="button"
-                              onClick={() => setActiveCitation(row.promised_citation)}
-                              className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
-                            >
-                              [quote verified: {row.promised_citation.doc_label}, p.{row.promised_citation.page}]
-                            </button>
-                          )}
-                        </td>
-                        <td className="px-2.5 py-2 align-top text-ink-2">
-                          <p>{row.delivered_summary}</p>
-                          {row.delivered_citation?.verified && (
-                            <button
-                              type="button"
-                              onClick={() => setActiveCitation(row.delivered_citation!)}
-                              className="mt-1 inline-block border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
-                            >
-                              [quote verified: {row.delivered_citation.doc_label}, p.{row.delivered_citation.page}]
-                            </button>
-                          )}
-                        </td>
-                        <td className="px-2.5 py-2 align-top font-mono text-[11px]">
-                          <span
-                            className={`inline-block border px-1.5 py-0.5 ${
-                              !row.promised_vs_delivered_testable
-                                ? "border-amber bg-paper text-amber"
-                                : row.verdict === "Delivered"
-                                  ? "border-up text-up"
-                                  : row.verdict === "Missed"
-                                    ? "border-signal text-signal"
-                                    : "border-rule text-ink-2"
-                            }`}
-                          >
-                            {row.verdict}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              )}
-            </div>
-
-            {/* Numbers vs. Narrative Checks */}
-            <div className="space-y-2">
-              <span className="kicker">
-                Numbers vs. Narrative · Primary-Source Cross-Check (Annual Report vs Concall)
-              </span>
-              <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3">
-                {dossier.numbers_vs_narrative.map((chk, idx) => (
-                  <div key={idx} className="border border-rule bg-paper-2 p-3 text-xs">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono font-semibold text-ink">{chk.check_title}</span>
-                      <span className="border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] uppercase text-ink-2">
-                        {chk.verdict}
-                      </span>
-                    </div>
-                    <p className="mt-1.5 text-ink">
-                      <strong className="font-mono text-[10px] uppercase text-muted">Numbers: </strong>
-                      {chk.numbers_observed}
-                    </p>
-                    <p className="mt-1 text-ink-2">
-                      <strong className="font-mono text-[10px] uppercase text-muted">Narrative: </strong>
-                      {chk.narrative_claimed}
-                    </p>
-                    {chk.citation?.verified && (
-                      <button
-                        type="button"
-                        onClick={() => setActiveCitation(chk.citation)}
-                        className="mt-2 border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-accent underline"
-                      >
-                        [quote verified: {chk.citation.doc_label}, p.{chk.citation.page}]
-                      </button>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bull vs. Bear Case (3 Bull / 3 Bear with Verbatim Source Sheet Citations) */}
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              <div className="space-y-2 border border-rule bg-paper-2 p-3 text-xs">
-                <span className="kicker text-up">Primary-Source Bull Case (3 Verified Filings Claims)</span>
-                <div className="space-y-2.5">
-                  {dossier.bull_case.map((b, i) => (
-                    <div key={i} className="border-l-2 border-up pl-2.5">
-                      <div className="font-semibold text-ink">{b.title}</div>
-                      <p className="mt-0.5 text-ink-2">{b.thesis}</p>
-                      {b.citation?.verified && (
-                        <button
-                          type="button"
-                          onClick={() => setActiveCitation(b.citation)}
-                          className="mt-1 font-mono text-[10px] text-accent underline"
-                        >
-                          [quote verified: {b.citation.doc_label}, p.{b.citation.page}]
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2 border border-rule bg-paper-2 p-3 text-xs">
-                <span className="kicker text-signal">Primary-Source Bear Case &amp; Filing Risks</span>
-                <div className="space-y-2.5">
-                  {dossier.bear_case.map((b, i) => (
-                    <div key={i} className="border-l-2 border-signal pl-2.5">
-                      <div className="font-semibold text-ink">{b.title}</div>
-                      <p className="mt-0.5 text-ink-2">{b.thesis}</p>
-                      {b.citation?.verified && (
-                        <button
-                          type="button"
-                          onClick={() => setActiveCitation(b.citation)}
-                          className="mt-1 font-mono text-[10px] text-accent underline"
-                        >
-                          [quote verified: {b.citation.doc_label}, p.{b.citation.page}]
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                </div>
+              <p className="text-ink-2">
+                Per primary-source grounding standards, earlier authored sections (<strong>Promised vs Delivered guidance verdicts</strong>, <strong>Numbers vs Narrative synthesis</strong>, and <strong>Bull/Bear thesis statements</strong>) are hidden across all 6 dossiers until Part C regenerates them strictly from cited claim IDs.
+              </p>
+              <div className="font-mono text-[11px] text-muted">
+                Deterministic extracts (Consolidated Financials, 5Y Trajectory sparklines/table, and Document Manifest with verified quotes) remain visible above.
               </div>
             </div>
 

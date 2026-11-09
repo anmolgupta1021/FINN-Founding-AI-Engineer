@@ -74,6 +74,31 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 
 ---
 
+## Phone test checklist (to be run by the human)
+
+Before presenting or submitting, open `https://finn-bay.vercel.app` on a physical phone (or desktop Safari/Chrome responsive mode set to 390×844) and run through this checklist:
+
+1. **390px Mobile Viewport & Visual Polish:**
+   - [ ] Page top respects notch/Dynamic Island safe area (`pt-[max(env(safe-area-inset-top),12px)]`).
+   - [ ] No horizontal document blowout or unintended horizontal body scrolling.
+   - [ ] 5-year financial trajectory table scrolls horizontally within its `.table-wrapper` container with sticky column header and pinned `Period` row header.
+   - [ ] Interactive touch targets (window scrubber pills, demo ticker buttons, dialog close buttons) are comfortable and distinct (>= 44px hit-box).
+
+2. **Window Presets Scrubber:**
+   - [ ] Default view is `24h`: header reads `24h · 9 material · 15 routine`.
+   - [ ] Tap `3d`: amber `(loading...)` pulse appears momentarily; header re-ranks to `3d · 30 material · 50 routine`.
+   - [ ] Tap `7d`: header re-ranks to `7d · 43 material · 105 routine`.
+   - [ ] Tap `14d`: header re-ranks to `14d · 128 material · 243 routine`.
+   - [ ] Tap `45d`: header re-ranks to `45d · 250 material · 523 routine`. Tap back to `24h`.
+
+3. **Airplane-Mode / Offline Load:**
+   - [ ] In online mode, load the app and tap into at least one dossier (`DIXON` or `SYRMA`).
+   - [ ] Switch phone to **Airplane Mode** (cellular data and Wi-Fi disabled).
+   - [ ] Reload `https://finn-bay.vercel.app`: verify the Service Worker (`sw.js` v2) serves the cached shell and snapshot data cleanly without showing a browser offline error.
+   - [ ] Switch Airplane Mode OFF.
+
+---
+
 ## Screens inventory (build list)
 
 | # | Screen | Phase |
