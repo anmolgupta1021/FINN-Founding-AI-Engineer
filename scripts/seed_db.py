@@ -144,12 +144,13 @@ def main() -> None:
                 cur.execute(
                     """
                     INSERT INTO announcements (
-                      id, symbol, exchange, ts, raw_category, subject, pdf_url,
+                      id, symbol, source, exchange, ts, raw_category, subject, pdf_url,
                       category, cls_method, cls_rule, priority, summary_1l,
                       is_demo_scenario, details_json
                     )
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb)
                     ON CONFLICT (id) DO UPDATE SET
+                      source = EXCLUDED.source,
                       category = EXCLUDED.category,
                       cls_method = EXCLUDED.cls_method,
                       priority = EXCLUDED.priority,
@@ -159,6 +160,7 @@ def main() -> None:
                     (
                         a["id"],
                         a["symbol"],
+                        a.get("source", a["exchange"].lower()),
                         a["exchange"],
                         a["ts"],
                         a.get("raw_category"),
@@ -169,10 +171,44 @@ def main() -> None:
                         a.get("cls_rule"),
                         a["priority"],
                         a["summary_1l"],
-                        bool(a.get("is_demo_scenario", False)),
+                        False,
                         json.dumps(a.get("details") or {}),
                     ),
                 )
+
+            demo_path = DATA_DIR / "snapshots" / "announcements" / "demo_announcements.json"
+            if demo_path.exists():
+                demo_snap = json.loads(demo_path.read_text(encoding="utf-8"))
+                for d in demo_snap.get("items", []):
+                    cur.execute(
+                        """
+                        INSERT INTO demo_announcements (
+                          id, symbol, source, exchange, ts, raw_category, subject, pdf_url,
+                          category, cls_method, cls_rule, priority, summary_1l,
+                          is_demo_scenario, details_json
+                        )
+                        VALUES (%s, %s, 'demo', 'DEMO', %s, %s, %s, %s, %s, %s, %s, %s, %s, TRUE, %s::jsonb)
+                        ON CONFLICT (id) DO UPDATE SET
+                          category = EXCLUDED.category,
+                          priority = EXCLUDED.priority,
+                          summary_1l = EXCLUDED.summary_1l,
+                          details_json = EXCLUDED.details_json
+                        """,
+                        (
+                            d["id"],
+                            d["symbol"],
+                            d["ts"],
+                            d.get("raw_category"),
+                            d["subject"],
+                            d.get("pdf_url"),
+                            d["category"],
+                            d["cls_method"],
+                            d.get("cls_rule"),
+                            d["priority"],
+                            d["summary_1l"],
+                            json.dumps(d.get("details") or {}),
+                        ),
+                    )
 
             for ct in contacts:
                 cur.execute(

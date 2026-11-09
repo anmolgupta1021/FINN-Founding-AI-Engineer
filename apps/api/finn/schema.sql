@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS prices_eod (
 CREATE TABLE IF NOT EXISTS announcements (
     id               TEXT PRIMARY KEY,
     symbol           TEXT NOT NULL REFERENCES companies(symbol) ON DELETE CASCADE,
+    source           TEXT NOT NULL DEFAULT 'nse' CHECK (source IN ('nse', 'bse')),
     exchange         TEXT NOT NULL,
     ts               TIMESTAMPTZ NOT NULL,
     raw_category     TEXT,
@@ -56,6 +57,25 @@ CREATE TABLE IF NOT EXISTS announcements (
 
 CREATE INDEX IF NOT EXISTS idx_announcements_ts_prio ON announcements (ts DESC, priority DESC);
 CREATE INDEX IF NOT EXISTS idx_announcements_symbol ON announcements (symbol);
+
+-- Separate table for any synthetic DEMO scenario items (never mixed into real `announcements`)
+CREATE TABLE IF NOT EXISTS demo_announcements (
+    id               TEXT PRIMARY KEY,
+    symbol           TEXT NOT NULL REFERENCES companies(symbol) ON DELETE CASCADE,
+    source           TEXT NOT NULL DEFAULT 'demo' CHECK (source = 'demo'),
+    exchange         TEXT NOT NULL DEFAULT 'DEMO',
+    ts               TIMESTAMPTZ NOT NULL,
+    raw_category     TEXT,
+    subject          TEXT NOT NULL,
+    pdf_url          TEXT,
+    category         TEXT NOT NULL,
+    cls_method       TEXT NOT NULL,
+    cls_rule         TEXT,
+    priority         INTEGER NOT NULL,
+    summary_1l       TEXT NOT NULL,
+    is_demo_scenario BOOLEAN NOT NULL DEFAULT TRUE,
+    details_json     JSONB
+);
 
 CREATE TABLE IF NOT EXISTS llm_calls (
     id               BIGSERIAL PRIMARY KEY,

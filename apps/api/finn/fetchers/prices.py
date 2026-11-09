@@ -1,21 +1,36 @@
-"""EOD prices & volume fetcher via yfinance (.NS / .BO) with committed JSON snapshot fallback."""
+"""EOD prices & volume fetcher via yfinance (.NS / .BO) with completed-session enforcement.
+
+If run during Indian market hours (before 15:45 IST on the same calendar date as the last bar),
+yfinance's `history()` includes today's partial intraday bar. We strip that partial bar so `as_of`,
+`close`, `change_pct`, and `volume_multiple` always reflect the last *completed* trading session.
+"""
 
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+IST = timezone(timedelta(hours=5, minutes=30))
 
-def fetch_eod_prices_live(symbols: list[str], *, days: int = 35) -> dict[str, Any]:
-    """Fetch last `days` calendar days (~22-25 trading days) of EOD OHLCV for each NSE symbol.
-    Falls back to .BO per symbol if .NS returns empty history.
-    """
+
+def _is_incomplete_intraday_bar(bar_date_str: str, now_ist: datetime) -> bool:
+    today_str = now_ist.strftime("%Y-%m-%d")
+    if bar_date_str != today_str:
+        return False
+    # NSE closes at 15:30 IST; post-close settlement completes ~15:45 IST
+    market_settled = (now_ist.hour > 15) or (now_ist.hour == 15 and now_ist.minute >= 45)
+    return not market_settled
+
+
+def fetch_eod_prices_live(symbols: list[str], *, days: int = 40) -> dict[str, Any]:
     import yfinance as yf
 
+    now_ist = datetime.now(IST)
     out: dict[str, dict[str, Any]] = {}
     failed: list[str] = []
+    dropped_intraday_dates: set[str] = set()
 
     for sym in symbols:
         df = None
@@ -32,13 +47,12 @@ def fetch_eod_prices_live(symbols: list[str], *, days: int = 35) -> dict[str, An
             continue
 
         df = df.dropna(subset=["Close"])
-        if len(df) < 2:
-            failed.append(sym)
-            continue
-
         bars: list[dict[str, Any]] = []
-        for idx, row in df.tail(25).iterrows():
+        for idx, row in df.iterrows():
             dt_str = idx.strftime("%Y-%m-%d")
+            if _is_incomplete_intraday_bar(dt_str, now_ist):
+                dropped_intraday_dates.add(dt_str)
+                continue
             bars.append(
                 {
                     "date": dt_str,
@@ -50,6 +64,11 @@ def fetch_eod_prices_live(symbols: list[str], *, days: int = 35) -> dict[str, An
                 }
             )
 
+        if len(bars) < 2:
+            failed.append(sym)
+            continue
+
+        bars = bars[-22:]
         latest = bars[-1]
         prev = bars[-2]
         change_pct = (
@@ -65,6 +84,7 @@ def fetch_eod_prices_live(symbols: list[str], *, days: int = 35) -> dict[str, An
             "symbol": sym,
             "yahoo_ticker": f"{sym}{used_suffix}",
             "as_of": latest["date"],
+            "completed_session": True,
             "close": latest["close"],
             "prev_close": prev["close"],
             "change_pct": change_pct,
@@ -81,6 +101,8 @@ def fetch_eod_prices_live(symbols: list[str], *, days: int = 35) -> dict[str, An
     return {
         "source": "yfinance",
         "as_of": latest_date,
+        "completed_session": True,
+        "dropped_partial_intraday_dates": sorted(dropped_intraday_dates),
         "fetched_at": datetime.now(UTC).isoformat(),
         "count": len(out),
         "failed": failed,

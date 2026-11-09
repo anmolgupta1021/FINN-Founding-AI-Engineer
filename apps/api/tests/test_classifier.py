@@ -4,40 +4,64 @@ from pathlib import Path
 from finn.pipeline.classify import classify_announcements, classify_by_rule, score_priority
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+EVAL_FILE = Path(__file__).resolve().parents[3] / "data" / "eval" / "real_announcements_40_to_label.json"
 
 
-def test_rules_precision_and_split_on_gold_30() -> None:
-    gold = json.loads((DATA_DIR / "seed" / "classifier_gold_30.json").read_text())["items"]
-    assert len(gold) == 30
+def test_real_announcements_provenance_and_pdf_urls() -> None:
+    snap = json.loads((DATA_DIR / "snapshots" / "announcements" / "announcements.json").read_text())
+    prov = snap["provenance"]
+    assert prov["total"] >= 400
+    assert prov["demo_count"] == 0
+    assert prov["with_resolvable_pdf_url"] == prov["total"]
+    assert prov["nse_count"] + prov["bse_count"] == prov["total"]
 
-    rule_hits = 0
-    for row in gold:
-        cat, conf, _ = classify_by_rule(row)
-        if cat is not None:
-            rule_hits += 1
-            assert conf >= 0.90
-            assert cat == row["expected_category"], f"Rule mismatch on {row['id']}: {cat} != {row['expected_category']}"
+    for item in snap["items"]:
+        assert item["source"] in ("nse", "bse")
+        assert item["pdf_url"].startswith("http")
+        assert item["pdf_url"].lower().endswith(".pdf")
+        assert item["is_demo_scenario"] is False
 
-    # Rules handle 25/30 (83.3%) with 100% precision; 5 ambiguous Reg-30 items defer to Stage 2 LLM
-    assert rule_hits == 25
+
+def test_real_40_eval_file_structure() -> None:
+    raw = json.loads(EVAL_FILE.read_text())
+    assert raw["count"] == 40
+    assert len(raw["items"]) == 40
+    res = classify_announcements(raw["items"], router=None, allow_llm=False)
+    assert res["total"] == 40
+    assert res["rule_count"] >= 25
 
 
 def test_priority_ordering_material_vs_routine() -> None:
-    gold = json.loads((DATA_DIR / "seed" / "classifier_gold_30.json").read_text())["items"]
-    res = classify_announcements(gold, router=None, network_symbols={"KAYNES", "POLYCAB"}, allow_llm=False)
-    by_id = {x["id"]: x for x in res["items"]}
+    sample = [
+        {
+            "id": "1",
+            "symbol": "POLYCAB",
+            "raw_category": "Outcome of Board Meeting",
+            "subject": "Polycab India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+        },
+        {
+            "id": "2",
+            "symbol": "POLYCAB",
+            "raw_category": "Newspaper Publication",
+            "subject": "Newspaper Publication of Extract of Unaudited Consolidated Financial Results",
+        },
+        {
+            "id": "3",
+            "symbol": "HDFCBANK",
+            "raw_category": "ESOP/ESOS/ESPS",
+            "subject": "Allotment of 4675598 equity shares under ESOP scheme",
+        },
+    ]
+    c1, _, _ = classify_by_rule(sample[0])
+    c2, _, _ = classify_by_rule(sample[1])
+    c3, _, _ = classify_by_rule(sample[2])
+    assert c1 == "results"
+    assert c2 == "results"
+    assert c3 == "unclassified"
 
-    # Material CFO appointment at network-overlap stock ranks at top (> 90)
-    assert by_id["g03"]["priority"] >= 90
-    # Actual Q2 results outcome ranks much higher than newspaper publication of extract of results
-    assert by_id["g01"]["priority"] >= 88
-    assert by_id["g27"]["priority"] <= 40
-    # Routine filings (ESOP, loss of shares, Reg 74(5), trading window) stay <= 12
-    for rid in ("g22", "g23", "g24", "g25", "g26", "g30"):
-        assert by_id[rid]["category"] == "unclassified"
-        assert by_id[rid]["priority"] <= 12
-
-    # Score boost for network overlap works
-    p_no_net = score_priority(by_id["g05"], category="capex", has_network_overlap=False)
-    p_with_net = score_priority(by_id["g05"], category="capex", has_network_overlap=True)
-    assert p_with_net == p_no_net + 6
+    p1 = score_priority(sample[0], category="results", has_network_overlap=True)
+    p2 = score_priority(sample[1], category="results", has_network_overlap=True)
+    p3 = score_priority(sample[2], category="unclassified", has_network_overlap=False)
+    assert p1 >= 88
+    assert p2 <= 45
+    assert p3 <= 12

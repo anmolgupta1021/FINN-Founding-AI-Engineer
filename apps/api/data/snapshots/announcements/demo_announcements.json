@@ -1,0 +1,6 @@
+{
+  "description": "Separate DEMO table snapshot for synthetic scenario announcements. Kept strictly separate from real NSE/BSE filings in announcements.json.",
+  "source": "demo",
+  "count": 0,
+  "items": []
+}

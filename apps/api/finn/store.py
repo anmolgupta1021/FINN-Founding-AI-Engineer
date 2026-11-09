@@ -136,12 +136,15 @@ def get_announcements(
     data_dir: Path,
     *,
     window_hours: int | None = None,
+    as_of_ts: str | None = None,
     symbol: str | None = None,
     include_demo: bool = True,
 ) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     source = "snapshot"
     as_of: str | None = None
+    demo_clock_default: str | None = None
+    provenance: dict[str, Any] = {}
     probe_note: str | None = None
 
     url = _db_url()
@@ -151,7 +154,7 @@ def get_announcements(
 
             with psycopg.connect(url, connect_timeout=3) as conn, conn.cursor() as cur:
                 cur.execute(
-                    "SELECT id, symbol, exchange, ts::text, raw_category, subject, pdf_url, "
+                    "SELECT id, symbol, source, exchange, ts::text, raw_category, subject, pdf_url, "
                     "category, cls_method, cls_rule, priority, summary_1l, is_demo_scenario, details_json "
                     "FROM announcements ORDER BY priority DESC, ts DESC"
                 )
@@ -163,18 +166,45 @@ def get_announcements(
                             {
                                 "id": r[0],
                                 "symbol": r[1],
-                                "exchange": r[2],
-                                "ts": r[3],
-                                "raw_category": r[4],
-                                "subject": r[5],
-                                "pdf_url": r[6],
-                                "category": r[7],
-                                "cls_method": r[8],
-                                "cls_rule": r[9],
-                                "priority": r[10],
-                                "summary_1l": r[11],
-                                "is_demo_scenario": bool(r[12]),
-                                "details": r[13] or {},
+                                "source": r[2],
+                                "exchange": r[3],
+                                "ts": r[4],
+                                "raw_category": r[5],
+                                "subject": r[6],
+                                "pdf_url": r[7],
+                                "category": r[8],
+                                "cls_method": r[9],
+                                "cls_rule": r[10],
+                                "priority": r[11],
+                                "summary_1l": r[12],
+                                "is_demo_scenario": bool(r[13]),
+                                "details": r[14] or {},
+                            }
+                        )
+                if include_demo:
+                    cur.execute(
+                        "SELECT id, symbol, source, exchange, ts::text, raw_category, subject, pdf_url, "
+                        "category, cls_method, cls_rule, priority, summary_1l, is_demo_scenario, details_json "
+                        "FROM demo_announcements ORDER BY priority DESC, ts DESC"
+                    )
+                    for r in cur.fetchall():
+                        items.append(
+                            {
+                                "id": r[0],
+                                "symbol": r[1],
+                                "source": "demo",
+                                "exchange": r[3],
+                                "ts": r[4],
+                                "raw_category": r[5],
+                                "subject": r[6],
+                                "pdf_url": r[7],
+                                "category": r[8],
+                                "cls_method": r[9],
+                                "cls_rule": r[10],
+                                "priority": r[11],
+                                "summary_1l": r[12],
+                                "is_demo_scenario": True,
+                                "details": r[14] or {},
                             }
                         )
         except (OSError, RuntimeError, ValueError):
@@ -185,36 +215,60 @@ def get_announcements(
         snap_path = data_dir / "snapshots" / "announcements" / "announcements.json"
         if snap_path.exists():
             raw = json.loads(snap_path.read_text(encoding="utf-8"))
-            items = raw.get("items", [])
-            as_of = raw.get("window_end") or raw.get("as_of")
+            items = list(raw.get("items", []))
+            as_of = raw.get("as_of") or raw.get("window_end")
+            demo_clock_default = raw.get("demo_clock_default") or raw.get("window_end")
+            provenance = raw.get("provenance") or {}
             probe_note = raw.get("exchange_probe_summary")
+        if include_demo:
+            demo_path = data_dir / "snapshots" / "announcements" / "demo_announcements.json"
+            if demo_path.exists():
+                demo_raw = json.loads(demo_path.read_text(encoding="utf-8"))
+                for d in demo_raw.get("items", []):
+                    items.append({**d, "source": "demo", "is_demo_scenario": True})
 
     if not include_demo:
-        items = [x for x in items if not x.get("is_demo_scenario")]
+        items = [x for x in items if not x.get("is_demo_scenario") and x.get("source") != "demo"]
     if symbol:
         items = [x for x in items if x.get("symbol", "").upper() == symbol.upper()]
 
-    # Time-window filter relative to the latest announcement timestamp in the dataset
-    # so the frozen demo window (e.g. 24h vs 72h vs 7d) always works deterministically.
+    # Demo-clock mode: default anchor is the frozen snapshot's latest timestamp (`demo_clock_default`),
+    # or a user-chosen `as_of_ts` ISO string (or "live" for current wall clock).
+    parsed_ts = []
+    for x in items:
+        try:
+            parsed_ts.append(datetime.fromisoformat(str(x["ts"])))
+        except ValueError:
+            pass
+    default_anchor = max(parsed_ts) if parsed_ts else datetime.now(UTC)
+
+    if as_of_ts and as_of_ts.lower() == "live":
+        anchor = datetime.now(UTC)
+        clock_mode = "live"
+    elif as_of_ts:
+        try:
+            anchor = datetime.fromisoformat(as_of_ts)
+            if anchor.tzinfo is None:
+                anchor = anchor.replace(tzinfo=UTC)
+            clock_mode = "custom"
+        except ValueError:
+            anchor = default_anchor
+            clock_mode = "frozen"
+    else:
+        anchor = default_anchor
+        clock_mode = "frozen"
+
     if window_hours is not None and items:
-        parsed_ts = []
+        cutoff = anchor - timedelta(hours=window_hours)
+        filtered = []
         for x in items:
             try:
-                parsed_ts.append(datetime.fromisoformat(str(x["ts"])))
-            except ValueError:
-                pass
-        if parsed_ts:
-            anchor = max(parsed_ts)
-            cutoff = anchor - timedelta(hours=window_hours)
-            filtered = []
-            for x in items:
-                try:
-                    dt = datetime.fromisoformat(str(x["ts"]))
-                    if dt >= cutoff:
-                        filtered.append(x)
-                except ValueError:
+                dt = datetime.fromisoformat(str(x["ts"]))
+                if cutoff <= dt <= anchor:
                     filtered.append(x)
-            items = filtered
+            except ValueError:
+                filtered.append(x)
+        items = filtered
 
     items.sort(key=lambda x: (-int(x.get("priority", 0)), str(x.get("ts", ""))), reverse=False)
     material = [x for x in items if int(x.get("priority", 0)) >= 50]
@@ -224,6 +278,12 @@ def get_announcements(
     return {
         "source": source,
         "as_of": as_of,
+        "demo_clock": {
+            "mode": clock_mode,
+            "anchor_ts": anchor.isoformat(),
+            "default_ts": demo_clock_default or default_anchor.isoformat(),
+        },
+        "provenance": provenance,
         "freshness_chip": chip,
         "exchange_probe_summary": probe_note,
         "total": len(items),

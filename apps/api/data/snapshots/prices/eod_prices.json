@@ -1,23 +1,29 @@
 {
   "source": "yfinance",
-  "as_of": "2026-11-09",
-  "fetched_at": "2026-11-09T06:58:50.278076+00:00",
+  "as_of": "2026-11-06",
+  "completed_session": true,
+  "dropped_partial_intraday_dates": [
+    "2026-11-09"
+  ],
+  "fetched_at": "2026-11-09T07:15:12.082415+00:00",
   "count": 22,
   "failed": [],
   "prices": {
     "HDFCBANK": {
       "symbol": "HDFCBANK",
       "yahoo_ticker": "HDFCBANK.NS",
-      "as_of": "2026-11-09",
-      "close": 794.55,
-      "prev_close": 788.25,
-      "change_pct": 0.8,
-      "volume": 43301403,
-      "avg_volume_20d": 34209883,
-      "volume_multiple": 1.27,
-      "high_20d": 801.9,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 788.25,
+      "prev_close": 760.0,
+      "change_pct": 3.72,
+      "volume": 73482878,
+      "avg_volume_20d": 31876177,
+      "volume_multiple": 2.31,
+      "high_20d": 788.25,
       "low_20d": 669.2,
       "sparkline_20d": [
+        707.25,
         704.9,
         714.0,
         710.7,
@@ -36,10 +42,17 @@
         725.5,
         736.7,
         760.0,
-        788.25,
-        794.55
+        788.25
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 696.6,
+          "high": 710.15,
+          "low": 695.3,
+          "close": 707.25,
+          "volume": 18397972
+        },
         {
           "date": "2026-10-12",
           "open": 707.5,
@@ -191,30 +204,24 @@
           "low": 754.05,
           "close": 788.25,
           "volume": 73482878
-        },
-        {
-          "date": "2026-11-09",
-          "open": 797.0,
-          "high": 801.9,
-          "low": 785.95,
-          "close": 794.55,
-          "volume": 43301403
         }
       ]
     },
     "INFY": {
       "symbol": "INFY",
       "yahoo_ticker": "INFY.NS",
-      "as_of": "2026-11-09",
-      "close": 1142.9,
-      "prev_close": 1181.4,
-      "change_pct": -3.26,
-      "volume": 6032266,
-      "avg_volume_20d": 16846310,
-      "volume_multiple": 0.36,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1181.4,
+      "prev_close": 1167.4,
+      "change_pct": 1.2,
+      "volume": 15301109,
+      "avg_volume_20d": 16823648,
+      "volume_multiple": 0.91,
       "high_20d": 1198.8,
-      "low_20d": 1010.65,
+      "low_20d": 1007.3,
       "sparkline_20d": [
+        1023.4,
         1020.0,
         1062.1,
         1088.0,
@@ -233,10 +240,17 @@
         1148.1,
         1128.2,
         1167.4,
-        1181.4,
-        1142.9
+        1181.4
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1007.3,
+          "high": 1030.9,
+          "low": 1007.3,
+          "close": 1023.4,
+          "volume": 14094234
+        },
         {
           "date": "2026-10-12",
           "open": 1029.3,
@@ -388,30 +402,24 @@
           "low": 1163.0,
           "close": 1181.4,
           "volume": 15301109
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1167.9,
-          "high": 1168.0,
-          "low": 1139.0,
-          "close": 1142.9,
-          "volume": 6032266
         }
       ]
     },
     "TITAN": {
       "symbol": "TITAN",
       "yahoo_ticker": "TITAN.NS",
-      "as_of": "2026-11-09",
-      "close": 4963.0,
-      "prev_close": 5000.0,
-      "change_pct": -0.74,
-      "volume": 400040,
-      "avg_volume_20d": 876348,
-      "volume_multiple": 0.46,
-      "high_20d": 5027.6,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 5000.0,
+      "prev_close": 4834.6,
+      "change_pct": 3.42,
+      "volume": 4132719,
+      "avg_volume_20d": 744256,
+      "volume_multiple": 5.55,
+      "high_20d": 5013.9,
       "low_20d": 4209.0,
       "sparkline_20d": [
+        4410.0,
         4400.0,
         4487.0,
         4444.0,
@@ -430,10 +438,17 @@
         4562.0,
         4754.4,
         4834.6,
-        5000.0,
-        4963.0
+        5000.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 4375.1,
+          "high": 4430.7,
+          "low": 4360.2,
+          "close": 4410.0,
+          "volume": 591677
+        },
         {
           "date": "2026-10-12",
           "open": 4415.7,
@@ -585,30 +600,24 @@
           "low": 4694.4,
           "close": 5000.0,
           "volume": 4132719
-        },
-        {
-          "date": "2026-11-09",
-          "open": 5000.7,
-          "high": 5027.6,
-          "low": 4954.2,
-          "close": 4963.0,
-          "volume": 400040
         }
       ]
     },
     "ASIANPAINT": {
       "symbol": "ASIANPAINT",
       "yahoo_ticker": "ASIANPAINT.NS",
-      "as_of": "2026-11-09",
-      "close": 2496.2,
-      "prev_close": 2546.0,
-      "change_pct": -1.96,
-      "volume": 381763,
-      "avg_volume_20d": 997485,
-      "volume_multiple": 0.38,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 2546.0,
+      "prev_close": 2523.8,
+      "change_pct": 0.88,
+      "volume": 969158,
+      "avg_volume_20d": 981647,
+      "volume_multiple": 0.99,
       "high_20d": 2576.6,
       "low_20d": 2217.1,
       "sparkline_20d": [
+        2339.1,
         2331.0,
         2376.0,
         2344.7,
@@ -627,10 +636,17 @@
         2437.8,
         2418.3,
         2523.8,
-        2546.0,
-        2496.2
+        2546.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 2324.0,
+          "high": 2362.9,
+          "low": 2322.2,
+          "close": 2339.1,
+          "volume": 248707
+        },
         {
           "date": "2026-10-12",
           "open": 2362.0,
@@ -782,30 +798,24 @@
           "low": 2452.3,
           "close": 2546.0,
           "volume": 969158
-        },
-        {
-          "date": "2026-11-09",
-          "open": 2529.0,
-          "high": 2538.5,
-          "low": 2493.3,
-          "close": 2496.2,
-          "volume": 381763
         }
       ]
     },
     "BAJFINANCE": {
       "symbol": "BAJFINANCE",
       "yahoo_ticker": "BAJFINANCE.NS",
-      "as_of": "2026-11-09",
-      "close": 1064.5,
-      "prev_close": 1087.75,
-      "change_pct": -2.14,
-      "volume": 5020781,
-      "avg_volume_20d": 9546560,
-      "volume_multiple": 0.53,
-      "high_20d": 1088.0,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1087.75,
+      "prev_close": 1070.0,
+      "change_pct": 1.66,
+      "volume": 9053404,
+      "avg_volume_20d": 9562310,
+      "volume_multiple": 0.95,
+      "high_20d": 1087.75,
       "low_20d": 899.15,
       "sparkline_20d": [
+        960.0,
         957.25,
         982.75,
         957.0,
@@ -824,10 +834,17 @@
         970.0,
         994.0,
         1070.0,
-        1087.75,
-        1064.5
+        1087.75
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 951.95,
+          "high": 968.0,
+          "low": 950.7,
+          "close": 960.0,
+          "volume": 7684275
+        },
         {
           "date": "2026-10-12",
           "open": 960.0,
@@ -979,30 +996,24 @@
           "low": 1041.0,
           "close": 1087.75,
           "volume": 9053404
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1086.25,
-          "high": 1088.0,
-          "low": 1063.05,
-          "close": 1064.5,
-          "volume": 5020781
         }
       ]
     },
     "SUNPHARMA": {
       "symbol": "SUNPHARMA",
       "yahoo_ticker": "SUNPHARMA.NS",
-      "as_of": "2026-11-09",
-      "close": 1907.2,
-      "prev_close": 1860.0,
-      "change_pct": 2.54,
-      "volume": 1714408,
-      "avg_volume_20d": 2107131,
-      "volume_multiple": 0.81,
-      "high_20d": 1943.9,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1860.0,
+      "prev_close": 1829.0,
+      "change_pct": 1.69,
+      "volume": 2348251,
+      "avg_volume_20d": 2069980,
+      "volume_multiple": 1.13,
+      "high_20d": 1868.9,
       "low_20d": 1719.1,
       "sparkline_20d": [
+        1760.0,
         1760.0,
         1770.7,
         1746.4,
@@ -1021,10 +1032,17 @@
         1769.9,
         1773.4,
         1829.0,
-        1860.0,
-        1907.2
+        1860.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1756.2,
+          "high": 1776.8,
+          "low": 1751.0,
+          "close": 1760.0,
+          "volume": 1346107
+        },
         {
           "date": "2026-10-12",
           "open": 1764.3,
@@ -1176,30 +1194,24 @@
           "low": 1814.7,
           "close": 1860.0,
           "volume": 2348251
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1915.0,
-          "high": 1943.9,
-          "low": 1900.6,
-          "close": 1907.2,
-          "volume": 1714408
         }
       ]
     },
     "MARUTI": {
       "symbol": "MARUTI",
       "yahoo_ticker": "MARUTI.NS",
-      "as_of": "2026-11-09",
-      "close": 12877.0,
-      "prev_close": 12750.0,
-      "change_pct": 1.0,
-      "volume": 291809,
-      "avg_volume_20d": 517606,
-      "volume_multiple": 0.56,
-      "high_20d": 12929.0,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 12750.0,
+      "prev_close": 12652.0,
+      "change_pct": 0.77,
+      "volume": 923719,
+      "avg_volume_20d": 493018,
+      "volume_multiple": 1.87,
+      "high_20d": 12836.0,
       "low_20d": 10985.0,
       "sparkline_20d": [
+        11420.0,
         11315.0,
         11245.0,
         11178.0,
@@ -1218,10 +1230,17 @@
         11869.0,
         11995.0,
         12652.0,
-        12750.0,
-        12877.0
+        12750.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 11291.0,
+          "high": 11455.0,
+          "low": 11247.0,
+          "close": 11420.0,
+          "volume": 353177
+        },
         {
           "date": "2026-10-12",
           "open": 11420.0,
@@ -1373,30 +1392,24 @@
           "low": 12451.0,
           "close": 12750.0,
           "volume": 923719
-        },
-        {
-          "date": "2026-11-09",
-          "open": 12815.0,
-          "high": 12929.0,
-          "low": 12657.0,
-          "close": 12877.0,
-          "volume": 291809
         }
       ]
     },
     "TRENT": {
       "symbol": "TRENT",
       "yahoo_ticker": "TRENT.NS",
-      "as_of": "2026-11-09",
-      "close": 3104.1,
-      "prev_close": 3079.0,
-      "change_pct": 0.82,
-      "volume": 378755,
-      "avg_volume_20d": 977377,
-      "volume_multiple": 0.39,
-      "high_20d": 3133.5,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 3079.0,
+      "prev_close": 3055.0,
+      "change_pct": 0.79,
+      "volume": 580070,
+      "avg_volume_20d": 1015814,
+      "volume_multiple": 0.57,
+      "high_20d": 3130.0,
       "low_20d": 2676.2,
       "sparkline_20d": [
+        2918.2,
         2913.0,
         2987.8,
         2971.0,
@@ -1415,10 +1428,17 @@
         3036.5,
         3060.0,
         3055.0,
-        3079.0,
-        3104.1
+        3079.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 2876.3,
+          "high": 2930.5,
+          "low": 2855.0,
+          "close": 2918.2,
+          "volume": 753581
+        },
         {
           "date": "2026-10-12",
           "open": 2928.0,
@@ -1570,30 +1590,24 @@
           "low": 3005.6,
           "close": 3079.0,
           "volume": 580070
-        },
-        {
-          "date": "2026-11-09",
-          "open": 3085.0,
-          "high": 3133.5,
-          "low": 3026.1,
-          "close": 3104.1,
-          "volume": 378755
         }
       ]
     },
     "POLYCAB": {
       "symbol": "POLYCAB",
       "yahoo_ticker": "POLYCAB.NS",
-      "as_of": "2026-11-09",
-      "close": 7862.0,
-      "prev_close": 7871.0,
-      "change_pct": -0.11,
-      "volume": 118059,
-      "avg_volume_20d": 416988,
-      "volume_multiple": 0.28,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 7871.0,
+      "prev_close": 7849.0,
+      "change_pct": 0.28,
+      "volume": 415293,
+      "avg_volume_20d": 414586,
+      "volume_multiple": 1.0,
       "high_20d": 8469.0,
       "low_20d": 7372.5,
       "sparkline_20d": [
+        8255.0,
         8405.0,
         8290.0,
         8335.0,
@@ -1612,10 +1626,17 @@
         7837.0,
         7930.0,
         7849.0,
-        7871.0,
-        7862.0
+        7871.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 8161.0,
+          "high": 8295.5,
+          "low": 8060.0,
+          "close": 8255.0,
+          "volume": 335752
+        },
         {
           "date": "2026-10-12",
           "open": 8300.0,
@@ -1767,30 +1788,24 @@
           "low": 7526.5,
           "close": 7871.0,
           "volume": 415293
-        },
-        {
-          "date": "2026-11-09",
-          "open": 7850.0,
-          "high": 7908.5,
-          "low": 7786.0,
-          "close": 7862.0,
-          "volume": 118059
         }
       ]
     },
     "DIXON": {
       "symbol": "DIXON",
       "yahoo_ticker": "DIXON.NS",
-      "as_of": "2026-11-09",
-      "close": 12560.0,
-      "prev_close": 12625.0,
-      "change_pct": -0.51,
-      "volume": 103125,
-      "avg_volume_20d": 371564,
-      "volume_multiple": 0.28,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 12625.0,
+      "prev_close": 12616.0,
+      "change_pct": 0.07,
+      "volume": 227053,
+      "avg_volume_20d": 371003,
+      "volume_multiple": 0.61,
       "high_20d": 12953.0,
       "low_20d": 10932.0,
       "sparkline_20d": [
+        12774.0,
         12660.0,
         12740.0,
         12820.0,
@@ -1809,10 +1824,17 @@
         12270.0,
         12290.0,
         12616.0,
-        12625.0,
-        12560.0
+        12625.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 12730.0,
+          "high": 12875.0,
+          "low": 12602.0,
+          "close": 12774.0,
+          "volume": 164138
+        },
         {
           "date": "2026-10-12",
           "open": 12838.0,
@@ -1964,30 +1986,24 @@
           "low": 12410.0,
           "close": 12625.0,
           "volume": 227053
-        },
-        {
-          "date": "2026-11-09",
-          "open": 12629.0,
-          "high": 12653.0,
-          "low": 12465.0,
-          "close": 12560.0,
-          "volume": 103125
         }
       ]
     },
     "KAYNES": {
       "symbol": "KAYNES",
       "yahoo_ticker": "KAYNES.NS",
-      "as_of": "2026-11-09",
-      "close": 3298.5,
-      "prev_close": 3233.0,
-      "change_pct": 2.03,
-      "volume": 266075,
-      "avg_volume_20d": 641775,
-      "volume_multiple": 0.41,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 3233.0,
+      "prev_close": 3292.5,
+      "change_pct": -1.81,
+      "volume": 343993,
+      "avg_volume_20d": 679563,
+      "volume_multiple": 0.51,
       "high_20d": 3557.0,
       "low_20d": 3112.0,
       "sparkline_20d": [
+        3264.0,
         3222.1,
         3290.0,
         3275.0,
@@ -2006,10 +2022,17 @@
         3239.0,
         3330.0,
         3292.5,
-        3233.0,
-        3298.5
+        3233.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 3259.9,
+          "high": 3290.7,
+          "low": 3200.1,
+          "close": 3264.0,
+          "volume": 595137
+        },
         {
           "date": "2026-10-12",
           "open": 3279.5,
@@ -2161,30 +2184,24 @@
           "low": 3210.0,
           "close": 3233.0,
           "volume": 343993
-        },
-        {
-          "date": "2026-11-09",
-          "open": 3263.0,
-          "high": 3316.2,
-          "low": 3237.3,
-          "close": 3298.5,
-          "volume": 266075
         }
       ]
     },
     "PIIND": {
       "symbol": "PIIND",
       "yahoo_ticker": "PIIND.NS",
-      "as_of": "2026-11-09",
-      "close": 1718.4,
-      "prev_close": 1735.0,
-      "change_pct": -0.96,
-      "volume": 525795,
-      "avg_volume_20d": 891508,
-      "volume_multiple": 0.59,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1735.0,
+      "prev_close": 1770.0,
+      "change_pct": -1.98,
+      "volume": 1451795,
+      "avg_volume_20d": 831231,
+      "volume_multiple": 1.75,
       "high_20d": 2237.5,
-      "low_20d": 1708.0,
+      "low_20d": 1716.4,
       "sparkline_20d": [
+        2118.2,
         2131.5,
         2130.0,
         2218.8,
@@ -2203,10 +2220,17 @@
         2185.0,
         2187.0,
         1770.0,
-        1735.0,
-        1718.4
+        1735.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 2120.0,
+          "high": 2143.5,
+          "low": 2106.0,
+          "close": 2118.2,
+          "volume": 119140
+        },
         {
           "date": "2026-10-12",
           "open": 2131.0,
@@ -2358,30 +2382,24 @@
           "low": 1716.4,
           "close": 1735.0,
           "volume": 1451795
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1741.0,
-          "high": 1742.2,
-          "low": 1708.0,
-          "close": 1718.4,
-          "volume": 525795
         }
       ]
     },
     "AARTIIND": {
       "symbol": "AARTIIND",
       "yahoo_ticker": "AARTIIND.NS",
-      "as_of": "2026-11-09",
-      "close": 454.0,
-      "prev_close": 444.05,
-      "change_pct": 2.24,
-      "volume": 357600,
-      "avg_volume_20d": 919447,
-      "volume_multiple": 0.39,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 444.05,
+      "prev_close": 443.3,
+      "change_pct": 0.17,
+      "volume": 456814,
+      "avg_volume_20d": 931653,
+      "volume_multiple": 0.49,
       "high_20d": 508.35,
       "low_20d": 419.0,
       "sparkline_20d": [
+        460.15,
         473.9,
         487.8,
         497.9,
@@ -2400,10 +2418,17 @@
         439.15,
         447.55,
         443.3,
-        444.05,
-        454.0
+        444.05
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 478.0,
+          "high": 486.4,
+          "low": 459.3,
+          "close": 460.15,
+          "volume": 738046
+        },
         {
           "date": "2026-10-12",
           "open": 460.45,
@@ -2555,30 +2580,24 @@
           "low": 435.05,
           "close": 444.05,
           "volume": 456814
-        },
-        {
-          "date": "2026-11-09",
-          "open": 445.8,
-          "high": 457.0,
-          "low": 442.1,
-          "close": 454.0,
-          "volume": 357600
         }
       ]
     },
     "CREDITACC": {
       "symbol": "CREDITACC",
       "yahoo_ticker": "CREDITACC.NS",
-      "as_of": "2026-11-09",
-      "close": 1101.4,
-      "prev_close": 1083.1,
-      "change_pct": 1.69,
-      "volume": 64587,
-      "avg_volume_20d": 485413,
-      "volume_multiple": 0.13,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1083.1,
+      "prev_close": 1100.8,
+      "change_pct": -1.61,
+      "volume": 414031,
+      "avg_volume_20d": 480442,
+      "volume_multiple": 0.86,
       "high_20d": 1324.7,
       "low_20d": 993.9,
       "sparkline_20d": [
+        1267.5,
         1301.2,
         1278.4,
         1267.5,
@@ -2597,10 +2616,17 @@
         1058.8,
         1073.0,
         1100.8,
-        1083.1,
-        1101.4
+        1083.1
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1263.4,
+          "high": 1293.3,
+          "low": 1250.4,
+          "close": 1267.5,
+          "volume": 158963
+        },
         {
           "date": "2026-10-12",
           "open": 1265.1,
@@ -2752,30 +2778,24 @@
           "low": 1077.6,
           "close": 1083.1,
           "volume": 414031
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1109.1,
-          "high": 1128.5,
-          "low": 1094.3,
-          "close": 1101.4,
-          "volume": 64587
         }
       ]
     },
     "CAMS": {
       "symbol": "CAMS",
       "yahoo_ticker": "CAMS.NS",
-      "as_of": "2026-11-09",
-      "close": 718.45,
-      "prev_close": 712.0,
-      "change_pct": 0.91,
-      "volume": 1019334,
-      "avg_volume_20d": 1467275,
-      "volume_multiple": 0.69,
-      "high_20d": 731.2,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 712.0,
+      "prev_close": 715.35,
+      "change_pct": -0.47,
+      "volume": 1462146,
+      "avg_volume_20d": 1445206,
+      "volume_multiple": 1.01,
+      "high_20d": 721.2,
       "low_20d": 639.1,
       "sparkline_20d": [
+        672.5,
         679.05,
         701.0,
         694.0,
@@ -2794,10 +2814,17 @@
         687.0,
         695.25,
         715.35,
-        712.0,
-        718.45
+        712.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 665.05,
+          "high": 675.0,
+          "low": 660.8,
+          "close": 672.5,
+          "volume": 1069377
+        },
         {
           "date": "2026-10-12",
           "open": 676.45,
@@ -2949,30 +2976,24 @@
           "low": 698.6,
           "close": 712.0,
           "volume": 1462146
-        },
-        {
-          "date": "2026-11-09",
-          "open": 716.0,
-          "high": 731.2,
-          "low": 710.0,
-          "close": 718.45,
-          "volume": 1019334
         }
       ]
     },
     "KPITTECH": {
       "symbol": "KPITTECH",
       "yahoo_ticker": "KPITTECH.NS",
-      "as_of": "2026-11-09",
-      "close": 539.95,
-      "prev_close": 540.45,
-      "change_pct": -0.09,
-      "volume": 689966,
-      "avg_volume_20d": 2681804,
-      "volume_multiple": 0.26,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 540.45,
+      "prev_close": 539.8,
+      "change_pct": 0.12,
+      "volume": 1283225,
+      "avg_volume_20d": 2688046,
+      "volume_multiple": 0.48,
       "high_20d": 571.4,
-      "low_20d": 476.9,
+      "low_20d": 473.6,
       "sparkline_20d": [
+        479.0,
         481.0,
         513.75,
         523.8,
@@ -2991,10 +3012,17 @@
         519.8,
         520.0,
         539.8,
-        540.45,
-        539.95
+        540.45
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 473.6,
+          "high": 489.5,
+          "low": 473.6,
+          "close": 479.0,
+          "volume": 1979891
+        },
         {
           "date": "2026-10-12",
           "open": 480.0,
@@ -3146,30 +3174,24 @@
           "low": 535.2,
           "close": 540.45,
           "volume": 1283225
-        },
-        {
-          "date": "2026-11-09",
-          "open": 543.85,
-          "high": 545.0,
-          "low": 528.25,
-          "close": 539.95,
-          "volume": 689966
         }
       ]
     },
     "IEX": {
       "symbol": "IEX",
       "yahoo_ticker": "IEX.NS",
-      "as_of": "2026-11-09",
-      "close": 111.83,
-      "prev_close": 109.5,
-      "change_pct": 2.13,
-      "volume": 1351691,
-      "avg_volume_20d": 4059643,
-      "volume_multiple": 0.33,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 109.5,
+      "prev_close": 112.2,
+      "change_pct": -2.41,
+      "volume": 4452447,
+      "avg_volume_20d": 4016099,
+      "volume_multiple": 1.11,
       "high_20d": 113.6,
       "low_20d": 99.5,
       "sparkline_20d": [
+        104.78,
         104.37,
         106.4,
         108.0,
@@ -3188,10 +3210,17 @@
         109.0,
         111.27,
         112.2,
-        109.5,
-        111.83
+        109.5
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 104.0,
+          "high": 105.55,
+          "low": 103.81,
+          "close": 104.78,
+          "volume": 3369146
+        },
         {
           "date": "2026-10-12",
           "open": 105.03,
@@ -3343,30 +3372,24 @@
           "low": 108.2,
           "close": 109.5,
           "volume": 4452447
-        },
-        {
-          "date": "2026-11-09",
-          "open": 111.0,
-          "high": 112.21,
-          "low": 109.76,
-          "close": 111.83,
-          "volume": 1351691
         }
       ]
     },
     "GRAVITA": {
       "symbol": "GRAVITA",
       "yahoo_ticker": "GRAVITA.NS",
-      "as_of": "2026-11-09",
-      "close": 1495.3,
-      "prev_close": 1493.9,
-      "change_pct": 0.09,
-      "volume": 38133,
-      "avg_volume_20d": 213000,
-      "volume_multiple": 0.18,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1493.9,
+      "prev_close": 1494.9,
+      "change_pct": -0.07,
+      "volume": 141945,
+      "avg_volume_20d": 214577,
+      "volume_multiple": 0.66,
       "high_20d": 1555.7,
       "low_20d": 1300.0,
       "sparkline_20d": [
+        1466.4,
         1499.6,
         1501.4,
         1494.2,
@@ -3385,10 +3408,17 @@
         1400.3,
         1474.6,
         1494.9,
-        1493.9,
-        1495.3
+        1493.9
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1510.2,
+          "high": 1541.8,
+          "low": 1440.1,
+          "close": 1466.4,
+          "volume": 343285
+        },
         {
           "date": "2026-10-12",
           "open": 1521.9,
@@ -3540,30 +3570,24 @@
           "low": 1461.1,
           "close": 1493.9,
           "volume": 141945
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1505.8,
-          "high": 1512.6,
-          "low": 1485.1,
-          "close": 1495.3,
-          "volume": 38133
         }
       ]
     },
     "SYRMA": {
       "symbol": "SYRMA",
       "yahoo_ticker": "SYRMA.NS",
-      "as_of": "2026-11-09",
-      "close": 1458.8,
-      "prev_close": 1459.3,
-      "change_pct": -0.03,
-      "volume": 597433,
-      "avg_volume_20d": 1626753,
-      "volume_multiple": 0.37,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1459.3,
+      "prev_close": 1515.0,
+      "change_pct": -3.68,
+      "volume": 3192006,
+      "avg_volume_20d": 1512395,
+      "volume_multiple": 2.11,
       "high_20d": 1754.4,
       "low_20d": 1399.9,
       "sparkline_20d": [
+        1719.9,
         1737.2,
         1694.0,
         1692.2,
@@ -3582,10 +3606,17 @@
         1491.0,
         1512.6,
         1515.0,
-        1459.3,
-        1458.8
+        1459.3
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1683.0,
+          "high": 1734.0,
+          "low": 1675.8,
+          "close": 1719.9,
+          "volume": 980252
+        },
         {
           "date": "2026-10-12",
           "open": 1754.4,
@@ -3737,30 +3768,24 @@
           "low": 1404.1,
           "close": 1459.3,
           "volume": 3192006
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1490.0,
-          "high": 1504.1,
-          "low": 1458.2,
-          "close": 1458.8,
-          "volume": 597433
         }
       ]
     },
     "NAVINFLUOR": {
       "symbol": "NAVINFLUOR",
       "yahoo_ticker": "NAVINFLUOR.NS",
-      "as_of": "2026-11-09",
-      "close": 9069.0,
-      "prev_close": 9010.0,
-      "change_pct": 0.65,
-      "volume": 99913,
-      "avg_volume_20d": 170149,
-      "volume_multiple": 0.59,
-      "high_20d": 9179.0,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 9010.0,
+      "prev_close": 8845.0,
+      "change_pct": 1.87,
+      "volume": 219771,
+      "avg_volume_20d": 163643,
+      "volume_multiple": 1.34,
+      "high_20d": 9035.0,
       "low_20d": 7510.5,
       "sparkline_20d": [
+        8352.5,
         8561.0,
         8468.0,
         8457.0,
@@ -3779,10 +3804,17 @@
         8530.0,
         8785.0,
         8845.0,
-        9010.0,
-        9069.0
+        9010.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 8465.0,
+          "high": 8498.0,
+          "low": 8310.0,
+          "close": 8352.5,
+          "volume": 43911
+        },
         {
           "date": "2026-10-12",
           "open": 8400.0,
@@ -3934,30 +3966,24 @@
           "low": 8665.5,
           "close": 9010.0,
           "volume": 219771
-        },
-        {
-          "date": "2026-11-09",
-          "open": 9065.0,
-          "high": 9179.0,
-          "low": 9013.5,
-          "close": 9069.0,
-          "volume": 99913
         }
       ]
     },
     "PIDILITIND": {
       "symbol": "PIDILITIND",
       "yahoo_ticker": "PIDILITIND.NS",
-      "as_of": "2026-11-09",
-      "close": 1571.7,
-      "prev_close": 1579.0,
-      "change_pct": -0.46,
-      "volume": 288900,
-      "avg_volume_20d": 791536,
-      "volume_multiple": 0.36,
-      "high_20d": 1583.2,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 1579.0,
+      "prev_close": 1553.6,
+      "change_pct": 1.63,
+      "volume": 625427,
+      "avg_volume_20d": 809532,
+      "volume_multiple": 0.77,
+      "high_20d": 1579.0,
       "low_20d": 1342.3,
       "sparkline_20d": [
+        1482.0,
         1477.7,
         1497.6,
         1499.5,
@@ -3976,10 +4002,17 @@
         1510.9,
         1510.2,
         1553.6,
-        1579.0,
-        1571.7
+        1579.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1466.4,
+          "high": 1488.9,
+          "low": 1466.1,
+          "close": 1482.0,
+          "volume": 312874
+        },
         {
           "date": "2026-10-12",
           "open": 1495.0,
@@ -4131,30 +4164,24 @@
           "low": 1530.8,
           "close": 1579.0,
           "volume": 625427
-        },
-        {
-          "date": "2026-11-09",
-          "open": 1576.9,
-          "high": 1583.2,
-          "low": 1563.6,
-          "close": 1571.7,
-          "volume": 288900
         }
       ]
     },
     "LAURUSLABS": {
       "symbol": "LAURUSLABS",
       "yahoo_ticker": "LAURUSLABS.NS",
-      "as_of": "2026-11-09",
-      "close": 2436.4,
-      "prev_close": 2340.0,
-      "change_pct": 4.12,
-      "volume": 3143127,
-      "avg_volume_20d": 2235073,
-      "volume_multiple": 1.41,
-      "high_20d": 2480.0,
+      "as_of": "2026-11-06",
+      "completed_session": true,
+      "close": 2340.0,
+      "prev_close": 2346.0,
+      "change_pct": -0.26,
+      "volume": 1445453,
+      "avg_volume_20d": 2232511,
+      "volume_multiple": 0.65,
+      "high_20d": 2441.9,
       "low_20d": 1933.5,
       "sparkline_20d": [
+        2036.6,
         2069.2,
         2059.4,
         2036.9,
@@ -4173,10 +4200,17 @@
         2323.0,
         2323.8,
         2346.0,
-        2340.0,
-        2436.4
+        2340.0
       ],
       "bars": [
+        {
+          "date": "2026-10-09",
+          "open": 1997.9,
+          "high": 2048.0,
+          "low": 1988.9,
+          "close": 2036.6,
+          "volume": 1358268
+        },
         {
           "date": "2026-10-12",
           "open": 2044.1,
@@ -4328,14 +4362,6 @@
           "low": 2309.1,
           "close": 2340.0,
           "volume": 1445453
-        },
-        {
-          "date": "2026-11-09",
-          "open": 2351.5,
-          "high": 2480.0,
-          "low": 2351.5,
-          "close": 2436.4,
-          "volume": 3143127
         }
       ]
     }

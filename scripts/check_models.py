@@ -118,7 +118,7 @@ def main() -> None:
                 }
                 print(f"  [PASS] {cand} ({ms} ms)")
                 return cand
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 report["pings"][cand] = {"ok": False, "error": str(e)[:200]}
                 print(f"  [FAIL] {cand}: {str(e)[:120]}")
         return None

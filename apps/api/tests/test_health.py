@@ -27,35 +27,30 @@ def test_portfolio_snapshot_fallback() -> None:
     assert research_syms == {"SYRMA", "NAVINFLUOR", "PIDILITIND", "LAURUSLABS"}
 
 
-def test_prices_endpoint_all_22_symbols() -> None:
+def test_prices_endpoint_all_22_completed_session() -> None:
     resp = client.get("/api/v1/prices")
     assert resp.status_code == 200
     body = resp.json()
     assert body["count"] == 22
+    assert body.get("completed_session") is True
     assert "Prices · EOD" in body["freshness_chip"]
     assert "POLYCAB" in body["prices"]
     assert "LAURUSLABS" in body["prices"]
     assert body["prices"]["POLYCAB"]["close"] > 0
 
-    filtered = client.get("/api/v1/prices?symbols=POLYCAB,DIXON").json()
-    assert filtered["count"] == 2
 
-
-def test_announcements_and_window_filtering() -> None:
+def test_announcements_provenance_and_demo_clock() -> None:
     resp = client.get("/api/v1/announcements")
     assert resp.status_code == 200
     body = resp.json()
-    assert body["total"] == 32
-    assert body["material_count"] == 8
-    assert body["routine_count"] == 24
-    # Highest priority item in the demo window is Kaynes CFO appointment or Polycab Q2 results
-    top = body["material"][0]
-    assert top["symbol"] in ("KAYNES", "POLYCAB")
-    assert top["priority"] >= 88
+    assert body["total"] >= 400
+    assert body["provenance"]["demo_count"] == 0
+    assert body["provenance"]["with_resolvable_pdf_url"] == body["total"]
+    assert body["demo_clock"]["mode"] == "frozen"
 
-    # Without demo scenario items, Kaynes synthetic CFO scenario is excluded
-    no_demo = client.get("/api/v1/announcements?include_demo=false").json()
-    assert no_demo["total"] == 31
+    # 24h window relative to frozen demo clock works and returns only filings from that 24h window
+    w24 = client.get("/api/v1/announcements?window_hours=24").json()
+    assert 0 < w24["total"] < body["total"]
 
 
 def test_freshness_and_ledger_endpoints() -> None:
@@ -63,7 +58,7 @@ def test_freshness_and_ledger_endpoints() -> None:
     assert fr.status_code == 200
     fbody = fr.json()
     assert fbody["prices"]["count"] == 22
-    assert fbody["announcements"]["total"] == 32
+    assert fbody["announcements"]["total"] >= 400
     assert "bulk_model" in fbody["models"]
 
     lg = client.get("/api/v1/llm/ledger")

@@ -17,16 +17,16 @@ Timings are cumulative. **[S#]** = screen. Lines in *italics* = what the present
 - *"Meera has 18 holdings and 40-odd filings overnight. FINN shows her the four that matter and buries the rest — but never hides them."*
 - Tap the window scrubber → `7d` → list re-ranks instantly. Back to `24h`.
 
-## 0:20 – 0:55 · Management change → **[S2] Event: KMP appointment**
+## 0:20 – 0:55 · Management change → **[S2] Event: KMP / SMP / Board appointment**
 
-- Top item: **"Kaynes Technology appoints new CFO"** (real filing if one exists in the window; otherwise a **DEMO**-tagged scenario item — visibly labelled).
+- Top item in the `24h` frozen window (`2026-11-06`): **"HDFC Bank appoints Mr. V. N. Srivatsan as Head - Direct to Consumer (SMP)"** or **"Asian Paints appoints Mr. Leo Puri as Independent Director"** (or in `14d`: **"KPIT Technologies appoints Mr. Anant Talaulicar as Lead Independent Director"**) — all 100% real NSE filings.
 - Event screen shows, in order:
-  1. One-line *what happened*, filing link + page cite.
-  2. **Who they are** — bio drawn **only from the filing's "brief profile"** (SEBI LODR), cited `Filing p.2`.
-  3. **Who to call** — `You → Rohan Desai (strong · spoke 5 wks ago) → overlapped with the incoming CFO at <prior employer>, 2016–19`.
-     Label directly under the path: *"inferred from employer/tenure overlap · synthetic network"*.
-  4. Tap → "Why Rohan" (3 bullet reasons) + a drafted 2-line opener (deterministic template, no LLM sees the network).
-- *"FINN doesn't stop at 'CFO resigned'. It tells her who this person is — from the filing itself — and who in her network can actually vouch for them."*
+  1. One-line *what happened*, direct NSE PDF link + page cite + SHA-256 hash.
+  2. **Who they are** — verbatim SEBI LODR "brief profile" extracted directly from the filing PDF (e.g., `HDFCBANK` p.3 of 3: IIM Ahmedabad PGDM, ex-President & Global Business Head at Olam Agri; `ASIANPAINT` p.1 of 2: Oxford & Cambridge Master's, ex-Chairman JP Morgan South & SE Asia, MD UTI AMC, Senior Partner McKinsey).
+  3. **Who to call** — `You → <Contact> (strong · spoke 5 wks ago) → overlapped at <prior employer>`.
+     Label directly under the path: *"inferred from employer/tenure overlap, synthetic network"*.
+  4. Tap → "Why this person" (3 bullet reasons) + a drafted 2-line opener (deterministic template, no LLM sees the network).
+- *"FINN doesn't stop at 'Change in Senior Management'. It pulls who this person is verbatim from page 3 of the NSE PDF, and shows who in Meera's network overlapped with them."*
 
 ## 0:55 – 1:20 · Results → **[S3] Event: Quarterly results card**
 

@@ -49,13 +49,15 @@ def prices(symbols: str | None = Query(default=None, description="Comma-separate
 
 @router.get("/announcements")
 def announcements(
-    window_hours: int | None = Query(default=None, ge=1, le=720),
+    window_hours: int | None = Query(default=None, ge=1, le=1080),
+    as_of: str | None = Query(default=None, description="ISO timestamp for demo clock, or 'live'"),
     symbol: str | None = Query(default=None),
     include_demo: bool = Query(default=True),
 ) -> dict:
     return get_announcements(
         DATA_DIR,
         window_hours=window_hours,
+        as_of_ts=as_of,
         symbol=symbol,
         include_demo=include_demo,
     )
