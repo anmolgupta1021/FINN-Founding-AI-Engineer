@@ -9,14 +9,23 @@ interface NetworkHook {
   city?: string;
   degree?: number;
   strength: number;
+  link_type?: string;
+  overlap_kind?: string;
   last_contacted?: string;
   recency: string;
+  is_stale_tie?: boolean;
+  stale_tie_label?: string | null;
   days_since_contact?: number;
   expertise_tags: string[];
   path: string;
   overlap_org?: string;
   overlap_tenure?: string;
   inferred_label: string;
+  ranking_breakdown?: {
+    match_score: number;
+    strength: number;
+    recency_weight: number;
+  };
   why_reasons: string[];
   draft_opener: string;
 }
@@ -249,6 +258,8 @@ interface DossierNetworkContact {
   strength: number;
   degree: number;
   recency: string;
+  is_stale_tie?: boolean;
+  stale_tie_label?: string | null;
   bucket: string;
   org: string;
   role?: string;
@@ -267,6 +278,18 @@ interface CompanyDossier {
   sector: string;
   bucket: string;
   is_lender: boolean;
+  analysis_generated?: boolean;
+  analysis_header?: string;
+  llm_provenance?: {
+    models_used: string[];
+    in_tokens: number;
+    out_tokens: number;
+    thinking_tokens: number;
+    cost_usd: number;
+    cost_inr: number;
+    live_calls: number;
+    cache_hits: number;
+  };
   ebitda_policy_note: string;
   generated_at: string;
   freshness: string;
@@ -320,21 +343,81 @@ interface CompanyDossier {
       roce_or_roe_pct?: number | null;
     }>;
   };
+  balance_sheet_panel?: {
+    is_lender: boolean;
+    source: string;
+    latest_period?: string | null;
+    borrowings_cr?: number | null;
+    equity_cr?: number | null;
+    debt_to_equity?: number | null;
+    total_assets_cr?: number | null;
+    working_capital_days?: number | null;
+    working_capital_period?: string | null;
+    deposits_cr?: number | null;
+    gross_npa_pct?: number | null;
+    net_npa_pct?: number | null;
+    car_pct?: number | null;
+    car_source?: string;
+    npa_source?: string;
+    series?: Array<{
+      period: string;
+      borrowings_cr?: number | null;
+      equity_cr?: number | null;
+      debt_to_equity?: number | null;
+      working_capital_days?: number | null;
+      debtor_days?: number | null;
+      inventory_days?: number | null;
+      days_payable?: number | null;
+      cash_conversion_cycle_days?: number | null;
+      roce_or_roe_pct?: number | null;
+    }>;
+  };
   segment_mix: Array<{
     segment: string;
     share_or_metric: string;
     citation: VerbatimCitation;
   }>;
   promised_vs_delivered: Array<{
+    claim_id?: number;
     period_called: string;
+    fiscal_period?: string;
+    scope?: string;
+    condition?: string | null;
+    unit?: string;
     is_latest_call: boolean;
     promised_vs_delivered_testable: boolean;
+    has_verdict?: boolean;
     topic: string;
+    speaker?: string;
     promised_guidance: string;
     promised_citation: VerbatimCitation;
     delivered_summary: string;
     delivered_citation?: VerbatimCitation | null;
     verdict: string;
+    one_line_explanation?: string;
+  }>;
+  reported_vs_stated?: Array<{
+    quarter_referenced: string;
+    metric: string;
+    stated_value: number;
+    unit?: string;
+    filed_value?: number | null;
+    variance?: number | null;
+    variance_pct?: number | null;
+    status: string;
+    label: string;
+    doc_label: string;
+    speaker?: string;
+    citation: VerbatimCitation;
+  }>;
+  concall_extraction_telemetry?: Array<{
+    doc_id: string;
+    label: string;
+    claims_extracted: number;
+    dropped_by_verifier: number;
+    dropped_missing_unit: number;
+    dropped_scope_mismatch: number;
+    kept: number;
   }>;
   numbers_vs_narrative: Array<{
     check_title: string;
@@ -373,6 +456,7 @@ interface CompanyDossier {
     concall_transcripts_verified: number;
     latest_call_marked_untestable: boolean;
     total_verified_citations: number;
+    dropped_uncited_sentences?: number;
     min_rapidfuzz_score: number;
     quote_verification_rule: string;
   };
@@ -398,17 +482,57 @@ const DEMO_DOSSIER_SYMBOLS = [
 const GENERALISATION_DOSSIER_SYMBOLS = [
   { symbol: "HDFCBANK", label: "HDFCBANK · Unseen Lender Path (No EBITDA)" },
   { symbol: "TITAN", label: "TITAN · Unseen Consumer Discretionary" },
+  { symbol: "KAYNES", label: "KAYNES · Generalisation EMS / OSAT" },
 ];
 
 const NETWORK_QUICK_QUERIES = [
+  "who are my go-to people for semiconductors",
   "specialty chemicals",
   "ICICI Bank",
   "Cummins",
   "Cohance",
   "EMS working capital",
   "IIT Kanpur",
-  "microfinance PAR 30",
 ];
+
+function extractFilingTimelineSentences(bioText: string): string[] {
+  if (!bioText.trim()) return [];
+  const normalized = bioText.replace(/\s+/g, " ").trim();
+  const sentences = normalized
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 25);
+  const careerCues = /(?:experience|served|worked|prior|join|appointed|directorship|director|degree|graduate|post|iim|iit|institute|university|college|bank|limited|years|from\s+\d{4})/i;
+  const matched = sentences.filter((s) => careerCues.test(s));
+  return (matched.length > 0 ? matched : sentences).slice(0, 4);
+}
+
+function buildFilingWorthAskingPrompts(bioText: string, symbol: string): string[] {
+  if (!bioText.trim()) return [];
+  const normalized = bioText.replace(/\s+/g, " ").trim();
+  const prompts: string[] = [];
+  if (/compliance|regulatory|inspection|rbi/i.test(normalized)) {
+    prompts.push(
+      `Filing cites direct regulatory/compliance background — worth asking how ${symbol}'s remediation or inspection posture changes under their tenure.`
+    );
+  }
+  if (/audit|finance|cfo|risk|credit/i.test(normalized)) {
+    prompts.push(
+      `Filing references finance/risk/audit responsibilities — worth asking about control changes or provisioning discipline.`
+    );
+  }
+  if (/re-?appoint|continuation/i.test(normalized)) {
+    prompts.push(
+      `Filing is a re-appointment/continuation — worth asking whether execution priorities or KPIs shifted vs the prior term.`
+    );
+  }
+  if (prompts.length === 0) {
+    prompts.push(
+      `Based strictly on the filing profile above, ask overlapping contacts about operational execution style and transition readiness (no external claims added).`
+    );
+  }
+  return prompts;
+}
 
 export function BriefClient() {
   const [windowHours, setWindowHours] = useState<number>(24);
@@ -744,10 +868,17 @@ export function BriefClient() {
 
       {/* [S1 / S4] Triggered EOD Alerts Strip */}
       <section aria-label="Triggered alerts" className="space-y-2 border-b border-rule pb-4">
-        <div className="flex items-center justify-between">
-          <span className="kicker">
-            Triggered Market Alerts · Session {data?.demo_clock.anchor_date ?? "2026-11-06"}
-          </span>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span className="kicker">
+              Triggered Market Alerts · Session {data?.demo_clock.anchor_date ?? "2026-11-06"}
+            </span>
+            <p className="mt-0.5 font-mono text-[10px] text-muted">
+              Threshold crossings as of demo clock (categories:{" "}
+              {data?.alert_rules?.categories?.join(", ") || "results, management_change, capex_capacity"}) ·{" "}
+              In-app digest only (real browser Web Push / VAPID notifications not implemented)
+            </p>
+          </div>
           <button
             type="button"
             onClick={() => setRulesModalOpen(true)}
@@ -1094,7 +1225,7 @@ export function BriefClient() {
             </span>
             <p className="mt-0.5 font-mono text-[11px] text-ink-2">
               Every claim carries a clickable verbatim quote verified via{" "}
-              <code>rapidfuzz.partial_ratio &ge; 85</code>. Unsupported claims show{" "}
+              <code>rapidfuzz.partial_ratio &ge; 90</code> + numerical token match. Unsupported claims show{" "}
               <strong>&ldquo;not found in filings&rdquo;</strong>.
             </p>
           </div>
@@ -1292,26 +1423,44 @@ export function BriefClient() {
 
             {/* Grounding & Section Status Disclosure Header */}
             <div className="border border-rule bg-paper-2 p-3 text-xs space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="kicker">Primary-Source Grounding Status</span>
-                <span className="font-mono text-[10px] uppercase text-muted">Strict Provenance</span>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="kicker">
+                  {dossier.analysis_generated
+                    ? "Primary-Source Grounding Status · Analysis Verified"
+                    : dossier.analysis_header ?? "Deterministic extracts only; analysis not generated."}
+                </span>
+                <span
+                  className={`font-mono text-[10px] uppercase ${
+                    dossier.analysis_generated ? "text-up" : "text-amber"
+                  }`}
+                >
+                  {dossier.analysis_generated ? "Part C Complete · Quotes Verified >=90%" : "Deterministic Extracts Only"}
+                </span>
               </div>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 pt-1">
-                <div className="border-l-2 border-up pl-2 space-y-0.5">
-                  <div className="font-semibold text-up font-mono text-[11px]">✓ Shown (Deterministic Extracts Only):</div>
-                  <p className="text-ink-2">
-                    Primary filings manifest (AR + concalls), 5-year financial trajectory (₹ Cr), consolidated balance sheet &amp; margin metrics,
-                    doctype checks, and verbatim filing quotes.
-                  </p>
+              {dossier.analysis_generated ? (
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 pt-1">
+                  <div className="border-l-2 border-up pl-2 space-y-0.5">
+                    <div className="font-semibold text-up font-mono text-[11px]">✓ Shown (Verified &amp; Grounded):</div>
+                    <p className="text-ink-2">
+                      Primary filings manifest, 5Y trajectory, deterministic Balance Sheet panel, verified Segment Mix,
+                      Concall Guidance with code-computed verdicts, Stated-vs-Filed cross-checks, Cited Numbers-vs-Narrative &amp; Bull/Bear, and Network.
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-amber pl-2 space-y-0.5">
+                    <div className="font-semibold text-amber font-mono text-[11px]">ℹ Pending / Omitted Rules:</div>
+                    <p className="text-ink-2">
+                      Claims missing explicit units, out-of-scope labels, or &lt;90% quote matches are dropped. Incomplete
+                      fiscal periods &amp; latest calls show progress or untestable status without verdicts.
+                    </p>
+                  </div>
                 </div>
-                <div className="border-l-2 border-amber pl-2 space-y-0.5">
-                  <div className="font-semibold text-amber font-mono text-[11px]">⏳ Hidden (Pending Part C LLM Rebuild):</div>
-                  <p className="text-ink-2">
-                    Promised vs Delivered track record &amp; verdicts, Numbers vs Narrative synthesis, Bull/Bear investment cases,
-                    and authored narrative summaries — withdrawn until regenerated from verified claim IDs.
-                  </p>
-                </div>
-              </div>
+              ) : (
+                <p className="text-ink-2">
+                  <strong className="text-ink">Deterministic extracts only; analysis not generated.</strong>{" "}
+                  Analysis sections (Promised vs Delivered, Stated vs Filed, Numbers vs Narrative, Bull/Bear) remain hidden for{" "}
+                  {dossier.symbol}.
+                </p>
+              )}
             </div>
 
             {/* Verified Primary Filings Manifest (Doc-Type Check Badges) */}
@@ -1455,19 +1604,322 @@ export function BriefClient() {
               </div>
             </div>
 
-            {/* Authored Sections Hidden Pending Part C Rebuild */}
-            <div className="border border-rule bg-paper-2 p-3.5 text-xs space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="kicker text-muted">Analysis Sections Status</span>
-                <span className="font-mono text-[10px] text-amber uppercase">Pending Part C Rebuild</span>
+            {/* [9.6] Deterministic Balance-Sheet & Working-Capital / Lender Asset Quality Panel */}
+            {dossier.balance_sheet_panel && (
+              <div className="space-y-2 border-t border-rule pt-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="kicker">
+                    Balance Sheet &amp; {dossier.is_lender ? "Lender Asset Quality / Capital" : "Working Capital Cycle"} ({dossier.balance_sheet_panel.latest_period ?? "Latest"})
+                  </span>
+                  <span className="font-mono text-[10px] text-muted">
+                    {dossier.balance_sheet_panel.source}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 text-xs">
+                  <div className="border border-rule bg-paper-2 p-2.5">
+                    <div className="font-mono text-[10px] uppercase text-muted">
+                      {dossier.is_lender ? "Borrowing" : "Borrowings"}
+                    </div>
+                    <div className="num mt-0.5 font-mono text-sm font-semibold text-ink">
+                      {dossier.balance_sheet_panel.borrowings_cr !== null &&
+                      dossier.balance_sheet_panel.borrowings_cr !== undefined
+                        ? `₹${dossier.balance_sheet_panel.borrowings_cr.toLocaleString("en-IN")} Cr`
+                        : "—"}
+                    </div>
+                  </div>
+                  <div className="border border-rule bg-paper-2 p-2.5">
+                    <div className="font-mono text-[10px] uppercase text-muted">Debt / Equity</div>
+                    <div className="num mt-0.5 font-mono text-sm font-semibold text-ink">
+                      {dossier.balance_sheet_panel.debt_to_equity !== null &&
+                      dossier.balance_sheet_panel.debt_to_equity !== undefined
+                        ? `${dossier.balance_sheet_panel.debt_to_equity.toFixed(2)}×`
+                        : "—"}
+                    </div>
+                  </div>
+                  {dossier.is_lender ? (
+                    <>
+                      <div className="border border-rule bg-paper-2 p-2.5">
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          CAR ({dossier.balance_sheet_panel.car_source ?? "Screener"})
+                        </div>
+                        <div className="num mt-0.5 font-mono text-sm font-semibold text-up">
+                          {dossier.balance_sheet_panel.car_pct !== null &&
+                          dossier.balance_sheet_panel.car_pct !== undefined
+                            ? `${dossier.balance_sheet_panel.car_pct}%`
+                            : "Not disclosed"}
+                        </div>
+                      </div>
+                      <div className="border border-rule bg-paper-2 p-2.5">
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          GNPA / NNPA ({dossier.balance_sheet_panel.npa_source ?? "Screener"})
+                        </div>
+                        <div className="num mt-0.5 font-mono text-sm font-semibold text-ink">
+                          {dossier.balance_sheet_panel.gross_npa_pct !== null &&
+                          dossier.balance_sheet_panel.gross_npa_pct !== undefined
+                            ? `${dossier.balance_sheet_panel.gross_npa_pct}% / ${dossier.balance_sheet_panel.net_npa_pct ?? "—"}%`
+                            : "Not disclosed in Screener"}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="border border-rule bg-paper-2 p-2.5">
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          Working Capital Days ({dossier.balance_sheet_panel.working_capital_period ?? "FY"})
+                        </div>
+                        <div className="num mt-0.5 font-mono text-sm font-semibold text-ink">
+                          {dossier.balance_sheet_panel.working_capital_days !== null &&
+                          dossier.balance_sheet_panel.working_capital_days !== undefined
+                            ? `${dossier.balance_sheet_panel.working_capital_days}d`
+                            : "—"}
+                        </div>
+                      </div>
+                      <div className="border border-rule bg-paper-2 p-2.5">
+                        <div className="font-mono text-[10px] uppercase text-muted">Total Assets</div>
+                        <div className="num mt-0.5 font-mono text-sm font-semibold text-ink">
+                          {dossier.balance_sheet_panel.total_assets_cr !== null &&
+                          dossier.balance_sheet_panel.total_assets_cr !== undefined
+                            ? `₹${dossier.balance_sheet_panel.total_assets_cr.toLocaleString("en-IN")} Cr`
+                            : "—"}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-              <p className="text-ink-2">
-                Per primary-source grounding standards, earlier authored sections (<strong>Promised vs Delivered guidance verdicts</strong>, <strong>Numbers vs Narrative synthesis</strong>, and <strong>Bull/Bear thesis statements</strong>) are hidden across all 6 dossiers until Part C regenerates them strictly from cited claim IDs.
-              </p>
-              <div className="font-mono text-[11px] text-muted">
-                Deterministic extracts (Consolidated Financials, 5Y Trajectory sparklines/table, and Document Manifest with verified quotes) remain visible above.
+            )}
+
+            {/* [6.1 / 6.2] Unhidden Pull Analysis Sections ONLY for Verified Dossiers (DIXON, POLYCAB, HDFCBANK, KAYNES) */}
+            {!dossier.analysis_generated ? (
+              <div className="border border-rule bg-paper-2 p-3.5 text-xs space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="kicker text-amber">Deterministic extracts only; analysis not generated.</span>
+                  <span className="font-mono text-[10px] text-amber uppercase">Analysis Hidden</span>
+                </div>
+                <p className="text-ink-2">
+                  Promised vs Delivered, Stated vs Filed, Numbers vs Narrative, and Bull/Bear synthesis are withheld for{" "}
+                  {dossier.symbol} until regenerated under verified claim-ID grounding.
+                </p>
               </div>
-            </div>
+            ) : (
+              <div className="space-y-4 border-t border-rule pt-3">
+                {/* [9.7] Verified AR Segment Mix */}
+                {dossier.segment_mix && dossier.segment_mix.length > 0 && (
+                  <div className="space-y-2">
+                    <span className="kicker">Business Snapshot · AR Segment Mix (Quote-Verified)</span>
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 text-xs">
+                      {dossier.segment_mix.map((seg, i) => (
+                        <div key={i} className="border border-rule bg-paper-2 p-2.5 space-y-1">
+                          <div className="font-semibold text-ink">{seg.segment}</div>
+                          <div className="font-mono text-[11px] text-ink-2">{seg.share_or_metric}</div>
+                          <button
+                            type="button"
+                            onClick={() => setActiveCitation(seg.citation)}
+                            className="font-mono text-[10px] text-accent underline"
+                          >
+                            [quote verified: {seg.citation.doc_label}, p.{seg.citation.page}]
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Promised vs Delivered Concall Guidance (Code-Computed Verdicts) */}
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <span className="kicker">
+                      Promised vs Delivered · Forward Concall Guidance ({dossier.promised_vs_delivered.length} verified claims)
+                    </span>
+                    <span className="font-mono text-[10px] text-muted">
+                      Verdicts computed deterministically in code · Fixed templates for untestable/incomplete/segment claims
+                    </span>
+                  </div>
+                  {dossier.promised_vs_delivered.length === 0 ? (
+                    <div className="border border-rule bg-paper-2 p-3 text-xs text-ink-2">
+                      No forward guidance rows passed all strict unit, metric, scope, and verbatim quote checks for {dossier.symbol}.
+                      {dossier.concall_extraction_telemetry && dossier.concall_extraction_telemetry.length > 0 && (
+                        <span className="ml-1 font-mono text-[11px] text-muted">
+                          (Dropped candidates logged in concall telemetry.)
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <div tabIndex={0} className="table-wrapper border border-rule">
+                      <table className="text-left text-xs">
+                        <thead className="border-b border-rule bg-paper-2 font-mono text-[10px] uppercase text-muted">
+                          <tr>
+                            <th scope="col" className="px-2.5 py-2">Call &amp; Scope</th>
+                            <th scope="col" className="px-2.5 py-2">Metric &amp; Quote</th>
+                            <th scope="col" className="px-2.5 py-2">Filed Comparison</th>
+                            <th scope="col" className="px-2.5 py-2">Verdict &amp; Rationale</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-rule">
+                          {dossier.promised_vs_delivered.map((row, idx) => (
+                            <tr key={row.claim_id ?? idx}>
+                              <td className="px-2.5 py-2 align-top font-mono text-[11px] whitespace-nowrap">
+                                <div className="font-semibold text-ink">{row.period_called}</div>
+                                <div className="text-muted">
+                                  {row.scope ?? "consolidated"} · {row.fiscal_period || "—"} · {row.unit || "—"}
+                                </div>
+                                {row.condition && (
+                                  <div className="text-amber text-[10px]">cond: {row.condition}</div>
+                                )}
+                              </td>
+                              <td className="px-2.5 py-2 align-top space-y-1 max-w-md">
+                                <div className="font-semibold text-ink">{row.topic}</div>
+                                <p className="text-ink-2 italic">&ldquo;{row.promised_guidance}&rdquo;</p>
+                                <button
+                                  type="button"
+                                  onClick={() => setActiveCitation(row.promised_citation)}
+                                  className="font-mono text-[10px] text-accent underline"
+                                >
+                                  [quote verified: {row.promised_citation.doc_label}, p.{row.promised_citation.page}]
+                                </button>
+                              </td>
+                              <td className="px-2.5 py-2 align-top text-ink-2 max-w-xs">
+                                {row.delivered_summary}
+                              </td>
+                              <td className="px-2.5 py-2 align-top space-y-1 max-w-xs">
+                                <span
+                                  className={`inline-block border px-1.5 py-0.5 font-mono text-[10px] font-semibold ${
+                                    row.verdict === "Delivered"
+                                      ? "border-up text-up"
+                                      : row.verdict === "Missed"
+                                        ? "border-signal text-signal"
+                                        : "border-amber text-amber"
+                                  }`}
+                                >
+                                  {row.verdict}
+                                </span>
+                                {row.one_line_explanation && (
+                                  <p className="text-[11px] text-ink-2">{row.one_line_explanation}</p>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
+
+                {/* Stated vs Filed Historical Checks */}
+                {dossier.reported_vs_stated && dossier.reported_vs_stated.length > 0 && (
+                  <div className="space-y-2">
+                    <span className="kicker">Stated vs Filed · Historical Call Claims (Not Guidance)</span>
+                    <div tabIndex={0} className="table-wrapper border border-rule">
+                      <table className="text-left text-xs">
+                        <thead className="border-b border-rule bg-paper-2 font-mono text-[10px] uppercase text-muted">
+                          <tr>
+                            <th scope="col" className="px-2.5 py-1.5">Tag</th>
+                            <th scope="col" className="px-2.5 py-1.5">Period &amp; Metric</th>
+                            <th scope="col" className="px-2.5 py-1.5 text-right">Stated</th>
+                            <th scope="col" className="px-2.5 py-1.5 text-right">Filed (Screener)</th>
+                            <th scope="col" className="px-2.5 py-1.5">Status &amp; Quote</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-rule">
+                          {dossier.reported_vs_stated.map((r, i) => (
+                            <tr key={i}>
+                              <td className="px-2.5 py-1.5 font-mono text-[10px] uppercase text-muted">{r.label}</td>
+                              <td className="px-2.5 py-1.5 font-mono text-[11px] text-ink">
+                                {r.quarter_referenced} · {r.metric}
+                              </td>
+                              <td className="num px-2.5 py-1.5 text-right font-mono text-ink">
+                                {r.stated_value} {r.unit ?? ""}
+                              </td>
+                              <td className="num px-2.5 py-1.5 text-right font-mono text-ink-2">
+                                {r.filed_value !== null && r.filed_value !== undefined ? r.filed_value : "—"}
+                              </td>
+                              <td className="px-2.5 py-1.5 text-xs">
+                                <span className="text-ink-2">{r.status}</span>{" "}
+                                <button
+                                  type="button"
+                                  onClick={() => setActiveCitation(r.citation)}
+                                  className="ml-1 font-mono text-[10px] text-accent underline"
+                                >
+                                  [quote verified: {r.citation.doc_label}, p.{r.citation.page}]
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Numbers vs Narrative */}
+                {dossier.numbers_vs_narrative.length > 0 && (
+                  <div className="space-y-2">
+                    <span className="kicker">Numbers vs Narrative · Cited Cross-Checks</span>
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-3 text-xs">
+                      {dossier.numbers_vs_narrative.map((item, i) => (
+                        <div key={i} className="border border-rule bg-paper-2 p-2.5 space-y-1">
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="font-semibold text-ink">{item.check_title}</span>
+                            <span className="border border-rule px-1 py-0.5 font-mono text-[10px] text-up">
+                              {item.verdict}
+                            </span>
+                          </div>
+                          <p className="text-ink-2">{item.narrative_claimed}</p>
+                          <div className="font-mono text-[10px] text-muted">Numbers: {item.numbers_observed}</div>
+                          <button
+                            type="button"
+                            onClick={() => setActiveCitation(item.citation)}
+                            className="font-mono text-[10px] text-accent underline"
+                          >
+                            [quote verified: {item.citation.doc_label}, p.{item.citation.page}]
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Bull & Bear Case */}
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-2 text-xs">
+                  <div className="border border-rule bg-paper-2 p-3 space-y-2">
+                    <span className="kicker text-up">Bull Case (Verified Primary Citations)</span>
+                    {dossier.bull_case.map((b, i) => (
+                      <div key={i} className="border-t border-rule/60 pt-1.5 space-y-1">
+                        <div className="font-semibold text-ink">{b.title}</div>
+                        <p className="text-ink-2">
+                          {b.thesis}{" "}
+                          <button
+                            type="button"
+                            onClick={() => setActiveCitation(b.citation)}
+                            className="font-mono text-[10px] text-accent underline"
+                          >
+                            [quote verified: {b.citation.doc_label}, p.{b.citation.page}]
+                          </button>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border border-rule bg-paper-2 p-3 space-y-2">
+                    <span className="kicker text-signal">Bear Case / Key Risks (Verified Primary Citations)</span>
+                    {dossier.bear_case.map((r, i) => (
+                      <div key={i} className="border-t border-rule/60 pt-1.5 space-y-1">
+                        <div className="font-semibold text-ink">{r.title}</div>
+                        <p className="text-ink-2">
+                          {r.thesis}{" "}
+                          <button
+                            type="button"
+                            onClick={() => setActiveCitation(r.citation)}
+                            className="font-mono text-[10px] text-accent underline"
+                          >
+                            [quote verified: {r.citation.doc_label}, p.{r.citation.page}]
+                          </button>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Explicit "not found in filings" Diligence Gaps */}
             <div className="border border-rule bg-paper-2 p-3 text-xs">
@@ -1530,6 +1982,24 @@ export function BriefClient() {
                 ))}
               </div>
             </div>
+
+            {/* [6.3] Dossier Model & Ledger Cost Footer */}
+            <div className="border-t border-rule pt-2.5 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-muted">
+              <div>
+                <strong>Models used:</strong>{" "}
+                {dossier.llm_provenance?.models_used?.length
+                  ? dossier.llm_provenance.models_used.join(", ")
+                  : "Deterministic extracts only (0 LLM calls)"}
+              </div>
+              <div>
+                <strong>Dossier cost (paid-eq.):</strong> ₹
+                {(dossier.llm_provenance?.cost_inr ?? 0).toFixed(4)} ($
+                {(dossier.llm_provenance?.cost_usd ?? 0).toFixed(6)}) ·{" "}
+                {(dossier.llm_provenance?.in_tokens ?? 0).toLocaleString()} in /{" "}
+                {(dossier.llm_provenance?.out_tokens ?? 0).toLocaleString()} out (
+                {(dossier.llm_provenance?.thinking_tokens ?? 0).toLocaleString()} thinking) · Free-tier actual: ₹0.00
+              </div>
+            </div>
           </div>
         ) : null}
       </section>
@@ -1553,7 +2023,7 @@ export function BriefClient() {
             <input
               type="search"
               aria-label="Query your network by company, sector, expertise, or alma mater"
-              placeholder="Who do I know in specialty chemicals, ICICI Bank, Cummins, EMS, IIT Kanpur…"
+              placeholder="Ask e.g. 'who are my go-to people for semiconductors', 'ICICI Bank', 'Cummins'…"
               value={networkQuery}
               onChange={(e) => setNetworkQuery(e.target.value)}
               className="w-full border border-rule bg-paper px-3 py-1.5 font-mono text-xs text-ink placeholder:text-muted"
@@ -1601,11 +2071,16 @@ export function BriefClient() {
                         }`}
                       >
                         {c.degree === 2
-                          ? (c.strength <= 2 || (c.days_since_contact ?? 0) >= 60 || c.recency.includes("mos")
-                              ? "2nd-degree path (stale target)"
+                          ? (c.is_stale_tie || c.strength <= 2 || (c.days_since_contact ?? 0) >= 60 || c.recency.includes("mos")
+                              ? "2nd-degree path · stale tie"
                               : "2nd-degree intro")
-                          : `1st-degree · ${c.strength}/5`}
+                          : `1st-degree · ${c.strength}/5${c.is_stale_tie ? " · stale tie" : ""}`}
                       </span>
+                      {c.ranking_breakdown && (
+                        <span className="font-mono text-[10px] text-muted">
+                          score {c.score} (str {c.ranking_breakdown.strength} × rec {c.ranking_breakdown.recency_weight} × match {c.ranking_breakdown.match_score})
+                        </span>
+                      )}
                     </div>
                     <button
                       type="button"
@@ -1855,19 +2330,50 @@ export function BriefClient() {
               </div>
             )}
 
-            {/* [S2] Management-Change Verbatim Bio */}
-            {activeCard.details?.kind === "management_change" && (
-              <div className="space-y-3">
-                <div>
-                  <span className="kicker">
-                    Who They Are · Verbatim from SEBI LODR Filing ({activeCard.details.filing_citation})
-                  </span>
-                  <pre className="mt-1.5 max-h-56 overflow-auto whitespace-pre-wrap border border-rule bg-paper-2 p-3 font-sans text-xs leading-relaxed text-ink">
-                    {activeCard.details.brief_profile_verbatim || activeCard.details.page_verbatim_excerpt}
-                  </pre>
+            {/* [S2 & 9.1] Management-Change Verbatim Bio & Filing-Sourced Person Diligence */}
+            {activeCard.details?.kind === "management_change" && (() => {
+              const rawBio = activeCard.details.brief_profile_verbatim || activeCard.details.page_verbatim_excerpt || "";
+              const timeline = extractFilingTimelineSentences(rawBio);
+              const worthAsking = buildFilingWorthAskingPrompts(rawBio, activeCard.symbol);
+              return (
+                <div className="space-y-3">
+                  <div>
+                    <span className="kicker">
+                      Who They Are · Verbatim from SEBI LODR Filing ({activeCard.details.filing_citation})
+                    </span>
+                    <pre className="mt-1.5 max-h-48 overflow-auto whitespace-pre-wrap border border-rule bg-paper-2 p-3 font-sans text-xs leading-relaxed text-ink">
+                      {rawBio}
+                    </pre>
+                  </div>
+
+                  {/* [9.1] Filing-Sourced Person Diligence Panel */}
+                  <div className="border border-rule bg-paper-2 p-3 text-xs space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="kicker">Person Diligence · Filing-Sourced Bio &amp; Worth Asking</span>
+                      <span className="font-mono text-[10px] text-muted">Strictly from SEBI filing text</span>
+                    </div>
+                    {timeline.length > 0 && (
+                      <div>
+                        <div className="font-mono text-[10px] uppercase text-muted">Filing-Stated Roles / Experience:</div>
+                        <ul className="mt-1 list-disc space-y-0.5 pl-4 text-ink-2">
+                          {timeline.map((line, i) => (
+                            <li key={i}>{line}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <div>
+                      <div className="font-mono text-[10px] uppercase text-muted">Worth Asking (Anchored to Filing Text):</div>
+                      <ul className="mt-1 list-disc space-y-0.5 pl-4 text-ink-2">
+                        {worthAsking.map((q, i) => (
+                          <li key={i}>{q}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* Woven-in Network Section ("Who to Call") */}
             <div className="space-y-2.5 border-t border-rule pt-3">

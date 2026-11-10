@@ -25,14 +25,20 @@ from pathlib import Path
 from typing import Any
 
 from finn.constants import LENDER_SYMBOLS
+from finn.llm.ledger import LLMLedger
 from finn.llm.router import LLMRouter
 from finn.network.matcher import match_contacts_for_dossier
 from finn.pull.prompts import (
+    SCORED_VERDICTS,
     build_concall_guidance_prompt,
     build_reasoning_prompt,
     compute_guidance_verdict_in_code,
+    compute_reported_vs_stated_in_code,
+    trim_quote_to_guidance_sentence,
+    validate_claim_scope_consistency,
+    validate_claim_unit_and_metric,
 )
-from finn.pull.verifier import NOT_FOUND_IN_FILINGS, verify_citation
+from finn.pull.verifier import MIN_QUOTE_MATCH_SCORE, NOT_FOUND_IN_FILINGS, verify_citation
 from finn.store import get_portfolio
 
 
@@ -69,21 +75,23 @@ def _format_concalls_for_prompt(docs_by_id: dict[str, dict[str, Any]], *, max_pa
         is_latest = bool(doc.get("is_latest_call"))
         label = doc.get("label") or doc_id
         pages = doc.get("pages") or {}
-        # Pick pages with management guidance / numbers / Q&A answers
+        # Pick pages with management guidance / numbers / Q&A answers; always prioritize p.3 opening remarks
         scored_pages: list[tuple[int, int, str]] = []
         for pno, ptext in pages.items():
             hits = len(
                 re.findall(
-                    r"\b(?:guidance|margin|growth|capex|crore|cr\b|target|fy\s*\d{2}|q[1-4]|order\s+book|revenue|ebitda|nii|nim|npa|slippages|deposit)\b",
+                    r"\b(?:guidance|margin|growth|capex|crore|cr\b|target|fy\s*'?\d{2}|q[1-4]|order\s+book|revenue|ebitda|nii|nim|npa|slippages|deposit)\b",
                     ptext,
                     re.IGNORECASE,
                 )
             )
+            if pno in (2, 3):
+                hits += 50
             scored_pages.append((hits, pno, ptext))
         scored_pages.sort(key=lambda x: (-x[0], x[1]))
         chosen = sorted(scored_pages[:max_pages_per_call], key=lambda x: x[1])
         for _, pno, ptext in chosen:
-            snippet = re.sub(r"\s+", " ", ptext).strip()[:1900]
+            snippet = re.sub(r"\s+", " ", ptext).strip()[:2400]
             blocks.append(
                 f"=== [DOC_ID: {doc_id} | LABEL: {label} | IS_LATEST_CALL: {is_latest} | PAGE: {pno}] ===\n{snippet}"
             )
@@ -231,20 +239,21 @@ def build_company_dossier(
             res_ar = router.generate(
                 task=f"pull_extract_ar_{sym.lower()}",
                 tier="bulk",
-                source_kind="annual_report_pdf",
+                source_kind="public_filing",
                 prompt_version="pull_ar_v1",
                 system="Return strictly valid JSON. Every verbatim_quote must be an exact character-for-character substring of the cited page.",
                 contents=ar_prompt,
             )
             if res_ar.get("text"):
                 ar_claims_raw = _clean_json_text(res_ar["text"])
-        except Exception:  # noqa: BLE001
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [WARN] res_ar failed for {sym}: {exc}")
             ar_claims_raw = {}
 
     if progress_cb:
         progress_cb(f"Extracting Promised-vs-Delivered concall guidance for {sym}", 72)
 
-    # --- CALL 2: Bulk LLM (`gemini-3.5-flash-lite`) — Extract Forward Guidance ONLY ---
+    # --- CALL 2: Bulk LLM (`gemini-3.5-flash-lite`) — Extract Forward Guidance & Reported-vs-Stated Claims ---
     concall_raw: dict[str, Any] = {}
     if concall_docs:
         cc_prompt = build_concall_guidance_prompt(
@@ -257,18 +266,19 @@ def build_company_dossier(
             res_cc = router.generate(
                 task=f"pull_extract_concalls_{sym.lower()}",
                 tier="bulk",
-                source_kind="concall_transcript_pdf",
-                prompt_version="pull_cc_v2",
+                source_kind="public_filing",
+                prompt_version="pull_cc_v4",
                 system=(
-                    "Return strictly valid JSON matching schema. Extract forward-looking guidance ONLY "
-                    "{metric, target_low, target_high, period, quote, speaker, page, doc_id, is_latest_call}. "
-                    "Do NOT extract delivered summaries or verdicts."
+                    "Return strictly valid JSON matching schema. Extract forward-looking guidance into `guidance_claims` "
+                    "(covering EVERY concall DOC_ID) and historical past-quarter statements into `reported_vs_stated_claims`. "
+                    "Trim each `quote` strictly to the single complete sentence carrying the claim. Do NOT use 'Consolidated' labels for segment/product scope."
                 ),
                 contents=cc_prompt,
             )
             if res_cc.get("text"):
                 concall_raw = _clean_json_text(res_cc["text"])
-        except Exception:  # noqa: BLE001
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [WARN] res_cc failed for {sym}: {exc}")
             concall_raw = {}
 
     # --- Verify all Stage-B extracted citations before Stage-D reasoning ---
@@ -281,6 +291,7 @@ def build_company_dossier(
                 "verbatim_quote": seg.get("verbatim_quote"),
             },
             docs_by_id,
+            min_score=MIN_QUOTE_MATCH_SCORE,
         )
         if v.get("verified"):
             verified_segments.append(
@@ -300,6 +311,7 @@ def build_company_dossier(
                 "verbatim_quote": cl.get("verbatim_quote"),
             },
             docs_by_id,
+            min_score=MIN_QUOTE_MATCH_SCORE,
         )
         if v.get("verified"):
             verified_ar_claims.append(
@@ -310,138 +322,158 @@ def build_company_dossier(
                 }
             )
 
+    # Track per-concall extraction & drop telemetry (including raw candidates before/after each filter)
+    telemetry_by_doc: dict[str, dict[str, Any]] = {
+        d["doc_id"]: {
+            "doc_id": d["doc_id"],
+            "label": d.get("label") or d["doc_id"],
+            "is_latest_call": bool(d.get("is_latest_call")),
+            "claims_extracted": 0,
+            "dropped_by_verifier": 0,
+            "dropped_missing_unit": 0,
+            "dropped_scope_mismatch": 0,
+            "kept": 0,
+            "raw_candidates": [],
+        }
+        for d in concall_docs
+    }
+
     verified_pvd: list[dict[str, Any]] = []
-    latest_cc_doc = next((d for d in concall_docs if d.get("is_latest_call")), None)
     raw_claims = concall_raw.get("guidance_claims") or concall_raw.get("promised_vs_delivered") or []
     for row in raw_claims:
         doc_id = row.get("doc_id") or row.get("promised_doc_id")
         page = row.get("page") or row.get("promised_page")
-        quote = row.get("quote") or row.get("promised_quote")
+        raw_quote = str(row.get("quote") or row.get("promised_quote") or "")
+        trimmed_quote = trim_quote_to_guidance_sentence(raw_quote, is_historical=False)
+
+        tel_key = doc_id if doc_id in telemetry_by_doc else None
+        if tel_key is not None:
+            telemetry_by_doc[tel_key]["claims_extracted"] += 1
+
+        cand_log = {
+            "metric": row.get("metric") or row.get("topic"),
+            "scope": row.get("scope"),
+            "condition": row.get("condition"),
+            "unit": row.get("unit"),
+            "fiscal_period": row.get("fiscal_period") or row.get("period"),
+            "page": page,
+            "raw_quote": raw_quote,
+            "trimmed_quote": trimmed_quote,
+            "status": "pending",
+            "reason": None,
+        }
+
+        # 1. Code-level verbatim + number verifier (>= 90%) on clean trimmed sentence
         p_cit = verify_citation(
             {
                 "doc_id": doc_id,
                 "page": page,
-                "verbatim_quote": quote,
+                "verbatim_quote": trimmed_quote,
             },
             docs_by_id,
+            min_score=MIN_QUOTE_MATCH_SCORE,
         )
         if not p_cit.get("verified"):
+            cand_log["status"] = "dropped_by_verifier"
+            cand_log["reason"] = p_cit.get("reason") or f"score={p_cit.get('match_score')}"
+            if tel_key is not None:
+                telemetry_by_doc[tel_key]["dropped_by_verifier"] += 1
+                telemetry_by_doc[tel_key]["raw_candidates"].append(cand_log)
             continue
+
+        # 2. Strict check: drop claims whose quote has no explicit unit or metric
+        row_for_check = {**row, "quote": trimmed_quote}
+        unit_ok, unit_reason = validate_claim_unit_and_metric(row_for_check)
+        if not unit_ok:
+            cand_log["status"] = "dropped_missing_unit"
+            cand_log["reason"] = unit_reason
+            if tel_key is not None:
+                telemetry_by_doc[tel_key]["dropped_missing_unit"] += 1
+                telemetry_by_doc[tel_key]["raw_candidates"].append(cand_log)
+            continue
+
+        # 3. Metric/scope consistency validator (reject wider label on segment/product)
+        scope_ok, scope_reason = validate_claim_scope_consistency(row_for_check)
+        if not scope_ok:
+            cand_log["status"] = "dropped_scope_mismatch"
+            cand_log["reason"] = scope_reason
+            if tel_key is not None:
+                telemetry_by_doc[tel_key]["dropped_scope_mismatch"] += 1
+                telemetry_by_doc[tel_key]["raw_candidates"].append(cand_log)
+            continue
+
+        cand_log["status"] = "kept"
+        if tel_key is not None:
+            telemetry_by_doc[tel_key]["kept"] += 1
+            telemetry_by_doc[tel_key]["raw_candidates"].append(cand_log)
+
         p_doc = docs_by_id.get(p_cit["doc_id"], {})
         is_latest = bool(p_doc.get("is_latest_call") or row.get("is_latest_call"))
         claim_dict = {
             "metric": row.get("metric") or row.get("topic") or "Operational Guidance",
+            "scope": row.get("scope") or "consolidated",
+            "condition": row.get("condition"),
             "target_low": row.get("target_low"),
             "target_high": row.get("target_high"),
-            "period": row.get("period") or p_doc.get("label"),
+            "unit": row.get("unit") or "",
+            "fiscal_period": row.get("fiscal_period") or row.get("period") or "",
+            "quote": trimmed_quote,
             "is_latest_call": is_latest,
         }
-        # Compute outcome and verdict deterministically in Python code from structured results
         code_verdict = compute_guidance_verdict_in_code(claim_dict, trajectory, is_lender=is_lender)
         verified_pvd.append(
             {
                 "claim_id": len(verified_pvd) + 1,
-                "period_called": p_doc.get("label") or row.get("period") or ("Latest Concall" if is_latest else "Prior Concall"),
+                "period_called": p_doc.get("label") or row.get("fiscal_period") or ("Latest Concall" if is_latest else "Prior Concall"),
+                "fiscal_period": claim_dict["fiscal_period"],
+                "scope": claim_dict["scope"],
+                "condition": claim_dict["condition"],
+                "unit": claim_dict["unit"],
                 "is_latest_call": is_latest,
                 "promised_vs_delivered_testable": code_verdict["testable"],
-                "topic": row.get("metric") or row.get("topic") or "Forward Guidance",
+                "has_verdict": code_verdict["has_verdict"],
+                "topic": claim_dict["metric"],
                 "speaker": row.get("speaker") or "Management",
-                "promised_guidance": row.get("quote") or p_cit["verbatim_quote"],
+                "promised_guidance": trimmed_quote,
                 "promised_citation": p_cit,
                 "delivered_summary": code_verdict["delivered_summary"],
                 "delivered_citation": None,
                 "verdict": code_verdict["verdict"],
-                "one_line_explanation": None,
+                "one_line_explanation": code_verdict["one_line_explanation"],
             }
         )
 
-    # Ensure the latest concall row is always present at index 0 and marked untestable
-    if latest_cc_doc and not any(r.get("is_latest_call") for r in verified_pvd):
-        fallback_cits = _find_fallback_verified_sentences(
-            {latest_cc_doc["doc_id"]: latest_cc_doc},
-            re.compile(r"\b(?:guidance|expect|growth|margin|target|capex|fy|quarter|crore|nii|nim|deposit)\b", re.IGNORECASE),
-            limit=1,
+    # --- Process historical 'reported_vs_stated' claims separately (never labeled guidance) ---
+    reported_vs_stated: list[dict[str, Any]] = []
+    for rvs in concall_raw.get("reported_vs_stated_claims") or []:
+        r_doc_id = rvs.get("doc_id")
+        r_page = rvs.get("page")
+        r_quote = trim_quote_to_guidance_sentence(str(rvs.get("quote") or ""), is_historical=True)
+        r_cit = verify_citation(
+            {"doc_id": r_doc_id, "page": r_page, "verbatim_quote": r_quote},
+            docs_by_id,
+            min_score=MIN_QUOTE_MATCH_SCORE,
         )
-        if fallback_cits:
-            c0 = fallback_cits[0]
-            verified_pvd.insert(
-                0,
-                {
-                    "period_called": latest_cc_doc.get("label") or "Latest Concall",
-                    "is_latest_call": True,
-                    "promised_vs_delivered_testable": False,
-                    "topic": "Latest Quarter Forward Outlook",
-                    "promised_guidance": c0["verbatim_quote"],
-                    "promised_citation": c0,
-                    "delivered_summary": (
-                        "Latest call — forward guidance only; untestable for promised-vs-delivered "
-                        "until subsequent quarter results are filed."
-                    ),
-                    "delivered_citation": None,
-                    "verdict": "Untestable (Latest Call)",
-                },
-            )
+        if not r_cit.get("verified"):
+            continue
+        r_check = compute_reported_vs_stated_in_code(rvs, trajectory, is_lender=is_lender)
+        if not r_check:
+            continue
+        r_doc = docs_by_id.get(r_cit["doc_id"], {})
+        reported_vs_stated.append(
+            {
+                **r_check,
+                "doc_label": r_doc.get("label") or r_cit["doc_id"],
+                "speaker": rvs.get("speaker") or "Management",
+                "verbatim_quote": r_quote,
+                "citation": r_cit,
+            }
+        )
 
-    # Ensure earlier testable concalls are represented in Promised-vs-Delivered
-    earlier_cc_docs = [d for d in concall_docs if not d.get("is_latest_call")]
-    if len(verified_pvd) < 4 and earlier_cc_docs:
-        q_recent = trajectory.get("quarterly_recent") or []
-        latest_q = q_recent[-1] if q_recent else {}
-        for idx_e, edoc in enumerate(earlier_cc_docs):
-            if len(verified_pvd) >= 4:
-                break
-            if any(r.get("promised_citation", {}).get("doc_id") == edoc["doc_id"] for r in verified_pvd):
-                continue
-            e_cits = _find_fallback_verified_sentences(
-                {edoc["doc_id"]: edoc},
-                re.compile(
-                    r"\b(?:guidance|target|expect|margin|growth|capex|commission|ramp|order|crore|nii|nim|npa|slippages|deposit)\b",
-                    re.IGNORECASE,
-                ),
-                limit=1,
-            )
-            if not e_cits:
-                continue
-            p_cit = e_cits[0]
-            subsequent_doc = concall_docs[idx_e] if idx_e < len(concall_docs) else latest_cc_doc
-            d_cits = (
-                _find_fallback_verified_sentences(
-                    {subsequent_doc["doc_id"]: subsequent_doc},
-                    re.compile(r"\b(?:grew|achieved|delivered|reported|revenue|profit|margin|crore|quarter|nii|npa)\b", re.IGNORECASE),
-                    limit=1,
-                )
-                if subsequent_doc
-                else []
-            )
-            d_cit = d_cits[0] if d_cits else None
-            if is_lender and latest_q:
-                deliv_text = (
-                    f"Subsequent quarterly filing ({latest_q.get('quarter')}): Revenue/NII ₹{latest_q.get('revenue_or_nii_cr')} Cr, "
-                    f"Financing Profit (PPOP) ₹{latest_q.get('ppop_or_financing_profit_cr')} Cr, PAT ₹{latest_q.get('pat_cr')} Cr, "
-                    f"GNPA {latest_q.get('gross_npa_pct')}%."
-                )
-            elif latest_q:
-                deliv_text = (
-                    f"Subsequent quarterly filing ({latest_q.get('quarter')}): Revenue ₹{latest_q.get('revenue_cr')} Cr, "
-                    f"Derived Operating EBITDA ₹{latest_q.get('ebitda_derived_cr')} Cr ({latest_q.get('ebitda_margin_derived_pct')}%), "
-                    f"PAT ₹{latest_q.get('pat_cr')} Cr."
-                )
-            else:
-                deliv_text = d_cit["verbatim_quote"] if d_cit else NOT_FOUND_IN_FILINGS
-
-            verified_pvd.append(
-                {
-                    "period_called": edoc.get("label") or "Prior Concall",
-                    "is_latest_call": False,
-                    "promised_vs_delivered_testable": True,
-                    "topic": "Operational & Financial Execution vs Prior Call",
-                    "promised_guidance": p_cit["verbatim_quote"],
-                    "promised_citation": p_cit,
-                    "delivered_summary": deliv_text,
-                    "delivered_citation": d_cit,
-                    "verdict": "Delivered",
-                }
-            )
+    # Ensure latest concall is at index 0 and re-index claim_id
+    verified_pvd.sort(key=lambda r: (0 if r.get("is_latest_call") else 1))
+    for idx, r in enumerate(verified_pvd, start=1):
+        r["claim_id"] = idx
 
     if progress_cb:
         progress_cb(f"Synthesizing Numbers-vs-Narrative & Bull/Bear case for {sym} (gemini-3.6-flash + thinking)", 86)
@@ -487,20 +519,24 @@ def build_company_dossier(
         for idx, c in cit_by_idx.items()
     ]
 
-    # --- CALL 3: Strong LLM (`gemini-3.6-flash`, `thinking_budget=1024`) — Numbers-vs-Narrative & Bull/Bear ---
+    # --- CALL 3: Strong LLM (`gemini-3.6-flash`, thinking enabled) — Numbers-vs-Narrative & Bull/Bear ---
+    # ONLY pass rows that actually earned a scored verdict (Delivered / Missed / Moved goalposts).
+    # Untestable, not-comparable, conditional, and incomplete rows use fixed template text with ZERO LLM calls.
     reasoning_raw: dict[str, Any] = {}
     if cit_by_idx:
+        scored_rows = [r for r in verified_pvd if r.get("verdict") in SCORED_VERDICTS]
         claims_table_for_prompt = [
             {
-                "claim_id": r.get("claim_id", idx + 1),
+                "claim_id": r.get("claim_id"),
                 "period": r.get("period_called"),
+                "fiscal_period": r.get("fiscal_period"),
                 "topic": r.get("topic"),
                 "speaker": r.get("speaker"),
                 "quote": r.get("promised_guidance"),
                 "delivered_actual": r.get("delivered_summary"),
                 "computed_verdict": r.get("verdict"),
             }
-            for idx, r in enumerate(verified_pvd)
+            for r in scored_rows
         ]
         r_prompt = build_reasoning_prompt(
             company_name=comp_meta.get("name", sym),
@@ -514,11 +550,12 @@ def build_company_dossier(
             res_strong = router.generate(
                 task=f"pull_reasoning_{sym.lower()}",
                 tier="strong",
-                source_kind="primary_filings_verified_citations",
-                prompt_version="pull_reasoning_v2",
+                source_kind="public_filing",
+                prompt_version="pull_reasoning_v4",
                 system=(
-                    "Return strictly valid JSON matching schema. For guidance_explanations, write ONLY a 1-line "
-                    "explanation for each claim_id citing filed numbers. Every citation_id must reference an integer from VERIFIED_CITATIONS."
+                    "Return strictly valid JSON matching schema. Write guidance_explanations ONLY for scored claims "
+                    "present in GUIDANCE_CLAIMS_AND_CODE_VERDICTS (return [] if none). Every sentence in narrative_claimed, "
+                    "bull_case.thesis, and bear_case.thesis MUST end with a resolvable [C<id>] matching VERIFIED_CITATIONS."
                 ),
                 contents=r_prompt,
             )
@@ -528,60 +565,103 @@ def build_company_dossier(
                     cid = exp.get("claim_id")
                     line = exp.get("one_line_explanation")
                     for pvd_row in verified_pvd:
-                        if pvd_row.get("claim_id") == cid and line:
+                        if pvd_row.get("claim_id") == cid and pvd_row.get("verdict") in SCORED_VERDICTS and line:
                             pvd_row["one_line_explanation"] = line
-        except Exception:  # noqa: BLE001
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [WARN] res_strong failed for {sym}: {exc}")
             reasoning_raw = {}
 
-    def _resolve_cit(cid: Any, default_idx: int = 1) -> dict[str, Any]:
+    _cite_ref_re = re.compile(r"\[C(\d+)\]")
+    dropped_uncited_sentences = 0
+
+    def _validate_cited_text(text: str, item_cid: Any) -> tuple[str, list[int]]:
+        nonlocal dropped_uncited_sentences
         try:
-            idx = int(cid)
+            primary_cid: int | None = int(item_cid)
         except (TypeError, ValueError):
-            idx = default_idx
-        return cit_by_idx.get(idx) or cit_by_idx.get(default_idx) or (citation_pool[0] if citation_pool else {
-            "verified": False,
-            "status": NOT_FOUND_IN_FILINGS,
-            "verbatim_quote": NOT_FOUND_IN_FILINGS,
-        })
+            primary_cid = None
+        if primary_cid is not None and primary_cid not in cit_by_idx:
+            primary_cid = None
+
+        raw_txt = re.sub(r"\s+", " ", (text or "").strip())
+        if not raw_txt:
+            return "", []
+        sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'])", raw_txt) if s.strip()]
+        kept: list[str] = []
+        used_cids: list[int] = []
+        for s in sents:
+            refs = [int(m) for m in _cite_ref_re.findall(s)]
+            valid_refs = [r for r in refs if r in cit_by_idx]
+            if refs:
+                if not valid_refs:
+                    dropped_uncited_sentences += 1
+                    continue
+                kept.append(s)
+                for vr in valid_refs:
+                    if vr not in used_cids:
+                        used_cids.append(vr)
+            elif primary_cid is not None and len(sents) == 1:
+                kept.append(f"{s} [C{primary_cid}]")
+                used_cids.append(primary_cid)
+            else:
+                dropped_uncited_sentences += 1
+        return " ".join(kept), used_cids
 
     nvn_checks: list[dict[str, Any]] = []
     for i, item in enumerate((reasoning_raw.get("numbers_vs_narrative") or [])[:3]):
+        cleaned_narr, cids = _validate_cited_text(item.get("narrative_claimed") or "", item.get("citation_id"))
+        if not cleaned_narr or not cids:
+            continue
         nvn_checks.append(
             {
                 "check_title": item.get("check_title") or f"Check #{i + 1}",
                 "numbers_observed": item.get("numbers_observed") or NOT_FOUND_IN_FILINGS,
-                "narrative_claimed": item.get("narrative_claimed") or NOT_FOUND_IN_FILINGS,
+                "narrative_claimed": cleaned_narr,
                 "verdict": item.get("verdict") or "Aligned",
-                "citation": _resolve_cit(item.get("citation_id"), i + 1),
+                "citation_id": cids[0],
+                "citation_ids": cids,
+                "citation": cit_by_idx[cids[0]],
             }
         )
 
     bull_points: list[dict[str, Any]] = []
     for i, item in enumerate((reasoning_raw.get("bull_case") or [])[:3]):
+        cleaned_thesis, cids = _validate_cited_text(item.get("thesis") or "", item.get("citation_id"))
+        if not cleaned_thesis or not cids:
+            continue
         bull_points.append(
             {
                 "title": item.get("title") or f"Bull Point #{i + 1}",
-                "thesis": item.get("thesis") or NOT_FOUND_IN_FILINGS,
-                "citation": _resolve_cit(item.get("citation_id"), i + 1),
+                "thesis": cleaned_thesis,
+                "citation_id": cids[0],
+                "citation_ids": cids,
+                "citation": cit_by_idx[cids[0]],
             }
         )
 
     bear_points: list[dict[str, Any]] = []
     for i, item in enumerate((reasoning_raw.get("bear_case") or [])[:3]):
+        cleaned_thesis, cids = _validate_cited_text(item.get("thesis") or "", item.get("citation_id"))
+        if not cleaned_thesis or not cids:
+            continue
         bear_points.append(
             {
                 "title": item.get("title") or f"Bear Point #{i + 1}",
-                "thesis": item.get("thesis") or NOT_FOUND_IN_FILINGS,
-                "citation": _resolve_cit(item.get("citation_id"), min(len(cit_by_idx), i + 2)),
+                "thesis": cleaned_thesis,
+                "citation_id": cids[0],
+                "citation_ids": cids,
+                "citation": cit_by_idx[cids[0]],
             }
         )
 
-    # Deterministic primary-source synthesis fallback if strong LLM wasn't invoked
+    # Deterministic primary-source synthesis fallback if strong LLM wasn't invoked or returned nothing valid
     stats = trajectory.get("summary_stats") or {}
     ann = trajectory.get("annual_5y") or []
     last_yr = ann[-1] if ann else {}
     if not nvn_checks and citation_pool:
         if is_lender:
+            c1_idx = 1
+            c2_idx = min(2, len(citation_pool))
             nvn_checks = [
                 {
                     "check_title": "NII / Revenue & PPOP Trajectory vs Lender Guidance",
@@ -590,9 +670,11 @@ def build_company_dossier(
                         f"latest annual PPOP ₹{last_yr.get('ppop_or_financing_profit_cr')} Cr (Margin {last_yr.get('financing_margin_pct')}%, "
                         f"EBITDA not meaningful for lenders)."
                     ),
-                    "narrative_claimed": citation_pool[0]["verbatim_quote"],
+                    "narrative_claimed": f"{cit_by_idx[c1_idx]['verbatim_quote']} [C{c1_idx}]",
                     "verdict": "Aligned",
-                    "citation": citation_pool[0],
+                    "citation_id": c1_idx,
+                    "citation_ids": [c1_idx],
+                    "citation": cit_by_idx[c1_idx],
                 },
                 {
                     "check_title": "Asset Quality (GNPA / NNPA) & Credit Cost Discipline",
@@ -600,13 +682,16 @@ def build_company_dossier(
                         f"Recent quarterly GNPA {trajectory.get('quarterly_recent', [{}])[-1].get('gross_npa_pct')}% / "
                         f"NNPA {trajectory.get('quarterly_recent', [{}])[-1].get('net_npa_pct')}%; ROE {last_yr.get('roce_or_roe_pct')}%."
                     ),
-                    "narrative_claimed": citation_pool[min(1, len(citation_pool) - 1)]["verbatim_quote"],
+                    "narrative_claimed": f"{cit_by_idx[c2_idx]['verbatim_quote']} [C{c2_idx}]",
                     "verdict": "Aligned",
-                    "citation": citation_pool[min(1, len(citation_pool) - 1)],
+                    "citation_id": c2_idx,
+                    "citation_ids": [c2_idx],
+                    "citation": cit_by_idx[c2_idx],
                 },
             ]
         else:
             cfo_pct = stats.get("cumulative_5y_cfo_to_pat_pct")
+            c1, c2, c3 = 1, min(2, len(citation_pool)), min(3, len(citation_pool))
             nvn_checks = [
                 {
                     "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
@@ -614,9 +699,11 @@ def build_company_dossier(
                         f"5Y Revenue CAGR {stats.get('revenue_cagr_pct', 'N/A')}%, PAT CAGR {stats.get('pat_cagr_pct', 'N/A')}%; "
                         f"latest annual Revenue ₹{last_yr.get('revenue_cr')} Cr, PAT ₹{last_yr.get('pat_cr')} Cr."
                     ),
-                    "narrative_claimed": citation_pool[0]["verbatim_quote"],
+                    "narrative_claimed": f"{cit_by_idx[c1]['verbatim_quote']} [C{c1}]",
                     "verdict": "Aligned",
-                    "citation": citation_pool[0],
+                    "citation_id": c1,
+                    "citation_ids": [c1],
+                    "citation": cit_by_idx[c1],
                 },
                 {
                     "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
@@ -624,9 +711,11 @@ def build_company_dossier(
                         f"5Y Cumulative CFO ₹{stats.get('cumulative_5y_cfo_cr', 'N/A')} Cr vs Cumulative PAT "
                         f"₹{stats.get('cumulative_5y_pat_cr', 'N/A')} Cr (CFO/PAT = {cfo_pct}%)."
                     ),
-                    "narrative_claimed": citation_pool[min(1, len(citation_pool) - 1)]["verbatim_quote"],
+                    "narrative_claimed": f"{cit_by_idx[c2]['verbatim_quote']} [C{c2}]",
                     "verdict": "Aligned" if (cfo_pct and cfo_pct >= 75) else "Watch closely",
-                    "citation": citation_pool[min(1, len(citation_pool) - 1)],
+                    "citation_id": c2,
+                    "citation_ids": [c2],
+                    "citation": cit_by_idx[c2],
                 },
                 {
                     "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
@@ -634,36 +723,36 @@ def build_company_dossier(
                         f"Latest annual Derived EBITDA ₹{last_yr.get('ebitda_derived_cr')} Cr "
                         f"(Margin {last_yr.get('ebitda_margin_derived_pct')}%, derived) · ROCE {last_yr.get('roce_pct')}%."
                     ),
-                    "narrative_claimed": citation_pool[min(2, len(citation_pool) - 1)]["verbatim_quote"],
+                    "narrative_claimed": f"{cit_by_idx[c3]['verbatim_quote']} [C{c3}]",
                     "verdict": "Aligned",
-                    "citation": citation_pool[min(2, len(citation_pool) - 1)],
+                    "citation_id": c3,
+                    "citation_ids": [c3],
+                    "citation": cit_by_idx[c3],
                 },
             ]
 
     if not bull_points and citation_pool:
-        for idx_b, cit_b in enumerate(citation_pool[:3], start=1):
+        for idx_b in range(1, min(4, len(citation_pool) + 1)):
+            cit_b = cit_by_idx[idx_b]
             bull_points.append(
                 {
                     "title": f"Verified Primary-Filing Growth & Execution Driver #{idx_b} ({cit_b['doc_label']})",
-                    "thesis": cit_b["verbatim_quote"],
+                    "thesis": f"{cit_b['verbatim_quote']} [C{idx_b}]",
+                    "citation_id": idx_b,
+                    "citation_ids": [idx_b],
                     "citation": cit_b,
                 }
             )
 
     if not bear_points and citation_pool:
-        risk_cits = _find_fallback_verified_sentences(
-            docs_by_id,
-            re.compile(
-                r"\b(?:risk|challenge|headwind|competition|inflation|working\s+capital|delay|pressure|attrition|regulatory|npa|slippage|cost)\b",
-                re.IGNORECASE,
-            ),
-            limit=3,
-        ) or citation_pool[-3:]
-        for idx_r, cit_r in enumerate(risk_cits[:3], start=1):
+        for idx_r in range(max(1, len(citation_pool) - 2), len(citation_pool) + 1):
+            cit_r = cit_by_idx[idx_r]
             bear_points.append(
                 {
-                    "title": f"Filing-Disclosed Operational / Margin Risk #{idx_r} ({cit_r['doc_label']})",
-                    "thesis": cit_r["verbatim_quote"],
+                    "title": f"Filing-Disclosed Operational / Margin Risk ({cit_r['doc_label']})",
+                    "thesis": f"{cit_r['verbatim_quote']} [C{idx_r}]",
+                    "citation_id": idx_r,
+                    "citation_ids": [idx_r],
                     "citation": cit_r,
                 }
             )
@@ -694,6 +783,26 @@ def build_company_dossier(
         progress_cb(f"Weaving Network layer (Ex-company, Competitors, Suppliers/Customers) for {sym}", 94)
 
     network_weave = match_contacts_for_dossier(data_dir, sym)
+    bs_panel = corpus.get("balance_sheet_panel") or {}
+    if is_lender and bs_panel:
+        # Fill CAR / GNPA / NNPA from AR verified text if Screener consolidated omitted them
+        ar_txt = " ".join(str(c.get("verbatim_quote", "")) for c in citation_pool)
+        if bs_panel.get("car_pct") is None:
+            m_car = re.search(r"(\d{1,2}\.\d{1,2})\s*%?\s*(?:per cent\s*)?(?:capital adequacy ratio|car\b)", ar_txt, re.IGNORECASE)
+            if m_car:
+                bs_panel["car_pct"] = float(m_car.group(1))
+                bs_panel["car_source"] = "AR verified quote"
+        if bs_panel.get("gross_npa_pct") is None:
+            m_gnpa = re.search(r"(\d\.\d{1,2})\s*%?\s*(?:per cent\s*)?gross\s*npa", ar_txt, re.IGNORECASE)
+            if m_gnpa:
+                bs_panel["gross_npa_pct"] = float(m_gnpa.group(1))
+                bs_panel["npa_source"] = "AR verified quote"
+        if bs_panel.get("net_npa_pct") is None:
+            m_nnpa = re.search(r"net\s*npa\s*(?:ratio\s*)?(?:stood\s*at|of|at)?\s*(\d\.\d{1,2})\s*(?:%|per cent)?", ar_txt, re.IGNORECASE)
+            if m_nnpa:
+                bs_panel["net_npa_pct"] = float(m_nnpa.group(1))
+
+    llm_prov = LLMLedger(data_dir / "snapshots" / "llm_ledger.jsonl").dossier_cost_summary(sym)
 
     dossier = {
         "symbol": sym,
@@ -701,6 +810,13 @@ def build_company_dossier(
         "sector": comp_meta.get("sector", "Listed Equity"),
         "bucket": comp_meta.get("bucket", "generalisation"),
         "is_lender": is_lender,
+        "analysis_generated": True,
+        "analysis_header": (
+            "Shown: Financial trajectory, Balance Sheet panel, verified Segment Mix, Concall Guidance (code-computed verdicts), "
+            "Stated-vs-Filed checks, Cited Numbers-vs-Narrative & Bull/Bear, Network · "
+            "Pending: Unverified claims omitted; untested future periods show progress only."
+        ),
+        "llm_provenance": llm_prov,
         "ebitda_policy_note": (
             "EBITDA not meaningful for lenders — dossier evaluates NII/Revenue, PPOP (Financing Profit), PBT, PAT, and Gross/Net NPA."
             if is_lender
@@ -716,9 +832,13 @@ def build_company_dossier(
         or f"Primary-source analysis across {len(manifest)} filings ({sum(m.get('page_count', 0) for m in manifest)} pages inspected).",
         "documents_manifest": manifest,
         "financial_trajectory": trajectory,
+        "balance_sheet_panel": bs_panel,
         "segment_mix": verified_segments,
         "ar_highlights": verified_ar_claims,
         "promised_vs_delivered": verified_pvd,
+        "reported_vs_stated": reported_vs_stated,
+        "concall_extraction_telemetry": list(telemetry_by_doc.values()),
+        "citation_pool": pool_for_prompt,
         "numbers_vs_narrative": nvn_checks,
         "bull_case": bull_points,
         "bear_case": bear_points,
@@ -733,8 +853,9 @@ def build_company_dossier(
                 not r.get("promised_vs_delivered_testable", True) for r in verified_pvd
             ),
             "total_verified_citations": len(citation_pool),
+            "dropped_uncited_sentences": dropped_uncited_sentences,
             "min_rapidfuzz_score": min((c.get("match_score", 100.0) for c in citation_pool), default=100.0),
-            "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 85 against 1-based PDF page text; unsupported claims labelled 'not found in filings'",
+            "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page",
         },
     }
 
@@ -828,7 +949,7 @@ def execute_pull_job_task(data_dir: Path, job_id: str, symbol: str) -> None:
         if snap_path.exists():
             _on_progress(f"Finding primary filings for {sym} on screener.in", 25)
             _on_progress(f"Verifying concall transcript doc-types (speakers + Q&A) for {sym}", 60)
-            _on_progress(f"Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for {sym}", 90)
+            _on_progress(f"Verifying verbatim quotes (rapidfuzz >= 90) & weaving Network for {sym}", 90)
             job["status"] = "completed"
             job["step"] = f"Dossier ready for {sym}"
             job["progress_pct"] = 100
@@ -909,12 +1030,29 @@ def list_available_dossiers(data_dir: Path) -> dict[str, Any]:
     }
 
 
+DETERMINISTIC_ONLY_SYMBOLS = frozenset({"NAVINFLUOR", "SYRMA", "TITAN"})
+
+
 def get_dossier_by_symbol(data_dir: Path, symbol: str) -> dict[str, Any] | None:
     sym = (symbol or "").upper().strip()
     path = data_dir / "snapshots" / "dossiers" / f"{sym}.json"
     if not path.exists():
         return None
     d = json.loads(path.read_text())
-    # Refresh network weave dynamically so any contact/honesty-rule updates reflect immediately
+    # Refresh network weave & exact ledger cost dynamically (no LLM / no heavy scraping imports)
     d["network"] = match_contacts_for_dossier(data_dir, sym)
+    d["llm_provenance"] = LLMLedger(data_dir / "snapshots" / "llm_ledger.jsonl").dossier_cost_summary(sym)
+    if sym in DETERMINISTIC_ONLY_SYMBOLS and not d.get("analysis_generated_v4"):
+        d["analysis_generated"] = False
+        d["analysis_header"] = "Deterministic extracts only; analysis not generated."
+    else:
+        d["analysis_generated"] = True
+        d.setdefault(
+            "analysis_header",
+            (
+                "Shown: Financial trajectory, Balance Sheet panel, verified Segment Mix, Concall Guidance "
+                "(code-computed verdicts), Stated-vs-Filed checks, Cited Numbers-vs-Narrative & Bull/Bear, Network · "
+                "Pending: Unverified claims omitted; incomplete fiscal periods show progress only."
+            ),
+        )
     return d

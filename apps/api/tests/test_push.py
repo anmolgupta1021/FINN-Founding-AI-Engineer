@@ -172,8 +172,10 @@ def test_brief_window_scrubber_monotonicity():
     assert total_counts[0] < total_counts[-1]
 
 
-import pytest
 from datetime import date
+
+import pytest
+
 from finn.network.matcher import _days_since, _recency_phrase
 
 
@@ -228,4 +230,87 @@ def test_contact_recency_fixed_anchor_parametrized(
     days = _days_since(contact_dt, anchor_dt)
     assert days == expected_days
     assert _recency_phrase(days) == expected_phrase
+
+
+def test_section5_network_card_cleanup_and_honesty_rules() -> None:
+    """Section 5.1-5.5: reappointment/no-overlap cap, HDFC prior-employer only, stale tie >12m, tenure honesty + synthetic label."""
+    r = client.get("/api/v1/brief?window_hours=168")
+    assert r.status_code == 200
+    body = r.json()
+    cards = body["ranked_material"] + body["deep_extracted_cards"]
+    by_id = {c["id"]: c for c in cards}
+
+    # 5.1: Re-appointments & cards without an appointee overlap show at most ONE "knows the company" hook
+    dixon_vachani = by_id["nse:DIXON:106800816"]
+    assert len([h for h in dixon_vachani["network_hooks"] if h["link_type"] == "knows_company"]) <= 1
+    assert len(dixon_vachani["network_hooks"]) == 1
+    assert dixon_vachani["network_hooks"][0]["name"] == "Rohan Desai"  # strongest (5/5) + most recent (35d)
+
+    bajfin_ciso = by_id["nse:BAJFINANCE:106822209"]
+    assert len([h for h in bajfin_ciso["network_hooks"] if h["link_type"] == "knows_company"]) == 1
+    assert bajfin_ciso["network_hooks"][0]["name"] == "Vikramaditya Joshi"  # 4/5, 83d < 93d < 118d
+
+    # Synthetic re-appointment unit check even if bio text mentions a prior org
+    from pathlib import Path
+
+    from finn.network.matcher import match_contacts_for_announcement
+    from finn.store import get_company_links, get_contact_links, get_contacts
+
+    data_dir = Path(__file__).resolve().parents[1] / "data"
+    contacts = get_contacts(data_dir)["contacts"]
+    c_links = get_company_links(data_dir)
+    k_links = get_contact_links(data_dir)
+    reappt_hooks = match_contacts_for_announcement(
+        {
+            "symbol": "DIXON",
+            "subject": "Re-appointment of Mr. Atul B. Lall as Vice Chairman & MD",
+            "details": {"kind": "management_change", "brief_profile_verbatim": "Re-appointment of MD."},
+        },
+        contacts,
+        c_links,
+        contact_links=k_links,
+    )
+    assert len([h for h in reappt_hooks if h["link_type"] == "knows_company"]) <= 1
+
+    # 5.2: HDFC card: only contacts overlapping the appointee's prior employer (ICICI Bank, never PSG College)
+    hdfc = by_id["nse:HDFCBANK:106850382"]
+    assert len(hdfc["network_hooks"]) == 1
+    assert hdfc["network_hooks"][0]["name"] == "Nandini Subramanian"
+    assert "ICICI Bank" in hdfc["network_hooks"][0]["path"]
+    assert all("PSG College" not in h["path"] for h in hdfc["network_hooks"])
+
+    # 5.3: Stale tie (> 12 months / > 365 days) marked "stale tie" on every card (1st- and 2nd-degree)
+    kpit = by_id["nse:KPITTECH:106831889"]
+    kpit_deg2 = [h for h in kpit["network_hooks"] if h["degree"] == 2]
+    assert len(kpit_deg2) == 1
+    assert kpit_deg2[0]["is_stale_tie"] is True
+    assert "stale tie" in kpit_deg2[0]["path"]
+
+    for card in cards:
+        for h in card.get("network_hooks") or []:
+            if h.get("days_since_contact", 0) > 365:
+                assert h.get("is_stale_tie") is True
+                assert "stale tie" in h.get("path", "")
+            # 5.4: Synthetic-to-real label + tenure honesty on every hook
+            assert h["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+            if h["link_type"] == "same_org_tenure_not_in_filing":
+                assert "tenure not stated in filing" in h["path"]
+
+
+def test_section9_2_expertise_map_ask_ranking() -> None:
+    """Section 9.2: 'who are my go-to people for <theme>' returns ranked list (strength x recency x tag match) + WHY line."""
+    r = client.get("/api/v1/network/ask?q=who+are+my+go-to+people+for+semiconductors")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["count"] >= 1
+    results = body["results"]
+    scores = [x["score"] for x in results]
+    assert scores == sorted(scores, reverse=True)
+    for row in results:
+        assert "ranking_breakdown" in row
+        assert row["ranking_breakdown"]["strength"] >= 1
+        assert row["ranking_breakdown"]["recency_weight"] > 0
+        assert len(row["why_reasons"]) >= 1
+        assert row["inferred_label"] == INFERRED_SYNTHETIC_LABEL
+
 

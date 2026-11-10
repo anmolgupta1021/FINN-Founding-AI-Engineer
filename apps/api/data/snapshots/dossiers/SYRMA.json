@@ -297,333 +297,10 @@
   },
   "segment_mix": [],
   "ar_highlights": [],
-  "promised_vs_delivered": [
-    {
-      "period_called": "SYRMA Concall Nov 2026 Transcript",
-      "is_latest_call": true,
-      "promised_vs_delivered_testable": false,
-      "topic": "Latest Quarter Forward Outlook",
-      "promised_guidance": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 6,
-        "cited_page": 6,
-        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
-      "delivered_citation": null,
-      "verdict": "Untestable (Latest Call)"
-    },
-    {
-      "period_called": "SYRMA Concall Aug 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
-        "doc_label": "SYRMA Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 17,
-        "cited_page": 17,
-        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "SYRMA Concall Jun 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "This year it's about INR1,452 crores and 8%, 10% growth, it should be about INR1,600 crores, INR1,500 crores, INR1,600 crores.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_3_JUN_2026",
-        "doc_label": "SYRMA Concall Jun 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=35f78458-fda9-4486-b457-33d418a9eca5.pdf",
-        "page": 10,
-        "cited_page": 10,
-        "verbatim_quote": "This year it's about INR1,452 crores and 8%, 10% growth, it should be about INR1,600 crores, INR1,500 crores, INR1,600 crores.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
-        "doc_label": "SYRMA Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "SYRMA Concall Feb 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "And we believe that we are in a good position to keep growing at profitable margin and which we have said that our objective is to grow a 30% growth on EBITDA, positive cash flows, 25%, 30%, 35% growth on top line.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_4_FEB_2026",
-        "doc_label": "SYRMA Concall Feb 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=dc41d98a-6b79-42bb-b344-2870bbf678fa.pdf",
-        "page": 18,
-        "cited_page": 18,
-        "verbatim_quote": "And we believe that we are in a good position to keep growing at profitable margin and which we have said that our objective is to grow a 30% growth on EBITDA, positive cash flows, 25%, 30%, 35% growth on top line.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1990.0 Cr, Derived Operating EBITDA ₹193.0 Cr (10.0%), PAT ₹124.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_3_JUN_2026",
-        "doc_label": "SYRMA Concall Jun 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=35f78458-fda9-4486-b457-33d418a9eca5.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "Our top 5 customers contribute around 34% of revenue, top 10 around 47%, top 20 around 63% of my revenue on a full year basis, FY '26.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    }
-  ],
-  "numbers_vs_narrative": [
-    {
-      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
-      "numbers_observed": "5Y Revenue CAGR 39.7%, PAT CAGR 44.7%; latest annual Revenue ₹4819.0 Cr, PAT ₹346.0 Cr.",
-      "narrative_claimed": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-      "verdict": "Aligned",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 6,
-        "cited_page": 6,
-        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
-      "numbers_observed": "5Y Cumulative CFO ₹274.0 Cr vs Cumulative PAT ₹856.0 Cr (CFO/PAT = 32.0%).",
-      "narrative_claimed": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-      "verdict": "Watch closely",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
-        "doc_label": "SYRMA Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
-      "numbers_observed": "Latest annual Derived EBITDA ₹546.0 Cr (Margin 11.0%, derived) · ROCE 17.0%.",
-      "narrative_claimed": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-      "verdict": "Aligned",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 17,
-        "cited_page": 17,
-        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
-  "bull_case": [
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #1 (SYRMA Concall Nov 2026 Transcript)",
-      "thesis": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 6,
-        "cited_page": 6,
-        "verbatim_quote": "Our consolidated total revenue for quarter 2 FY27 is approximately INR2,000 crores registering a strong year-on-year growth of 73% and sequential growth of 25%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #2 (SYRMA Concall Aug 2026 Transcript)",
-      "thesis": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_2_AUG_2026",
-        "doc_label": "SYRMA Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=13ead359-db88-472c-948c-9941361e182e.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "Bijay Agrawal: But just to add on there, whatever guidance we are giving, 10.5% to 11% of a margin, that factors all these initiatives together and that is where we are guiding this to be 10.5% to 11% kind of a margin entirely for the full year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #3 (SYRMA Concall Nov 2026 Transcript)",
-      "thesis": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 17,
-        "cited_page": 17,
-        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
-  "bear_case": [
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #1 (SYRMA Concall Nov 2026 Transcript)",
-      "thesis": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_CONCALL_1_NOV_2026",
-        "doc_label": "SYRMA Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=57d2288c-61ce-4573-b2ea-d6140b9b2eac.pdf",
-        "page": 17,
-        "cited_page": 17,
-        "verbatim_quote": "So, we can assume that if we have done about INR1,900 crores of revenue in this quarter or INR2,000 crores of revenue this quarter, INR50 crores to INR60 crores, INR70 crores could be attributed to the cost push, 3% to 5%, INR60 crores, INR70.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #2 (SYRMA Annual Report 2026 (Annual Report))",
-      "thesis": "Revenue, margins, working capital and capital efficiency have advanced together, with revenue rising from ` 1,267 crores in FY22 to ` 4,819 crores in FY26 and the operating profile strengthening alongside it.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_AR_LATEST",
-        "doc_label": "SYRMA Annual Report 2026 (Annual Report)",
-        "doc_type": "annual_report",
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a57268a-76e7-4813-bfc8-86a0e2d02428.pdf",
-        "page": 10,
-        "cited_page": 10,
-        "verbatim_quote": "Revenue, margins, working capital and capital efficiency have advanced together, with revenue rising from ` 1,267 crores in FY22 to ` 4,819 crores in FY26 and the operating profile strengthening alongside it.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #3 (SYRMA Annual Report 2026 (Annual Report))",
-      "thesis": "The outstanding amounts as at 31 March 2025 are H 80.81 million for cash credit and H 95.57 million for working capital loans, carrying an interest rate ranging from 8.00% to 10.03% per annum.",
-      "citation": {
-        "verified": true,
-        "doc_id": "SYRMA_AR_LATEST",
-        "doc_label": "SYRMA Annual Report 2026 (Annual Report)",
-        "doc_type": "annual_report",
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a57268a-76e7-4813-bfc8-86a0e2d02428.pdf",
-        "page": 122,
-        "cited_page": 122,
-        "verbatim_quote": "The outstanding amounts as at 31 March 2025 are H 80.81 million for cash credit and H 95.57 million for working capital loans, carrying an interest rate ranging from 8.00% to 10.03% per annum.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
+  "promised_vs_delivered": [],
+  "numbers_vs_narrative": [],
+  "bull_case": [],
+  "bear_case": [],
   "unanswered_diligence_questions": [
     {
       "topic": "Customer-level margin concentration & contract repricing lag",
@@ -868,5 +545,78 @@
     "dropped_citations_count": 0,
     "min_rapidfuzz_score": 100.0,
     "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
-  }
+  },
+  "balance_sheet_panel": {
+    "symbol": "SYRMA",
+    "is_lender": false,
+    "source": "Screener #balance-sheet & #ratios (deterministic)",
+    "latest_period": "Sep 2026",
+    "borrowings_cr": 807.0,
+    "equity_cr": 3042.0,
+    "debt_to_equity": 0.27,
+    "total_assets_cr": 7074.0,
+    "working_capital_days": 68.0,
+    "working_capital_period": "Mar 2026",
+    "series": [
+      {
+        "period": "Mar 2025",
+        "equity_cr": 1750.0,
+        "borrowings_cr": 665.0,
+        "debt_to_equity": 0.38,
+        "deposits_cr": null,
+        "total_assets_cr": 4202.0,
+        "working_capital_days": 37.0,
+        "cash_conversion_cycle_days": 52.0,
+        "debtor_days": 142.0,
+        "inventory_days": 102.0,
+        "days_payable": 193.0,
+        "roce_or_roe_pct": 12.0
+      },
+      {
+        "period": "Mar 2026",
+        "equity_cr": 2863.0,
+        "borrowings_cr": 400.0,
+        "debt_to_equity": 0.14,
+        "deposits_cr": null,
+        "total_assets_cr": 5767.0,
+        "working_capital_days": 68.0,
+        "cash_conversion_cycle_days": 48.0,
+        "debtor_days": 139.0,
+        "inventory_days": 108.0,
+        "days_payable": 199.0,
+        "roce_or_roe_pct": 17.0
+      },
+      {
+        "period": "Sep 2026",
+        "equity_cr": 3042.0,
+        "borrowings_cr": 807.0,
+        "debt_to_equity": 0.27,
+        "deposits_cr": null,
+        "total_assets_cr": 7074.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": null
+      }
+    ]
+  },
+  "llm_provenance": {
+    "symbol": "SYRMA",
+    "total_calls": 0,
+    "live_calls": 0,
+    "cache_hits": 0,
+    "models_used": [],
+    "all_models_seen": [],
+    "in_tokens": 0,
+    "out_tokens": 0,
+    "thinking_tokens": 0,
+    "cost_usd": 0,
+    "cost_inr": 0,
+    "latest_run_tasks": []
+  },
+  "analysis_generated": false,
+  "analysis_header": "Deterministic extracts only; analysis not generated.",
+  "reported_vs_stated": []
 }

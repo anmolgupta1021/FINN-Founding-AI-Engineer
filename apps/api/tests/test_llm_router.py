@@ -134,3 +134,56 @@ def test_router_sha256_cache_and_ledger(tmp_path: Path) -> None:
     assert summary["cache_hits"] == 1
     assert summary["live_calls"] == 2
     assert summary["in_tokens"] == 360
+
+
+def test_cost_endpoint_matches_llm_ledger_jsonl_exactly() -> None:
+    """Section 6.3: /api/v1/llm/ledger & dossier llm_provenance match llm_ledger.jsonl line-by-line."""
+    import json
+
+    from fastapi.testclient import TestClient
+
+    from main import app
+
+    rows = [
+        json.loads(line)
+        for line in (REAL_DATA_DIR / "snapshots" / "llm_ledger.jsonl").read_text().splitlines()
+        if line.strip()
+    ]
+    client = TestClient(app)
+    api_summary = client.get("/api/v1/llm/ledger").json()
+
+    assert api_summary["total_calls"] == len(rows)
+    assert api_summary["cache_hits"] == sum(1 for r in rows if r.get("cache_hit"))
+    assert api_summary["live_calls"] == sum(1 for r in rows if not r.get("cache_hit"))
+    assert api_summary["in_tokens"] == sum(int(r.get("in_tokens", 0)) for r in rows)
+    assert api_summary["out_tokens"] == sum(int(r.get("out_tokens", 0)) for r in rows)
+    assert api_summary["thinking_tokens"] == sum(int(r.get("thinking_tokens", 0) or 0) for r in rows)
+    assert api_summary["estimated_paid_cost_usd"] == round(sum(float(r.get("cost_usd", 0.0)) for r in rows), 6)
+    assert api_summary["estimated_paid_cost_inr"] == round(sum(float(r.get("cost_inr", 0.0)) for r in rows), 4)
+
+    for sym in ("DIXON", "POLYCAB", "HDFCBANK"):
+        sym_live = [
+            r for r in rows if str(r.get("task", "")).lower().endswith(f"_{sym.lower()}") and not r.get("cache_hit")
+        ]
+        d = client.get(f"/api/v1/dossiers/{sym}").json()
+        assert d["llm_provenance"]["cost_usd"] == round(sum(float(r.get("cost_usd", 0.0)) for r in sym_live), 6)
+        assert d["llm_provenance"]["cost_inr"] == round(sum(float(r.get("cost_inr", 0.0)) for r in sym_live), 4)
+
+
+def test_no_private_contact_data_in_any_llm_cache_or_ledger() -> None:
+    """Section 6.4: assert that zero private contact names, IDs, or notes appear in LLM cache or ledger."""
+    import json
+
+    contacts_raw = (REAL_DATA_DIR / "seed" / "network" / "contacts.json").read_text()
+    contacts = json.loads(contacts_raw).get("contacts", [])
+    cache_text = (REAL_DATA_DIR / "snapshots" / "llm_cache.json").read_text()
+    ledger_text = (REAL_DATA_DIR / "snapshots" / "llm_ledger.jsonl").read_text()
+    combined = f"{cache_text}\n{ledger_text}"
+
+    assert len(contacts) >= 50
+    for ct in contacts:
+        assert ct["id"] not in combined
+        assert ct["name"] not in combined
+        note = (ct.get("notes") or "").strip()
+        if len(note) >= 16:
+            assert note not in combined

@@ -257,6 +257,98 @@ def extract_financial_trajectory(html: str, symbol: str) -> dict[str, Any]:
     }
 
 
+def extract_balance_sheet_panel(html: str, symbol: str) -> dict[str, Any]:
+    """Deterministically extract Balance Sheet & Working Capital / Lender Asset Quality panel from Screener HTML (Section 9.6)."""
+    from bs4 import BeautifulSoup
+
+    sym = symbol.upper()
+    is_lender = sym in LENDER_SYMBOLS
+    soup = BeautifulSoup(html, "lxml")
+
+    bs_rows = _parse_screener_table(soup.select_one("#balance-sheet"))
+    rat_rows = _parse_screener_table(soup.select_one("#ratios"))
+    q_rows = _parse_screener_table(soup.select_one("#quarters"))
+
+    def _find_row(table_dict: dict[str, dict[str, float | None]], candidates: list[str]) -> dict[str, float | None]:
+        for cand in candidates:
+            for k, v in table_dict.items():
+                if k.lower().startswith(cand.lower()):
+                    return v
+        return {}
+
+    eq_cap = _find_row(bs_rows, ["Equity Capital"])
+    reserves = _find_row(bs_rows, ["Reserves"])
+    borrowings = _find_row(bs_rows, ["Borrowings", "Borrowing"])
+    deposits = _find_row(bs_rows, ["Deposits"])
+    total_assets = _find_row(bs_rows, ["Total Assets"])
+
+    wc_days = _find_row(rat_rows, ["Working Capital Days"])
+    ccc_days = _find_row(rat_rows, ["Cash Conversion Cycle"])
+    debtor_days = _find_row(rat_rows, ["Debtor Days"])
+    inv_days = _find_row(rat_rows, ["Inventory Days"])
+    payable_days = _find_row(rat_rows, ["Days Payable"])
+    roe_row = _find_row(rat_rows, ["ROE %", "ROE"])
+    roce_row = _find_row(rat_rows, ["ROCE %", "ROCE"])
+
+    periods = list(total_assets.keys() or borrowings.keys() or eq_cap.keys())[-3:]
+    series: list[dict[str, Any]] = []
+    for p in periods:
+        eq = (eq_cap.get(p) or 0.0) + (reserves.get(p) or 0.0)
+        borr = borrowings.get(p)
+        d_to_e = round(borr / eq, 2) if (borr is not None and eq > 0) else None
+        series.append(
+            {
+                "period": p,
+                "equity_cr": round(eq, 1) if eq else None,
+                "borrowings_cr": borr,
+                "debt_to_equity": d_to_e,
+                "deposits_cr": deposits.get(p) if is_lender else None,
+                "total_assets_cr": total_assets.get(p),
+                "working_capital_days": wc_days.get(p),
+                "cash_conversion_cycle_days": ccc_days.get(p),
+                "debtor_days": debtor_days.get(p),
+                "inventory_days": inv_days.get(p),
+                "days_payable": payable_days.get(p),
+                "roce_or_roe_pct": roe_row.get(p) if is_lender else roce_row.get(p),
+            }
+        )
+
+    latest = series[-1] if series else {}
+    latest_ann_wc_period = None
+    latest_wc = None
+    for p in reversed(list(wc_days.keys())):
+        if wc_days.get(p) is not None:
+            latest_ann_wc_period = p
+            latest_wc = wc_days.get(p)
+            break
+
+    panel: dict[str, Any] = {
+        "symbol": sym,
+        "is_lender": is_lender,
+        "source": "Screener #balance-sheet & #ratios (deterministic)",
+        "latest_period": latest.get("period"),
+        "borrowings_cr": latest.get("borrowings_cr"),
+        "equity_cr": latest.get("equity_cr"),
+        "debt_to_equity": latest.get("debt_to_equity"),
+        "total_assets_cr": latest.get("total_assets_cr"),
+        "working_capital_days": latest_wc,
+        "working_capital_period": latest_ann_wc_period,
+        "series": series,
+    }
+
+    if is_lender:
+        gnpa_row = _find_row(q_rows, ["Gross NPA"])
+        nnpa_row = _find_row(q_rows, ["Net NPA"])
+        latest_gnpa = next((v for v in reversed(list(gnpa_row.values())) if v is not None), None)
+        latest_nnpa = next((v for v in reversed(list(nnpa_row.values())) if v is not None), None)
+        panel["deposits_cr"] = latest.get("deposits_cr")
+        panel["gross_npa_pct"] = latest_gnpa
+        panel["net_npa_pct"] = latest_nnpa
+        panel["car_pct"] = None  # Populated from AR verified highlight if available
+
+    return panel
+
+
 def parse_screener_document_links(html: str) -> dict[str, Any]:
     """Extract latest Annual Report link and last 4 Concall Transcript links from Screener HTML."""
     from bs4 import BeautifulSoup
@@ -406,6 +498,7 @@ def fetch_company_primary_corpus(
                 html_cache.write_text(html, encoding="utf-8")
 
         trajectory = extract_financial_trajectory(html, sym)
+        bs_panel = extract_balance_sheet_panel(html, sym)
         doc_links = parse_screener_document_links(html)
 
         docs_by_id: dict[str, dict[str, Any]] = {}
@@ -479,6 +572,7 @@ def fetch_company_primary_corpus(
         "symbol": sym,
         "screener_url": screener_url,
         "trajectory": trajectory,
+        "balance_sheet_panel": bs_panel,
         "manifest": manifest,
         "docs_by_id": docs_by_id,
     }

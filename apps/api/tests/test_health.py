@@ -64,3 +64,26 @@ def test_freshness_and_ledger_endpoints() -> None:
     lg = client.get("/api/v1/llm/ledger")
     assert lg.status_code == 200
     assert "total_calls" in lg.json()
+
+
+def test_cold_start_no_heavy_pipeline_imports() -> None:
+    """Section 7.4: Fresh cold-start of FastAPI app + request handling must never load bs4 or pdfplumber."""
+    import os
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    api_dir = str(Path(__file__).resolve().parents[1])
+    code = (
+        "import sys; from fastapi.testclient import TestClient; import main; "
+        "c = TestClient(main.app); "
+        "assert c.get('/api/v1/health').status_code == 200; "
+        "assert c.get('/api/v1/brief').status_code == 200; "
+        "assert c.get('/api/v1/dossiers/DIXON').status_code == 200; "
+        "assert c.get('/api/v1/llm/ledger').status_code == 200; "
+        "assert not any('bs4' in m for m in sys.modules), 'bs4 loaded on cold start'; "
+        "assert not any('pdfplumber' in m for m in sys.modules), 'pdfplumber loaded on cold start'"
+    )
+    env = {**os.environ, "PYTHONPATH": api_dir}
+    proc = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, env=env, check=False)
+    assert proc.returncode == 0, proc.stderr

@@ -5,12 +5,12 @@
   "bucket": "holding",
   "is_lender": false,
   "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
-  "generated_at": "2026-11-09T10:52:55.241959+00:00",
+  "generated_at": "2026-11-10T07:49:09.542246+00:00",
   "freshness": "precomputed_primary_filings",
   "primary_sources_only": true,
   "screener_url": "https://www.screener.in/company/DIXON/consolidated/",
-  "business_model_1l": "Dixon Technologies (EMS / electronics) — analyzed strictly from primary Annual Report & Concall Transcripts.",
-  "executive_summary": "Primary-source analysis across 5 filings (607 pages inspected).",
+  "business_model_1l": "Dixon Technologies (India) Limited operates as an electronic manufacturing services and design-led manufacturing company, providing end-to-end product development, assembly, and component manufacturing solutions across diverse electronic categories.",
+  "executive_summary": "Dixon Technologies has demonstrated phenomenal revenue scale and operating momentum, achieving a revenue CAGR of 46.2% alongside strong cash generation. Management execution remains robust with solid return on capital employed metrics.",
   "documents_manifest": [
     {
       "doc_id": "DIXON_AR_LATEST",
@@ -295,24 +295,204 @@
       }
     ]
   },
-  "segment_mix": [],
-  "ar_highlights": [],
+  "segment_mix": [
+    {
+      "segment": "Mobile Phones and Other EMS",
+      "share_or_metric": "₹ 4,42,570 Million",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 106,
+        "cited_page": 106,
+        "verbatim_quote": "4,42,570 (₹ in Million) Mobile Phones and Other EMS 2023-24 1,09,190 3,30,430 4,42,570 2024-25 2025-26",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "segment": "Consumer Electronics & Refrigerator",
+      "share_or_metric": "₹ 28,920 Million",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 106,
+        "cited_page": 106,
+        "verbatim_quote": "28,920 (₹ in Million) Consumer Electronics & Refrigerator 2023-24 41,480 35,900 28,920 2024-25 2025-26",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "segment": "Home Appliances & Engineering",
+      "share_or_metric": "₹ 14,260 Million",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 106,
+        "cited_page": 106,
+        "verbatim_quote": "14,260 (₹ in Million) Home Appliances & Engineering 2023-24 12,050 13,660 14,260 2024-25 2025-26",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "segment": "ODM components business",
+      "share_or_metric": "approximately 11% of total revenues",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 98,
+        "cited_page": 98,
+        "verbatim_quote": "During 2025-26, the ODM components business contributed approximately 11% of total revenues while EMS businesses contributed to 89% of total revenues.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "segment": "EMS businesses",
+      "share_or_metric": "89% of total revenues",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 98,
+        "cited_page": 98,
+        "verbatim_quote": "During 2025-26, the ODM components business contributed approximately 11% of total revenues while EMS businesses contributed to 89% of total revenues.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "ar_highlights": [
+    {
+      "topic": "Capex / Margin / Balance Sheet / Asset Quality",
+      "claim": "Consolidated revenue excluding exceptional gain grew by 26% year-on-year to ₹48,893 Crores, while adjusted EBITDA increased by 23% to ₹1,887 Crores.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 99,
+        "cited_page": 99,
+        "verbatim_quote": "For 2025-26, Dixon Technologies recorded a consolidated revenue¹ of ₹48,893 Crores, marking a growth of 26% year-on-year. Our EBITDA¹ , excluding exceptional gain, was ₹1,887 Crores against ₹1,528 Crores in the same period, a growth of 23%.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Capex / Margin / Balance Sheet / Asset Quality",
+      "claim": "The working capital cycle was maintained at a negative 8 days for the financial year.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 101,
+        "cited_page": 101,
+        "verbatim_quote": "We closed FY 2025-26 with a negative working capital cycle of 8 days, an improvement driven by tighter receivables and inventory managem",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Capex / Margin / Balance Sheet / Asset Quality",
+      "claim": "Capital expenditure deployed during the year exceeded ₹1,058 Crores, directed toward backward integration and capacity additions.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 102,
+        "cited_page": 102,
+        "verbatim_quote": "We deployed over ₹1,058 Crores in capital expenditure during the year, directed primarily towards our display module and camera module facilities, backward integration and capacity additions across our segments.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Capex / Margin / Balance Sheet / Asset Quality",
+      "claim": "Return on Capital Employed (ROCE) and Return on Equity (ROE) stood at 44.8% and 28.1% respectively for 2025-26.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 101,
+        "cited_page": 101,
+        "verbatim_quote": "Improved asset utilisation, operating leverage and disciplined capital allocation supported healthy ROCE and ROE of 44.8% & 28.1% respectively.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
   "promised_vs_delivered": [
     {
+      "claim_id": 1,
       "period_called": "DIXON Concall Nov 2026 Transcript",
+      "fiscal_period": "FY28",
+      "scope": "product",
+      "condition": null,
+      "unit": "crores",
       "is_latest_call": true,
       "promised_vs_delivered_testable": false,
-      "topic": "Latest Quarter Forward Outlook",
-      "promised_guidance": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+      "has_verdict": false,
+      "topic": "Display Business Revenue Potential",
+      "speaker": "Saurabh Gupta, Director and Group CFO",
+      "promised_guidance": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores.",
       "promised_citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_1_NOV_2026",
         "doc_label": "DIXON Concall Nov 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -321,141 +501,263 @@
       },
       "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
       "delivered_citation": null,
-      "verdict": "Untestable (Latest Call)"
+      "verdict": "Untestable (Latest Call)",
+      "one_line_explanation": "Fixed template: Guidance was stated on the latest available concall and remains untestable until subsequent quarterly results are filed."
     },
     {
+      "claim_id": 2,
+      "period_called": "DIXON Concall Nov 2026 Transcript",
+      "fiscal_period": "FY28",
+      "scope": "segment",
+      "condition": null,
+      "unit": "bps",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Display & Camera Module Margin Expansion",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "promised_guidance": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)",
+      "one_line_explanation": "Fixed template: Guidance was stated on the latest available concall and remains untestable until subsequent quarterly results are filed."
+    },
+    {
+      "claim_id": 3,
+      "period_called": "DIXON Concall Nov 2026 Transcript",
+      "fiscal_period": "FY28",
+      "scope": "segment",
+      "condition": null,
+      "unit": "crores",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "IT Hardware / Inventec JV Business Revenue",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "promised_guidance": "We feel that in next couple of years, this is going to be almost INR 15,000 crore to INR 20,000 crore business for us.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 11,
+        "cited_page": 11,
+        "verbatim_quote": "We feel that in next couple of years, this is going to be almost INR 15,000 crore to INR 20,000 crore business for us.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)",
+      "one_line_explanation": "Fixed template: Guidance was stated on the latest available concall and remains untestable until subsequent quarterly results are filed."
+    },
+    {
+      "claim_id": 4,
+      "period_called": "DIXON Concall Nov 2026 Transcript",
+      "fiscal_period": "FY27",
+      "scope": "product",
+      "condition": null,
+      "unit": "crores",
+      "is_latest_call": true,
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Q Tech Revenue",
+      "speaker": "Saurabh Gupta, Director and Group CFO",
+      "promised_guidance": "And as far as Q Tech is concerned, of course, you have to make budgets for next year, but broadly we should be in a kind of a number of almost somewhere between INR 2,500 crores to INR 3,000 odd crores.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "And as far as Q Tech is concerned, of course, you have to make budgets for next year, but broadly we should be in a kind of a number of almost somewhere between INR 2,500 crores to INR 3,000 odd crores.",
+        "match_score": 99.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      },
+      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
+      "delivered_citation": null,
+      "verdict": "Untestable (Latest Call)",
+      "one_line_explanation": "Fixed template: Guidance was stated on the latest available concall and remains untestable until subsequent quarterly results are filed."
+    },
+    {
+      "claim_id": 5,
       "period_called": "DIXON Concall Aug 2026 Transcript",
+      "fiscal_period": "FY28",
+      "scope": "segment",
+      "condition": null,
+      "unit": "million",
       "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Mobile export revenue and volume addition",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "promised_guidance": "We feel that in a couple of years, that can add almost 15 million to 20 million to our numbers, additional quantity in a couple of years.",
       "promised_citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_2_AUG_2026",
         "doc_label": "DIXON Concall Aug 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "We feel that in a couple of years, that can add almost 15 million to 20 million to our numbers, additional quantity in a couple of years.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
         "reason": null,
         "status": "verified"
       },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "DIXON_CONCALL_1_NOV_2026",
-        "doc_label": "DIXON Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 13,
-        "cited_page": 13,
-        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
+      "delivered_summary": "Not comparable to filed numbers: segment-level guidance ('Mobile export revenue and volume addition') is not broken out in consolidated quarterly financial statements.",
+      "delivered_citation": null,
+      "verdict": "Not comparable to filed numbers",
+      "one_line_explanation": "Fixed template: Segment-level guidance ('Mobile export revenue and volume addition') cannot be scored against consolidated financial statements."
     },
     {
+      "claim_id": 6,
       "period_called": "DIXON Concall May 2026 Transcript",
+      "fiscal_period": "FY27",
+      "scope": "consolidated",
+      "condition": "without the Vivo numbers",
+      "unit": "crores",
       "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Consolidated Revenue",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "promised_guidance": "Next year, we are targeting almost INR56,000 crores without the Vivo numbers, and mobile volume being flat.",
       "promised_citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_3_MAY_2026",
         "doc_label": "DIXON Concall May 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
-        "page": 18,
-        "cited_page": 18,
-        "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
+        "page": 15,
+        "cited_page": 15,
+        "verbatim_quote": "Next year, we are targeting almost INR56,000 crores without the Vivo numbers, and mobile volume being flat.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
         "reason": null,
         "status": "verified"
       },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
-      "delivered_citation": {
+      "delivered_summary": "Conditional, not scored (condition: 'without the Vivo numbers'). 2 of 4 quarters filed (Jun 2026, Sep 2026); H1 = ₹37,342 Cr (66.7% of ₹56,000 Cr target)",
+      "delivered_citation": null,
+      "verdict": "Conditional, not scored",
+      "one_line_explanation": "Fixed template: Guidance is explicitly conditional ('without the Vivo numbers') and is not scored against unadjusted consolidated filings."
+    },
+    {
+      "claim_id": 7,
+      "period_called": "DIXON Concall Aug 2026 Transcript",
+      "fiscal_period": "FY27",
+      "scope": "segment",
+      "condition": null,
+      "unit": "crores",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Telecom Revenue",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "promised_guidance": "And we feel, as I mentioned earlier, we're going to be somewhere between INR6,700 crores to INR7,000 crores in this fiscal.",
+      "promised_citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_2_AUG_2026",
         "doc_label": "DIXON Concall Aug 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "page": 20,
+        "cited_page": 20,
+        "verbatim_quote": "And we feel, as I mentioned earlier, we're going to be somewhere between INR6,700 crores to INR7,000 crores in this fiscal.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
         "reason": null,
         "status": "verified"
       },
-      "verdict": "Delivered"
+      "delivered_summary": "Not comparable to filed numbers: segment-level guidance ('Telecom Revenue') is not broken out in consolidated quarterly financial statements.",
+      "delivered_citation": null,
+      "verdict": "Not comparable to filed numbers",
+      "one_line_explanation": "Fixed template: Segment-level guidance ('Telecom Revenue') cannot be scored against consolidated financial statements."
     },
     {
+      "claim_id": 8,
       "period_called": "DIXON Concall Feb 2026 Transcript",
+      "fiscal_period": "FY27",
+      "scope": "segment",
+      "condition": null,
+      "unit": "crores",
       "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "Dixon Technologies (India) Limited January 29, 2026 Page 4 of 20 and target to expand volumes of smartphone camera modules from 40 million units in this fiscal to 190 million to 200 million units per annum.",
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "IT Hardware Revenue",
+      "speaker": "Saurabh Gupta, Director and Group CFO",
+      "promised_guidance": "We feel that for next year, the numbers are going to be somewhere around INR3,500 crores to INR4,000 crores.",
       "promised_citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_4_FEB_2026",
         "doc_label": "DIXON Concall Feb 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "Dixon Technologies (India) Limited January 29, 2026 Page 4 of 20 and target to expand volumes of smartphone camera modules from 40 million units in this fiscal to 190 million to 200 million units per annum.",
+        "page": 17,
+        "cited_page": 17,
+        "verbatim_quote": "We feel that for next year, the numbers are going to be somewhere around INR3,500 crores to INR4,000 crores.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
         "reason": null,
         "status": "verified"
       },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹21794.0 Cr, Derived Operating EBITDA ₹597.0 Cr (2.7%), PAT ₹411.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "DIXON_CONCALL_3_MAY_2026",
-        "doc_label": "DIXON Concall May 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
-        "page": 18,
-        "cited_page": 18,
-        "verbatim_quote": "In the final picture of this business, the revenue target, once we start achieving 80% to 90% of the capacity utilization, the revenue generation is going to be almost INR5,500 crores to INR6,000 crores with a double-digit margin.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
+      "delivered_summary": "Not comparable to filed numbers: segment-level guidance ('IT Hardware Revenue') is not broken out in consolidated quarterly financial statements.",
+      "delivered_citation": null,
+      "verdict": "Not comparable to filed numbers",
+      "one_line_explanation": "Fixed template: Segment-level guidance ('IT Hardware Revenue') cannot be scored against consolidated financial statements."
     }
   ],
-  "numbers_vs_narrative": [
+  "reported_vs_stated": [
     {
-      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
-      "numbers_observed": "5Y Revenue CAGR 46.2%, PAT CAGR 71.5%; latest annual Revenue ₹48873.0 Cr, PAT ₹1644.0 Cr.",
-      "narrative_claimed": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
-      "verdict": "Aligned",
+      "quarter_referenced": "Sep 2026",
+      "metric": "Revenue",
+      "stated_value": 21806.0,
+      "filed_value": 21794.0,
+      "variance": 12.0,
+      "variance_pct": 0.1,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "DIXON Concall Nov 2026 Transcript",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "verbatim_quote": "Revenues for the quarter ended September 30, 2026 was INR 21,806 crores.",
       "citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_1_NOV_2026",
         "doc_label": "DIXON Concall Nov 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Revenues for the quarter ended September 30, 2026 was INR 21,806 crores.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -464,19 +766,26 @@
       }
     },
     {
-      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
-      "numbers_observed": "5Y Cumulative CFO ₹4515.0 Cr vs Cumulative PAT ₹3697.0 Cr (CFO/PAT = 122.1%).",
-      "narrative_claimed": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
-      "verdict": "Aligned",
+      "quarter_referenced": "Jun 2026",
+      "metric": "Revenue",
+      "stated_value": 15557.0,
+      "filed_value": 15548.0,
+      "variance": 9.0,
+      "variance_pct": 0.1,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "DIXON Concall Aug 2026 Transcript",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "verbatim_quote": "Revenues for the quarter ended June 30, 2026, was INR15,557 crores.",
       "citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_2_AUG_2026",
         "doc_label": "DIXON Concall Aug 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Revenues for the quarter ended June 30, 2026, was INR15,557 crores.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -485,19 +794,391 @@
       }
     },
     {
-      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
-      "numbers_observed": "Latest annual Derived EBITDA ₹1873.0 Cr (Margin 3.8%, derived) · ROCE 29.0%.",
-      "narrative_claimed": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
-      "verdict": "Aligned",
+      "quarter_referenced": "Mar 2026",
+      "metric": "Revenue",
+      "stated_value": 10520.0,
+      "filed_value": 10511.0,
+      "variance": 9.0,
+      "variance_pct": 0.1,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "DIXON Concall May 2026 Transcript",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "verbatim_quote": "The revenues for the quarter ended March 31, 2026 was INR10,520 crores EBITDA excluding exceptional gain for the quarter was INR418 crores.",
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_1_NOV_2026",
-        "doc_label": "DIXON Concall Nov 2026 Transcript",
+        "doc_id": "DIXON_CONCALL_3_MAY_2026",
+        "doc_label": "DIXON Concall May 2026 Transcript",
         "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 13,
-        "cited_page": 13,
-        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "The revenues for the quarter ended March 31, 2026 was INR10,520 crores EBITDA excluding exceptional gain for the quarter was INR418 crores.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "quarter_referenced": "Dec 2025",
+      "metric": "Revenue",
+      "stated_value": 10678.0,
+      "filed_value": 10672.0,
+      "variance": 6.0,
+      "variance_pct": 0.1,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "DIXON Concall Feb 2026 Transcript",
+      "speaker": "Atul Lall, Managing Director and Vice Chairman",
+      "verbatim_quote": "Consolidated operating revenues for the quarter ended December 31, 2025, was INR10,678 crores against INR10,461 crores in the same period last year; consolidated operating EBITDA for the quarter was INR421 crores against INR398 crores in the same period last year.",
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_CONCALL_4_FEB_2026",
+        "doc_label": "DIXON Concall Feb 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Consolidated operating revenues for the quarter ended December 31, 2025, was INR10,678 crores against INR10,461 crores in the same period last year; consolidated operating EBITDA for the quarter was INR421 crores against INR398 crores in the same period last year.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "concall_extraction_telemetry": [
+    {
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "label": "DIXON Concall Nov 2026 Transcript",
+      "is_latest_call": true,
+      "claims_extracted": 4,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 4,
+      "raw_candidates": [
+        {
+          "metric": "Display Business Revenue Potential",
+          "scope": "product",
+          "condition": null,
+          "unit": "crores",
+          "fiscal_period": "FY28",
+          "page": 18,
+          "raw_quote": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores.",
+          "trimmed_quote": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores.",
+          "status": "kept",
+          "reason": null
+        },
+        {
+          "metric": "Display & Camera Module Margin Expansion",
+          "scope": "segment",
+          "condition": null,
+          "unit": "bps",
+          "fiscal_period": "FY28",
+          "page": 18,
+          "raw_quote": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps.",
+          "trimmed_quote": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps.",
+          "status": "kept",
+          "reason": null
+        },
+        {
+          "metric": "IT Hardware / Inventec JV Business Revenue",
+          "scope": "segment",
+          "condition": null,
+          "unit": "crores",
+          "fiscal_period": "FY28",
+          "page": 11,
+          "raw_quote": "We feel that in next couple of years, this is going to be almost INR 15,000 crore to INR 20,000 crore business for us.",
+          "trimmed_quote": "We feel that in next couple of years, this is going to be almost INR 15,000 crore to INR 20,000 crore business for us.",
+          "status": "kept",
+          "reason": null
+        },
+        {
+          "metric": "Q Tech Revenue",
+          "scope": "product",
+          "condition": null,
+          "unit": "crores",
+          "fiscal_period": "FY27",
+          "page": 18,
+          "raw_quote": "And as far as Q Tech is concerned, of course, you have to make budgets for next year, but broadly we should be in a kind of a number of almost somewhere between INR 2,500 crores to INR 3,000 odd crores.",
+          "trimmed_quote": "And as far as Q Tech is concerned, of course, you have to make budgets for next year, but broadly we should be in a kind of a number of almost somewhere between INR 2,500 crores to INR 3,000 odd crores.",
+          "status": "kept",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "doc_id": "DIXON_CONCALL_2_AUG_2026",
+      "label": "DIXON Concall Aug 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 2,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 2,
+      "raw_candidates": [
+        {
+          "metric": "Mobile export revenue and volume addition",
+          "scope": "segment",
+          "condition": null,
+          "unit": "million",
+          "fiscal_period": "FY28",
+          "page": 10,
+          "raw_quote": "We feel that in a couple of years, that can add almost 15 million to 20 million to our numbers, additional quantity in a couple of years.",
+          "trimmed_quote": "We feel that in a couple of years, that can add almost 15 million to 20 million to our numbers, additional quantity in a couple of years.",
+          "status": "kept",
+          "reason": null
+        },
+        {
+          "metric": "Telecom Revenue",
+          "scope": "segment",
+          "condition": null,
+          "unit": "crores",
+          "fiscal_period": "FY27",
+          "page": 20,
+          "raw_quote": "And we feel, as I mentioned earlier, we're going to be somewhere between INR6,700 crores to INR7,000 crores in this fiscal.",
+          "trimmed_quote": "And we feel, as I mentioned earlier, we're going to be somewhere between INR6,700 crores to INR7,000 crores in this fiscal.",
+          "status": "kept",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "doc_id": "DIXON_CONCALL_3_MAY_2026",
+      "label": "DIXON Concall May 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 1,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 1,
+      "raw_candidates": [
+        {
+          "metric": "Consolidated Revenue",
+          "scope": "consolidated",
+          "condition": "without the Vivo numbers",
+          "unit": "crores",
+          "fiscal_period": "FY27",
+          "page": 15,
+          "raw_quote": "Next year, we are targeting almost INR56,000 crores without the Vivo numbers, and mobile volume being flat.",
+          "trimmed_quote": "Next year, we are targeting almost INR56,000 crores without the Vivo numbers, and mobile volume being flat.",
+          "status": "kept",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "doc_id": "DIXON_CONCALL_4_FEB_2026",
+      "label": "DIXON Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 1,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 1,
+      "raw_candidates": [
+        {
+          "metric": "IT Hardware Revenue",
+          "scope": "segment",
+          "condition": null,
+          "unit": "crores",
+          "fiscal_period": "FY27",
+          "page": 17,
+          "raw_quote": "We feel that for next year, the numbers are going to be somewhere around INR3,500 crores to INR4,000 crores.",
+          "trimmed_quote": "We feel that for next year, the numbers are going to be somewhere around INR3,500 crores to INR4,000 crores.",
+          "status": "kept",
+          "reason": null
+        }
+      ]
+    }
+  ],
+  "citation_pool": [
+    {
+      "citation_id": 1,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 106,
+      "verbatim_quote": "4,42,570 (₹ in Million) Mobile Phones and Other EMS 2023-24 1,09,190 3,30,430 4,42,570 2024-25 2025-26"
+    },
+    {
+      "citation_id": 2,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 106,
+      "verbatim_quote": "28,920 (₹ in Million) Consumer Electronics & Refrigerator 2023-24 41,480 35,900 28,920 2024-25 2025-26"
+    },
+    {
+      "citation_id": 3,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 106,
+      "verbatim_quote": "14,260 (₹ in Million) Home Appliances & Engineering 2023-24 12,050 13,660 14,260 2024-25 2025-26"
+    },
+    {
+      "citation_id": 4,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 98,
+      "verbatim_quote": "During 2025-26, the ODM components business contributed approximately 11% of total revenues while EMS businesses contributed to 89% of total revenues."
+    },
+    {
+      "citation_id": 5,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 99,
+      "verbatim_quote": "For 2025-26, Dixon Technologies recorded a consolidated revenue¹ of ₹48,893 Crores, marking a growth of 26% year-on-year. Our EBITDA¹ , excluding exceptional gain, was ₹1,887 Crores against ₹1,528 Crores in the same period, a growth of 23%."
+    },
+    {
+      "citation_id": 6,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 101,
+      "verbatim_quote": "We closed FY 2025-26 with a negative working capital cycle of 8 days, an improvement driven by tighter receivables and inventory managem"
+    },
+    {
+      "citation_id": 7,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 102,
+      "verbatim_quote": "We deployed over ₹1,058 Crores in capital expenditure during the year, directed primarily towards our display module and camera module facilities, backward integration and capacity additions across our segments."
+    },
+    {
+      "citation_id": 8,
+      "doc_id": "DIXON_AR_LATEST",
+      "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+      "page": 101,
+      "verbatim_quote": "Improved asset utilisation, operating leverage and disciplined capital allocation supported healthy ROCE and ROE of 44.8% & 28.1% respectively."
+    },
+    {
+      "citation_id": 9,
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "doc_label": "DIXON Concall Nov 2026 Transcript",
+      "page": 18,
+      "verbatim_quote": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores."
+    },
+    {
+      "citation_id": 10,
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "doc_label": "DIXON Concall Nov 2026 Transcript",
+      "page": 18,
+      "verbatim_quote": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps."
+    },
+    {
+      "citation_id": 11,
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "doc_label": "DIXON Concall Nov 2026 Transcript",
+      "page": 11,
+      "verbatim_quote": "We feel that in next couple of years, this is going to be almost INR 15,000 crore to INR 20,000 crore business for us."
+    },
+    {
+      "citation_id": 12,
+      "doc_id": "DIXON_CONCALL_1_NOV_2026",
+      "doc_label": "DIXON Concall Nov 2026 Transcript",
+      "page": 18,
+      "verbatim_quote": "And as far as Q Tech is concerned, of course, you have to make budgets for next year, but broadly we should be in a kind of a number of almost somewhere between INR 2,500 crores to INR 3,000 odd crores."
+    },
+    {
+      "citation_id": 13,
+      "doc_id": "DIXON_CONCALL_2_AUG_2026",
+      "doc_label": "DIXON Concall Aug 2026 Transcript",
+      "page": 10,
+      "verbatim_quote": "We feel that in a couple of years, that can add almost 15 million to 20 million to our numbers, additional quantity in a couple of years."
+    },
+    {
+      "citation_id": 14,
+      "doc_id": "DIXON_CONCALL_3_MAY_2026",
+      "doc_label": "DIXON Concall May 2026 Transcript",
+      "page": 15,
+      "verbatim_quote": "Next year, we are targeting almost INR56,000 crores without the Vivo numbers, and mobile volume being flat."
+    },
+    {
+      "citation_id": 15,
+      "doc_id": "DIXON_CONCALL_2_AUG_2026",
+      "doc_label": "DIXON Concall Aug 2026 Transcript",
+      "page": 20,
+      "verbatim_quote": "And we feel, as I mentioned earlier, we're going to be somewhere between INR6,700 crores to INR7,000 crores in this fiscal."
+    },
+    {
+      "citation_id": 16,
+      "doc_id": "DIXON_CONCALL_4_FEB_2026",
+      "doc_label": "DIXON Concall Feb 2026 Transcript",
+      "page": 17,
+      "verbatim_quote": "We feel that for next year, the numbers are going to be somewhere around INR3,500 crores to INR4,000 crores."
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "Working Capital Efficiency",
+      "numbers_observed": "Negative working capital cycle of 8 days reported for FY 2025-26.",
+      "narrative_claimed": "Management claimed that the business closed the year with a negative working capital cycle of 8 days driven by tighter receivables and inventory management [C6].",
+      "verdict": "Aligned",
+      "citation_id": 6,
+      "citation_ids": [
+        6
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 101,
+        "cited_page": 101,
+        "verbatim_quote": "We closed FY 2025-26 with a negative working capital cycle of 8 days, an improvement driven by tighter receivables and inventory managem",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Capital Expenditure Scale",
+      "numbers_observed": "Over 1,058 Crores deployed in capex during FY 2025-26.",
+      "narrative_claimed": "Management highlighted deploying over ₹1,058 Crores in capital expenditure directed primarily towards display and camera module facilities [C7].",
+      "verdict": "Aligned",
+      "citation_id": 7,
+      "citation_ids": [
+        7
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 102,
+        "cited_page": 102,
+        "verbatim_quote": "We deployed over ₹1,058 Crores in capital expenditure during the year, directed primarily towards our display module and camera module facilities, backward integration and capacity additions across our segments.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Return Metrics",
+      "numbers_observed": "ROCE of 29.0% in Mar 2026, with annual report noting ROCE of 44.8%.",
+      "narrative_claimed": "Improved asset utilisation, operating leverage and disciplined capital allocation supported healthy ROCE and ROE of 44.8% & 28.1% respectively [C8].",
+      "verdict": "Aligned",
+      "citation_id": 8,
+      "citation_ids": [
+        8
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 101,
+        "cited_page": 101,
+        "verbatim_quote": "Improved asset utilisation, operating leverage and disciplined capital allocation supported healthy ROCE and ROE of 44.8% & 28.1% respectively.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -508,17 +1189,21 @@
   ],
   "bull_case": [
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #1 (DIXON Concall Nov 2026 Transcript)",
-      "thesis": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+      "title": "Massive Revenue Expansion in EMS",
+      "thesis": "Mobile Phones and Other EMS segment scaled dramatically to reach 4,42,570 million in FY 2025-26 [C1].",
+      "citation_id": 1,
+      "citation_ids": [
+        1
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_1_NOV_2026",
-        "doc_label": "DIXON Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 16,
-        "cited_page": 16,
-        "verbatim_quote": "So, on the subsidiary financials, Q Tech's margin has declined by almost 450 bps in FY '26 compared to FY '25.",
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 106,
+        "cited_page": 106,
+        "verbatim_quote": "4,42,570 (₹ in Million) Mobile Phones and Other EMS 2023-24 1,09,190 3,30,430 4,42,570 2024-25 2025-26",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -527,17 +1212,21 @@
       }
     },
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #2 (DIXON Concall Aug 2026 Transcript)",
-      "thesis": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+      "title": "Display Business Growth Potential",
+      "thesis": "The display business once completely ramped up can generate revenues closer to INR 6,000 crores to INR 7,000 crores [C9].",
+      "citation_id": 9,
+      "citation_ids": [
+        9
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_2_AUG_2026",
-        "doc_label": "DIXON Concall Aug 2026 Transcript",
+        "doc_id": "DIXON_CONCALL_1_NOV_2026",
+        "doc_label": "DIXON Concall Nov 2026 Transcript",
         "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Our market position, customer engagement and manufacturing capabilities remain intact, and we expect 20% to 25% volume growth quarter￾on-quarter growth as consumer demand strengthens and we have a strong order book.",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "So the real potential for display business, once it is completely ramped up in next couple of years, it can generate revenues of closer to INR 6,000 crores to INR 7,000 crores.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -546,17 +1235,21 @@
       }
     },
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #3 (DIXON Concall Nov 2026 Transcript)",
-      "thesis": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+      "title": "Strong Margin Expansion Levers",
+      "thesis": "Both display and camera put together are expected to expand operating margins by 80 to 100 bps over the next 2 years [C10].",
+      "citation_id": 10,
+      "citation_ids": [
+        10
+      ],
       "citation": {
         "verified": true,
         "doc_id": "DIXON_CONCALL_1_NOV_2026",
         "doc_label": "DIXON Concall Nov 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
-        "page": 13,
-        "cited_page": 13,
-        "verbatim_quote": "Atul Lall: So let's say in a washing machine business, which is traditionally 11% EBITDA margin, between 10.5% to 11%, the margins compressed to 8.6%.",
+        "page": 18,
+        "cited_page": 18,
+        "verbatim_quote": "So, clearly both display and camera put together, we feel that over a period of next 2 years, we should be able to expand our margins by 80 to 100 bps.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -567,17 +1260,21 @@
   ],
   "bear_case": [
     {
-      "title": "Filing-Disclosed Operational / Margin Risk #1 (DIXON Concall Aug 2026 Transcript)",
-      "thesis": "Mobile volume performance was aligned with temporary demand contraction seen across the broader smartphone market by 10% to 12%, while our top line witnessed a strong revenue growth due to higher input cost realization.",
+      "title": "Consumer Electronics Contraction",
+      "thesis": "Consumer Electronics & Refrigerator segment revenue declined to 28,920 million in FY 2025-26 from previous highs [C2].",
+      "citation_id": 2,
+      "citation_ids": [
+        2
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_2_AUG_2026",
-        "doc_label": "DIXON Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7ce2ca16-3043-48f4-97f9-a62a6a086c2f.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Mobile volume performance was aligned with temporary demand contraction seen across the broader smartphone market by 10% to 12%, while our top line witnessed a strong revenue growth due to higher input cost realization.",
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 106,
+        "cited_page": 106,
+        "verbatim_quote": "28,920 (₹ in Million) Consumer Electronics & Refrigerator 2023-24 41,480 35,900 28,920 2024-25 2025-26",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -586,17 +1283,21 @@
       }
     },
     {
-      "title": "Filing-Disclosed Operational / Margin Risk #2 (DIXON Concall Feb 2026 Transcript)",
-      "thesis": "I mean, are you sure -- do you maintain this 20 million number for Vivo for FY '27 or there can be a downside risk to this?",
+      "title": "EMS Revenue Concentration",
+      "thesis": "EMS businesses continue to dominate at 89% of total revenues, reflecting high reliance on contract manufacturing volumes [C4].",
+      "citation_id": 4,
+      "citation_ids": [
+        4
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_4_FEB_2026",
-        "doc_label": "DIXON Concall Feb 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ad6e72f1-b5f8-4a75-8e45-f2e88c7525e0.pdf",
-        "page": 11,
-        "cited_page": 11,
-        "verbatim_quote": "I mean, are you sure -- do you maintain this 20 million number for Vivo for FY '27 or there can be a downside risk to this?",
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 98,
+        "cited_page": 98,
+        "verbatim_quote": "During 2025-26, the ODM components business contributed approximately 11% of total revenues while EMS businesses contributed to 89% of total revenues.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -605,17 +1306,21 @@
       }
     },
     {
-      "title": "Filing-Disclosed Operational / Margin Risk #3 (DIXON Concall May 2026 Transcript)",
-      "thesis": "The ROCE is 44.8% and working capital operating cycle is negative 8 days.",
+      "title": "Quarterly Margin Moderation",
+      "thesis": "Derived operating EBITDA margins moderated to 2.7% in Sep 2026 compared to historical highs [C5].",
+      "citation_id": 5,
+      "citation_ids": [
+        5
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "DIXON_CONCALL_3_MAY_2026",
-        "doc_label": "DIXON Concall May 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=38b72f07-55a6-4503-91fd-ed3b2c209e96.pdf",
-        "page": 8,
-        "cited_page": 8,
-        "verbatim_quote": "The ROCE is 44.8% and working capital operating cycle is negative 8 days.",
+        "doc_id": "DIXON_AR_LATEST",
+        "doc_label": "DIXON Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5ef88e3c-352d-4223-a8ec-bdd7d3aa31c1.pdf",
+        "page": 99,
+        "cited_page": 99,
+        "verbatim_quote": "For 2025-26, Dixon Technologies recorded a consolidated revenue¹ of ₹48,893 Crores, marking a growth of 26% year-on-year. Our EBITDA¹ , excluding exceptional gain, was ₹1,887 Crores against ₹1,528 Crores in the same period, a growth of 23%.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -626,9 +1331,14 @@
   ],
   "unanswered_diligence_questions": [
     {
-      "topic": "Customer-level margin concentration & contract repricing lag",
+      "topic": "Customer Concentration Risks",
       "status": "not found in filings",
-      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+      "question_for_management_or_network": "What is the exact percentage contribution of the top three smartphone brand clients to total mobile EMS revenues?"
+    },
+    {
+      "topic": "Display Module Yield Rates",
+      "status": "not found in filings",
+      "question_for_management_or_network": "Granular cohort unit economics not found in filings — verify via former operator / channel check."
     }
   ],
   "network": {
@@ -662,6 +1372,30 @@
         "inferred_label": "inferred from employer/tenure overlap, synthetic network"
       },
       {
+        "contact_id": "contact:rohit_malhotra",
+        "name": "Rohit Malhotra",
+        "headline": "VP EMS Supply Chain & Padget Operations · Ex-Dixon Technologies",
+        "city": "Noida",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "bucket": "ex_company",
+        "org": "Dixon Technologies",
+        "role": "VP Operations — Padget Electronics",
+        "tenure": "2018–2025",
+        "relation_label": "knows the company (Dixon Technologies)",
+        "path": "You → Rohit Malhotra (strength 5/5 · spoke 2 mos ago) → knows the company (Dixon Technologies, 2018–2025)",
+        "expertise_tags": [
+          "mobile PLI",
+          "EMS working capital",
+          "Noida Padget assembly",
+          "consumer electronics"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "draft_opener": "Hi Rohit — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2018–2025), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
         "contact_id": "contact:ritesh_malhotra",
         "name": "Ritesh Malhotra",
         "headline": "VP Smartphone EMS & Display Module · Ex-Dixon (Padget)",
@@ -683,30 +1417,6 @@
         ],
         "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
         "draft_opener": "Hi Ritesh — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2019–2025), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
-        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
-      },
-      {
-        "contact_id": "contact:gautam_rao",
-        "name": "Gautam Rao",
-        "headline": "VP Washing Machine & Refrigerator ODM · Ex-Dixon Technologies",
-        "city": "Tirupati",
-        "strength": 4,
-        "degree": 1,
-        "recency": "spoke 3 mos ago",
-        "bucket": "ex_company",
-        "org": "Dixon Technologies",
-        "role": "Plant Head — Home Appliances",
-        "tenure": "2017–2024",
-        "relation_label": "knows the company (Dixon Technologies)",
-        "path": "You → Gautam Rao (strength 4/5 · spoke 3 mos ago) → knows the company (Dixon Technologies, 2017–2024)",
-        "expertise_tags": [
-          "semi-automatic WM",
-          "fully automatic WM",
-          "Voltas/Bosch ODM",
-          "backward tooling"
-        ],
-        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
-        "draft_opener": "Hi Gautam — running a primary-source deep dive on Dixon Technologies (DIXON) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2017–2024), how realistic is management's execution timeline on new capacity and margin guidance at Dixon Technologies?",
         "inferred_label": "inferred from employer/tenure overlap, synthetic network"
       }
     ],
@@ -865,8 +1575,114 @@
     "concall_transcripts_verified": 4,
     "latest_call_marked_untestable": true,
     "total_verified_citations": 16,
-    "dropped_citations_count": 0,
-    "min_rapidfuzz_score": 100.0,
+    "dropped_uncited_sentences": 0,
+    "min_rapidfuzz_score": 99.0,
     "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
-  }
+  },
+  "balance_sheet_panel": {
+    "symbol": "DIXON",
+    "is_lender": false,
+    "source": "Screener #balance-sheet & #ratios (deterministic)",
+    "latest_period": "Sep 2026",
+    "borrowings_cr": 1236.0,
+    "equity_cr": 5878.0,
+    "debt_to_equity": 0.21,
+    "total_assets_cr": 29178.0,
+    "working_capital_days": -3.0,
+    "working_capital_period": "Mar 2026",
+    "series": [
+      {
+        "period": "Mar 2025",
+        "equity_cr": 3010.0,
+        "borrowings_cr": 671.0,
+        "debt_to_equity": 0.22,
+        "deposits_cr": null,
+        "total_assets_cr": 16758.0,
+        "working_capital_days": 2.0,
+        "cash_conversion_cycle_days": -5.0,
+        "debtor_days": 65.0,
+        "inventory_days": 41.0,
+        "days_payable": 111.0,
+        "roce_or_roe_pct": 40.0
+      },
+      {
+        "period": "Mar 2026",
+        "equity_cr": 4677.0,
+        "borrowings_cr": 994.0,
+        "debt_to_equity": 0.21,
+        "deposits_cr": null,
+        "total_assets_cr": 19152.0,
+        "working_capital_days": -3.0,
+        "cash_conversion_cycle_days": -7.0,
+        "debtor_days": 49.0,
+        "inventory_days": 31.0,
+        "days_payable": 86.0,
+        "roce_or_roe_pct": 29.0
+      },
+      {
+        "period": "Sep 2026",
+        "equity_cr": 5878.0,
+        "borrowings_cr": 1236.0,
+        "debt_to_equity": 0.21,
+        "deposits_cr": null,
+        "total_assets_cr": 29178.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": null
+      }
+    ]
+  },
+  "llm_provenance": {
+    "symbol": "DIXON",
+    "total_calls": 30,
+    "live_calls": 10,
+    "cache_hits": 20,
+    "models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "all_models_seen": [
+      "gemini-3.5-flash-lite",
+      "gemini-3.6-flash",
+      "gemini-3.7-flash"
+    ],
+    "in_tokens": 127679,
+    "out_tokens": 12363,
+    "thinking_tokens": 2212,
+    "cost_usd": 0.041247,
+    "cost_inr": 3.5472,
+    "latest_run_tasks": [
+      {
+        "task": "pull_extract_ar_dixon",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_ar_v1",
+        "cache_hit": true,
+        "in_tokens": 11565,
+        "out_tokens": 1280,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_extract_concalls_dixon",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_cc_v4",
+        "cache_hit": true,
+        "in_tokens": 33378,
+        "out_tokens": 2125,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_reasoning_dixon",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_reasoning_v4",
+        "cache_hit": true,
+        "in_tokens": 4909,
+        "out_tokens": 953,
+        "thinking_tokens": 0
+      }
+    ]
+  },
+  "analysis_generated": true,
+  "analysis_header": "Shown: Financial trajectory, Balance Sheet panel, verified Segment Mix, Concall Guidance (code-computed verdicts), Stated-vs-Filed checks, Cited Numbers-vs-Narrative & Bull/Bear, Network · Pending: Unverified claims omitted; incomplete fiscal periods show progress only."
 }

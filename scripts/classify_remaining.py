@@ -1,11 +1,11 @@
-"""Batch-classify remaining unclassified filings using gemini-3.5-flash-lite.
+"""Batch-classify remaining unclassified filings (`cls_method == 'fallback'`) using Bulk LLM.
 
 Takes all announcements where `cls_method == 'fallback'`, batches them into chunks
-of 20, queries `gemini-3.5-flash-lite` via `LLMRouter`, records every call in
-`llm_ledger.jsonl` and `llm_cache.json`, and updates `announcements.json`.
+of 20, queries Gemini Bulk tier via `LLMRouter`, records every call in
+`llm_ledger.jsonl` and `llm_cache.json`, and updates `announcements.json` and
+its `cls_method_breakdown` metadata.
 
 Usage:
-    export GEMINI_API_KEY="your-gemini-key"
     PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/classify_remaining.py
 """
 
@@ -15,6 +15,7 @@ import json
 import os
 import sys
 import time
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -28,26 +29,68 @@ for p in (ROOT / ".env", ROOT / ".env.local", Path.home() / ".env"):
     if p.exists():
         load_dotenv(p, override=False)
 
-from finn.llm.router import LLMRouter  # noqa: E402
-from finn.pipeline.classify import BATCH_CLASSIFY_SYSTEM, format_batch_for_prompt, parse_batch_response  # noqa: E402
+from finn.llm.router import LLMRouter, _resolve_in_memory_key  # noqa: E402
+from finn.pipeline.classify import (  # noqa: E402
+    CATEGORIES,
+    LLM_CLS_SYSTEM,
+    score_priority,
+    summarize_one_line,
+)
+from finn.store import get_contacts  # noqa: E402
+
+BATCH_SCHEMA: dict[str, Any] = {
+    "type": "OBJECT",
+    "properties": {
+        "items": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "id": {"type": "STRING"},
+                    "category": {"type": "STRING"},
+                    "summary_1l": {"type": "STRING"},
+                },
+                "required": ["id", "category", "summary_1l"],
+            },
+        }
+    },
+    "required": ["items"],
+}
 
 
 def main() -> None:
-    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or _resolve_in_memory_key()
     if not api_key:
-        print("ERROR: GEMINI_API_KEY is not set in environment or .env.local.")
-        print("To run, execute: export GEMINI_API_KEY=\"<key>\" && PYTHONPATH=apps/api apps/api/.venv/bin/python scripts/classify_remaining.py")
+        print("ERROR: GEMINI_API_KEY is not set in environment or in-memory.")
         sys.exit(1)
+    if not os.environ.get("GEMINI_API_KEY"):
+        os.environ["GEMINI_API_KEY"] = api_key
 
     data = json.loads(SNAP_PATH.read_text(encoding="utf-8"))
-    items = data.get("items", [])
+    items: list[dict[str, Any]] = data.get("items", [])
+
+    contacts = get_contacts(DATA_DIR).get("contacts", [])
+    net_syms = {
+        str(af.get("symbol") or "").upper()
+        for ct in contacts
+        for af in (ct.get("affiliations") or [])
+        if af.get("symbol")
+    }
 
     unclassified = [it for it in items if it.get("cls_method") == "fallback"]
     print(f"Total announcements: {len(items)}")
-    print(f"Unclassified announcements to process: {len(unclassified)}")
+    print(f"Unclassified (fallback) announcements to process: {len(unclassified)}")
 
     if not unclassified:
-        print("No unclassified announcements remaining!")
+        counts = Counter(it.get("cls_method") for it in items)
+        data["cls_method_breakdown"] = {
+            "rule": counts.get("rule", 0),
+            "llm": counts.get("llm", 0),
+            "fallback": counts.get("fallback", 0),
+            "total": len(items),
+        }
+        SNAP_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+        print(f"No fallback announcements remaining! Breakdown: {data['cls_method_breakdown']}")
         return
 
     router = LLMRouter(DATA_DIR)
@@ -55,65 +98,96 @@ def main() -> None:
     batches = [unclassified[i : i + batch_size] for i in range(0, len(unclassified), batch_size)]
     print(f"Processing {len(unclassified)} items across {len(batches)} batches of {batch_size}...")
 
-    updated_by_id: dict[str, dict[str, Any]] = {}
     total_in_tokens = 0
     total_out_tokens = 0
+    total_thinking_tokens = 0
+    total_cost_usd = 0.0
     total_cost_inr = 0.0
+    newly_classified = 0
 
     for b_idx, batch in enumerate(batches, start=1):
         print(f"[{b_idx}/{len(batches)}] Classifying batch of {len(batch)} items...")
-        prompt = format_batch_for_prompt(batch)
+        payload = [
+            {
+                "id": str(it["id"]),
+                "symbol": it.get("symbol", ""),
+                "raw_category": it.get("raw_category", ""),
+                "subject": it.get("subject", ""),
+            }
+            for it in batch
+        ]
+        res: dict[str, Any] = {}
         try:
             res = router.generate(
-                task="batch_classify_remaining",
+                task="classify_announcements_batch",
                 tier="bulk",
-                source_kind="announcement_batch",
-                prompt_version="batch_cls_v1",
-                system=BATCH_CLASSIFY_SYSTEM,
-                contents=prompt,
+                source_kind="public_filing",
+                prompt_version="cls-batch-v1",
+                system=LLM_CLS_SYSTEM,
+                contents=payload,
+                response_schema=BATCH_SCHEMA,
             )
-            raw_text = res.get("text", "")
-            results_map = parse_batch_response(raw_text)
+            parsed_items = (res.get("parsed") or {}).get("items") or []
+            if not parsed_items and res.get("text"):
+                try:
+                    parsed_items = (json.loads(res["text"]) or {}).get("items") or []
+                except json.JSONDecodeError:
+                    parsed_items = []
+            by_id = {str(x.get("id")): x for x in parsed_items if isinstance(x, dict)}
+
             in_tok = int(res.get("in_tokens", 0))
             out_tok = int(res.get("out_tokens", 0))
-            cost = float(res.get("cost_inr", 0.0))
-            total_in_tokens += in_tok
-            total_out_tokens += out_tok
-            total_cost_inr += cost
+            think_tok = int(res.get("thinking_tokens", 0))
+            cost_u = float(res.get("cost_usd", 0.0))
+            cost_i = float(res.get("cost_inr", 0.0))
+            if not res.get("cache_hit", False):
+                total_in_tokens += in_tok
+                total_out_tokens += out_tok
+                total_thinking_tokens += think_tok
+                total_cost_usd += cost_u
+                total_cost_inr += cost_i
 
+            mapped = 0
             for it in batch:
-                aid = it["id"]
-                if aid in results_map:
-                    cat, prio, summary = results_map[aid]
+                aid = str(it["id"])
+                hit = by_id.get(aid)
+                cat = hit.get("category") if hit else None
+                if cat in CATEGORIES:
+                    sym = str(it.get("symbol") or "")
                     it["category"] = cat
-                    it["priority"] = prio
-                    it["summary_1l"] = summary
                     it["cls_method"] = "llm"
-                    it["cls_rule"] = "gemini-3.5-flash-lite"
-                    updated_by_id[aid] = it
-            print(f"   -> Batch {b_idx} done ({in_tok} in, {out_tok} out, ₹{cost:.4f}, mapped {len(results_map)} items)")
+                    it["cls_rule"] = str(res.get("model") or "gemini-3.5-flash-lite")
+                    it["cls_confidence"] = 0.80
+                    it["priority"] = score_priority(it, category=cat, has_network_overlap=sym in net_syms)
+                    it["summary_1l"] = (hit.get("summary_1l") if hit else None) or summarize_one_line(it, category=cat)
+                    mapped += 1
+                    newly_classified += 1
+            print(
+                f"   -> Batch {b_idx} done (model={res.get('model')}, hit={res.get('cache_hit')}, "
+                f"{in_tok} in, {out_tok} out, ₹{cost_i:.4f}, mapped {mapped}/{len(batch)})"
+            )
         except Exception as exc:  # noqa: BLE001
             print(f"   -> Batch {b_idx} failed: {exc}")
 
-        if b_idx < len(batches):
-            time.sleep(2.0)
+        if b_idx < len(batches) and not res.get("cache_hit", False):
+            time.sleep(4.2)
 
-    # Save updated announcements.json
     data["items"] = items
-    # Update provenance / metadata
-    rule_count = sum(1 for it in items if it.get("cls_method") == "rule")
-    llm_count = sum(1 for it in items if it.get("cls_method") == "llm")
-    fallback_count = sum(1 for it in items if it.get("cls_method") == "fallback")
+    counts = Counter(it.get("cls_method") for it in items)
     data["cls_method_breakdown"] = {
-        "rule": rule_count,
-        "llm": llm_count,
-        "fallback": fallback_count,
+        "rule": counts.get("rule", 0),
+        "llm": counts.get("llm", 0),
+        "fallback": counts.get("fallback", 0),
         "total": len(items),
     }
     SNAP_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     print("\nUpdated announcements.json successfully!")
-    print(f"Breakdown: rule={rule_count}, llm={llm_count}, fallback={fallback_count}")
-    print(f"Spend: {total_in_tokens} in tokens, {total_out_tokens} out tokens, ₹{total_cost_inr:.4f}")
+    print(f"Newly classified by LLM: {newly_classified}/{len(unclassified)}")
+    print(f"Final cls_method breakdown (776): {json.dumps(data['cls_method_breakdown'])}")
+    print(
+        f"Stage-2 remaining spend (live calls): {total_in_tokens} in tokens, {total_out_tokens} out tokens, "
+        f"{total_thinking_tokens} thinking tokens, ${total_cost_usd:.6f} (₹{total_cost_inr:.4f})"
+    )
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-11-09T08:46:33.085977+00:00",
+  "verified_at": "2026-11-10T07:47:17.193343+00:00",
   "key_present": true,
   "free_tier_rate_limits_note": "Google AI Studio enforces free-tier limits per project (dynamic in AI Studio -> Rate Limits). Typical free-tier envelopes: Flash-Lite ~15 RPM / 250k TPM / 500-1000 RPD; Flash (thinking) ~10 RPM / 250k TPM / 250-500 RPD; thinking tokens count toward output tokens. FINN stays well inside this by: (1) rules-first classification (~40% handled by Stage-1 rules with 0 LLM calls), (2) batching remaining announcements up to 20 per call, and (3) sha256 content-hash caching.",
   "available_gemini_models": [
@@ -29,19 +29,36 @@
     "gemini-3.5-flash-lite": {
       "ok": true,
       "vertexai": false,
-      "latency_ms": 1199,
+      "latency_ms": 5978,
       "in_tokens": 4,
       "out_tokens": 1,
       "thinking_tokens": null
     },
-    "gemini-3.6-flash": {
-      "ok": true,
-      "vertexai": false,
-      "latency_ms": 2324,
-      "in_tokens": 4,
-      "out_tokens": null,
-      "thinking_tokens": 13
+    "gemini-3.6-flash:vertexai=False": {
+      "ok": false,
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    "gemini-3.5-flash:vertexai=False": {
+      "ok": false,
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    "gemini-3.7-flash:vertexai=False": {
+      "ok": false,
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    "gemini-3.8-flash:vertexai=False": {
+      "ok": false,
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    "gemini-2.5-flash:vertexai=False": {
+      "ok": false,
+      "error": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest feature"
+    },
+    "gemini-omni-flash-preview:vertexai=False": {
+      "ok": false,
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
     }
   },
-  "vertexai_express_mode": false
+  "vertexai_express_mode": false,
+  "strong_live_verified": "gemini-3.5-flash-lite"
 }

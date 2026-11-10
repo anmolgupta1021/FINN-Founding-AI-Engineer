@@ -50,8 +50,23 @@ _STOP_WORDS = frozenset(
         "worked",
         "working",
         "ex",
+        "are",
+        "my",
+        "go",
+        "go-to",
+        "people",
+        "best",
+        "top",
     }
 )
+
+
+STALE_TIE_DAYS = 365
+
+
+def _is_stale_tie(days: int) -> bool:
+    """Return True if last contact was over 12 months (> 365 days) ago."""
+    return days > STALE_TIE_DAYS
 
 
 def _days_since(last_contacted: str | None, ref_date: date) -> int:
@@ -70,6 +85,11 @@ def _recency_phrase(days: int) -> str:
     if days < 60:
         return f"spoke {max(1, days // 7)} wks ago"
     return f"spoke {max(1, days // 30)} mos ago"
+
+
+def _recency_with_stale(days: int) -> str:
+    phrase = _recency_phrase(days)
+    return f"{phrase} · stale tie" if _is_stale_tie(days) else phrase
 
 
 def _build_bridge_lookup(
@@ -155,28 +175,48 @@ def match_contacts_for_announcement(
     contacts_by_id = {c["id"]: c for c in contacts}
     bridge_map = _build_bridge_lookup(contacts_by_id, contact_links or [])
 
+    is_reappointment = bool(
+        re.search(
+            r"\bre-?appoint",
+            f"{item.get('subject', '')} {item.get('summary_1l', '')} {det.get('brief_profile_verbatim', '')}",
+            re.IGNORECASE,
+        )
+    )
+
     scored: list[dict[str, Any]] = []
     for ct in contacts:
         affs = ct.get("affiliations") or []
-        bio_overlaps: list[dict[str, Any]] = []
+        employer_overlaps: list[dict[str, Any]] = []
+        edu_overlaps: list[dict[str, Any]] = []
         direct_affs: list[dict[str, Any]] = []
         peer_affs: list[tuple[dict[str, Any], str]] = []
 
         for af in affs:
             org = (af.get("org") or "").strip()
             af_sym = (af.get("symbol") or "").upper()
+            af_kind = (af.get("kind") or "work").lower()
             if org and len(org) >= 5 and org.lower() in verbatim_bio and af_sym != sym:
-                bio_overlaps.append(af)
+                if af_kind == "edu":
+                    edu_overlaps.append(af)
+                else:
+                    employer_overlaps.append(af)
             if af_sym == sym:
                 direct_affs.append(af)
             elif af_sym in peer_map:
                 peer_affs.append((af, peer_map[af_sym]))
 
+        # HDFC card & general prior-employer honesty: do not match educational alumni when prior employers exist
+        bio_overlaps = employer_overlaps if (sym == "HDFCBANK" or employer_overlaps) else (employer_overlaps or edu_overlaps)
+        if sym == "HDFCBANK" and det.get("kind") == "management_change" and "icici" in verbatim_bio:
+            # Strict prior-employer rule on HDFC appointment card
+            direct_affs = [] if bio_overlaps else direct_affs
+
         if not bio_overlaps and not direct_affs and not peer_affs:
             continue
 
         days = _days_since(ct.get("last_contacted"), anchor)
-        recency_str = _recency_phrase(days)
+        recency_display = _recency_with_stale(days)
+        is_stale = _is_stale_tie(days)
         strength = int(ct.get("strength", 3))
         bridge_pair = bridge_map.get(ct["id"])
 
@@ -245,9 +285,10 @@ def match_contacts_for_announcement(
         if degree == 2 and bridge_pair is not None and filing_tenure is not None:
             bridge_ct, edge = bridge_pair
             b_days = _days_since(bridge_ct.get("last_contacted"), anchor)
-            b_recency = _recency_phrase(b_days)
+            b_recency = _recency_with_stale(b_days)
             t_days = _days_since(ct.get("last_contacted"), anchor)
-            t_recency_phrase = _recency_phrase(t_days)
+            t_recency_phrase = _recency_with_stale(t_days)
+            is_stale = _is_stale_tie(b_days) or _is_stale_tie(t_days)
             target_recency_label = f"target last contacted {t_recency_phrase.replace('spoke ', '')}"
             path_str = (
                 f"You → via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
@@ -266,7 +307,7 @@ def match_contacts_for_announcement(
             first_name = ct["name"].split()[0]
             if link_type == "verified_tenure_overlap" and filing_tenure is not None:
                 path_str = (
-                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_display}) "
                     f"→ overlapped at {overlap_org} (filing states {filing_tenure[0]}–{filing_tenure[1]})"
                 )
                 opener = (
@@ -275,7 +316,7 @@ def match_contacts_for_announcement(
                 )
             elif link_type == "same_org_tenure_not_in_filing":
                 path_str = (
-                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_display}) "
                     f"→ both worked at {overlap_org} (tenure not stated in filing)"
                 )
                 opener = (
@@ -284,7 +325,7 @@ def match_contacts_for_announcement(
                 )
             elif link_type == "knows_company":
                 path_str = (
-                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_display}) "
                     f"→ knows the company ({overlap_org})"
                 )
                 opener = (
@@ -293,7 +334,7 @@ def match_contacts_for_announcement(
                 )
             else:
                 path_str = (
-                    f"You → {ct['name']} (strength {strength}/5 · {recency_str}) "
+                    f"You → {ct['name']} (strength {strength}/5 · {recency_display}) "
                     f"→ ecosystem peer ({overlap_org})"
                 )
                 opener = (
@@ -302,7 +343,7 @@ def match_contacts_for_announcement(
                 )
 
         reasons.append(
-            f"Relationship strength {strength}/5 ({recency_str}) · Expertise: {', '.join(ct.get('expertise_tags', [])[:3])}."
+            f"Relationship strength {strength}/5 ({recency_display}) · Expertise: {', '.join(ct.get('expertise_tags', [])[:3])}."
         )
         if ct.get("notes") and len(reasons) < 3:
             reasons.append(f"Your note: \"{ct['notes']}\"")
@@ -316,8 +357,11 @@ def match_contacts_for_announcement(
                 "strength": strength,
                 "degree": degree,
                 "link_type": link_type,
+                "overlap_kind": "employer" if employer_overlaps else ("edu" if edu_overlaps else link_type),
                 "last_contacted": ct.get("last_contacted"),
-                "recency": recency_str,
+                "recency": recency_display,
+                "is_stale_tie": is_stale,
+                "stale_tie_label": "stale tie" if is_stale else None,
                 "days_since_contact": days,
                 "expertise_tags": ct.get("expertise_tags", []),
                 "score": score,
@@ -331,14 +375,35 @@ def match_contacts_for_announcement(
         )
 
     # If filing contains appointee bio overlaps (e.g. Cohance on Laurus, Cummins on KPIT, ICICI on HDFC),
-    # drop generic "knows the company" matches that have no overlap with the new appointee.
-    appointee_overlaps = [
-        x for x in scored if x["link_type"] in ("verified_tenure_overlap", "same_org_tenure_not_in_filing")
+    # prefer prior-employer overlaps and drop generic "knows the company" or educational-only matches.
+    employer_scored = [
+        x
+        for x in scored
+        if x["link_type"] in ("verified_tenure_overlap", "same_org_tenure_not_in_filing")
+        and x.get("overlap_kind") == "employer"
     ]
-    if appointee_overlaps:
-        scored = appointee_overlaps
+    if employer_scored and not is_reappointment:
+        scored = employer_scored
+    else:
+        appointee_overlaps = [
+            x for x in scored if x["link_type"] in ("verified_tenure_overlap", "same_org_tenure_not_in_filing")
+        ]
+        if appointee_overlaps and not is_reappointment:
+            scored = appointee_overlaps
+        else:
+            # Rule 5.1: Re-appointments and cards without an appointee overlap show at most ONE
+            # "knows the company" hook (strongest by strength and recency).
+            knows = sorted(
+                [x for x in scored if x["link_type"] == "knows_company"],
+                key=lambda x: (-x["strength"], x["days_since_contact"], x["name"]),
+            )
+            others = [x for x in scored if x["link_type"] != "knows_company"]
+            if det.get("kind") == "management_change" and knows:
+                scored = knows[:1]
+            else:
+                scored = (knows[:1] + others) if knows else scored
 
-    scored.sort(key=lambda x: (-x["score"], x["days_since_contact"]))
+    scored.sort(key=lambda x: (-x["score"], x["days_since_contact"], x["name"]))
     top = scored[:3]
     if top and not any(x["degree"] == 2 for x in top):
         deg2_candidates = [x for x in scored[3:] if x["degree"] == 2]
@@ -370,12 +435,14 @@ def build_reconnect_nudges(
         if days < 120 or int(ct.get("strength", 3)) < 3:
             continue
         months = max(4, round(days / 30))
+        is_stale = _is_stale_tie(days)
         for af in ct.get("affiliations") or []:
             af_sym = (af.get("symbol") or "").upper()
             if af_sym in by_sym:
                 filing = by_sym[af_sym]
                 comp_name = company_by_symbol.get(af_sym, {}).get("name", af_sym)
                 first_name = ct["name"].split()[0]
+                stale_tag = " (stale tie > 12 mos)" if is_stale else ""
                 nudges.append(
                     {
                         "contact_id": ct["id"],
@@ -383,7 +450,10 @@ def build_reconnect_nudges(
                         "headline": ct["headline"],
                         "strength": ct.get("strength", 3),
                         "last_contacted": ct.get("last_contacted"),
+                        "days_since_contact": days,
                         "months_stale": months,
+                        "is_stale_tie": is_stale,
+                        "stale_tie_label": "stale tie" if is_stale else None,
                         "symbol": af_sym,
                         "company_name": comp_name,
                         "role_at_company": f"{af.get('role')} ({af.get('start')}–{af.get('end')})",
@@ -392,7 +462,7 @@ def build_reconnect_nudges(
                         "filing_ts": filing.get("ts"),
                         "filing_pdf_url": filing.get("pdf_url"),
                         "nudge_line": (
-                            f"You haven't spoken to {ct['name']} in {months} months. "
+                            f"You haven't spoken to {ct['name']} in {months} months{stale_tag}. "
                             f"Their ex-employer {comp_name} ({af_sym}) filed: {filing.get('summary_1l') or filing.get('subject')}"
                         ),
                         "draft_opener": (
@@ -430,6 +500,26 @@ def query_network(
 
     q_clean = re.sub(r"[^\w\s+&+-]", " ", (query or "").strip())
     raw_tokens = [t.lower() for t in q_clean.split() if t.lower() not in _STOP_WORDS and len(t) >= 2]
+    # Deterministic theme-synonym & singularization expansion for Expertise Map ("who are my go-to people for <theme>")
+    _THEME_SYNONYMS: dict[str, tuple[str, ...]] = {
+        "semiconductors": ("osat", "pcb", "ems", "wire bonding", "power module"),
+        "semiconductor": ("osat", "pcb", "ems", "wire bonding", "power module"),
+        "electronics": ("ems", "pcb", "osat", "consumer electronics"),
+        "pharma": ("cdmo", "api", "usfda", "cgmp"),
+        "banking": ("bfsi", "nbfc", "nim", "casa", "hdfc"),
+        "chemicals": ("fluorochemicals", "specialty chemicals", "fluorination"),
+        "auto": ("ev", "powertrain", "adas", "cummins", "oem"),
+    }
+    expanded_tokens: list[str] = []
+    for t in raw_tokens:
+        if t not in expanded_tokens:
+            expanded_tokens.append(t)
+        if len(t) > 4 and t.endswith("s") and t[:-1] not in expanded_tokens:
+            expanded_tokens.append(t[:-1])
+        for syn in _THEME_SYNONYMS.get(t, ()):
+            if syn not in expanded_tokens:
+                expanded_tokens.append(syn)
+    raw_tokens = expanded_tokens
     q_phrase = " ".join(raw_tokens)
 
     # Identify if query targets specific ticker symbols
@@ -508,11 +598,15 @@ def query_network(
 
         strength = int(ct.get("strength", 3))
         days = _days_since(ct.get("last_contacted"), anchor)
-        recency_str = _recency_phrase(days)
+        recency_str = _recency_with_stale(days)
+        is_stale = _is_stale_tie(days)
         bridge_pair = bridge_map.get(ct["id"])
         degree = 2 if (strength <= 2 and bridge_pair is not None) else 1
 
-        total_score = score + strength * 6
+        # Deterministic strength x recency x tag/org match ranking (Section 9.2)
+        recency_weight = round(1.0 / (1.0 + days / 180.0), 3)
+        match_weight = max(1, score)
+        total_score = round(match_weight * strength * recency_weight, 2)
         af_primary = affs[0] if affs else {"org": "Network", "start": 2018, "end": 2024}
         overlap_org = af_primary.get("org", "Network")
         overlap_tenure = f"{af_primary.get('start', '?')}–{af_primary.get('end', 'present')}"
@@ -520,9 +614,10 @@ def query_network(
         if degree == 2 and bridge_pair is not None:
             bridge_ct, edge = bridge_pair
             b_days = _days_since(bridge_ct.get("last_contacted"), anchor)
-            b_recency = _recency_phrase(b_days)
+            b_recency = _recency_with_stale(b_days)
             t_days = _days_since(ct.get("last_contacted"), anchor)
-            t_recency_phrase = _recency_phrase(t_days)
+            t_recency_phrase = _recency_with_stale(t_days)
+            is_stale = _is_stale_tie(b_days) or _is_stale_tie(t_days)
             target_recency_label = f"target last contacted {t_recency_phrase.replace('spoke ', '')}"
             path_str = (
                 f"You → via {bridge_ct['name']} ({b_recency}); {target_recency_label} "
@@ -556,10 +651,18 @@ def query_network(
                 "strength": strength,
                 "degree": degree,
                 "last_contacted": ct.get("last_contacted"),
+                "days_since_contact": days,
                 "recency": recency_str,
+                "is_stale_tie": is_stale,
+                "stale_tie_label": "stale tie" if is_stale else None,
                 "expertise_tags": tags,
                 "affiliations": affs,
                 "score": total_score,
+                "ranking_breakdown": {
+                    "match_score": match_weight,
+                    "strength": strength,
+                    "recency_weight": recency_weight,
+                },
                 "path": path_str,
                 "inferred_label": INFERRED_SYNTHETIC_LABEL,
                 "why_reasons": reasons[:3],
@@ -645,22 +748,26 @@ def match_contacts_for_dossier(
         *,
         strength_val: int,
         recency_val: str,
+        days_val: int,
         degree_val: int,
         bridge_val: tuple[dict[str, Any], dict[str, Any]] | None,
     ) -> dict[str, Any]:
         tenure = f"{af.get('start', '?')}–{af.get('end', 'present')}"
         org = af.get("org") or sym
         first_name = contact["name"].split()[0]
+        rec_display = _recency_with_stale(days_val)
+        is_stale = _is_stale_tie(days_val)
         if degree_val == 2 and bridge_val is not None:
             b_ct, _edge = bridge_val
             b_days = _days_since(b_ct.get("last_contacted"), anchor)
-            target_recency_label = f"target last contacted {recency_val.replace('spoke ', '')}"
+            is_stale = is_stale or _is_stale_tie(b_days)
+            target_recency_label = f"target last contacted {rec_display.replace('spoke ', '')}"
             path_str = (
-                f"You → via {b_ct['name']} ({_recency_phrase(b_days)}); {target_recency_label} "
+                f"You → via {b_ct['name']} ({_recency_with_stale(b_days)}); {target_recency_label} "
                 f"→ {contact['name']} (2nd-degree · knows {org}, {tenure})"
             )
         else:
-            path_str = f"You → {contact['name']} (strength {strength_val}/5 · {recency_val}) → knows the company ({org}, {tenure})"
+            path_str = f"You → {contact['name']} (strength {strength_val}/5 · {rec_display}) → knows the company ({org}, {tenure})"
         return {
             "contact_id": contact["id"],
             "name": contact["name"],
@@ -668,7 +775,10 @@ def match_contacts_for_dossier(
             "city": contact.get("city"),
             "strength": strength_val,
             "degree": degree_val,
-            "recency": recency_val,
+            "recency": rec_display,
+            "days_since_contact": days_val,
+            "is_stale_tie": is_stale,
+            "stale_tie_label": "stale tie" if is_stale else None,
             "bucket": bucket,
             "org": org,
             "role": af.get("role"),
@@ -688,7 +798,7 @@ def match_contacts_for_dossier(
         affs = ct.get("affiliations") or []
         strength = int(ct.get("strength", 3))
         days = _days_since(ct.get("last_contacted"), anchor)
-        recency_str = _recency_phrase(days)
+        recency_str = _recency_with_stale(days)
         bridge_pair = bridge_map.get(ct["id"])
         degree = 2 if (strength <= 2 and bridge_pair is not None) else 1
 
@@ -706,6 +816,7 @@ def match_contacts_for_dossier(
                         f"how realistic is management's execution timeline on new capacity and margin guidance at {comp_name}?",
                         strength_val=strength,
                         recency_val=recency_str,
+                        days_val=days,
                         degree_val=degree,
                         bridge_val=bridge_pair,
                     )
@@ -728,6 +839,7 @@ def match_contacts_for_dossier(
                         f"how does {comp_name}'s pricing discipline and customer wallet share compare against {af.get('org')} on the ground?",
                         strength_val=strength,
                         recency_val=recency_str,
+                        days_val=days,
                         degree_val=degree,
                         bridge_val=bridge_pair,
                     )
@@ -749,6 +861,7 @@ def match_contacts_for_dossier(
                         f"what are you seeing on channel inventory, working-capital terms, and order visibility with {comp_name}?",
                         strength_val=strength,
                         recency_val=recency_str,
+                        days_val=days,
                         degree_val=degree,
                         bridge_val=bridge_pair,
                     )
@@ -766,6 +879,7 @@ def match_contacts_for_dossier(
                         f"how do you view sector-wide demand and regulatory tailwinds for {comp_name} ({sym}) over the next 4 quarters?",
                         strength_val=strength,
                         recency_val=recency_str,
+                        days_val=days,
                         degree_val=degree,
                         bridge_val=bridge_pair,
                     )

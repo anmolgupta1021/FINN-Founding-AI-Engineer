@@ -5,12 +5,12 @@
   "bucket": "holding",
   "is_lender": true,
   "ebitda_policy_note": "EBITDA not meaningful for lenders — dossier evaluates NII/Revenue, PPOP (Financing Profit), PBT, PAT, and Gross/Net NPA.",
-  "generated_at": "2026-11-09T10:53:04.885209+00:00",
+  "generated_at": "2026-11-10T08:35:28.827031+00:00",
   "freshness": "precomputed_primary_filings",
   "primary_sources_only": true,
   "screener_url": "https://www.screener.in/company/HDFCBANK/consolidated/",
-  "business_model_1l": "HDFC Bank (Private bank) — analyzed strictly from primary Annual Report & Concall Transcripts.",
-  "executive_summary": "Primary-source analysis across 5 filings (742 pages inspected).",
+  "business_model_1l": "HDFC Bank operates as a commercial bank providing wholesale banking, treasury, and retail banking services, leveraging customer deposits, shareholder equity, retained earnings, and external borrowings to ensure consistent returns and financial inclusion.",
+  "executive_summary": "HDFC Bank delivered robust balance sheet expansion in FY26 with total deposits rising by 14.4 per cent to H31,05,251 crore alongside a net profit increase of 10.9 per cent to `74,671.3 crore [C4]. Prudent risk management and solid asset quality kept net NPA down to 0.38 per cent while maintaining capital adequacy at 19.7 per cent [C5, C10].",
   "documents_manifest": [
     {
       "doc_id": "HDFCBANK_AR_LATEST",
@@ -305,167 +305,40 @@
       }
     ]
   },
-  "segment_mix": [],
-  "ar_highlights": [],
-  "promised_vs_delivered": [
+  "segment_mix": [
     {
-      "period_called": "HDFCBANK Concall Oct 2026 Transcript",
-      "is_latest_call": true,
-      "promised_vs_delivered_testable": false,
-      "topic": "Latest Quarter Forward Outlook",
-      "promised_guidance": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
-        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
-        "page": 9,
-        "cited_page": 9,
-        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
-      "delivered_citation": null,
-      "verdict": "Untestable (Latest Call)"
-    },
-    {
-      "period_called": "HDFCBANK Concall Jul 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
-        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
-        "page": 15,
-        "cited_page": 15,
-        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
-        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
-        "page": 3,
-        "cited_page": 3,
-        "verbatim_quote": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "HDFCBANK Concall Apr 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
-        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
-        "page": 10,
-        "cited_page": 10,
-        "verbatim_quote": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
-        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
-        "page": 10,
-        "cited_page": 10,
-        "verbatim_quote": "I think while this quarter it could be a 20% mix in terms of deposits, etcetera, but I guess these things then normalize and in the medium to long term, I think it's been more or less stable, which is what we have seen over the last 10 years.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "HDFCBANK Concall Mar 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "The board has accepted his resignation with appreciation for his guidance and contribution during his tenure.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_4_MAR_2026",
-        "doc_label": "HDFCBANK Concall Mar 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=56739132-e21e-4503-aeb6-85f4f53c1244.pdf",
-        "page": 3,
-        "cited_page": 3,
-        "verbatim_quote": "The board has accepted his resignation with appreciation for his guidance and contribution during his tenure.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue/NII ₹95132.0 Cr, Financing Profit (PPOP) ₹-5565.0 Cr, PAT ₹21537.0 Cr, GNPA None%.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
-        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
-        "page": 7,
-        "cited_page": 7,
-        "verbatim_quote": "And you'll see that the average of the retail versus wholesale is about a percentage point or 2 different in this quarter, which in our earnings deck, you will notice that it is 82% against 84% or something, 82%, 83% against 84%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    }
-  ],
-  "numbers_vs_narrative": [
-    {
-      "check_title": "NII / Revenue & PPOP Trajectory vs Lender Guidance",
-      "numbers_observed": "5Y Revenue/NII CAGR 26.5%, PAT CAGR 20.0%; latest annual PPOP ₹-40511.0 Cr (Margin -12.0%, EBITDA not meaningful for lenders).",
-      "narrative_claimed": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
-      "verdict": "Aligned",
+      "segment": "Retail Banking",
+      "share_or_metric": "Retail Advances under Management grew to `16,14,941 crore witnessing a growth of about 7 per cent year-on-year.",
       "citation": {
         "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
-        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
-        "page": 9,
-        "cited_page": 9,
-        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 280,
+        "cited_page": 280,
+        "verbatim_quote": "The Bank's Retail Assets are based on three core pillars: > Maintaining Pristine Portfolio Quality > Strong Digital Offering and > Optimal Risk Pricing The Bank's Retail Advances under Management grew to `16,14,941 crore witnessing a growth of about 7 per cent year-on-year.",
+        "match_score": 98.9,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "ar_highlights": [
+    {
+      "topic": "Balance Sheet",
+      "claim": "Total balance sheet size increased by 11.6 per cent to H43,64,886 crore from H39,10,199 crore on March 31, 2025.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Your Bank’s total balance sheet size increased by 11.6 per cent to H43,64,886 crore from H 39,10,199 crore on March 31, 2025.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -474,19 +347,480 @@
       }
     },
     {
-      "check_title": "Asset Quality (GNPA / NNPA) & Credit Cost Discipline",
-      "numbers_observed": "Recent quarterly GNPA None% / NNPA None%; ROE 14.0%.",
-      "narrative_claimed": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
-      "verdict": "Aligned",
+      "topic": "Advances",
+      "claim": "Advances stood at H29,37,166 crore, representing an increase of 12.1 per cent over March 31, 2025.",
       "citation": {
         "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
-        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Advances stood at H29,37,166 crore, representing an increase of 12.1 per cent over March 31, 2025.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Deposits",
+      "claim": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Asset Quality",
+      "claim": "Gross Non-Performing Assets stood at 1.15 per cent and Net NPA ratio stood at 0.38 per cent.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 280,
+        "cited_page": 280,
+        "verbatim_quote": "Net NPA ratio stood at 0.38 per cent as against 0.43 per cent in the previous year.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "topic": "Margin",
+      "claim": "Net Interest Margin (as percentage of average assets) was at 3.34 per cent.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Net interest margin (as percentage of average assets) was at 3.34 per cent.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "promised_vs_delivered": [
+    {
+      "claim_id": 1,
+      "period_called": "HDFCBANK Concall Apr 2026 Transcript",
+      "fiscal_period": "FY27",
+      "scope": "consolidated",
+      "condition": null,
+      "unit": "%",
+      "is_latest_call": false,
+      "promised_vs_delivered_testable": false,
+      "has_verdict": false,
+      "topic": "Liquidity Coverage Ratio (LCR)",
+      "speaker": "Srinivasan Vaidyanathan",
+      "promised_guidance": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%.",
+      "promised_citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
         "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
-        "page": 15,
-        "cited_page": 15,
-        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%.",
+        "match_score": 98.9,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      },
+      "delivered_summary": "2 of 4 quarters filed (Jun 2026, Sep 2026); H1 revenue = ₹185,707 Cr.",
+      "delivered_citation": null,
+      "verdict": "No verdict (period incomplete)",
+      "one_line_explanation": "Fixed template: FY27 is incomplete (2 of 4 quarters filed); showing progress only without a verdict."
+    }
+  ],
+  "reported_vs_stated": [
+    {
+      "quarter_referenced": "Sep 2026",
+      "metric": "Gross NPA",
+      "stated_value": 1.11,
+      "unit": "%",
+      "filed_value": null,
+      "variance": null,
+      "variance_pct": null,
+      "status": "Metric not disclosed in Screener row",
+      "label": "stated vs filed",
+      "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+      "speaker": "Sashidhar Jagdishan",
+      "verbatim_quote": "Our asset quality remains pristine, with GNPA at 1.11%, 13 basis points lower than year...",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our asset quality remains pristine, with GNPA at 1.11%, 13 basis points lower than year...",
+        "match_score": 96.7,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "quarter_referenced": "Mar 2026",
+      "metric": "Gross NPA",
+      "stated_value": 1.15,
+      "unit": "%",
+      "filed_value": null,
+      "variance": null,
+      "variance_pct": null,
+      "status": "Metric not disclosed in Screener row",
+      "label": "stated vs filed",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "speaker": "Sashidhar Jagdishan",
+      "verbatim_quote": "Our asset quality is extremely healthy at 1.15% gross NPAs.",
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+        "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
+        "page": 4,
+        "cited_page": 4,
+        "verbatim_quote": "Our asset quality is extremely healthy at 1.15% gross NPAs.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "concall_extraction_telemetry": [
+    {
+      "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+      "label": "HDFCBANK Concall Oct 2026 Transcript",
+      "is_latest_call": true,
+      "claims_extracted": 1,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 1,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": [
+        {
+          "metric": "Liquidity Coverage Ratio (LCR)",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "%",
+          "fiscal_period": "FY27",
+          "page": 15,
+          "raw_quote": "Yes, we would like to operate between 110 and 120, which we have told you over last few years, somewhere probably in the middle, 115.",
+          "trimmed_quote": "Yes, we would like to operate between 110 and 120, which we have told you over last few years, somewhere probably in the middle, 115.",
+          "status": "dropped_missing_unit",
+          "reason": "unit_not_in_quote"
+        }
+      ]
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+      "label": "HDFCBANK Concall Jul 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 1,
+      "dropped_by_verifier": 1,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": [
+        {
+          "metric": "Liquidity Coverage Ratio (LCR)",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "%",
+          "fiscal_period": "FY27",
+          "page": 15,
+          "raw_quote": "Yes, we would like to operate between 110 and 120, which we have told you over last few years, somewhere probably in the middle, 115.",
+          "trimmed_quote": "Yes, we would like to operate between 110 and 120, which we have told you over last few years, somewhere probably in the middle, 115.",
+          "status": "dropped_by_verifier",
+          "reason": "numbers_mismatch"
+        }
+      ]
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "label": "HDFCBANK Concall Apr 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 1,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 1,
+      "raw_candidates": [
+        {
+          "metric": "Liquidity Coverage Ratio (LCR)",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "%",
+          "fiscal_period": "FY27",
+          "page": 9,
+          "raw_quote": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%.",
+          "trimmed_quote": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%.",
+          "status": "kept",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "doc_id": "HDFCBANK_CONCALL_4_MAR_2026",
+      "label": "HDFCBANK Concall Mar 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 0,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": []
+    }
+  ],
+  "citation_pool": [
+    {
+      "citation_id": 1,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 280,
+      "verbatim_quote": "The Bank's Retail Assets are based on three core pillars: > Maintaining Pristine Portfolio Quality > Strong Digital Offering and > Optimal Risk Pricing The Bank's Retail Advances under Management grew to `16,14,941 crore witnessing a growth of about 7 per cent year-on-year."
+    },
+    {
+      "citation_id": 2,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 41,
+      "verbatim_quote": "Your Bank’s total balance sheet size increased by 11.6 per cent to H43,64,886 crore from H 39,10,199 crore on March 31, 2025."
+    },
+    {
+      "citation_id": 3,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 41,
+      "verbatim_quote": "Advances stood at H29,37,166 crore, representing an increase of 12.1 per cent over March 31, 2025."
+    },
+    {
+      "citation_id": 4,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 41,
+      "verbatim_quote": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore."
+    },
+    {
+      "citation_id": 5,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 280,
+      "verbatim_quote": "Net NPA ratio stood at 0.38 per cent as against 0.43 per cent in the previous year."
+    },
+    {
+      "citation_id": 6,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 41,
+      "verbatim_quote": "Net interest margin (as percentage of average assets) was at 3.34 per cent."
+    },
+    {
+      "citation_id": 7,
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "page": 9,
+      "verbatim_quote": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%."
+    },
+    {
+      "citation_id": 8,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 468,
+      "verbatim_quote": "The Bank contributed ` 809.03 crore (previous year: ` 750.43 crore) to the provident fund, ` 51.30 crore (previous year: ` 21.00 crore) to the National Pension Scheme (for employees who opted) and ` 97.94 crore (previous year: ` 95.95 crore) to the superannuation plan."
+    },
+    {
+      "citation_id": 9,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 272,
+      "verbatim_quote": "Net Interest Income Non-Interest Income 13.6% Net Revenue Distribution (I Cr) 4.9% FY 2024-25 FY 2025-26 1,22,670 45,632 62,533 1,28,686 Net Profit increased by 10.9 per cent to ` 74,671.3 crore from ` 67,347.4 crore."
+    },
+    {
+      "citation_id": 10,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 34,
+      "verbatim_quote": "STRONG FINANCIALS J29,37,166 crore ADVANCES J31,05,250 crore DEPOSITS 1.15% GROSS NPA 19.7% CAPITAL ADEQUACY RATIO 1.94% RETURN ON AVERAGE ASSETS Prudent risk management and strong capital buffers enable consistent financial performance."
+    },
+    {
+      "citation_id": 11,
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "page": 8,
+      "verbatim_quote": "At least if you see through large part of FY26, the nominal GDP growth expected was somewhere around the 9%, 9.5%, so one consensus until the large part of the year was a system credit growth of around 10.5% to 11.5%."
+    },
+    {
+      "citation_id": 12,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 280,
+      "verbatim_quote": "After providing for Income Tax of `20,497.4 crore, Net Profit increased by 10.9 per cent to ` 74,671.3 crore from ` 67,347.4 crore."
+    },
+    {
+      "citation_id": 13,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 280,
+      "verbatim_quote": "NET PROFIT `H 74,671.3 crore 10.9 PER CENT INCREASE IN THE FINANCIAL YEAR 2025-26 As on March 31, 2026, your Bank’s Total Balance Sheet stood at `43,64,886 crore, an increase of 11.6 per cent over `39,10,199 crore on March 31, 2025."
+    },
+    {
+      "citation_id": 14,
+      "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+      "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+      "page": 15,
+      "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%."
+    },
+    {
+      "citation_id": 15,
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "page": 3,
+      "verbatim_quote": "Net income growth clocked at 11%, similar to the last financial year, whilst EPS growth of 10% versus 3% last year."
+    },
+    {
+      "citation_id": 16,
+      "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
+      "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
+      "page": 4,
+      "verbatim_quote": "September'26 EOP loan growth has grown 23.5% year-on-year compared to 17% to 18% year-on-year growth levels seen in the last few quarters."
+    },
+    {
+      "citation_id": 17,
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "page": 8,
+      "verbatim_quote": "It is something that we have to navigate, but it's not too far away from the momentum we have seen from a 5.4% growth in FY25 to a 12% growth."
+    },
+    {
+      "citation_id": 18,
+      "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
+      "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
+      "page": 10,
+      "verbatim_quote": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%."
+    },
+    {
+      "citation_id": 19,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 280,
+      "verbatim_quote": "It stood at `8,88,670 crore as compared to `8,35,656 crore in FY 2024-25."
+    },
+    {
+      "citation_id": 20,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 41,
+      "verbatim_quote": "MESSAGE FROM THE MD & CEO Net revenue (net interest income plus other income) for the year ended March 31, 2026, was at H1,91,218.6 crore as against H1,68,302.4 crore in the previous year."
+    },
+    {
+      "citation_id": 21,
+      "doc_id": "HDFCBANK_AR_LATEST",
+      "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+      "page": 279,
+      "verbatim_quote": "FINANCIAL PERFORMANCE The financial performance of your Bank for the year ended March 31, 2026 remained healthy with Total Net Revenue (Net Interest Income plus Other Income) rising 13.6 per cent to `1,91,218.6 crore from `1,68,302.4 crore in the previous year."
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "Deposit Growth vs Balance Sheet Expansion",
+      "numbers_observed": "Total deposits rose 14.4% to H31,05,251 crore while balance sheet increased 11.6% to H43,64,886 crore.",
+      "narrative_claimed": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore [C4].",
+      "verdict": "Aligned",
+      "citation_id": 4,
+      "citation_ids": [
+        4
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Asset Quality vs Portfolio Quality",
+      "numbers_observed": "Net NPA stood at 0.38% against 0.43% previously; Gross NPA at 1.15%.",
+      "narrative_claimed": "Net NPA ratio stood at 0.38 per cent as against 0.43 per cent in the previous year [C5].",
+      "verdict": "Aligned",
+      "citation_id": 5,
+      "citation_ids": [
+        5
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 280,
+        "cited_page": 280,
+        "verbatim_quote": "Net NPA ratio stood at 0.38 per cent as against 0.43 per cent in the previous year.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Profitability and Net Interest Margin",
+      "numbers_observed": "Net profit increased to `74,671.3 crore; NIM at 3.34%.",
+      "narrative_claimed": "Net interest margin (as percentage of average assets) was at 3.34 per cent [C6].",
+      "verdict": "Aligned",
+      "citation_id": 6,
+      "citation_ids": [
+        6
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Net interest margin (as percentage of average assets) was at 3.34 per cent.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -497,17 +831,21 @@
   ],
   "bull_case": [
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #1 (HDFCBANK Concall Oct 2026 Transcript)",
-      "thesis": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+      "title": "Strong Deposit Franchise",
+      "thesis": "Total deposits expanded significantly by 14.4 per cent to reach H31,05,251 crore, demonstrating robust retail liability mobilization [C4].",
+      "citation_id": 4,
+      "citation_ids": [
+        4
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
-        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
-        "page": 9,
-        "cited_page": 9,
-        "verbatim_quote": "But overall, at an aggregate level, we did have a deposit growth of Rs 1,57,000 crores, and we had a loan growth of Rs 1,58,000 crores in this quarter.",
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 41,
+        "cited_page": 41,
+        "verbatim_quote": "Total Deposits rose by 14.4 per cent to H31,05,251 crore from H27,14,715 crore.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -516,17 +854,21 @@
       }
     },
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #2 (HDFCBANK Concall Jul 2026 Transcript)",
-      "thesis": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+      "title": "Pristine Asset Quality",
+      "thesis": "Net NPA ratio improved to 0.38 per cent from 0.43 per cent in the previous year, underscoring resilient credit underwriting [C5].",
+      "citation_id": 5,
+      "citation_ids": [
+        5
+      ],
       "citation": {
         "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
-        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
-        "page": 15,
-        "cited_page": 15,
-        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "doc_id": "HDFCBANK_AR_LATEST",
+        "doc_label": "HDFCBANK Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7d621500-082a-4342-b98d-ba677d3890c5.pdf",
+        "page": 280,
+        "cited_page": 280,
+        "verbatim_quote": "Net NPA ratio stood at 0.38 per cent as against 0.43 per cent in the previous year.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -535,29 +877,12 @@
       }
     },
     {
-      "title": "Verified Primary-Filing Growth & Execution Driver #3 (HDFCBANK Concall Oct 2026 Transcript)",
-      "thesis": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
-      "citation": {
-        "verified": true,
-        "doc_id": "HDFCBANK_CONCALL_1_OCT_2026",
-        "doc_label": "HDFCBANK Concall Oct 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
-        "page": 3,
-        "cited_page": 3,
-        "verbatim_quote": "We added about 1.7 million liability relationships in the second quarter, which is 25% higher than Q1 and 33% higher than the fourth quarter of last year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
-  "bear_case": [
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #1 (HDFCBANK Annual Report 2026 (Annual Report))",
-      "thesis": "STRONG FINANCIALS J29,37,166 crore ADVANCES J31,05,250 crore DEPOSITS 1.15% GROSS NPA 19.7% CAPITAL ADEQUACY RATIO 1.94% RETURN ON AVERAGE ASSETS Prudent risk management and strong capital buffers enable consistent financial performance.",
+      "title": "Healthy Capital Buffers",
+      "thesis": "The bank maintains a strong capital adequacy ratio of 19.7 per cent alongside a return on average assets of 1.94 per cent [C10].",
+      "citation_id": 10,
+      "citation_ids": [
+        10
+      ],
       "citation": {
         "verified": true,
         "doc_id": "HDFCBANK_AR_LATEST",
@@ -573,19 +898,25 @@
         "reason": null,
         "status": "verified"
       }
-    },
+    }
+  ],
+  "bear_case": [
     {
-      "title": "Filing-Disclosed Operational / Margin Risk #2 (HDFCBANK Concall Apr 2026 Transcript)",
-      "thesis": "Despite the drop in NIMs, the return on assets continue to be stable at 1.9% due to cost efficiencies with cost-to-income declining from 40.5% to 39.5% on a core basis and focus on quality growth reflecting in lower credit costs.",
+      "title": "Time Deposit Concentration Pressure",
+      "thesis": "Time deposits grew at a faster pace of 15.5 per cent year-on-year compared to total deposits growth of 14.4 per cent [C18].",
+      "citation_id": 18,
+      "citation_ids": [
+        18
+      ],
       "citation": {
         "verified": true,
         "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
         "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
-        "page": 3,
-        "cited_page": 3,
-        "verbatim_quote": "Despite the drop in NIMs, the return on assets continue to be stable at 1.9% due to cost efficiencies with cost-to-income declining from 40.5% to 39.5% on a core basis and focus on quality growth reflecting in lower credit costs.",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "And so, within the deposit, when there is a higher propensity for time deposit, which we have seen, the time deposit rate of growth was 15.5% year-on-year when you see now when the total deposit rate of growth was 14.4%, the time deposit was 15.5%.",
         "match_score": 100.0,
         "numbers_verified": true,
         "missing_numbers": [],
@@ -594,18 +925,45 @@
       }
     },
     {
-      "title": "Filing-Disclosed Operational / Margin Risk #3 (HDFCBANK Concall Apr 2026 Transcript)",
-      "thesis": "Seshadri, if you look at the cost growth that we have, we have seen that at a level almost at, call it, 6.5%, 7% or so is the full year, right?",
+      "title": "Credit Card Book Growth Lag",
+      "thesis": "While credit card spend growth remained robust at 13 per cent, the underlying book growth lagged at 2 to 3 per cent [C14].",
+      "citation_id": 14,
+      "citation_ids": [
+        14
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "HDFCBANK_CONCALL_2_JUL_2026",
+        "doc_label": "HDFCBANK Concall Jul 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=509cc499-6cb1-4d9f-8de9-9c7de6c70eef.pdf",
+        "page": 15,
+        "cited_page": 15,
+        "verbatim_quote": "Even now when you look at the book growth on cards is 2.3% or something, while the spends growth at 13%, but the book grows at 2% to 3%.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "LCR Management Pressures",
+      "thesis": "Management noted ongoing efforts to navigate liquidity coverage ratios within an intended band of 110% to 120% [C7].",
+      "citation_id": 7,
+      "citation_ids": [
+        7
+      ],
       "citation": {
         "verified": true,
         "doc_id": "HDFCBANK_CONCALL_3_APR_2026",
         "doc_label": "HDFCBANK Concall Apr 2026 Transcript",
         "doc_type": "concall_transcript",
         "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a77abbbb-954a-4221-8240-67bf0da6ba1c.pdf",
-        "page": 11,
-        "cited_page": 11,
-        "verbatim_quote": "Seshadri, if you look at the cost growth that we have, we have seen that at a level almost at, call it, 6.5%, 7% or so is the full year, right?",
-        "match_score": 100.0,
+        "page": 9,
+        "cited_page": 9,
+        "verbatim_quote": "Kunai, in the past, we have mentioned that our endeavor for LCR is to be between 110% and 120%.",
+        "match_score": 98.9,
         "numbers_verified": true,
         "missing_numbers": [],
         "reason": null,
@@ -615,9 +973,14 @@
   ],
   "unanswered_diligence_questions": [
     {
-      "topic": "Customer-level margin concentration & contract repricing lag",
+      "topic": "Granular Sectoral NPA Breakdown",
       "status": "not found in filings",
-      "question_for_management_or_network": "Customer-by-customer gross margin contribution is not found in filings; check pass-through clauses with ex-company or competitor contacts."
+      "question_for_management_or_network": "What is the specific gross NPA breakdown across newly acquired corporate segments versus legacy retail portfolios?"
+    },
+    {
+      "topic": "Marginal Cost of Funds Impact",
+      "status": "not found in filings",
+      "question_for_management_or_network": "How will the shift toward 15.5% time deposit growth impact net interest margins over the next four quarters?"
     }
   ],
   "network": {
@@ -762,7 +1125,7 @@
         "role": "SVP — Overseas Banking Compliance & Data Privacy",
         "tenure": "2015–2024",
         "relation_label": "sector specialist (ICICI Bank Limited)",
-        "path": "You → Nandini Subramanian (strength 5/5 · spoke 5 wks ago) → Arvind Raghavan (2nd-degree · knows ICICI Bank Limited, 2015–2024)",
+        "path": "You → via Nandini Subramanian (spoke 5 wks ago); target last contacted 21 mos ago → Arvind Raghavan (2nd-degree · knows ICICI Bank Limited, 2015–2024)",
         "expertise_tags": [
           "overseas banking compliance",
           "DPDP Act",
@@ -780,9 +1143,120 @@
     "total_documents_verified": 5,
     "concall_transcripts_verified": 4,
     "latest_call_marked_untestable": true,
-    "total_verified_citations": 15,
-    "dropped_citations_count": 0,
-    "min_rapidfuzz_score": 100.0,
+    "total_verified_citations": 21,
+    "dropped_uncited_sentences": 0,
+    "min_rapidfuzz_score": 98.9,
     "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
-  }
+  },
+  "balance_sheet_panel": {
+    "symbol": "HDFCBANK",
+    "is_lender": true,
+    "source": "Screener #balance-sheet & #ratios (deterministic)",
+    "latest_period": "Sep 2026",
+    "borrowings_cr": 594144.0,
+    "equity_cr": 603469.0,
+    "debt_to_equity": 0.98,
+    "total_assets_cr": 5165842.0,
+    "working_capital_days": null,
+    "working_capital_period": null,
+    "series": [
+      {
+        "period": "Mar 2025",
+        "equity_cr": 521789.0,
+        "borrowings_cr": 634606.0,
+        "debt_to_equity": 1.22,
+        "deposits_cr": 2710898.0,
+        "total_assets_cr": 4392110.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": 14.0
+      },
+      {
+        "period": "Mar 2026",
+        "equity_cr": 586059.0,
+        "borrowings_cr": 588485.0,
+        "debt_to_equity": 1.0,
+        "deposits_cr": 3099638.0,
+        "total_assets_cr": 4907701.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": 14.0
+      },
+      {
+        "period": "Sep 2026",
+        "equity_cr": 603469.0,
+        "borrowings_cr": 594144.0,
+        "debt_to_equity": 0.98,
+        "deposits_cr": 3324146.0,
+        "total_assets_cr": 5165842.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": null
+      }
+    ],
+    "deposits_cr": 3324146.0,
+    "gross_npa_pct": 1.15,
+    "net_npa_pct": 0.38,
+    "car_pct": 19.7,
+    "car_source": "AR verified quote",
+    "npa_source": "AR verified quote"
+  },
+  "llm_provenance": {
+    "symbol": "HDFCBANK",
+    "total_calls": 8,
+    "live_calls": 4,
+    "cache_hits": 4,
+    "models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "all_models_seen": [
+      "gemini-3.5-flash-lite",
+      "gemini-3.6-flash"
+    ],
+    "in_tokens": 58157,
+    "out_tokens": 3984,
+    "thinking_tokens": 4573,
+    "cost_usd": 0.018982,
+    "cost_inr": 1.6325,
+    "latest_run_tasks": [
+      {
+        "task": "pull_extract_ar_hdfcbank",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_ar_v1",
+        "cache_hit": true,
+        "in_tokens": 13688,
+        "out_tokens": 868,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_extract_concalls_hdfcbank",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_cc_v4",
+        "cache_hit": true,
+        "in_tokens": 34154,
+        "out_tokens": 836,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_reasoning_hdfcbank",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_reasoning_v4",
+        "cache_hit": false,
+        "in_tokens": 5897,
+        "out_tokens": 1073,
+        "thinking_tokens": 1561
+      }
+    ]
+  },
+  "analysis_generated": true,
+  "analysis_header": "Shown: Financial trajectory, Balance Sheet panel, verified Segment Mix, Concall Guidance (code-computed verdicts), Stated-vs-Filed checks, Cited Numbers-vs-Narrative & Bull/Bear, Network · Pending: Unverified claims omitted; incomplete fiscal periods show progress only."
 }

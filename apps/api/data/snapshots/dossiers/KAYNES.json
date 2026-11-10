@@ -1,0 +1,1258 @@
+{
+  "symbol": "KAYNES",
+  "company_name": "Kaynes Technology",
+  "sector": "EMS / electronics",
+  "bucket": "holding",
+  "is_lender": false,
+  "analysis_generated": true,
+  "analysis_header": "Shown: Financial trajectory, Balance Sheet panel, verified Segment Mix, Concall Guidance (code-computed verdicts), Stated-vs-Filed checks, Cited Numbers-vs-Narrative & Bull/Bear, Network · Pending: Unverified claims omitted; untested future periods show progress only.",
+  "llm_provenance": {
+    "symbol": "KAYNES",
+    "total_calls": 3,
+    "live_calls": 3,
+    "cache_hits": 0,
+    "models_used": [
+      "gemini-3.5-flash-lite",
+      "gemini-3.6-flash"
+    ],
+    "all_models_seen": [
+      "gemini-3.5-flash-lite",
+      "gemini-3.6-flash"
+    ],
+    "in_tokens": 49641,
+    "out_tokens": 3022,
+    "thinking_tokens": 3506,
+    "cost_usd": 0.018672,
+    "cost_inr": 1.6057,
+    "latest_run_tasks": [
+      {
+        "task": "pull_extract_ar_kaynes",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_ar_v1",
+        "cache_hit": false,
+        "in_tokens": 10220,
+        "out_tokens": 636,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_extract_concalls_kaynes",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "pull_cc_v4",
+        "cache_hit": false,
+        "in_tokens": 34188,
+        "out_tokens": 1106,
+        "thinking_tokens": 0
+      },
+      {
+        "task": "pull_reasoning_kaynes",
+        "model": "gemini-3.6-flash",
+        "prompt_version": "pull_reasoning_v4",
+        "cache_hit": false,
+        "in_tokens": 5233,
+        "out_tokens": 1280,
+        "thinking_tokens": 3506
+      }
+    ]
+  },
+  "ebitda_policy_note": "Operating EBITDA is marked 'derived' (cross-checked against Screener Operating Profit).",
+  "generated_at": "2026-11-10T09:12:27.096403+00:00",
+  "freshness": "precomputed_primary_filings",
+  "primary_sources_only": true,
+  "screener_url": "https://www.screener.in/company/KAYNES/consolidated/",
+  "business_model_1l": "Kaynes Technology India Limited is a leading end-to-end IoT solutions-integrated electronics manufacturing company in India, offering comprehensive capabilities across the entire ESDM value chain from new product design and engineering to manufacturing and lifecycle support.",
+  "executive_summary": "Kaynes Technology has sustained robust top-line growth with revenues compounding at a 50.5% CAGR to ₹3,626 Cr in FY26, alongside steady derived operating EBITDA margin expansion to 16.0%. However, aggressive operational scaling and capital spending have severely constrained cash generation, leading to a cumulative 5-year CFO of -₹615 Cr (-62.9% CFO/PAT conversion) and a decline in ROCE from 25.0% to 13.0%.",
+  "documents_manifest": [
+    {
+      "doc_id": "KAYNES_AR_LATEST",
+      "label": "KAYNES Annual Report 2026 (Annual Report)",
+      "doc_type": "annual_report",
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+      "size_kb": 15030.2,
+      "page_count": 321,
+      "non_empty_pages": 319,
+      "doctype_verified": true
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+      "label": "KAYNES Concall Aug 2026 Transcript",
+      "date_label": "Aug 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": true,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e8d82234-f369-467f-a76f-75bb2747aaa1.pdf",
+      "size_kb": 627.9,
+      "page_count": 20,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 20,
+        "total_chars": 55032,
+        "speaker_turn_count": 93,
+        "distinct_speaker_count": 19,
+        "sample_speakers": [
+          "H.O & Regd Office",
+          "Telephone No",
+          "Enclosed",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Nikhil Kandoi",
+          "Ramesh Kunhikannan",
+          "N. Muthukumar"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 30,
+        "header_cue_hits": 12,
+        "is_latest_call": true,
+        "promised_vs_delivered_testable": false,
+        "promised_vs_delivered_status": "untestable_latest_call",
+        "promised_vs_delivered_note": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed."
+      }
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "label": "KAYNES Concall May 2026 Transcript",
+      "date_label": "May 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c2aa16ac-08ab-430a-819a-833f94c09dde.pdf",
+      "size_kb": 633.9,
+      "page_count": 20,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 20,
+        "total_chars": 58630,
+        "speaker_turn_count": 79,
+        "distinct_speaker_count": 17,
+        "sample_speakers": [
+          "H.O & Regd Office",
+          "Telephone No",
+          "Enclosed",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Nikhil Kandoi",
+          "Ramesh Kunhikannan",
+          "N. Muthukumar"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 26,
+        "header_cue_hits": 9,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_3_FEB_2026",
+      "label": "KAYNES Concall Feb 2026 Transcript",
+      "date_label": "Feb 2026",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7fcb06f1-08f9-4ebd-a6ac-783e8abfda40.pdf",
+      "size_kb": 513.1,
+      "page_count": 19,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 19,
+        "total_chars": 51138,
+        "speaker_turn_count": 112,
+        "distinct_speaker_count": 22,
+        "sample_speakers": [
+          "H.O & Regd Off",
+          "Telephone No",
+          "Enclosed",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Deepak Agarwal",
+          "Ramesh Kunhikannan",
+          "Jairam Sampath"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 36,
+        "header_cue_hits": 6,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_4_DEC_2025",
+      "label": "KAYNES Concall Dec 2025 Transcript",
+      "date_label": "Dec 2025",
+      "doc_type": "concall_transcript",
+      "is_latest_call": false,
+      "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d42ff5a9-4c9e-4163-ae33-ed915881baa4.pdf",
+      "size_kb": 588.3,
+      "page_count": 22,
+      "doctype_check": {
+        "is_transcript": true,
+        "doc_subtype": "verbatim_concall_transcript",
+        "page_count": 22,
+        "total_chars": 64110,
+        "speaker_turn_count": 108,
+        "distinct_speaker_count": 20,
+        "sample_speakers": [
+          "H.O & Regd Office",
+          "Telephone No",
+          "Enclosed",
+          "MANAGEMENT",
+          "MODERATOR",
+          "Nikhil Kandoi",
+          "Ramesh Kunhikannan",
+          "Jairam Sampath"
+        ],
+        "has_qa": true,
+        "qa_cue_hits": 32,
+        "header_cue_hits": 3,
+        "is_latest_call": false,
+        "promised_vs_delivered_testable": true,
+        "promised_vs_delivered_status": "testable",
+        "promised_vs_delivered_note": "Testable against subsequent reported quarterly results."
+      }
+    }
+  ],
+  "financial_trajectory": {
+    "symbol": "KAYNES",
+    "is_lender": false,
+    "summary_stats": {
+      "is_lender": false,
+      "sector_accounting_mode": "operating_ebitda_derived",
+      "ebitda_label": "Derived Operating EBITDA (Screener OPM cross-check)",
+      "revenue_cagr_pct": 50.5,
+      "pat_cagr_pct": 71.6,
+      "cumulative_5y_cfo_cr": -615.0,
+      "cumulative_5y_pat_cr": 977.0,
+      "cumulative_5y_cfo_to_pat_pct": -62.9
+    },
+    "annual_5y": [
+      {
+        "period": "Mar 2022",
+        "revenue_cr": 706.0,
+        "ebitda_derived_cr": 95.0,
+        "ebitda_margin_derived_pct": 13.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 59.0,
+        "pat_cr": 42.0,
+        "cfo_cr": 21.0,
+        "cfo_to_pat_pct": 50.0,
+        "roce_pct": 25.0
+      },
+      {
+        "period": "Mar 2023",
+        "revenue_cr": 1126.0,
+        "ebitda_derived_cr": 170.0,
+        "ebitda_margin_derived_pct": 15.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 126.0,
+        "pat_cr": 95.0,
+        "cfo_cr": -42.0,
+        "cfo_to_pat_pct": -44.2,
+        "roce_pct": 22.0
+      },
+      {
+        "period": "Mar 2024",
+        "revenue_cr": 1805.0,
+        "ebitda_derived_cr": 257.0,
+        "ebitda_margin_derived_pct": 14.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 232.0,
+        "pat_cr": 183.0,
+        "cfo_cr": 88.0,
+        "cfo_to_pat_pct": 48.1,
+        "roce_pct": 15.0
+      },
+      {
+        "period": "Mar 2025",
+        "revenue_cr": 2722.0,
+        "ebitda_derived_cr": 416.0,
+        "ebitda_margin_derived_pct": 15.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 372.0,
+        "pat_cr": 293.0,
+        "cfo_cr": -82.0,
+        "cfo_to_pat_pct": -28.0,
+        "roce_pct": 14.0
+      },
+      {
+        "period": "Mar 2026",
+        "revenue_cr": 3626.0,
+        "ebitda_derived_cr": 578.0,
+        "ebitda_margin_derived_pct": 16.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 504.0,
+        "pat_cr": 364.0,
+        "cfo_cr": -600.0,
+        "cfo_to_pat_pct": -164.8,
+        "roce_pct": 13.0
+      }
+    ],
+    "quarterly_recent": [
+      {
+        "quarter": "Mar 2025",
+        "revenue_cr": 984.0,
+        "ebitda_derived_cr": 168.0,
+        "ebitda_margin_derived_pct": 17.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 142.0,
+        "pat_cr": 116.0
+      },
+      {
+        "quarter": "Jun 2025",
+        "revenue_cr": 673.0,
+        "ebitda_derived_cr": 113.0,
+        "ebitda_margin_derived_pct": 17.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 96.0,
+        "pat_cr": 75.0
+      },
+      {
+        "quarter": "Sep 2025",
+        "revenue_cr": 906.0,
+        "ebitda_derived_cr": 148.0,
+        "ebitda_margin_derived_pct": 16.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 152.0,
+        "pat_cr": 121.0
+      },
+      {
+        "quarter": "Dec 2025",
+        "revenue_cr": 804.0,
+        "ebitda_derived_cr": 119.0,
+        "ebitda_margin_derived_pct": 15.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 116.0,
+        "pat_cr": 77.0
+      },
+      {
+        "quarter": "Mar 2026",
+        "revenue_cr": 1243.0,
+        "ebitda_derived_cr": 194.0,
+        "ebitda_margin_derived_pct": 16.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 140.0,
+        "pat_cr": 91.0
+      },
+      {
+        "quarter": "Jun 2026",
+        "revenue_cr": 946.0,
+        "ebitda_derived_cr": 148.0,
+        "ebitda_margin_derived_pct": 16.0,
+        "ebitda_status": "derived",
+        "pbt_cr": 88.0,
+        "pat_cr": 56.0
+      }
+    ]
+  },
+  "balance_sheet_panel": {
+    "symbol": "KAYNES",
+    "is_lender": false,
+    "source": "Screener #balance-sheet & #ratios (deterministic)",
+    "latest_period": "Mar 2026",
+    "borrowings_cr": 913.0,
+    "equity_cr": 4748.0,
+    "debt_to_equity": 0.19,
+    "total_assets_cr": 6894.0,
+    "working_capital_days": 133.0,
+    "working_capital_period": "Mar 2026",
+    "series": [
+      {
+        "period": "Mar 2024",
+        "equity_cr": 2487.0,
+        "borrowings_cr": 323.0,
+        "debt_to_equity": 0.13,
+        "deposits_cr": null,
+        "total_assets_cr": 3265.0,
+        "working_capital_days": 66.0,
+        "cash_conversion_cycle_days": 123.0,
+        "debtor_days": 72.0,
+        "inventory_days": 150.0,
+        "days_payable": 99.0,
+        "roce_or_roe_pct": 15.0
+      },
+      {
+        "period": "Mar 2025",
+        "equity_cr": 2840.0,
+        "borrowings_cr": 903.0,
+        "debt_to_equity": 0.32,
+        "deposits_cr": null,
+        "total_assets_cr": 4641.0,
+        "working_capital_days": -7.0,
+        "cash_conversion_cycle_days": 102.0,
+        "debtor_days": 77.0,
+        "inventory_days": 156.0,
+        "days_payable": 131.0,
+        "roce_or_roe_pct": 14.0
+      },
+      {
+        "period": "Mar 2026",
+        "equity_cr": 4748.0,
+        "borrowings_cr": 913.0,
+        "debt_to_equity": 0.19,
+        "deposits_cr": null,
+        "total_assets_cr": 6894.0,
+        "working_capital_days": 133.0,
+        "cash_conversion_cycle_days": 193.0,
+        "debtor_days": 154.0,
+        "inventory_days": 169.0,
+        "days_payable": 131.0,
+        "roce_or_roe_pct": 13.0
+      }
+    ]
+  },
+  "segment_mix": [
+    {
+      "segment": "Automotive",
+      "share_or_metric": "55%",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 25,
+        "cited_page": 25,
+        "verbatim_quote": "Industrial and EV Automotive IoT/IT, Consumer and Others Railways Medical Aerospace, Space and Outer Space, and Strategic Electronics Vertical-wise Revenue: FY 2025-26 2% IMPACTS OTHER CAPITALS CAPITAL FINANCIAL Financial capital enables disciplined investment across the business, helping us build scale, deepen capabilities, improve resilience and create broader stakeholder value. Manufactured Capital Funds capacity expansion across OSAT and HDI PCB facilities, deepening vertical integration and improving quality and scale outcomes. Intellectual Capital Supports continued investment in R&D, IoT platforms (Kemsys), and AI-led solutions (Sensonic), reinforcing a design-led, innovation-driven operating model. Human Capital Guides investment in development of workforce through targeted skill-building, Kaizen initiatives, and performancelinked programmes, supporting productivity and retention. Natural Capital Funds the adoption of energyefficient technologies, solar power, and sustainable resource practices, aligned with our priorities. Social and Relationship Capital Supports sustained CSR investments in education, skilling, and community development, while strengthening partner ecosystems through consistent and timely financial support. Capital Allocation Investing behind Higher-Value, Integrated Growt h Our capital allocation is focused on building high-margin, integrated capabilities across semiconductor packaging, advanced PCB manufacturing and core EMS. We are adequately funded through internal accruals and previous QIP raises, and do not intend to undertake further equity dilution to execute our immediate expansion phases. 2% 6% 10% 25% 55%",
+        "match_score": 99.9,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "ar_highlights": [
+    {
+      "topic": "Capex / Margin / Balance Sheet / Asset Quality",
+      "claim": "Order book stood at ₹83,663 Mn as of 31 March, 2026, with EBITDA margins expanding to 15.8% in FY 2025-26 from 15.1% in FY 2024-25.",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Structural Margin Expansion We have delivered consistent improvement in financial performance, with EBITDA margins expanding to 15.8% in FY 2025-26 from 15.1% in FY 2024-25. This expansion is structural, not incidental.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "promised_vs_delivered": [],
+  "reported_vs_stated": [
+    {
+      "quarter_referenced": "Jun 2026",
+      "metric": "Revenue",
+      "stated_value": 946.0,
+      "unit": "crores",
+      "filed_value": 946.0,
+      "variance": 0.0,
+      "variance_pct": 0.0,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "KAYNES Concall Aug 2026 Transcript",
+      "speaker": "Ramesh Kunhikannan, Executive Vice Chairman",
+      "verbatim_quote": "Our total revenue stood at INR946 crores, reflecting an year-on-year growth of 40%, which is largely driven by EMS business.",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+        "doc_label": "KAYNES Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e8d82234-f369-467f-a76f-75bb2747aaa1.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Our total revenue stood at INR946 crores, reflecting an year-on-year growth of 40%, which is largely driven by EMS business.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "quarter_referenced": "Jun 2026",
+      "metric": "EBITDA",
+      "stated_value": 147.6,
+      "unit": "crores",
+      "filed_value": 148.0,
+      "variance": -0.4,
+      "variance_pct": -0.3,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "KAYNES Concall Aug 2026 Transcript",
+      "speaker": "Ramesh Kunhikannan, Executive Vice Chairman",
+      "verbatim_quote": "EBITDA for the quarter was INR147.6 crores, translating into an EBITDA margin of 15.6% and 31% year-on-year growth.",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+        "doc_label": "KAYNES Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e8d82234-f369-467f-a76f-75bb2747aaa1.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "EBITDA for the quarter was INR147.6 crores, translating into an EBITDA margin of 15.6% and 31% year-on-year growth.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "quarter_referenced": "Jun 2026",
+      "metric": "EBITDA Margin",
+      "stated_value": 15.6,
+      "unit": "%",
+      "filed_value": 16.0,
+      "variance": -0.4,
+      "variance_pct": -2.5,
+      "status": "Match (within Screener integer rounding)",
+      "label": "stated vs filed",
+      "doc_label": "KAYNES Concall Aug 2026 Transcript",
+      "speaker": "Ramesh Kunhikannan, Executive Vice Chairman",
+      "verbatim_quote": "EBITDA for the quarter was INR147.6 crores, translating into an EBITDA margin of 15.6% and 31% year-on-year growth.",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+        "doc_label": "KAYNES Concall Aug 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e8d82234-f369-467f-a76f-75bb2747aaa1.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "EBITDA for the quarter was INR147.6 crores, translating into an EBITDA margin of 15.6% and 31% year-on-year growth.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "quarter_referenced": "Mar 2026 (Full-Year)",
+      "metric": "Revenue",
+      "stated_value": 3626.4,
+      "unit": "crores",
+      "filed_value": 3626.0,
+      "variance": 0.4,
+      "variance_pct": 0.0,
+      "status": "Match (within 2%)",
+      "label": "stated vs filed",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "speaker": "Ramesh Kunhikannan, Executive Vice Chairman",
+      "verbatim_quote": "Our total revenue stood at INR3,626.4 crores, reflecting a year-on-year growth of 33.2%.",
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+        "doc_label": "KAYNES Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c2aa16ac-08ab-430a-819a-833f94c09dde.pdf",
+        "page": 3,
+        "cited_page": 3,
+        "verbatim_quote": "Our total revenue stood at INR3,626.4 crores, reflecting a year-on-year growth of 33.2%.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "concall_extraction_telemetry": [
+    {
+      "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+      "label": "KAYNES Concall Aug 2026 Transcript",
+      "is_latest_call": true,
+      "claims_extracted": 0,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": []
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "label": "KAYNES Concall May 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 0,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": []
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_3_FEB_2026",
+      "label": "KAYNES Concall Feb 2026 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 3,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 3,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": [
+        {
+          "metric": "Operating Cash Flow",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "",
+          "fiscal_period": "FY27",
+          "page": 14,
+          "raw_quote": "So year, you can expect at consol level, definitely a significant positive operating cash flow.",
+          "trimmed_quote": "So year, you can expect at consol level, definitely a significant positive operating cash flow.",
+          "status": "dropped_missing_unit",
+          "reason": "missing_unit"
+        },
+        {
+          "metric": "Revenue",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "billion dollars",
+          "fiscal_period": "FY28",
+          "page": 17,
+          "raw_quote": "So in FY '28, if you see $1 billion, we might be targeting more than that actually, while we may deliver $1 billion, but we'll target more than that.",
+          "trimmed_quote": "So in FY '28, if you see $1 billion, we might be targeting more than that actually, while we may deliver $1 billion, but we'll target more than that.",
+          "status": "dropped_missing_unit",
+          "reason": "unit_not_in_quote"
+        },
+        {
+          "metric": "Revenue",
+          "scope": "consolidated",
+          "condition": null,
+          "unit": "billion dollars",
+          "fiscal_period": "FY28",
+          "page": 17,
+          "raw_quote": "At a consol level, we'll definitely deliver this number of $1 billion.",
+          "trimmed_quote": "At a consol level, we'll definitely deliver this number of $1 billion.",
+          "status": "dropped_missing_unit",
+          "reason": "unit_not_in_quote"
+        }
+      ]
+    },
+    {
+      "doc_id": "KAYNES_CONCALL_4_DEC_2025",
+      "label": "KAYNES Concall Dec 2025 Transcript",
+      "is_latest_call": false,
+      "claims_extracted": 0,
+      "dropped_by_verifier": 0,
+      "dropped_missing_unit": 0,
+      "dropped_scope_mismatch": 0,
+      "kept": 0,
+      "raw_candidates": []
+    }
+  ],
+  "citation_pool": [
+    {
+      "citation_id": 1,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 25,
+      "verbatim_quote": "Industrial and EV Automotive IoT/IT, Consumer and Others Railways Medical Aerospace, Space and Outer Space, and Strategic Electronics Vertical-wise Revenue: FY 2025-26 2% IMPACTS OTHER CAPITALS CAPITAL FINANCIAL Financial capital enables disciplined investment across the business, helping us build scale, deepen capabilities, improve resilience and create broader stakeholder value. Manufactured Capital Funds capacity expansion across OSAT and HDI PCB facilities, deepening vertical integration and improving quality and scale outcomes. Intellectual Capital Supports continued investment in R&D, IoT platforms (Kemsys), and AI-led solutions (Sensonic), reinforcing a design-led, innovation-driven operating model. Human Capital Guides investment in development of workforce through targeted skill-building, Kaizen initiatives, and performancelinked programmes, supporting productivity and retention. Natural Capital Funds the adoption of energyefficient technologies, solar power, and sustainable resource practices, aligned with our priorities. Social and Relationship Capital Supports sustained CSR investments in education, skilling, and community development, while strengthening partner ecosystems through consistent and timely financial support. Capital Allocation Investing behind Higher-Value, Integrated Growt h Our capital allocation is focused on building high-margin, integrated capabilities across semiconductor packaging, advanced PCB manufacturing and core EMS. We are adequately funded through internal accruals and previous QIP raises, and do not intend to undertake further equity dilution to execute our immediate expansion phases. 2% 6% 10% 25% 55%"
+    },
+    {
+      "citation_id": 2,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 16,
+      "verbatim_quote": "Structural Margin Expansion We have delivered consistent improvement in financial performance, with EBITDA margins expanding to 15.8% in FY 2025-26 from 15.1% in FY 2024-25. This expansion is structural, not incidental."
+    },
+    {
+      "citation_id": 3,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 8,
+      "verbatim_quote": "This growth is supported by an order EBITDA for FY 2025-26 was approximately ₹5,741 Mn at a margin of 15.8% against 15.1% in FY 2024-25 and 14.1% in FY 2023-24, with margins structurally improving."
+    },
+    {
+      "citation_id": 4,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 3,
+      "verbatim_quote": "This translates into an EBITDA margin of 15.8% for FY '26, while profit after tax came in at INR3,639 million, representing a PAT margin of 10% for FY '26."
+    },
+    {
+      "citation_id": 5,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 125,
+      "verbatim_quote": "Particular FY 2025-26 FY 2024-25 Details of improvements in environmental and social impacts 1 R&D 7.09% 16% R&D expenses aimed at impacting energy efficiency in motor controllers for BLDC fans 2 Capex 28.24% 53% ROHS compliant plant & machinery 2 a."
+    },
+    {
+      "citation_id": 6,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 8,
+      "verbatim_quote": "On the cash flow front, the standalone business delivered a positive operating cash flow (OCF) of ₹2,467 Mn in FY 2025-26, compared to ₹650 Mn in FY 2024-25, reflecting a significant improvement in operating efficiency and working capital management."
+    },
+    {
+      "citation_id": 7,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 10,
+      "verbatim_quote": "65% of our revenue comes from EMS business where our receivables is only 35%, whereas 25% of the business comes from EMS where the receivables is 67%."
+    },
+    {
+      "citation_id": 8,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 11,
+      "verbatim_quote": "When we are saying that the industry in India, the GDP growth is at 8%, the EMS space where we are playing has grown at about 18% last year or is expected to grow in this year 16% to 18%."
+    },
+    {
+      "citation_id": 9,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 18,
+      "verbatim_quote": "So see, as I said in the earlier or to some of you when we were talking, the industry is growing at 6.5% to 7% in India, our market space is growing at around 15% to 16%, and we'll be doubling the growth."
+    },
+    {
+      "citation_id": 10,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 19,
+      "verbatim_quote": "When I say 2x growth, it's not the 2x growth of our last quarter comparison, but on the market growth and our growth."
+    },
+    {
+      "citation_id": 11,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 8,
+      "verbatim_quote": "Our performance in FY 2025-26 reflects the strength of our diversified model, with consolidated revenue of ₹36,264 Mn, a ~33% year-on-year increase."
+    },
+    {
+      "citation_id": 12,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 8,
+      "verbatim_quote": "Consolidated Message from the CFO The integration of August Electronics (Canada) contributed approximately ₹2,055 Mn to consolidated revenue and ₹380 Mn to consolidated EBITDA in FY 2025-26."
+    },
+    {
+      "citation_id": 13,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 16,
+      "verbatim_quote": "Strategic Pillar Strategic Pillar Strategic Pillar Strategic Pillar Structural Margin Expansion We have delivered consistent improvement in financial performance, with EBITDA margins expanding to 15.8% in FY 2025-26 from 15.1% in FY 2024-25."
+    },
+    {
+      "citation_id": 14,
+      "doc_id": "KAYNES_AR_LATEST",
+      "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+      "page": 21,
+      "verbatim_quote": "Fiscal Subsidies Backed by the semiconductor and display fab PLI scheme, securing a 50% central and a 20% state capex subsidy on qualifying expenditures (₹26,150 Mn)."
+    },
+    {
+      "citation_id": 15,
+      "doc_id": "KAYNES_CONCALL_1_AUG_2026",
+      "doc_label": "KAYNES Concall Aug 2026 Transcript",
+      "page": 3,
+      "verbatim_quote": "EBITDA for the quarter was INR147.6 crores, translating into an EBITDA margin of 15.6% and 31% year-on-year growth."
+    },
+    {
+      "citation_id": 16,
+      "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+      "doc_label": "KAYNES Concall May 2026 Transcript",
+      "page": 5,
+      "verbatim_quote": "For Q4 FY '26, our total revenue stood at INR12,426 million, reflecting a year-on-year growth of 26% for this quarter."
+    }
+  ],
+  "numbers_vs_narrative": [
+    {
+      "check_title": "Consolidated Cash Flow vs Standalone OCF Improvement Narrative",
+      "numbers_observed": "Consolidated CFO deteriorated to -₹600 Cr in Mar 2026, leading to a 5-year cumulative CFO of -₹615 Cr against ₹977 Cr in PAT (-62.9% CFO/PAT conversion).",
+      "narrative_claimed": "Management highlighted that the standalone business delivered a positive operating cash flow of ₹2,467 Mn in FY 2025-26 compared to ₹650 Mn in FY 2024-25 [C6].",
+      "verdict": "Divergence",
+      "citation_id": 6,
+      "citation_ids": [
+        6
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "On the cash flow front, the standalone business delivered a positive operating cash flow (OCF) of ₹2,467 Mn in FY 2025-26, compared to ₹650 Mn in FY 2024-25, reflecting a significant improvement in operating efficiency and working capital management.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Operating EBITDA Margin Expansion vs Structural Margin Narrative",
+      "numbers_observed": "Derived operating EBITDA margin expanded from 13.0% in Mar 2022 to 16.0% in Mar 2026, reaching ₹578 Cr in derived EBITDA.",
+      "narrative_claimed": "Management asserted that EBITDA margins structurally expanded to 15.8% in FY 2025-26 from 15.1% in FY 2024-25 and 14.1% in FY 2023-24 [C3].",
+      "verdict": "Aligned",
+      "citation_id": 3,
+      "citation_ids": [
+        3
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "This growth is supported by an order EBITDA for FY 2025-26 was approximately ₹5,741 Mn at a margin of 15.8% against 15.1% in FY 2024-25 and 14.1% in FY 2023-24, with margins structurally improving.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "check_title": "Capital Efficiency (ROCE) vs High-Margin Integrated Allocation Narrative",
+      "numbers_observed": "ROCE declined steadily over five consecutive years from 25.0% in Mar 2022 to 13.0% in Mar 2026.",
+      "narrative_claimed": "Management stated that capital allocation is focused on building high-margin, integrated capabilities across semiconductor packaging and core EMS without further equity dilution [C1].",
+      "verdict": "Watch closely",
+      "citation_id": 1,
+      "citation_ids": [
+        1
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 25,
+        "cited_page": 25,
+        "verbatim_quote": "Industrial and EV Automotive IoT/IT, Consumer and Others Railways Medical Aerospace, Space and Outer Space, and Strategic Electronics Vertical-wise Revenue: FY 2025-26 2% IMPACTS OTHER CAPITALS CAPITAL FINANCIAL Financial capital enables disciplined investment across the business, helping us build scale, deepen capabilities, improve resilience and create broader stakeholder value. Manufactured Capital Funds capacity expansion across OSAT and HDI PCB facilities, deepening vertical integration and improving quality and scale outcomes. Intellectual Capital Supports continued investment in R&D, IoT platforms (Kemsys), and AI-led solutions (Sensonic), reinforcing a design-led, innovation-driven operating model. Human Capital Guides investment in development of workforce through targeted skill-building, Kaizen initiatives, and performancelinked programmes, supporting productivity and retention. Natural Capital Funds the adoption of energyefficient technologies, solar power, and sustainable resource practices, aligned with our priorities. Social and Relationship Capital Supports sustained CSR investments in education, skilling, and community development, while strengthening partner ecosystems through consistent and timely financial support. Capital Allocation Investing behind Higher-Value, Integrated Growt h Our capital allocation is focused on building high-margin, integrated capabilities across semiconductor packaging, advanced PCB manufacturing and core EMS. We are adequately funded through internal accruals and previous QIP raises, and do not intend to undertake further equity dilution to execute our immediate expansion phases. 2% 6% 10% 25% 55%",
+        "match_score": 99.9,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "bull_case": [
+    {
+      "title": "Structural Margin Expansion",
+      "thesis": "Kaynes achieved structural margin improvement as derived operating EBITDA margin reached 16.0% in FY26 with EBITDA expanding from 15.1% in FY25 to 15.8% on consolidated execution [C2].",
+      "citation_id": 2,
+      "citation_ids": [
+        2
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 16,
+        "cited_page": 16,
+        "verbatim_quote": "Structural Margin Expansion We have delivered consistent improvement in financial performance, with EBITDA margins expanding to 15.8% in FY 2025-26 from 15.1% in FY 2024-25. This expansion is structural, not incidental.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Acquisition-Led International Growth",
+      "thesis": "The strategic integration of August Electronics contributed ₹2,055 Mn to consolidated revenue and ₹380 Mn to consolidated EBITDA in FY 2025-26 [C12].",
+      "citation_id": 12,
+      "citation_ids": [
+        12
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "Consolidated Message from the CFO The integration of August Electronics (Canada) contributed approximately ₹2,055 Mn to consolidated revenue and ₹380 Mn to consolidated EBITDA in FY 2025-26.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Policy Tailwinds and Capital Subsidies",
+      "thesis": "The company is supported by semiconductor and display fab PLI schemes securing 50% central and 20% state capex subsidies on qualifying expenditures of ₹26,150 Mn [C14].",
+      "citation_id": 14,
+      "citation_ids": [
+        14
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 21,
+        "cited_page": 21,
+        "verbatim_quote": "Fiscal Subsidies Backed by the semiconductor and display fab PLI scheme, securing a 50% central and a 20% state capex subsidy on qualifying expenditures (₹26,150 Mn).",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "bear_case": [
+    {
+      "title": "Severe Operating Cash Flow Deficit",
+      "thesis": "Consolidated CFO deteriorated to -₹600 Cr in FY26, bringing 5-year cumulative CFO to -₹615 Cr against ₹977 Cr PAT due to working capital expansion [C6].",
+      "citation_id": 6,
+      "citation_ids": [
+        6
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 8,
+        "cited_page": 8,
+        "verbatim_quote": "On the cash flow front, the standalone business delivered a positive operating cash flow (OCF) of ₹2,467 Mn in FY 2025-26, compared to ₹650 Mn in FY 2024-25, reflecting a significant improvement in operating efficiency and working capital management.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Working Capital Drag from High Receivables",
+      "thesis": "Working capital management faces friction as 25% of the business incurs high receivable commitments reaching 67% [C7].",
+      "citation_id": 7,
+      "citation_ids": [
+        7
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_CONCALL_2_MAY_2026",
+        "doc_label": "KAYNES Concall May 2026 Transcript",
+        "doc_type": "concall_transcript",
+        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c2aa16ac-08ab-430a-819a-833f94c09dde.pdf",
+        "page": 10,
+        "cited_page": 10,
+        "verbatim_quote": "65% of our revenue comes from EMS business where our receivables is only 35%, whereas 25% of the business comes from EMS where the receivables is 67%.",
+        "match_score": 100.0,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    {
+      "title": "Persistent ROCE Dilution",
+      "thesis": "ROCE has systematically compressed from 25.0% in FY22 down to 13.0% in FY26 despite aggressive capital investments in higher-value verticals [C1].",
+      "citation_id": 1,
+      "citation_ids": [
+        1
+      ],
+      "citation": {
+        "verified": true,
+        "doc_id": "KAYNES_AR_LATEST",
+        "doc_label": "KAYNES Annual Report 2026 (Annual Report)",
+        "doc_type": "annual_report",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b3ec474-8dc9-46bc-bf3b-64d55d3b6c30.pdf",
+        "page": 25,
+        "cited_page": 25,
+        "verbatim_quote": "Industrial and EV Automotive IoT/IT, Consumer and Others Railways Medical Aerospace, Space and Outer Space, and Strategic Electronics Vertical-wise Revenue: FY 2025-26 2% IMPACTS OTHER CAPITALS CAPITAL FINANCIAL Financial capital enables disciplined investment across the business, helping us build scale, deepen capabilities, improve resilience and create broader stakeholder value. Manufactured Capital Funds capacity expansion across OSAT and HDI PCB facilities, deepening vertical integration and improving quality and scale outcomes. Intellectual Capital Supports continued investment in R&D, IoT platforms (Kemsys), and AI-led solutions (Sensonic), reinforcing a design-led, innovation-driven operating model. Human Capital Guides investment in development of workforce through targeted skill-building, Kaizen initiatives, and performancelinked programmes, supporting productivity and retention. Natural Capital Funds the adoption of energyefficient technologies, solar power, and sustainable resource practices, aligned with our priorities. Social and Relationship Capital Supports sustained CSR investments in education, skilling, and community development, while strengthening partner ecosystems through consistent and timely financial support. Capital Allocation Investing behind Higher-Value, Integrated Growt h Our capital allocation is focused on building high-margin, integrated capabilities across semiconductor packaging, advanced PCB manufacturing and core EMS. We are adequately funded through internal accruals and previous QIP raises, and do not intend to undertake further equity dilution to execute our immediate expansion phases. 2% 6% 10% 25% 55%",
+        "match_score": 99.9,
+        "numbers_verified": true,
+        "missing_numbers": [],
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  ],
+  "unanswered_diligence_questions": [
+    {
+      "topic": "Working Capital Disconnect between Standalone OCF and Consolidated CFO",
+      "status": "not found in filings",
+      "question_for_management_or_network": "What specific subsidiary working capital or inventory buildup caused consolidated CFO to drop to -₹600 Cr in FY26 while standalone operating cash flow was reported at positive ₹2,467 Mn?"
+    },
+    {
+      "topic": "Receivable Collection Terms across Sub-segments",
+      "status": "not found in filings",
+      "question_for_management_or_network": "What is the contractual payment structure and customer credit window for the 25% EMS business segment carrying 67% of total receivables?"
+    }
+  ],
+  "network": {
+    "symbol": "KAYNES",
+    "company_name": "Kaynes Technology",
+    "inferred_label": "inferred from employer/tenure overlap, synthetic network",
+    "privacy_guarantee": "100% deterministic local graph match — zero private network data ever sent to an LLM",
+    "ex_company": [
+      {
+        "contact_id": "contact:nilesh_patil",
+        "name": "Nilesh Patil",
+        "headline": "Head of Semicon OSAT Packaging · Ex-Kaynes Semicon",
+        "city": "Hyderabad",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "days_since_contact": 17,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "ex_company",
+        "org": "Kaynes Technology",
+        "role": "VP — Semiconductor Packaging",
+        "tenure": "2022–2025",
+        "relation_label": "knows the company (Kaynes Technology)",
+        "path": "You → Nilesh Patil (strength 5/5 · spoke 2 wks ago) → knows the company (Kaynes Technology, 2022–2025)",
+        "expertise_tags": [
+          "OSAT subsidy",
+          "wire bonding",
+          "Sanand OSAT",
+          "power module packaging"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "draft_opener": "Hi Nilesh — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2022–2025), how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:vivek_hegde",
+        "name": "Vivek Hegde",
+        "headline": "VP Aerospace & Industrial Box-Build · Ex-Kaynes Technology",
+        "city": "Mysuru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 wks ago",
+        "days_since_contact": 19,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "ex_company",
+        "org": "Kaynes Technology",
+        "role": "GM — Operations & Strategic Accounts",
+        "tenure": "2018–2025",
+        "relation_label": "knows the company (Kaynes Technology)",
+        "path": "You → Vivek Hegde (strength 4/5 · spoke 2 wks ago) → knows the company (Kaynes Technology, 2018–2025)",
+        "expertise_tags": [
+          "OSAT",
+          "high-density PCB",
+          "railway signalling",
+          "aerospace EMS"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "draft_opener": "Hi Vivek — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2018–2025), how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:suhas_joshi",
+        "name": "Suhas Joshi",
+        "headline": "VP Industrial & Medical PCB Assembly · Ex-Kaynes & Syrma",
+        "city": "Bengaluru",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 16 mos ago · stale tie",
+        "days_since_contact": 486,
+        "is_stale_tie": true,
+        "stale_tie_label": "stale tie",
+        "bucket": "ex_company",
+        "org": "Kaynes Technology",
+        "role": "DGM — Aerospace & Defense EMS",
+        "tenure": "2017–2023",
+        "relation_label": "knows the company (Kaynes Technology)",
+        "path": "You → Suhas Joshi (strength 3/5 · spoke 16 mos ago · stale tie) → knows the company (Kaynes Technology, 2017–2023)",
+        "expertise_tags": [
+          "high-layer PCBA",
+          "aerospace defense EMS",
+          "Chamrajnagar plant",
+          "RoHS"
+        ],
+        "diligence_prompt": "how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "draft_opener": "Hi Suhas — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Kaynes Technology (2017–2023), how realistic is management's execution timeline on new capacity and margin guidance at Kaynes Technology?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "competitors": [
+      {
+        "contact_id": "contact:rohan_desai",
+        "name": "Rohan Desai",
+        "headline": "VP Finance, Industrial Automation · Ex-Dixon Technologies & Bosch India",
+        "city": "Bengaluru",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 5 wks ago",
+        "days_since_contact": 35,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "competitors",
+        "org": "Dixon Technologies",
+        "role": "GM Finance (Consumer EMS)",
+        "tenure": "2020–2024",
+        "relation_label": "competitor benchmark (Dixon Technologies · competitor (Both EMS manufacturers in industrial & consumer electronics))",
+        "path": "You → Rohan Desai (strength 5/5 · spoke 5 wks ago) → knows the company (Dixon Technologies, 2020–2024)",
+        "expertise_tags": [
+          "EMS",
+          "industrial electronics",
+          "working capital",
+          "CEAMA"
+        ],
+        "diligence_prompt": "how does Kaynes Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "draft_opener": "Hi Rohan — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2020–2024), how does Kaynes Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:rohit_malhotra",
+        "name": "Rohit Malhotra",
+        "headline": "VP EMS Supply Chain & Padget Operations · Ex-Dixon Technologies",
+        "city": "Noida",
+        "strength": 5,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "days_since_contact": 65,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "competitors",
+        "org": "Dixon Technologies",
+        "role": "VP Operations — Padget Electronics",
+        "tenure": "2018–2025",
+        "relation_label": "competitor benchmark (Dixon Technologies · competitor (Both EMS manufacturers in industrial & consumer electronics))",
+        "path": "You → Rohit Malhotra (strength 5/5 · spoke 2 mos ago) → knows the company (Dixon Technologies, 2018–2025)",
+        "expertise_tags": [
+          "mobile PLI",
+          "EMS working capital",
+          "Noida Padget assembly",
+          "consumer electronics"
+        ],
+        "diligence_prompt": "how does Kaynes Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "draft_opener": "Hi Rohit — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Dixon Technologies (2018–2025), how does Kaynes Technology's pricing discipline and customer wallet share compare against Dixon Technologies on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:kavita_rao",
+        "name": "Kavita Rao",
+        "headline": "VP Procurement, Consumer Electronics & Jewellery · Ex-Syrma SGS & Titan",
+        "city": "Chennai",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 17 mos ago · stale tie",
+        "days_since_contact": 514,
+        "is_stale_tie": true,
+        "stale_tie_label": "stale tie",
+        "bucket": "competitors",
+        "org": "Syrma SGS Technology",
+        "role": "Director — Strategic Sourcing",
+        "tenure": "2021–2025",
+        "relation_label": "competitor benchmark (Syrma SGS Technology · competitor (Direct competitor in high-mix industrial/automotive EMS))",
+        "path": "You → Kavita Rao (strength 4/5 · spoke 17 mos ago · stale tie) → knows the company (Syrma SGS Technology, 2021–2025)",
+        "expertise_tags": [
+          "EMS",
+          "PCB sourcing",
+          "jewellery retail",
+          "wearables"
+        ],
+        "diligence_prompt": "how does Kaynes Technology's pricing discipline and customer wallet share compare against Syrma SGS Technology on the ground?",
+        "draft_opener": "Hi Kavita — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Syrma SGS Technology (2021–2025), how does Kaynes Technology's pricing discipline and customer wallet share compare against Syrma SGS Technology on the ground?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "suppliers_customers": [
+      {
+        "contact_id": "contact:ashwin_pai",
+        "name": "Ashwin Pai",
+        "headline": "VP Autonomous Driving & ADAS · Ex-KPIT & Tata Elxsi",
+        "city": "Bengaluru",
+        "strength": 4,
+        "degree": 1,
+        "recency": "spoke 2 mos ago",
+        "days_since_contact": 86,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Practice Head — ADAS",
+        "tenure": "2019–2024",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Ashwin Pai (strength 4/5 · spoke 2 mos ago) → knows the company (KPIT Technologies, 2019–2024)",
+        "expertise_tags": [
+          "ADAS",
+          "middleware",
+          "European OEMs",
+          "Honda/Renault SDV"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "draft_opener": "Hi Ashwin — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2019–2024), how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:prateek_goel",
+        "name": "Prateek Goel",
+        "headline": "Director — Industrial Adhesives & B2B · Ex-Pidilite",
+        "city": "Mumbai",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 11 mos ago",
+        "days_since_contact": 340,
+        "is_stale_tie": false,
+        "stale_tie_label": null,
+        "bucket": "suppliers_customers",
+        "org": "Pidilite Industries",
+        "role": "Business Head — Industrial Products",
+        "tenure": "2017–2024",
+        "relation_label": "sector specialist (Pidilite Industries)",
+        "path": "You → Prateek Goel (strength 3/5 · spoke 11 mos ago) → knows the company (Pidilite Industries, 2017–2024)",
+        "expertise_tags": [
+          "B2B pigments",
+          "packaging adhesives",
+          "electronics adhesives",
+          "Huntsman Araldite"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "draft_opener": "Hi Prateek — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at Pidilite Industries (2017–2024), how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      },
+      {
+        "contact_id": "contact:yashwant_rao",
+        "name": "Yashwant Rao",
+        "headline": "VP EV Battery Management Systems · Ex-KPIT Technologies",
+        "city": "Pune",
+        "strength": 3,
+        "degree": 1,
+        "recency": "spoke 18 mos ago · stale tie",
+        "days_since_contact": 540,
+        "is_stale_tie": true,
+        "stale_tie_label": "stale tie",
+        "bucket": "suppliers_customers",
+        "org": "KPIT Technologies",
+        "role": "Senior Architect — Electrification",
+        "tenure": "2016–2023",
+        "relation_label": "sector specialist (KPIT Technologies)",
+        "path": "You → Yashwant Rao (strength 3/5 · spoke 18 mos ago · stale tie) → knows the company (KPIT Technologies, 2016–2023)",
+        "expertise_tags": [
+          "BMS firmware",
+          "invertor control",
+          "Japanese OEMs",
+          "fixed-price ER&D"
+        ],
+        "diligence_prompt": "how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "draft_opener": "Hi Yashwant — running a primary-source deep dive on Kaynes Technology (KAYNES) from their latest Annual Report and concalls. Given your experience at KPIT Technologies (2016–2023), how do you view sector-wide demand and regulatory tailwinds for Kaynes Technology (KAYNES) over the next 4 quarters?",
+        "inferred_label": "inferred from employer/tenure overlap, synthetic network"
+      }
+    ],
+    "total_matched": 9
+  },
+  "verification_summary": {
+    "total_documents_verified": 5,
+    "concall_transcripts_verified": 4,
+    "latest_call_marked_untestable": false,
+    "total_verified_citations": 16,
+    "dropped_uncited_sentences": 0,
+    "min_rapidfuzz_score": 99.9,
+    "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
+  }
+}

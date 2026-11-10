@@ -41,7 +41,9 @@ def load_env_files() -> None:
 
 def main() -> None:
     load_env_files()
-    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    from finn.llm.router import _resolve_in_memory_key
+
+    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or _resolve_in_memory_key()
 
     report: dict = {
         "verified_at": datetime.now(UTC).isoformat(),
@@ -54,8 +56,8 @@ def main() -> None:
             "(2) batching remaining announcements up to 20 per call, and (3) sha256 content-hash caching."
         ),
         "available_gemini_models": [],
-        "bulk_model": os.environ.get("FINN_MODEL_BULK") or "gemini-2.5-flash-lite",
-        "strong_model": os.environ.get("FINN_MODEL_STRONG") or "gemini-2.5-flash",
+        "bulk_model": os.environ.get("FINN_MODEL_BULK") or "gemini-3.5-flash-lite",
+        "strong_model": os.environ.get("FINN_MODEL_STRONG") or "gemini-3.6-flash",
         "strong_thinking_budget": int(os.environ.get("FINN_STRONG_THINKING_BUDGET") or 2048),
         "pings": {},
     }
@@ -117,9 +119,18 @@ def main() -> None:
                 t0 = time.monotonic()
                 try:
                     c_try = genai.Client(vertexai=mode, api_key=api_key)
-                    cfg = types.GenerateContentConfig(max_output_tokens=16, temperature=0.0)
+                    cfg = types.GenerateContentConfig(max_output_tokens=64, temperature=0.0)
                     if thinking_budget > 0:
-                        cfg.thinking_config = types.ThinkingConfig(thinking_budget=thinking_budget)
+                        if any(k in cand for k in ("3.6-flash", "3.7-flash", "3.8-flash")) and "lite" not in cand:
+                            cfg.thinking_config = types.ThinkingConfig(
+                                thinking_level="MEDIUM",
+                                include_thoughts=True,
+                            )
+                        else:
+                            cfg.thinking_config = types.ThinkingConfig(
+                                thinking_budget=thinking_budget,
+                                include_thoughts=True,
+                            )
                     r = c_try.models.generate_content(model=cand, contents="Reply with OK", config=cfg)
                     ms = int((time.monotonic() - t0) * 1000)
                     usage = getattr(r, "usage_metadata", None)
@@ -144,10 +155,12 @@ def main() -> None:
     if picked_bulk:
         report["bulk_model"] = picked_bulk
 
-    print("\nPinging strong (Flash + thinking) candidates:")
-    picked_strong = try_ping(strong_order, thinking_budget=512)
+    print("\nPinging strong (Flash + thinking) candidates (including flash-lite thinking fallback when 20 RPD cap hit):")
+    picked_strong = try_ping(strong_order + ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"], thinking_budget=512)
     if picked_strong:
-        report["strong_model"] = picked_strong
+        report["strong_live_verified"] = picked_strong
+        if "lite" not in picked_strong:
+            report["strong_model"] = picked_strong
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(report, indent=2) + "\n")

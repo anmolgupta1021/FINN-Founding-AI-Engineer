@@ -26,6 +26,7 @@ interface LedgerSummary {
   cache_hit_rate: number;
   in_tokens: number;
   out_tokens: number;
+  thinking_tokens?: number;
   estimated_paid_cost_usd: number;
   estimated_paid_cost_inr: number;
   actual_free_tier_spend_inr: number;
@@ -33,95 +34,25 @@ interface LedgerSummary {
   recent: LedgerCall[];
 }
 
-const FALLBACK_LEDGER: LedgerSummary = {
-  total_calls: 5,
+const EMPTY_LEDGER: LedgerSummary = {
+  total_calls: 0,
   cache_hits: 0,
-  live_calls: 5,
-  cache_hit_rate: 0.0,
-  in_tokens: 6394,
-  out_tokens: 4926,
-  estimated_paid_cost_usd: 0.002609,
-  estimated_paid_cost_inr: 0.2244,
-  actual_free_tier_spend_inr: 0.0,
-  updated_at: "2026-11-09T08:48:36Z",
-  recent: [
-    {
-      ts: "2026-11-09T08:46:40Z",
-      task: "classify_announcements_batch",
-      tier: "bulk",
-      model: "gemini-3.5-flash-lite",
-      prompt_version: "cls-batch-v1",
-      cache_key: "6fc61142d8ad4eafa59cd77c10bd73468879b9dd9081a7f2ec1f11ef11d94d56",
-      cache_hit: false,
-      in_tokens: 1666,
-      out_tokens: 1432,
-      cost_usd: 0.000739,
-      cost_inr: 0.0636,
-      latency_ms: 3651,
-    },
-    {
-      ts: "2026-11-09T08:46:42Z",
-      task: "classify_announcements_batch",
-      tier: "bulk",
-      model: "gemini-3.5-flash-lite",
-      prompt_version: "cls-batch-v1",
-      cache_key: "17087b3b7b36f3fa513615ac1d2778abdaae9f442413501a81de096348bccd51",
-      cache_hit: false,
-      in_tokens: 449,
-      out_tokens: 273,
-      cost_usd: 0.000154,
-      cost_inr: 0.0132,
-      latency_ms: 1304,
-    },
-    {
-      ts: "2026-11-09T08:48:31Z",
-      task: "classify_announcements_batch",
-      tier: "bulk",
-      model: "gemini-3.5-flash-lite",
-      prompt_version: "cls-batch-v1",
-      cache_key: "6544d961c1530a2d11eb8040cd4f9af9db217620d89e50e47787921bfe774e63",
-      cache_hit: false,
-      in_tokens: 1562,
-      out_tokens: 1152,
-      cost_usd: 0.000617,
-      cost_inr: 0.0531,
-      latency_ms: 3991,
-    },
-    {
-      ts: "2026-11-09T08:48:34Z",
-      task: "classify_announcements_batch",
-      tier: "bulk",
-      model: "gemini-3.5-flash-lite",
-      prompt_version: "cls-batch-v1",
-      cache_key: "8522c10bcac11f56b86d76158d5874decc11d5f897350600117fcf991e84fc54",
-      cache_hit: false,
-      in_tokens: 1690,
-      out_tokens: 1331,
-      cost_usd: 0.000701,
-      cost_inr: 0.0603,
-      latency_ms: 3288,
-    },
-    {
-      ts: "2026-11-09T08:48:36Z",
-      task: "classify_announcements_batch",
-      tier: "bulk",
-      model: "gemini-3.5-flash-lite",
-      prompt_version: "cls-batch-v1",
-      cache_key: "07c97ad660b7a33540c4dfb3cd83a944e4856be9ca669f8c84bf8708ea3b1874",
-      cache_hit: false,
-      in_tokens: 1027,
-      out_tokens: 738,
-      cost_usd: 0.000398,
-      cost_inr: 0.0342,
-      latency_ms: 2158,
-    },
-  ],
+  live_calls: 0,
+  cache_hit_rate: 1.0,
+  in_tokens: 0,
+  out_tokens: 0,
+  thinking_tokens: 0,
+  estimated_paid_cost_usd: 0,
+  estimated_paid_cost_inr: 0,
+  actual_free_tier_spend_inr: 0,
+  updated_at: "",
+  recent: [],
 };
 
 export default function CostPage() {
-  const [data, setData] = useState<LedgerSummary>(FALLBACK_LEDGER);
+  const [data, setData] = useState<LedgerSummary | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [sourceTag, setSourceTag] = useState<"live" | "snapshot">("snapshot");
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   useEffect(() => {
     let ignore = false;
@@ -133,13 +64,13 @@ export default function CostPage() {
       .then((payload: LedgerSummary) => {
         if (ignore) return;
         setData(payload);
-        setSourceTag("live");
+        setFetchError(null);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((err: unknown) => {
         if (ignore) return;
-        setData(FALLBACK_LEDGER);
-        setSourceTag("snapshot");
+        setData(EMPTY_LEDGER);
+        setFetchError(err instanceof Error ? err.message : "Failed to load /api/v1/llm/ledger");
         setLoading(false);
       });
     return () => {
@@ -147,7 +78,8 @@ export default function CostPage() {
     };
   }, []);
 
-  const totalTokens = (data.in_tokens || 0) + (data.out_tokens || 0);
+  const ledger = data ?? EMPTY_LEDGER;
+  const totalTokens = (ledger.in_tokens || 0) + (ledger.out_tokens || 0) + (ledger.thinking_tokens || 0);
 
   return (
     <main className="space-y-6">
@@ -171,7 +103,7 @@ export default function CostPage() {
         <div className="flex items-center justify-between">
           <span className="kicker">LLM Call Transparency</span>
           <span className="font-mono text-[10px] uppercase text-muted">
-            Source: {sourceTag} {loading && "(refreshing...)"}
+            Source: {fetchError ? `unavailable (${fetchError})` : loading ? "loading /api/v1/llm/ledger..." : "llm_ledger.jsonl (live)"}
           </span>
         </div>
         <p>
@@ -180,9 +112,10 @@ export default function CostPage() {
           Private investor network data never enters prompts.
         </p>
         <p className="border-t border-rule/60 pt-1 text-muted">
-          <strong>Dossier Generation Disclosure:</strong> All 6 committed company dossiers were generated via
-          deterministic primary-source extraction (regex and financial table extraction from Annual Reports and concall transcripts),
-          with zero LLM calls. The 5 calls recorded in the ledger belong strictly to corporate announcement classification batches.
+          <strong>Ledger Scope Disclosure:</strong> Totals above match{" "}
+          <code className="font-mono text-[11px]">apps/api/data/snapshots/llm_ledger.jsonl</code> verbatim,
+          covering all Stage-2 announcement classification batches across the 776 NSE/BSE filings and primary-source Pull pipelines
+          for DIXON, POLYCAB, HDFCBANK, and KAYNES. NAVINFLUOR, SYRMA, and TITAN remain deterministic-extract only.
         </p>
       </div>
 
@@ -197,18 +130,18 @@ export default function CostPage() {
         <div className="border border-rule p-3">
           <div className="kicker text-[10px]">Paid Eq. Cost</div>
           <div className="num mt-1 text-2xl font-semibold text-ink">
-            ₹{(data.estimated_paid_cost_inr || 0).toFixed(4)}
+            ₹{(ledger.estimated_paid_cost_inr || 0).toFixed(4)}
           </div>
           <div className="mt-0.5 text-[11px] text-muted">
-            ${(data.estimated_paid_cost_usd || 0).toFixed(6)} USD
+            ${(ledger.estimated_paid_cost_usd || 0).toFixed(6)} USD
           </div>
         </div>
 
         <div className="border border-rule p-3">
           <div className="kicker text-[10px]">Total Calls</div>
-          <div className="num mt-1 text-2xl font-semibold text-ink">{data.total_calls}</div>
+          <div className="num mt-1 text-2xl font-semibold text-ink">{ledger.total_calls}</div>
           <div className="mt-0.5 text-[11px] text-muted">
-            {data.live_calls} live · {data.cache_hits} cached
+            {ledger.live_calls} live · {ledger.cache_hits} cached
           </div>
         </div>
 
@@ -216,7 +149,8 @@ export default function CostPage() {
           <div className="kicker text-[10px]">Total Tokens</div>
           <div className="num mt-1 text-2xl font-semibold text-ink">{totalTokens.toLocaleString()}</div>
           <div className="mt-0.5 text-[11px] text-muted">
-            {data.in_tokens.toLocaleString()} in · {data.out_tokens.toLocaleString()} out
+            {ledger.in_tokens.toLocaleString()} in · {ledger.out_tokens.toLocaleString()} out ·{" "}
+            {(ledger.thinking_tokens || 0).toLocaleString()} think
           </div>
         </div>
       </div>
@@ -261,8 +195,8 @@ export default function CostPage() {
       {/* Ledger Feed Table */}
       <section className="space-y-2">
         <div className="flex items-baseline justify-between">
-          <h2 className="font-serif text-lg font-semibold tracking-tight">Ledger Calls</h2>
-          <span className="font-mono text-xs text-muted">{data.recent.length} recorded</span>
+          <h2 className="font-serif text-lg font-semibold tracking-tight">Ledger Calls (Recent {ledger.recent.length} of {ledger.total_calls})</h2>
+          <span className="font-mono text-xs text-muted">{ledger.total_calls} total in llm_ledger.jsonl</span>
         </div>
 
         <div tabIndex={0} className="table-wrapper border border-rule">
@@ -273,13 +207,13 @@ export default function CostPage() {
                 <th scope="col" className="p-2">Timestamp</th>
                 <th scope="col" className="p-2">Task</th>
                 <th scope="col" className="p-2">Model</th>
-                <th scope="col" className="p-2 text-right">Tokens (In / Out)</th>
+                <th scope="col" className="p-2 text-right">Tokens (In / Out / Think)</th>
                 <th scope="col" className="p-2 text-right">Latency</th>
                 <th scope="col" className="p-2 text-right">Paid Eq.</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-rule font-mono text-[11px]">
-              {data.recent.map((entry, idx) => (
+              {ledger.recent.map((entry, idx) => (
                 <tr key={`${entry.ts}-${idx}`} className="hover:bg-paper-2/60">
                   <td className="p-2 text-muted whitespace-nowrap">
                     {entry.ts.slice(11, 19)} UTC
@@ -294,7 +228,7 @@ export default function CostPage() {
                   </td>
                   <td className="p-2 text-muted whitespace-nowrap">{entry.model}</td>
                   <td className="p-2 text-right num whitespace-nowrap">
-                    {entry.in_tokens.toLocaleString()} / {entry.out_tokens.toLocaleString()}
+                    {entry.in_tokens.toLocaleString()} / {entry.out_tokens.toLocaleString()} / {(entry.thinking_tokens || 0).toLocaleString()}
                   </td>
                   <td className="p-2 text-right num text-muted whitespace-nowrap">
                     {(entry.latency_ms / 1000).toFixed(1)}s

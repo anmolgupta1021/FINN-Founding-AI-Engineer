@@ -33,12 +33,15 @@ for env_candidate in (ROOT / ".env", ROOT / ".env.local", Path.home() / ".env"):
     if env_candidate.exists():
         load_dotenv(env_candidate, override=False)
 
+from finn.llm.router import _resolve_in_memory_key
 from finn.pull.builder import build_company_dossier
 from finn.pull.verifier import MIN_QUOTE_MATCH_SCORE
 
 
 def check_api_key_configured() -> bool:
-    key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or _resolve_in_memory_key()
+    if key and not os.environ.get("GEMINI_API_KEY"):
+        os.environ["GEMINI_API_KEY"] = key
     return bool(key and len(key.strip()) > 10)
 
 
@@ -91,9 +94,25 @@ def run_dossier_part_c(symbol: str) -> dict:
     print(f"\n✓ Completed {sym} in {elapsed}s")
     print(f"  Promised-vs-Delivered rows: {len(pvd)}")
     print(f"  Verdict distribution: {json.dumps(verdict_dist, indent=2)}")
+    print("  Per-concall extraction telemetry:")
+    for t in dossier.get("concall_extraction_telemetry", []):
+        print(
+            f"    - {t.get('doc_id')}: extracted={t.get('claims_extracted')} | "
+            f"dropped_verifier={t.get('dropped_by_verifier')} | "
+            f"dropped_missing_unit={t.get('dropped_missing_unit')} | "
+            f"dropped_scope={t.get('dropped_scope_mismatch', 0)} | kept={t.get('kept')}"
+        )
+        for cand in t.get("raw_candidates", []):
+            print(
+                f"        * [{cand.get('status')}] reason={cand.get('reason')} | "
+                f"metric={cand.get('metric')} ({cand.get('scope')}) | unit={cand.get('unit')} | "
+                f"p.{cand.get('page')} | trimmed={str(cand.get('trimmed_quote'))[:120]!r}"
+            )
+    rvs = dossier.get("reported_vs_stated", [])
+    print(f"  Reported-vs-Stated checks: {len(rvs)}")
     print(f"  Numbers-vs-Narrative checks: {len(nvn)}")
     print(f"  Bull points: {len(bull)} | Bear points: {len(bear)}")
-    print(f"  Verified citations: {vs.get('total_verified_citations')} (min score: {vs.get('min_rapidfuzz_score')}%)")
+    print(f"  Verified citations: {vs.get('total_verified_citations')} (dropped_uncited={vs.get('dropped_uncited_sentences', 0)}, min score: {vs.get('min_rapidfuzz_score')}%)")
 
     return {
         "symbol": sym,
@@ -110,6 +129,14 @@ def run_dossier_part_c(symbol: str) -> dict:
 
 def main() -> None:
     dixon_only = "--dixon-only" in sys.argv
+    target_symbol: str | None = None
+    if "--symbol" in sys.argv:
+        idx = sys.argv.index("--symbol")
+        if idx + 1 < len(sys.argv):
+            target_symbol = sys.argv[idx + 1].upper().strip()
+    elif dixon_only:
+        target_symbol = "DIXON"
+
     has_key = check_api_key_configured()
 
     print("=== PART C: DOSSIER LLM REGENERATION & GROUNDING ===")
@@ -122,6 +149,20 @@ def main() -> None:
         sys.exit(1)
 
     t_start = time.time()
+
+    if target_symbol:
+        res = run_dossier_part_c(target_symbol)
+        ledger_rows = get_recent_pull_ledger_rows(t_start)
+        sym_rows = [r for r in ledger_rows if target_symbol.lower() in r.get("task", "").lower()]
+        print(f"\n--- {target_symbol} pull_* Ledger Records ---")
+        print(f"Found {len(sym_rows)} pull_* records for {target_symbol}:")
+        for r in sym_rows:
+            print(
+                f"  - ts={r.get('ts')} | task={r.get('task')} | model={r.get('model')} | pv={r.get('prompt_version')} | "
+                f"in={r.get('in_tokens')} out={r.get('out_tokens')} thinking={r.get('thinking_tokens')} | "
+                f"cost_inr=₹{r.get('cost_inr')} | cache_hit={r.get('cache_hit')}"
+            )
+        return
 
     # Step 1: Run DIXON first as mandated
     dixon_res = run_dossier_part_c("DIXON")
@@ -138,10 +179,6 @@ def main() -> None:
             f"cost_inr=₹{r.get('cost_inr')} | cache_hit={r.get('cache_hit')}"
         )
 
-    if dixon_only:
-        print("\nCompleted DIXON run (--dixon-only flag supplied).")
-        return
-
     # Step 2: Run remaining 5 dossiers
     remaining_symbols = ["SYRMA", "NAVINFLUOR", "POLYCAB", "HDFCBANK", "TITAN"]
     results = [dixon_res]
@@ -154,6 +191,7 @@ def main() -> None:
     print("\n==================================================")
     print("  RUNNING STRICT RE-VERIFICATION (RAPIDFUZZ >= 90)")
     print("==================================================")
+    sys.path.insert(0, str(ROOT / "scripts"))
     from reverify_dossiers import reverify_dossier
 
     for sym in ["DIXON", "SYRMA", "NAVINFLUOR", "POLYCAB", "HDFCBANK", "TITAN"]:

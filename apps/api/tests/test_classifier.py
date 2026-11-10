@@ -69,3 +69,38 @@ def test_priority_ordering_material_vs_routine() -> None:
     assert p1 >= 88
     assert p2 <= 45
     assert p3 <= 12
+
+
+def test_ledger_and_stored_cls_method_consistency() -> None:
+    """Section 4.3: stored cls_method counts across 776 filings match cls_method_breakdown & ledger batches."""
+    from collections import Counter
+
+    snap = json.loads((DATA_DIR / "snapshots" / "announcements" / "announcements.json").read_text())
+    items = snap["items"]
+    counts = Counter(x.get("cls_method") for x in items)
+
+    assert len(items) == 776
+    assert counts.get("fallback", 0) == 0
+    assert counts["rule"] + counts["llm"] == 776
+    assert snap.get("cls_method_breakdown") == {
+        "rule": counts["rule"],
+        "llm": counts["llm"],
+        "fallback": 0,
+        "total": 776,
+    }
+
+    for it in items:
+        assert it["cls_method"] in ("rule", "llm")
+        if it["cls_method"] == "rule":
+            assert it.get("cls_rule") is not None
+
+    ledger_rows = [
+        json.loads(line)
+        for line in (DATA_DIR / "snapshots" / "llm_ledger.jsonl").read_text().splitlines()
+        if line.strip()
+    ]
+    cls_live_batches = [
+        r for r in ledger_rows if r.get("task") == "classify_announcements_batch" and not r.get("cache_hit")
+    ]
+    assert len(cls_live_batches) >= 24  # 5 initial + 19 batch runs covering 437 LLM-classified items
+    assert len(cls_live_batches) * 20 >= counts["llm"]

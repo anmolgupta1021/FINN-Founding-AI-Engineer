@@ -286,5 +286,485 @@
     "started_at": "2026-11-09T16:47:39.162176+00:00",
     "finished_at": "2026-11-09T16:47:39.163493+00:00",
     "error": null
+  },
+  "job_dixon_1717c783": {
+    "job_id": "job_dixon_1717c783",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T06:30:51.744116+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T06:30:51.745178+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T06:30:51.745408+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T06:30:51.745609+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T06:30:51.744116+00:00",
+    "finished_at": "2026-11-10T06:30:51.745803+00:00",
+    "error": null
+  },
+  "job_dixon_d0124490": {
+    "job_id": "job_dixon_d0124490",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T06:56:47.916566+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T06:56:47.921345+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T06:56:47.921577+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T06:56:47.921780+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T06:56:47.916566+00:00",
+    "finished_at": "2026-11-10T06:56:47.922001+00:00",
+    "error": null
+  },
+  "job_dixon_44b05393": {
+    "job_id": "job_dixon_44b05393",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T06:57:05.805249+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T06:57:05.805891+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T06:57:05.806120+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T06:57:05.806332+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T06:57:05.805249+00:00",
+    "finished_at": "2026-11-10T06:57:05.806539+00:00",
+    "error": null
+  },
+  "job_dixon_1c2777c9": {
+    "job_id": "job_dixon_1c2777c9",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T07:17:14.264684+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T07:17:14.265432+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T07:17:14.265684+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T07:17:14.265921+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T07:17:14.264684+00:00",
+    "finished_at": "2026-11-10T07:17:14.266143+00:00",
+    "error": null
+  },
+  "job_dixon_33450969": {
+    "job_id": "job_dixon_33450969",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T07:17:50.421206+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T07:17:50.421947+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T07:17:50.422232+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T07:17:50.422482+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T07:17:50.421206+00:00",
+    "finished_at": "2026-11-10T07:17:50.422723+00:00",
+    "error": null
+  },
+  "job_dixon_61a51396": {
+    "job_id": "job_dixon_61a51396",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T07:23:47.689487+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T07:23:47.690257+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T07:23:47.690568+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T07:23:47.690835+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T07:23:47.689487+00:00",
+    "finished_at": "2026-11-10T07:23:47.691090+00:00",
+    "error": null
+  },
+  "job_dixon_40974ecb": {
+    "job_id": "job_dixon_40974ecb",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T07:40:24.211764+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T07:40:24.212685+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T07:40:24.212986+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T07:40:24.213246+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T07:40:24.211764+00:00",
+    "finished_at": "2026-11-10T07:40:24.213498+00:00",
+    "error": null
+  },
+  "job_dixon_0d255009": {
+    "job_id": "job_dixon_0d255009",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T07:49:09.921174+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T07:49:09.922056+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T07:49:09.922362+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T07:49:09.922634+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T07:49:09.921174+00:00",
+    "finished_at": "2026-11-10T07:49:09.922892+00:00",
+    "error": null
+  },
+  "job_dixon_cc0701c1": {
+    "job_id": "job_dixon_cc0701c1",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T08:34:13.385678+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T08:34:13.386703+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T08:34:13.386999+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T08:34:13.387273+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T08:34:13.385678+00:00",
+    "finished_at": "2026-11-10T08:34:13.387539+00:00",
+    "error": null
+  },
+  "job_dixon_9e3eb854": {
+    "job_id": "job_dixon_9e3eb854",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:06:59.796994+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:06:59.799832+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:06:59.800159+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:06:59.800446+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:06:59.796994+00:00",
+    "finished_at": "2026-11-10T09:06:59.800725+00:00",
+    "error": null
+  },
+  "job_kaynes_37f79980": {
+    "job_id": "job_kaynes_37f79980",
+    "symbol": "KAYNES",
+    "status": "completed",
+    "step": "Dossier ready for KAYNES",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:15:22.738958+00:00",
+        "step": "Queued primary-source research job for KAYNES",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:15:22.739906+00:00",
+        "step": "Finding primary filings for KAYNES on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:15:22.740223+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for KAYNES",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:15:22.740513+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 85) & weaving Network for KAYNES",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:15:22.738958+00:00",
+    "finished_at": "2026-11-10T09:15:22.740799+00:00",
+    "error": null
+  },
+  "job_dixon_7b4d7664": {
+    "job_id": "job_dixon_7b4d7664",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:16:19.091655+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:16:19.092438+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:16:19.092830+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:16:19.093158+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 90) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:16:19.091655+00:00",
+    "finished_at": "2026-11-10T09:16:19.093459+00:00",
+    "error": null
+  },
+  "job_dixon_a1047cb4": {
+    "job_id": "job_dixon_a1047cb4",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:16:34.623587+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:16:34.624429+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:16:34.624798+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:16:34.625120+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 90) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:16:34.623587+00:00",
+    "finished_at": "2026-11-10T09:16:34.625432+00:00",
+    "error": null
+  },
+  "job_kaynes_8cbbf5fa": {
+    "job_id": "job_kaynes_8cbbf5fa",
+    "symbol": "KAYNES",
+    "status": "completed",
+    "step": "Dossier ready for KAYNES",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:20:30.839657+00:00",
+        "step": "Queued primary-source research job for KAYNES",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:20:30.840501+00:00",
+        "step": "Finding primary filings for KAYNES on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:20:30.840865+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for KAYNES",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:20:30.841194+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 90) & weaving Network for KAYNES",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:20:30.839657+00:00",
+    "finished_at": "2026-11-10T09:20:30.841513+00:00",
+    "error": null
+  },
+  "job_dixon_8cfa2591": {
+    "job_id": "job_dixon_8cfa2591",
+    "symbol": "DIXON",
+    "status": "completed",
+    "step": "Dossier ready for DIXON",
+    "progress_pct": 100,
+    "steps_log": [
+      {
+        "ts": "2026-11-10T09:20:33.646540+00:00",
+        "step": "Queued primary-source research job for DIXON",
+        "progress_pct": 5
+      },
+      {
+        "ts": "2026-11-10T09:20:33.647381+00:00",
+        "step": "Finding primary filings for DIXON on screener.in",
+        "progress_pct": 25
+      },
+      {
+        "ts": "2026-11-10T09:20:33.647726+00:00",
+        "step": "Verifying concall transcript doc-types (speakers + Q&A) for DIXON",
+        "progress_pct": 60
+      },
+      {
+        "ts": "2026-11-10T09:20:33.648059+00:00",
+        "step": "Verifying verbatim quotes (rapidfuzz >= 90) & weaving Network for DIXON",
+        "progress_pct": 90
+      }
+    ],
+    "started_at": "2026-11-10T09:20:33.646540+00:00",
+    "finished_at": "2026-11-10T09:20:33.648378+00:00",
+    "error": null
   }
 }

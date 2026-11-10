@@ -297,333 +297,10 @@
   },
   "segment_mix": [],
   "ar_highlights": [],
-  "promised_vs_delivered": [
-    {
-      "period_called": "NAVINFLUOR Concall Nov 2026 Transcript",
-      "is_latest_call": true,
-      "promised_vs_delivered_testable": false,
-      "topic": "Latest Quarter Forward Outlook",
-      "promised_guidance": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Latest call — forward guidance only; untestable for promised-vs-delivered until subsequent quarter results are filed.",
-      "delivered_citation": null,
-      "verdict": "Untestable (Latest Call)"
-    },
-    {
-      "period_called": "NAVINFLUOR Concall Aug 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
-        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 11,
-        "cited_page": 11,
-        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "NAVINFLUOR Concall May 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "For the full year FY26, net operating revenues grew to INR3,314 crores, reflecting a growth of 41%, supported by broad-based momentum across specialty chemicals, CDMO and HPP.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_3_MAY_2026",
-        "doc_label": "NAVINFLUOR Concall May 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1440596d-ed29-441c-b785-0c8dbf3b5dbd.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "For the full year FY26, net operating revenues grew to INR3,314 crores, reflecting a growth of 41%, supported by broad-based momentum across specialty chemicals, CDMO and HPP.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
-        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    },
-    {
-      "period_called": "NAVINFLUOR Concall Feb 2026 Transcript",
-      "is_latest_call": false,
-      "promised_vs_delivered_testable": true,
-      "topic": "Operational & Financial Execution vs Prior Call",
-      "promised_guidance": "Operating PBT increased to INR243 crores versus INR98 crores in Q3 FY25 and INR179 crores in Q2 FY26, marking a growth of 149% year-on-year and 36% sequential growth.",
-      "promised_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_4_FEB_2026",
-        "doc_label": "NAVINFLUOR Concall Feb 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=45e3cf37-1db9-4a21-944f-cf829ff37c84.pdf",
-        "page": 6,
-        "cited_page": 6,
-        "verbatim_quote": "Operating PBT increased to INR243 crores versus INR98 crores in Q3 FY25 and INR179 crores in Q2 FY26, marking a growth of 149% year-on-year and 36% sequential growth.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "delivered_summary": "Subsequent quarterly filing (Sep 2026): Revenue ₹1191.0 Cr, Derived Operating EBITDA ₹407.0 Cr (34.0%), PAT ₹269.0 Cr.",
-      "delivered_citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_3_MAY_2026",
-        "doc_label": "NAVINFLUOR Concall May 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=1440596d-ed29-441c-b785-0c8dbf3b5dbd.pdf",
-        "page": 4,
-        "cited_page": 4,
-        "verbatim_quote": "Quarter 4 FY26 revenue grew 20% year-on-year at INR393 crores, driven by improved realization and volume growth.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      },
-      "verdict": "Delivered"
-    }
-  ],
-  "numbers_vs_narrative": [
-    {
-      "check_title": "5-Year Revenue & PAT Compounding vs Primary Filings",
-      "numbers_observed": "5Y Revenue CAGR 22.9%, PAT CAGR 26.1%; latest annual Revenue ₹3314.0 Cr, PAT ₹664.0 Cr.",
-      "narrative_claimed": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-      "verdict": "Aligned",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "check_title": "Cumulative 5Y Cash Conversion (CFO / PAT) Check",
-      "numbers_observed": "5Y Cumulative CFO ₹2226.0 Cr vs Cumulative PAT ₹1861.0 Cr (CFO/PAT = 119.6%).",
-      "narrative_claimed": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-      "verdict": "Aligned",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
-        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "check_title": "Derived Operating EBITDA Margin & ROCE Trajectory",
-      "numbers_observed": "Latest annual Derived EBITDA ₹1082.0 Cr (Margin 33.0%, derived) · ROCE 21.0%.",
-      "narrative_claimed": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
-      "verdict": "Aligned",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 11,
-        "cited_page": 11,
-        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
-  "bull_case": [
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #1 (NAVINFLUOR Concall Nov 2026 Transcript)",
-      "thesis": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "On a consolidated basis, operating revenue for the quarter stood at INR1,191 crores, registering a year-on-year growth of 57%.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #2 (NAVINFLUOR Concall Aug 2026 Transcript)",
-      "thesis": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_2_AUG_2026",
-        "doc_label": "NAVINFLUOR Concall Aug 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8efd175a-4c8d-467b-aa33-b788176175f2.pdf",
-        "page": 5,
-        "cited_page": 5,
-        "verbatim_quote": "The revenue of the quarter grew 44% Y-o-Y to INR1,044 crores and EBITDA stood at INR357 crores, up 73% year-on-year and PAT at INR243 crores, registering a growth of 108% year-on-year.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Verified Primary-Filing Growth & Execution Driver #3 (NAVINFLUOR Concall Nov 2026 Transcript)",
-      "thesis": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_1_NOV_2026",
-        "doc_label": "NAVINFLUOR Concall Nov 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8208e424-002b-4299-b68d-4bc45311047e.pdf",
-        "page": 11,
-        "cited_page": 11,
-        "verbatim_quote": "We've also said that cGMP-4 Phase 2, when Phase 1 and Phase 2 put together, the peak annual revenue potential is close to 3x of the capital or about INR900 crores to INR1,000 crores by FY28, FY29, if I'm not mistaken.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
-  "bear_case": [
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #1 (NAVINFLUOR Annual Report 2026 (Annual Report))",
-      "thesis": "Cash Credit and Working Capital Loans (i) The Cash credit, Working capital loans, Buyers credit and Packing credit in Foreign currency carry interest rate of 4.09% - 7.40% (Previous year: 5.80% - 9.60%).",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_AR_LATEST",
-        "doc_label": "NAVINFLUOR Annual Report 2026 (Annual Report)",
-        "doc_type": "annual_report",
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe8394d4-503f-4418-b9d1-3691ee92e2f7.pdf",
-        "page": 319,
-        "cited_page": 319,
-        "verbatim_quote": "Cash Credit and Working Capital Loans (i) The Cash credit, Working capital loans, Buyers credit and Packing credit in Foreign currency carry interest rate of 4.09% - 7.40% (Previous year: 5.80% - 9.60%).",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #2 (NAVINFLUOR Annual Report 2026 (Annual Report))",
-      "thesis": "Further, global headline inflation is expected to rise from 4.1% in 2025 to 4.4% in 2026 and then moderate to 3.7% in 2027.",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_AR_LATEST",
-        "doc_label": "NAVINFLUOR Annual Report 2026 (Annual Report)",
-        "doc_type": "annual_report",
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe8394d4-503f-4418-b9d1-3691ee92e2f7.pdf",
-        "page": 104,
-        "cited_page": 104,
-        "verbatim_quote": "Further, global headline inflation is expected to rise from 4.1% in 2025 to 4.4% in 2026 and then moderate to 3.7% in 2027.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    },
-    {
-      "title": "Filing-Disclosed Operational / Margin Risk #3 (NAVINFLUOR Concall Feb 2026 Transcript)",
-      "thesis": "As of December 31, FY25, our net debt-to-equity ratio stood at 0.03x and net working capital was below 80 days of sales.",
-      "citation": {
-        "verified": true,
-        "doc_id": "NAVINFLUOR_CONCALL_4_FEB_2026",
-        "doc_label": "NAVINFLUOR Concall Feb 2026 Transcript",
-        "doc_type": "concall_transcript",
-        "pdf_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=45e3cf37-1db9-4a21-944f-cf829ff37c84.pdf",
-        "page": 6,
-        "cited_page": 6,
-        "verbatim_quote": "As of December 31, FY25, our net debt-to-equity ratio stood at 0.03x and net working capital was below 80 days of sales.",
-        "match_score": 100.0,
-        "numbers_verified": true,
-        "missing_numbers": [],
-        "reason": null,
-        "status": "verified"
-      }
-    }
-  ],
+  "promised_vs_delivered": [],
+  "numbers_vs_narrative": [],
+  "bull_case": [],
+  "bear_case": [],
   "unanswered_diligence_questions": [
     {
       "topic": "Customer-level margin concentration & contract repricing lag",
@@ -844,5 +521,78 @@
     "dropped_citations_count": 0,
     "min_rapidfuzz_score": 100.0,
     "quote_verification_rule": "rapidfuzz.fuzz.partial_ratio >= 90.0 + all numbers in quote verified present on cited page"
-  }
+  },
+  "balance_sheet_panel": {
+    "symbol": "NAVINFLUOR",
+    "is_lender": false,
+    "source": "Screener #balance-sheet & #ratios (deterministic)",
+    "latest_period": "Sep 2026",
+    "borrowings_cr": 1248.0,
+    "equity_cr": 4462.0,
+    "debt_to_equity": 0.28,
+    "total_assets_cr": 6831.0,
+    "working_capital_days": 44.0,
+    "working_capital_period": "Mar 2026",
+    "series": [
+      {
+        "period": "Mar 2025",
+        "equity_cr": 2626.0,
+        "borrowings_cr": 1466.0,
+        "debt_to_equity": 0.56,
+        "deposits_cr": null,
+        "total_assets_cr": 4830.0,
+        "working_capital_days": 25.0,
+        "cash_conversion_cycle_days": 89.0,
+        "debtor_days": 90.0,
+        "inventory_days": 117.0,
+        "days_payable": 118.0,
+        "roce_or_roe_pct": 11.0
+      },
+      {
+        "period": "Mar 2026",
+        "equity_cr": 3974.0,
+        "borrowings_cr": 1272.0,
+        "debt_to_equity": 0.32,
+        "deposits_cr": null,
+        "total_assets_cr": 6379.0,
+        "working_capital_days": 44.0,
+        "cash_conversion_cycle_days": 60.0,
+        "debtor_days": 83.0,
+        "inventory_days": 121.0,
+        "days_payable": 144.0,
+        "roce_or_roe_pct": 21.0
+      },
+      {
+        "period": "Sep 2026",
+        "equity_cr": 4462.0,
+        "borrowings_cr": 1248.0,
+        "debt_to_equity": 0.28,
+        "deposits_cr": null,
+        "total_assets_cr": 6831.0,
+        "working_capital_days": null,
+        "cash_conversion_cycle_days": null,
+        "debtor_days": null,
+        "inventory_days": null,
+        "days_payable": null,
+        "roce_or_roe_pct": null
+      }
+    ]
+  },
+  "llm_provenance": {
+    "symbol": "NAVINFLUOR",
+    "total_calls": 0,
+    "live_calls": 0,
+    "cache_hits": 0,
+    "models_used": [],
+    "all_models_seen": [],
+    "in_tokens": 0,
+    "out_tokens": 0,
+    "thinking_tokens": 0,
+    "cost_usd": 0,
+    "cost_inr": 0,
+    "latest_run_tasks": []
+  },
+  "analysis_generated": false,
+  "analysis_header": "Deterministic extracts only; analysis not generated.",
+  "reported_vs_stated": []
 }
