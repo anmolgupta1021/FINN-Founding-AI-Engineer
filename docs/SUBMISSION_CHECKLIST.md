@@ -5,7 +5,7 @@
 - **Subject Line:** `IIT Kanpur – Founding AI Engineer - 2027`
 - **Deployed Production URL:** `https://finn-bay.vercel.app`
 - **Cost & Ledger URL:** `https://finn-bay.vercel.app/cost`
-- **Public GitHub Repo URL:** `<INSERT PUBLIC GITHUB REPO URL AFTER HUMAN PUSH>`
+- **Public GitHub Repo URL:** `https://github.com/anmolgupta1021/FINN-Founding-AI-Engineer`
 
 ---
 
@@ -50,7 +50,7 @@ cd apps/web && ./node_modules/.bin/tsc --noEmit && ./node_modules/.bin/eslint .
 ---
 
 ## 5. Human Final Steps (Do Not Automate Secrets/Push)
-- [ ] Add `git remote add origin <repo-url>` and run `git push -u origin main`.
+- [x] Push to public repository: `https://github.com/anmolgupta1021/FINN-Founding-AI-Engineer` (remote `origin/main` tracking).
 - [ ] Confirm `GEMINI_API_KEY` and `DATABASE_URL` (optional) are configured in Vercel Dashboard environment variables (never commit `.env` or `.env.local`).
 - [ ] Run one final check of `https://finn-bay.vercel.app` on mobile/desktop (toggle `24h` → `7d`, inspect `DIXON`/`POLYCAB`/`HDFCBANK` vs `NAVINFLUOR`/`SYRMA`/`TITAN`, open `/cost`).
 - [ ] Send email to `assessment@enam.com` with subject `IIT Kanpur – Founding AI Engineer - 2027`.
